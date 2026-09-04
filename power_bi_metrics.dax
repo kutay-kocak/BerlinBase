@@ -1,0 +1,110 @@
+// ==============================================================================
+// BerliNest: Power BI Desktop DAX Measures & Star Schema Specification
+// Day 4 of 14-Day Sprint
+// ==============================================================================
+
+// ------------------------------------------------------------------------------
+// 1. DATA MODEL RELATIONSHIPS (STAR SCHEMA)
+// ------------------------------------------------------------------------------
+// - dim_neighborhood [1] -----> [*] fact_listings (Key: district_id)
+// - dim_neighborhood [1] -----> [*] fact_price_trends (Key: district_id)
+// Cross-filter direction: Single (dim_neighborhood filters facts)
+
+// ------------------------------------------------------------------------------
+// 2. CORE RENT METRICS
+// ------------------------------------------------------------------------------
+
+Total Listings = COUNTROWS('fact_listings')
+
+Average Warm Rent = 
+AVERAGE('fact_listings'[warm_rent_eur])
+
+Median Warm Rent = 
+MEDIAN('fact_listings'[warm_rent_eur])
+
+Average Cold Rent = 
+AVERAGE('fact_listings'[cold_rent_eur])
+
+Average Size SQM = 
+AVERAGE('fact_listings'[size_sqm])
+
+Average Cold Rent Per SQM = 
+DIVIDE(
+    SUM('fact_listings'[cold_rent_eur]),
+    SUM('fact_listings'[size_sqm]),
+    0
+)
+
+// ------------------------------------------------------------------------------
+// 3. TIME INTELLIGENCE & YoY ANALYSIS (Using fact_price_trends)
+// ------------------------------------------------------------------------------
+
+Current Year Warm Rent = 
+CALCULATE(
+    MAX('fact_price_trends'[avg_warm_rent_eur]),
+    FILTER(
+        'fact_price_trends',
+        'fact_price_trends'[year] = MAX('fact_price_trends'[year])
+    )
+)
+
+Previous Year Warm Rent = 
+VAR CurrentYr = MAX('fact_price_trends'[year])
+RETURN
+CALCULATE(
+    MAX('fact_price_trends'[avg_warm_rent_eur]),
+    FILTER(
+        ALL('fact_price_trends'),
+        'fact_price_trends'[district_id] = MAX('fact_price_trends'[district_id]) &&
+        'fact_price_trends'[property_type] = MAX('fact_price_trends'[property_type]) &&
+        'fact_price_trends'[year] = CurrentYr - 1
+    )
+)
+
+YoY Rent Growth Pct = 
+VAR CurrentRent = [Current Year Warm Rent]
+VAR PrevRent = [Previous Year Warm Rent]
+RETURN
+IF(
+    NOT(ISBLANK(PrevRent)) && PrevRent > 0,
+    DIVIDE(CurrentRent - PrevRent, PrevRent, 0),
+    BLANK()
+)
+
+// ------------------------------------------------------------------------------
+// 4. KIEZ BAROMETER & COMPARATIVE SPREAD MEASURES
+// ------------------------------------------------------------------------------
+
+Room vs Flat SQM Premium = 
+VAR RoomM2 = 
+    CALCULATE(
+        [Average Cold Rent Per SQM],
+        'fact_listings'[property_type] = "Room"
+    )
+VAR FlatM2 = 
+    CALCULATE(
+        [Average Cold Rent Per SQM],
+        'fact_listings'[property_type] = "Apartment"
+    )
+RETURN
+IF(
+    FlatM2 > 0,
+    DIVIDE(RoomM2 - FlatM2, FlatM2, 0),
+    BLANK()
+)
+
+// ------------------------------------------------------------------------------
+// 5. USER BUDGET SIMULATOR (WHAT-IF PARAMETER)
+// ------------------------------------------------------------------------------
+// Create a What-If Parameter in Power BI: 'Budget Parameter'[Budget Value] (e.g. 500 to 2500 EUR, step 50)
+
+Affordable Listings Count = 
+VAR UserBudget = SELECTEDVALUE('Budget Parameter'[Budget Value], 1200)
+RETURN
+CALCULATE(
+    COUNTROWS('fact_listings'),
+    'fact_listings'[warm_rent_eur] <= UserBudget
+)
+
+Affordability Percentage = 
+DIVIDE([Affordable Listings Count], [Total Listings], 0)

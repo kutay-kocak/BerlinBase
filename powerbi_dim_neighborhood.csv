@@ -1,0 +1,13 @@
+district_id,district_name,inside_ringbahn,spati_count,spati_density,avg_doner_eur,transit_to_alex_min,anmeldung_speed_wks,vibe_summary
+1,Charlottenburg,True,65,Medium,7.9,22,4,"Classic Elegance, Boulevards & Boutiques, Quiet Residential, Expat Families"
+2,Friedrichshain,True,135,Very High,7.5,10,6,"Nightlife Capital, Boxhagener Foodies, RAW-Gelände, Young Professionals"
+3,Kreuzberg,True,160,Very High,7.8,14,6,"Alternative Culture, Techno & Bars, Canal Walks, Diverse Street Food"
+4,Lichtenberg,False,45,Medium,6.5,24,3,"Plattenbau & Space, Asian Community Hub, Lower Rents, Raw Post-Soviet Charm"
+5,Mitte,True,145,Very High,8.5,6,5,"Suits & Tech Hub, High Rent, Central & Walkable, Tourist Hotspots"
+6,Moabit,True,70,High,7.0,18,5,"Waterfront Paths, Affordable Pockets, Central Transit, Traditional Working Class"
+7,Neukölln,True,185,Very High,6.8,18,7,"Vibrant & Grungy, Artists & Expats, Busy Spätis, Rapidly Gentrifying"
+8,Pankow,False,30,Low,7.2,25,3,"Family Haven, Quiet Tram Lines, Abundant Parks, Suburban Comfort"
+9,Prenzlauer Berg,True,95,High,8.0,12,4,"Baby Strollers, Organic Bakeries, Restored Altbau, Peaceful Green Squares"
+10,Schöneberg,True,85,High,7.5,19,4,"Historic Queer Center, Weekly Markets, Cozy Neighborhood Feel, Well Connected"
+11,Steglitz,False,25,Low,7.4,32,3,"Green & Calm, Schlossstraße Shopping, Academic Vibe, Quiet Family Living"
+12,Wedding,True,110,Very High,6.7,16,5,"Up-and-Coming, Budget Friendly, Industrial Vibe, Multicultural Hub"

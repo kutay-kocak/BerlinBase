@@ -1,0 +1,13 @@
+﻿district_id,district_name,foreign_cuisine_pct,german_cuisine_pct,flat_white_price_eur,fiber_internet_pct,spati_count,transit_alex_min
+1,Mitte,68,32,4.5,68,145,6
+2,Friedrichshain,72,28,4.3,62,135,10
+3,Kreuzberg,76,24,4.2,58,160,14
+4,Prenzlauer Berg,58,42,4.4,54,95,12
+5,Charlottenburg,62,38,4.2,38,65,22
+6,Schöneberg,59,41,3.9,46,85,19
+7,Moabit,64,36,3.6,42,70,18
+8,Neukölln,78,22,3.8,51,185,18
+9,Wedding,66,34,3.2,45,110,16
+10,Pankow,32,68,3.8,49,30,25
+11,Steglitz,35,65,3.7,36,25,32
+12,Lichtenberg,48,52,3.4,55,45,24

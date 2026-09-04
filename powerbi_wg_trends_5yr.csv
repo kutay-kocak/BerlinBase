@@ -1,0 +1,61 @@
+﻿trend_id,district_id,district_name,year,property_type,total_monthly_rent_eur,sample_size_analyzed
+1,1,Mitte,2022,WG Room (Priority),570,380
+2,1,Mitte,2023,WG Room (Priority),614,380
+3,1,Mitte,2024,WG Room (Priority),666,380
+4,1,Mitte,2025,WG Room (Priority),710,380
+5,1,Mitte,2026,WG Room (Priority),740,380
+6,2,Friedrichshain,2022,WG Room (Priority),547,440
+7,2,Friedrichshain,2023,WG Room (Priority),589,440
+8,2,Friedrichshain,2024,WG Room (Priority),639,440
+9,2,Friedrichshain,2025,WG Room (Priority),682,440
+10,2,Friedrichshain,2026,WG Room (Priority),710,440
+11,3,Kreuzberg,2022,WG Room (Priority),554,470
+12,3,Kreuzberg,2023,WG Room (Priority),598,470
+13,3,Kreuzberg,2024,WG Room (Priority),648,470
+14,3,Kreuzberg,2025,WG Room (Priority),691,470
+15,3,Kreuzberg,2026,WG Room (Priority),720,470
+16,4,Prenzlauer Berg,2022,WG Room (Priority),531,310
+17,4,Prenzlauer Berg,2023,WG Room (Priority),573,310
+18,4,Prenzlauer Berg,2024,WG Room (Priority),621,310
+19,4,Prenzlauer Berg,2025,WG Room (Priority),662,310
+20,4,Prenzlauer Berg,2026,WG Room (Priority),690,310
+21,5,Charlottenburg,2022,WG Room (Priority),508,250
+22,5,Charlottenburg,2023,WG Room (Priority),548,250
+23,5,Charlottenburg,2024,WG Room (Priority),594,250
+24,5,Charlottenburg,2025,WG Room (Priority),634,250
+25,5,Charlottenburg,2026,WG Room (Priority),660,250
+26,6,Schöneberg,2022,WG Room (Priority),493,290
+27,6,Schöneberg,2023,WG Room (Priority),531,290
+28,6,Schöneberg,2024,WG Room (Priority),576,290
+29,6,Schöneberg,2025,WG Room (Priority),614,290
+30,6,Schöneberg,2026,WG Room (Priority),640,290
+31,7,Moabit,2022,WG Room (Priority),470,240
+32,7,Moabit,2023,WG Room (Priority),506,240
+33,7,Moabit,2024,WG Room (Priority),549,240
+34,7,Moabit,2025,WG Room (Priority),586,240
+35,7,Moabit,2026,WG Room (Priority),610,240
+36,8,Neukölln,2022,WG Room (Priority),485,560
+37,8,Neukölln,2023,WG Room (Priority),523,560
+38,8,Neukölln,2024,WG Room (Priority),567,560
+39,8,Neukölln,2025,WG Room (Priority),605,560
+40,8,Neukölln,2026,WG Room (Priority),630,560
+41,9,Wedding,2022,WG Room (Priority),431,340
+42,9,Wedding,2023,WG Room (Priority),465,340
+43,9,Wedding,2024,WG Room (Priority),504,340
+44,9,Wedding,2025,WG Room (Priority),538,340
+45,9,Wedding,2026,WG Room (Priority),560,340
+46,10,Pankow,2022,WG Room (Priority),439,160
+47,10,Pankow,2023,WG Room (Priority),473,160
+48,10,Pankow,2024,WG Room (Priority),513,160
+49,10,Pankow,2025,WG Room (Priority),547,160
+50,10,Pankow,2026,WG Room (Priority),570,160
+51,11,Steglitz,2022,WG Room (Priority),431,140
+52,11,Steglitz,2023,WG Room (Priority),465,140
+53,11,Steglitz,2024,WG Room (Priority),504,140
+54,11,Steglitz,2025,WG Room (Priority),538,140
+55,11,Steglitz,2026,WG Room (Priority),560,140
+56,12,Lichtenberg,2022,WG Room (Priority),400,180
+57,12,Lichtenberg,2023,WG Room (Priority),432,180
+58,12,Lichtenberg,2024,WG Room (Priority),468,180
+59,12,Lichtenberg,2025,WG Room (Priority),499,180
+60,12,Lichtenberg,2026,WG Room (Priority),520,180

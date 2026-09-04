@@ -1,0 +1,13 @@
+﻿district_name,district_id,average_monthly_rent_eur,total_listings_analyzed
+Mitte,1,739,380
+Kreuzberg,3,722,470
+Friedrichshain,2,718,440
+Prenzlauer Berg,4,687,310
+Charlottenburg,5,667,250
+Schöneberg,6,632,290
+Neukölln,8,626,560
+Moabit,7,608,240
+Pankow,10,565,160
+Steglitz,11,560,140
+Wedding,9,559,340
+Lichtenberg,12,523,180

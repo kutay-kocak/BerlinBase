@@ -1,0 +1,962 @@
+[
+  {
+    "trend_id": 1,
+    "district_name": "Mitte",
+    "year": 2022,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1380.0,
+    "yoy_increase_percentage": 0.0
+  },
+  {
+    "trend_id": 2,
+    "district_name": "Mitte",
+    "year": 2023,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1469.7,
+    "yoy_increase_percentage": 6.5
+  },
+  {
+    "trend_id": 3,
+    "district_name": "Mitte",
+    "year": 2024,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1589.76,
+    "yoy_increase_percentage": 8.17
+  },
+  {
+    "trend_id": 4,
+    "district_name": "Mitte",
+    "year": 2025,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1697.4,
+    "yoy_increase_percentage": 6.77
+  },
+  {
+    "trend_id": 5,
+    "district_name": "Mitte",
+    "year": 2026,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1773.3,
+    "yoy_increase_percentage": 4.47
+  },
+  {
+    "trend_id": 6,
+    "district_name": "Mitte",
+    "year": 2022,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 540.0,
+    "yoy_increase_percentage": 0.0
+  },
+  {
+    "trend_id": 7,
+    "district_name": "Mitte",
+    "year": 2023,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 575.1,
+    "yoy_increase_percentage": 6.5
+  },
+  {
+    "trend_id": 8,
+    "district_name": "Mitte",
+    "year": 2024,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 622.08,
+    "yoy_increase_percentage": 8.17
+  },
+  {
+    "trend_id": 9,
+    "district_name": "Mitte",
+    "year": 2025,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 664.2,
+    "yoy_increase_percentage": 6.77
+  },
+  {
+    "trend_id": 10,
+    "district_name": "Mitte",
+    "year": 2026,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 693.9,
+    "yoy_increase_percentage": 4.47
+  },
+  {
+    "trend_id": 11,
+    "district_name": "Friedrichshain",
+    "year": 2022,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1190.0,
+    "yoy_increase_percentage": 0.0
+  },
+  {
+    "trend_id": 12,
+    "district_name": "Friedrichshain",
+    "year": 2023,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1267.35,
+    "yoy_increase_percentage": 6.5
+  },
+  {
+    "trend_id": 13,
+    "district_name": "Friedrichshain",
+    "year": 2024,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1370.88,
+    "yoy_increase_percentage": 8.17
+  },
+  {
+    "trend_id": 14,
+    "district_name": "Friedrichshain",
+    "year": 2025,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1463.7,
+    "yoy_increase_percentage": 6.77
+  },
+  {
+    "trend_id": 15,
+    "district_name": "Friedrichshain",
+    "year": 2026,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1529.15,
+    "yoy_increase_percentage": 4.47
+  },
+  {
+    "trend_id": 16,
+    "district_name": "Friedrichshain",
+    "year": 2022,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 480.0,
+    "yoy_increase_percentage": 0.0
+  },
+  {
+    "trend_id": 17,
+    "district_name": "Friedrichshain",
+    "year": 2023,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 511.2,
+    "yoy_increase_percentage": 6.5
+  },
+  {
+    "trend_id": 18,
+    "district_name": "Friedrichshain",
+    "year": 2024,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 552.96,
+    "yoy_increase_percentage": 8.17
+  },
+  {
+    "trend_id": 19,
+    "district_name": "Friedrichshain",
+    "year": 2025,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 590.4,
+    "yoy_increase_percentage": 6.77
+  },
+  {
+    "trend_id": 20,
+    "district_name": "Friedrichshain",
+    "year": 2026,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 616.8,
+    "yoy_increase_percentage": 4.47
+  },
+  {
+    "trend_id": 21,
+    "district_name": "Kreuzberg",
+    "year": 2022,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1180.0,
+    "yoy_increase_percentage": 0.0
+  },
+  {
+    "trend_id": 22,
+    "district_name": "Kreuzberg",
+    "year": 2023,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1256.7,
+    "yoy_increase_percentage": 6.5
+  },
+  {
+    "trend_id": 23,
+    "district_name": "Kreuzberg",
+    "year": 2024,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1359.36,
+    "yoy_increase_percentage": 8.17
+  },
+  {
+    "trend_id": 24,
+    "district_name": "Kreuzberg",
+    "year": 2025,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1451.4,
+    "yoy_increase_percentage": 6.77
+  },
+  {
+    "trend_id": 25,
+    "district_name": "Kreuzberg",
+    "year": 2026,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1516.3,
+    "yoy_increase_percentage": 4.47
+  },
+  {
+    "trend_id": 26,
+    "district_name": "Kreuzberg",
+    "year": 2022,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 490.0,
+    "yoy_increase_percentage": 0.0
+  },
+  {
+    "trend_id": 27,
+    "district_name": "Kreuzberg",
+    "year": 2023,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 521.85,
+    "yoy_increase_percentage": 6.5
+  },
+  {
+    "trend_id": 28,
+    "district_name": "Kreuzberg",
+    "year": 2024,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 564.48,
+    "yoy_increase_percentage": 8.17
+  },
+  {
+    "trend_id": 29,
+    "district_name": "Kreuzberg",
+    "year": 2025,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 602.7,
+    "yoy_increase_percentage": 6.77
+  },
+  {
+    "trend_id": 30,
+    "district_name": "Kreuzberg",
+    "year": 2026,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 629.65,
+    "yoy_increase_percentage": 4.47
+  },
+  {
+    "trend_id": 31,
+    "district_name": "Prenzlauer Berg",
+    "year": 2022,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1210.0,
+    "yoy_increase_percentage": 0.0
+  },
+  {
+    "trend_id": 32,
+    "district_name": "Prenzlauer Berg",
+    "year": 2023,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1288.65,
+    "yoy_increase_percentage": 6.5
+  },
+  {
+    "trend_id": 33,
+    "district_name": "Prenzlauer Berg",
+    "year": 2024,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1393.92,
+    "yoy_increase_percentage": 8.17
+  },
+  {
+    "trend_id": 34,
+    "district_name": "Prenzlauer Berg",
+    "year": 2025,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1488.3,
+    "yoy_increase_percentage": 6.77
+  },
+  {
+    "trend_id": 35,
+    "district_name": "Prenzlauer Berg",
+    "year": 2026,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1554.85,
+    "yoy_increase_percentage": 4.47
+  },
+  {
+    "trend_id": 36,
+    "district_name": "Prenzlauer Berg",
+    "year": 2022,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 510.0,
+    "yoy_increase_percentage": 0.0
+  },
+  {
+    "trend_id": 37,
+    "district_name": "Prenzlauer Berg",
+    "year": 2023,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 543.15,
+    "yoy_increase_percentage": 6.5
+  },
+  {
+    "trend_id": 38,
+    "district_name": "Prenzlauer Berg",
+    "year": 2024,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 587.52,
+    "yoy_increase_percentage": 8.17
+  },
+  {
+    "trend_id": 39,
+    "district_name": "Prenzlauer Berg",
+    "year": 2025,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 627.3,
+    "yoy_increase_percentage": 6.77
+  },
+  {
+    "trend_id": 40,
+    "district_name": "Prenzlauer Berg",
+    "year": 2026,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 655.35,
+    "yoy_increase_percentage": 4.47
+  },
+  {
+    "trend_id": 41,
+    "district_name": "Neukölln",
+    "year": 2022,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 980.0,
+    "yoy_increase_percentage": 0.0
+  },
+  {
+    "trend_id": 42,
+    "district_name": "Neukölln",
+    "year": 2023,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1043.7,
+    "yoy_increase_percentage": 6.5
+  },
+  {
+    "trend_id": 43,
+    "district_name": "Neukölln",
+    "year": 2024,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1128.96,
+    "yoy_increase_percentage": 8.17
+  },
+  {
+    "trend_id": 44,
+    "district_name": "Neukölln",
+    "year": 2025,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1205.4,
+    "yoy_increase_percentage": 6.77
+  },
+  {
+    "trend_id": 45,
+    "district_name": "Neukölln",
+    "year": 2026,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1259.3,
+    "yoy_increase_percentage": 4.47
+  },
+  {
+    "trend_id": 46,
+    "district_name": "Neukölln",
+    "year": 2022,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 420.0,
+    "yoy_increase_percentage": 0.0
+  },
+  {
+    "trend_id": 47,
+    "district_name": "Neukölln",
+    "year": 2023,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 447.3,
+    "yoy_increase_percentage": 6.5
+  },
+  {
+    "trend_id": 48,
+    "district_name": "Neukölln",
+    "year": 2024,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 483.84,
+    "yoy_increase_percentage": 8.17
+  },
+  {
+    "trend_id": 49,
+    "district_name": "Neukölln",
+    "year": 2025,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 516.6,
+    "yoy_increase_percentage": 6.77
+  },
+  {
+    "trend_id": 50,
+    "district_name": "Neukölln",
+    "year": 2026,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 539.7,
+    "yoy_increase_percentage": 4.47
+  },
+  {
+    "trend_id": 51,
+    "district_name": "Charlottenburg",
+    "year": 2022,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1150.0,
+    "yoy_increase_percentage": 0.0
+  },
+  {
+    "trend_id": 52,
+    "district_name": "Charlottenburg",
+    "year": 2023,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1224.75,
+    "yoy_increase_percentage": 6.5
+  },
+  {
+    "trend_id": 53,
+    "district_name": "Charlottenburg",
+    "year": 2024,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1324.8,
+    "yoy_increase_percentage": 8.17
+  },
+  {
+    "trend_id": 54,
+    "district_name": "Charlottenburg",
+    "year": 2025,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1414.5,
+    "yoy_increase_percentage": 6.77
+  },
+  {
+    "trend_id": 55,
+    "district_name": "Charlottenburg",
+    "year": 2026,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1477.75,
+    "yoy_increase_percentage": 4.47
+  },
+  {
+    "trend_id": 56,
+    "district_name": "Charlottenburg",
+    "year": 2022,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 490.0,
+    "yoy_increase_percentage": 0.0
+  },
+  {
+    "trend_id": 57,
+    "district_name": "Charlottenburg",
+    "year": 2023,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 521.85,
+    "yoy_increase_percentage": 6.5
+  },
+  {
+    "trend_id": 58,
+    "district_name": "Charlottenburg",
+    "year": 2024,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 564.48,
+    "yoy_increase_percentage": 8.17
+  },
+  {
+    "trend_id": 59,
+    "district_name": "Charlottenburg",
+    "year": 2025,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 602.7,
+    "yoy_increase_percentage": 6.77
+  },
+  {
+    "trend_id": 60,
+    "district_name": "Charlottenburg",
+    "year": 2026,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 629.65,
+    "yoy_increase_percentage": 4.47
+  },
+  {
+    "trend_id": 61,
+    "district_name": "Schöneberg",
+    "year": 2022,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1080.0,
+    "yoy_increase_percentage": 0.0
+  },
+  {
+    "trend_id": 62,
+    "district_name": "Schöneberg",
+    "year": 2023,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1150.2,
+    "yoy_increase_percentage": 6.5
+  },
+  {
+    "trend_id": 63,
+    "district_name": "Schöneberg",
+    "year": 2024,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1244.16,
+    "yoy_increase_percentage": 8.17
+  },
+  {
+    "trend_id": 64,
+    "district_name": "Schöneberg",
+    "year": 2025,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1328.4,
+    "yoy_increase_percentage": 6.77
+  },
+  {
+    "trend_id": 65,
+    "district_name": "Schöneberg",
+    "year": 2026,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1387.8,
+    "yoy_increase_percentage": 4.47
+  },
+  {
+    "trend_id": 66,
+    "district_name": "Schöneberg",
+    "year": 2022,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 460.0,
+    "yoy_increase_percentage": 0.0
+  },
+  {
+    "trend_id": 67,
+    "district_name": "Schöneberg",
+    "year": 2023,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 489.9,
+    "yoy_increase_percentage": 6.5
+  },
+  {
+    "trend_id": 68,
+    "district_name": "Schöneberg",
+    "year": 2024,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 529.92,
+    "yoy_increase_percentage": 8.17
+  },
+  {
+    "trend_id": 69,
+    "district_name": "Schöneberg",
+    "year": 2025,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 565.8,
+    "yoy_increase_percentage": 6.77
+  },
+  {
+    "trend_id": 70,
+    "district_name": "Schöneberg",
+    "year": 2026,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 591.1,
+    "yoy_increase_percentage": 4.47
+  },
+  {
+    "trend_id": 71,
+    "district_name": "Moabit",
+    "year": 2022,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1120.0,
+    "yoy_increase_percentage": 0.0
+  },
+  {
+    "trend_id": 72,
+    "district_name": "Moabit",
+    "year": 2023,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1192.8,
+    "yoy_increase_percentage": 6.5
+  },
+  {
+    "trend_id": 73,
+    "district_name": "Moabit",
+    "year": 2024,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1290.24,
+    "yoy_increase_percentage": 8.17
+  },
+  {
+    "trend_id": 74,
+    "district_name": "Moabit",
+    "year": 2025,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1377.6,
+    "yoy_increase_percentage": 6.77
+  },
+  {
+    "trend_id": 75,
+    "district_name": "Moabit",
+    "year": 2026,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1439.2,
+    "yoy_increase_percentage": 4.47
+  },
+  {
+    "trend_id": 76,
+    "district_name": "Moabit",
+    "year": 2022,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 450.0,
+    "yoy_increase_percentage": 0.0
+  },
+  {
+    "trend_id": 77,
+    "district_name": "Moabit",
+    "year": 2023,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 479.25,
+    "yoy_increase_percentage": 6.5
+  },
+  {
+    "trend_id": 78,
+    "district_name": "Moabit",
+    "year": 2024,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 518.4,
+    "yoy_increase_percentage": 8.17
+  },
+  {
+    "trend_id": 79,
+    "district_name": "Moabit",
+    "year": 2025,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 553.5,
+    "yoy_increase_percentage": 6.77
+  },
+  {
+    "trend_id": 80,
+    "district_name": "Moabit",
+    "year": 2026,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 578.25,
+    "yoy_increase_percentage": 4.47
+  },
+  {
+    "trend_id": 81,
+    "district_name": "Wedding",
+    "year": 2022,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 920.0,
+    "yoy_increase_percentage": 0.0
+  },
+  {
+    "trend_id": 82,
+    "district_name": "Wedding",
+    "year": 2023,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 979.8,
+    "yoy_increase_percentage": 6.5
+  },
+  {
+    "trend_id": 83,
+    "district_name": "Wedding",
+    "year": 2024,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1059.84,
+    "yoy_increase_percentage": 8.17
+  },
+  {
+    "trend_id": 84,
+    "district_name": "Wedding",
+    "year": 2025,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1131.6,
+    "yoy_increase_percentage": 6.77
+  },
+  {
+    "trend_id": 85,
+    "district_name": "Wedding",
+    "year": 2026,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1182.2,
+    "yoy_increase_percentage": 4.47
+  },
+  {
+    "trend_id": 86,
+    "district_name": "Wedding",
+    "year": 2022,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 390.0,
+    "yoy_increase_percentage": 0.0
+  },
+  {
+    "trend_id": 87,
+    "district_name": "Wedding",
+    "year": 2023,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 415.35,
+    "yoy_increase_percentage": 6.5
+  },
+  {
+    "trend_id": 88,
+    "district_name": "Wedding",
+    "year": 2024,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 449.28,
+    "yoy_increase_percentage": 8.17
+  },
+  {
+    "trend_id": 89,
+    "district_name": "Wedding",
+    "year": 2025,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 479.7,
+    "yoy_increase_percentage": 6.77
+  },
+  {
+    "trend_id": 90,
+    "district_name": "Wedding",
+    "year": 2026,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 501.15,
+    "yoy_increase_percentage": 4.47
+  },
+  {
+    "trend_id": 91,
+    "district_name": "Pankow",
+    "year": 2022,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 930.0,
+    "yoy_increase_percentage": 0.0
+  },
+  {
+    "trend_id": 92,
+    "district_name": "Pankow",
+    "year": 2023,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 990.45,
+    "yoy_increase_percentage": 6.5
+  },
+  {
+    "trend_id": 93,
+    "district_name": "Pankow",
+    "year": 2024,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1071.36,
+    "yoy_increase_percentage": 8.17
+  },
+  {
+    "trend_id": 94,
+    "district_name": "Pankow",
+    "year": 2025,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1143.9,
+    "yoy_increase_percentage": 6.77
+  },
+  {
+    "trend_id": 95,
+    "district_name": "Pankow",
+    "year": 2026,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1195.05,
+    "yoy_increase_percentage": 4.47
+  },
+  {
+    "trend_id": 96,
+    "district_name": "Pankow",
+    "year": 2022,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 410.0,
+    "yoy_increase_percentage": 0.0
+  },
+  {
+    "trend_id": 97,
+    "district_name": "Pankow",
+    "year": 2023,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 436.65,
+    "yoy_increase_percentage": 6.5
+  },
+  {
+    "trend_id": 98,
+    "district_name": "Pankow",
+    "year": 2024,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 472.32,
+    "yoy_increase_percentage": 8.17
+  },
+  {
+    "trend_id": 99,
+    "district_name": "Pankow",
+    "year": 2025,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 504.3,
+    "yoy_increase_percentage": 6.77
+  },
+  {
+    "trend_id": 100,
+    "district_name": "Pankow",
+    "year": 2026,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 526.85,
+    "yoy_increase_percentage": 4.47
+  },
+  {
+    "trend_id": 101,
+    "district_name": "Lichtenberg",
+    "year": 2022,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 880.0,
+    "yoy_increase_percentage": 0.0
+  },
+  {
+    "trend_id": 102,
+    "district_name": "Lichtenberg",
+    "year": 2023,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 937.2,
+    "yoy_increase_percentage": 6.5
+  },
+  {
+    "trend_id": 103,
+    "district_name": "Lichtenberg",
+    "year": 2024,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1013.76,
+    "yoy_increase_percentage": 8.17
+  },
+  {
+    "trend_id": 104,
+    "district_name": "Lichtenberg",
+    "year": 2025,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1082.4,
+    "yoy_increase_percentage": 6.77
+  },
+  {
+    "trend_id": 105,
+    "district_name": "Lichtenberg",
+    "year": 2026,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1130.8,
+    "yoy_increase_percentage": 4.47
+  },
+  {
+    "trend_id": 106,
+    "district_name": "Lichtenberg",
+    "year": 2022,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 370.0,
+    "yoy_increase_percentage": 0.0
+  },
+  {
+    "trend_id": 107,
+    "district_name": "Lichtenberg",
+    "year": 2023,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 394.05,
+    "yoy_increase_percentage": 6.5
+  },
+  {
+    "trend_id": 108,
+    "district_name": "Lichtenberg",
+    "year": 2024,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 426.24,
+    "yoy_increase_percentage": 8.17
+  },
+  {
+    "trend_id": 109,
+    "district_name": "Lichtenberg",
+    "year": 2025,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 455.1,
+    "yoy_increase_percentage": 6.77
+  },
+  {
+    "trend_id": 110,
+    "district_name": "Lichtenberg",
+    "year": 2026,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 475.45,
+    "yoy_increase_percentage": 4.47
+  },
+  {
+    "trend_id": 111,
+    "district_name": "Steglitz",
+    "year": 2022,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 940.0,
+    "yoy_increase_percentage": 0.0
+  },
+  {
+    "trend_id": 112,
+    "district_name": "Steglitz",
+    "year": 2023,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1001.1,
+    "yoy_increase_percentage": 6.5
+  },
+  {
+    "trend_id": 113,
+    "district_name": "Steglitz",
+    "year": 2024,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1082.88,
+    "yoy_increase_percentage": 8.17
+  },
+  {
+    "trend_id": 114,
+    "district_name": "Steglitz",
+    "year": 2025,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1156.2,
+    "yoy_increase_percentage": 6.77
+  },
+  {
+    "trend_id": 115,
+    "district_name": "Steglitz",
+    "year": 2026,
+    "property_type": "Apartment",
+    "avg_warm_rent_eur": 1207.9,
+    "yoy_increase_percentage": 4.47
+  },
+  {
+    "trend_id": 116,
+    "district_name": "Steglitz",
+    "year": 2022,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 400.0,
+    "yoy_increase_percentage": 0.0
+  },
+  {
+    "trend_id": 117,
+    "district_name": "Steglitz",
+    "year": 2023,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 426.0,
+    "yoy_increase_percentage": 6.5
+  },
+  {
+    "trend_id": 118,
+    "district_name": "Steglitz",
+    "year": 2024,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 460.8,
+    "yoy_increase_percentage": 8.17
+  },
+  {
+    "trend_id": 119,
+    "district_name": "Steglitz",
+    "year": 2025,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 492.0,
+    "yoy_increase_percentage": 6.77
+  },
+  {
+    "trend_id": 120,
+    "district_name": "Steglitz",
+    "year": 2026,
+    "property_type": "Room",
+    "avg_warm_rent_eur": 514.0,
+    "yoy_increase_percentage": 4.47
+  }
+]

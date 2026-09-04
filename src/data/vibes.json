@@ -1,0 +1,158 @@
+{
+  "Mitte": {
+    "tags": [
+      "Suits & Tech Hub",
+      "High Rent",
+      "Central & Walkable",
+      "Tourist Hotspots"
+    ],
+    "spati_count": 145,
+    "spati_density": "Very High",
+    "avg_doner_eur": 8.5,
+    "transit_alex_min": 6,
+    "anmeldung_weeks": 5
+  },
+  "Kreuzberg": {
+    "tags": [
+      "Alternative Culture",
+      "Techno & Bars",
+      "Canal Walks",
+      "Diverse Street Food"
+    ],
+    "spati_count": 160,
+    "spati_density": "Very High",
+    "avg_doner_eur": 7.8,
+    "transit_alex_min": 14,
+    "anmeldung_weeks": 6
+  },
+  "Neukölln": {
+    "tags": [
+      "Vibrant & Grungy",
+      "Artists & Expats",
+      "Busy Spätis",
+      "Rapidly Gentrifying"
+    ],
+    "spati_count": 185,
+    "spati_density": "Very High",
+    "avg_doner_eur": 6.8,
+    "transit_alex_min": 18,
+    "anmeldung_weeks": 7
+  },
+  "Friedrichshain": {
+    "tags": [
+      "Nightlife Capital",
+      "Boxhagener Foodies",
+      "RAW-Gelände",
+      "Young Professionals"
+    ],
+    "spati_count": 135,
+    "spati_density": "Very High",
+    "avg_doner_eur": 7.5,
+    "transit_alex_min": 10,
+    "anmeldung_weeks": 6
+  },
+  "Prenzlauer Berg": {
+    "tags": [
+      "Baby Strollers",
+      "Organic Bakeries",
+      "Restored Altbau",
+      "Peaceful Green Squares"
+    ],
+    "spati_count": 95,
+    "spati_density": "High",
+    "avg_doner_eur": 8.0,
+    "transit_alex_min": 12,
+    "anmeldung_weeks": 4
+  },
+  "Charlottenburg": {
+    "tags": [
+      "Classic Elegance",
+      "Boulevards & Boutiques",
+      "Quiet Residential",
+      "Expat Families"
+    ],
+    "spati_count": 65,
+    "spati_density": "Medium",
+    "avg_doner_eur": 7.9,
+    "transit_alex_min": 22,
+    "anmeldung_weeks": 4
+  },
+  "Schöneberg": {
+    "tags": [
+      "Historic Queer Center",
+      "Weekly Markets",
+      "Cozy Neighborhood Feel",
+      "Well Connected"
+    ],
+    "spati_count": 85,
+    "spati_density": "High",
+    "avg_doner_eur": 7.5,
+    "transit_alex_min": 19,
+    "anmeldung_weeks": 4
+  },
+  "Wedding": {
+    "tags": [
+      "Up-and-Coming",
+      "Budget Friendly",
+      "Industrial Vibe",
+      "Multicultural Hub"
+    ],
+    "spati_count": 110,
+    "spati_density": "Very High",
+    "avg_doner_eur": 6.7,
+    "transit_alex_min": 16,
+    "anmeldung_weeks": 5
+  },
+  "Moabit": {
+    "tags": [
+      "Waterfront Paths",
+      "Affordable Pockets",
+      "Central Transit",
+      "Traditional Working Class"
+    ],
+    "spati_count": 70,
+    "spati_density": "High",
+    "avg_doner_eur": 7.0,
+    "transit_alex_min": 18,
+    "anmeldung_weeks": 5
+  },
+  "Pankow": {
+    "tags": [
+      "Family Haven",
+      "Quiet Tram Lines",
+      "Abundant Parks",
+      "Suburban Comfort"
+    ],
+    "spati_count": 30,
+    "spati_density": "Low",
+    "avg_doner_eur": 7.2,
+    "transit_alex_min": 25,
+    "anmeldung_weeks": 3
+  },
+  "Lichtenberg": {
+    "tags": [
+      "Plattenbau & Space",
+      "Asian Community Hub",
+      "Lower Rents",
+      "Raw Post-Soviet Charm"
+    ],
+    "spati_count": 45,
+    "spati_density": "Medium",
+    "avg_doner_eur": 6.5,
+    "transit_alex_min": 24,
+    "anmeldung_weeks": 3
+  },
+  "Steglitz": {
+    "tags": [
+      "Green & Calm",
+      "Schlossstraße Shopping",
+      "Academic Vibe",
+      "Quiet Family Living"
+    ],
+    "spati_count": 25,
+    "spati_density": "Low",
+    "avg_doner_eur": 7.4,
+    "transit_alex_min": 32,
+    "anmeldung_weeks": 3
+  }
+}

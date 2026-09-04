@@ -1,0 +1,462 @@
+{
+  "districts_lifestyle": [
+    {
+      "district_id": 1,
+      "district_name": "Mitte",
+      "borough": "Mitte",
+      "inside_ringbahn": true,
+      "foreign_cuisine_pct": 68,
+      "german_cuisine_pct": 32,
+      "total_verified_restaurants": 580,
+      "foreign_cuisine_count": 394,
+      "german_cuisine_count": 186,
+      "flat_white_price_eur": 4.5,
+      "fiber_internet_pct": 68,
+      "spati_count": 145,
+      "transit_to_alex_min": 6,
+      "buergeramt_speed_wks": 5,
+      "primary_cuisine": "Contemporary Asian & Global Fusion",
+      "secondary_cuisine": "Artisan Coffee & Nordic Brunch",
+      "famous_specialty": "Vietnamese Pho, Specialty Ramen & Poke",
+      "top_street_hotspot": "Torstraße & Rosenthaler Platz"
+    },
+    {
+      "district_id": 2,
+      "district_name": "Friedrichshain",
+      "borough": "Friedrichshain-Kreuzberg",
+      "inside_ringbahn": true,
+      "foreign_cuisine_pct": 72,
+      "german_cuisine_pct": 28,
+      "total_verified_restaurants": 460,
+      "foreign_cuisine_count": 331,
+      "german_cuisine_count": 129,
+      "flat_white_price_eur": 4.3,
+      "fiber_internet_pct": 62,
+      "spati_count": 135,
+      "transit_to_alex_min": 10,
+      "buergeramt_speed_wks": 6,
+      "primary_cuisine": "Vietnamese & East Asian Vegan",
+      "secondary_cuisine": "Vegan Burgers & Street Food",
+      "famous_specialty": "Bánh Mì, Vegan Tapas & Dumplings",
+      "top_street_hotspot": "Boxhagener Platz & Simon-Dach-Straße"
+    },
+    {
+      "district_id": 3,
+      "district_name": "Kreuzberg",
+      "borough": "Friedrichshain-Kreuzberg",
+      "inside_ringbahn": true,
+      "foreign_cuisine_pct": 76,
+      "german_cuisine_pct": 24,
+      "total_verified_restaurants": 490,
+      "foreign_cuisine_count": 372,
+      "german_cuisine_count": 118,
+      "flat_white_price_eur": 4.2,
+      "fiber_internet_pct": 58,
+      "spati_count": 160,
+      "transit_to_alex_min": 14,
+      "buergeramt_speed_wks": 6,
+      "primary_cuisine": "Turkish & Anatolian Traditional",
+      "secondary_cuisine": "Levantine & Middle Eastern",
+      "famous_specialty": "Döner Kebab, Gözleme, Baklava & Lahmacun",
+      "top_street_hotspot": "Kottbusser Damm & Oranienstraße"
+    },
+    {
+      "district_id": 4,
+      "district_name": "Prenzlauer Berg",
+      "borough": "Pankow",
+      "inside_ringbahn": true,
+      "foreign_cuisine_pct": 58,
+      "german_cuisine_pct": 42,
+      "total_verified_restaurants": 380,
+      "foreign_cuisine_count": 220,
+      "german_cuisine_count": 160,
+      "flat_white_price_eur": 4.4,
+      "fiber_internet_pct": 54,
+      "spati_count": 95,
+      "transit_to_alex_min": 12,
+      "buergeramt_speed_wks": 4,
+      "primary_cuisine": "Mediterranean & Italian Trattorias",
+      "secondary_cuisine": "Organic Alpine & Bakery Culture",
+      "famous_specialty": "Handmade Sourdough, Neapolitan Pizza & French Pastries",
+      "top_street_hotspot": "Kastanienallee & Kollwitzplatz"
+    },
+    {
+      "district_id": 5,
+      "district_name": "Charlottenburg",
+      "borough": "Charlottenburg-Wilmersdorf",
+      "inside_ringbahn": true,
+      "foreign_cuisine_pct": 62,
+      "german_cuisine_pct": 38,
+      "total_verified_restaurants": 410,
+      "foreign_cuisine_count": 254,
+      "german_cuisine_count": 156,
+      "flat_white_price_eur": 4.2,
+      "fiber_internet_pct": 38,
+      "spati_count": 65,
+      "transit_to_alex_min": 22,
+      "buergeramt_speed_wks": 4,
+      "primary_cuisine": "Authentic Chinese & Szechuan",
+      "secondary_cuisine": "Japanese Izakaya & Korean BBQ",
+      "famous_specialty": "Dim Sum, Hand-pulled Biang Biang Noodles & Hot Pot",
+      "top_street_hotspot": "Kantstraße (Chinatown of Berlin)"
+    },
+    {
+      "district_id": 6,
+      "district_name": "Schöneberg",
+      "borough": "Tempelhof-Schöneberg",
+      "inside_ringbahn": true,
+      "foreign_cuisine_pct": 59,
+      "german_cuisine_pct": 41,
+      "total_verified_restaurants": 320,
+      "foreign_cuisine_count": 189,
+      "german_cuisine_count": 131,
+      "flat_white_price_eur": 3.9,
+      "fiber_internet_pct": 46,
+      "spati_count": 85,
+      "transit_to_alex_min": 19,
+      "buergeramt_speed_wks": 4,
+      "primary_cuisine": "Levantine, Syrian & Israeli",
+      "secondary_cuisine": "Classic Austro-German Wirtshaus",
+      "famous_specialty": "Hummus, Shakshuka, Falafel & Wiener Schnitzel",
+      "top_street_hotspot": "Goltzstraße & Akazienstraße"
+    },
+    {
+      "district_id": 7,
+      "district_name": "Mitte (Moabit)",
+      "borough": "Mitte",
+      "inside_ringbahn": true,
+      "foreign_cuisine_pct": 64,
+      "german_cuisine_pct": 36,
+      "total_verified_restaurants": 260,
+      "foreign_cuisine_count": 166,
+      "german_cuisine_count": 94,
+      "flat_white_price_eur": 3.6,
+      "fiber_internet_pct": 42,
+      "spati_count": 70,
+      "transit_to_alex_min": 18,
+      "buergeramt_speed_wks": 5,
+      "primary_cuisine": "Middle Eastern & Turkish Grill",
+      "secondary_cuisine": "North African & Sudani",
+      "famous_specialty": "Köfte, Shawarma & Sudanese Peanut Sauce Falafel",
+      "top_street_hotspot": "Turmstraße & Arminiusmarkthalle"
+    },
+    {
+      "district_id": 8,
+      "district_name": "Neukölln",
+      "borough": "Neukölln",
+      "inside_ringbahn": true,
+      "foreign_cuisine_pct": 78,
+      "german_cuisine_pct": 22,
+      "total_verified_restaurants": 540,
+      "foreign_cuisine_count": 421,
+      "german_cuisine_count": 119,
+      "flat_white_price_eur": 3.8,
+      "fiber_internet_pct": 51,
+      "spati_count": 185,
+      "transit_to_alex_min": 18,
+      "buergeramt_speed_wks": 7,
+      "primary_cuisine": "Arabic, Lebanese & Syrian Street Food",
+      "secondary_cuisine": "Trendy Expat Third-Wave Brunch",
+      "famous_specialty": "Fresh Pita Shawarma, Halloumi, Knafeh & Flat Whites",
+      "top_street_hotspot": "Sonnenallee (Arabische Straße) & Weserstraße"
+    },
+    {
+      "district_id": 9,
+      "district_name": "Wedding",
+      "borough": "Mitte",
+      "inside_ringbahn": true,
+      "foreign_cuisine_pct": 66,
+      "german_cuisine_pct": 34,
+      "total_verified_restaurants": 290,
+      "foreign_cuisine_count": 191,
+      "german_cuisine_count": 99,
+      "flat_white_price_eur": 3.2,
+      "fiber_internet_pct": 45,
+      "spati_count": 110,
+      "transit_to_alex_min": 16,
+      "buergeramt_speed_wks": 5,
+      "primary_cuisine": "Turkish Ocakbaşı & West African",
+      "secondary_cuisine": "Sudanese & Balkan Comfort",
+      "famous_specialty": "Charcoal Lamb Chops, Fufu & Yassa",
+      "top_street_hotspot": "Müllerstraße & Leopoldplatz"
+    },
+    {
+      "district_id": 10,
+      "district_name": "Pankow",
+      "borough": "Pankow",
+      "inside_ringbahn": false,
+      "foreign_cuisine_pct": 32,
+      "german_cuisine_pct": 68,
+      "total_verified_restaurants": 210,
+      "foreign_cuisine_count": 67,
+      "german_cuisine_count": 143,
+      "flat_white_price_eur": 3.8,
+      "fiber_internet_pct": 49,
+      "spati_count": 30,
+      "transit_to_alex_min": 25,
+      "buergeramt_speed_wks": 3,
+      "primary_cuisine": "Traditional German Cuisine & Bakeries",
+      "secondary_cuisine": "Czech & Eastern European",
+      "famous_specialty": "Kassler, Eisbein, Currywurst & Apfelstrudel",
+      "top_street_hotspot": "Florastraße & Pankow Rathaus"
+    },
+    {
+      "district_id": 11,
+      "district_name": "Steglitz",
+      "borough": "Steglitz-Zehlendorf",
+      "inside_ringbahn": false,
+      "foreign_cuisine_pct": 35,
+      "german_cuisine_pct": 65,
+      "total_verified_restaurants": 180,
+      "foreign_cuisine_count": 63,
+      "german_cuisine_count": 117,
+      "flat_white_price_eur": 3.7,
+      "fiber_internet_pct": 36,
+      "spati_count": 25,
+      "transit_to_alex_min": 32,
+      "buergeramt_speed_wks": 3,
+      "primary_cuisine": "Classic German & Bavarian Wirtshaus",
+      "secondary_cuisine": "Traditional Italian & Greek",
+      "famous_specialty": "Spätzle, Rouladen & Mediterranean Fish",
+      "top_street_hotspot": "Schloßstraße & Steglitz Zentrum"
+    },
+    {
+      "district_id": 12,
+      "district_name": "Lichtenberg",
+      "borough": "Lichtenberg",
+      "inside_ringbahn": false,
+      "foreign_cuisine_pct": 48,
+      "german_cuisine_pct": 52,
+      "total_verified_restaurants": 230,
+      "foreign_cuisine_count": 110,
+      "german_cuisine_count": 120,
+      "flat_white_price_eur": 3.4,
+      "fiber_internet_pct": 55,
+      "spati_count": 45,
+      "transit_to_alex_min": 24,
+      "buergeramt_speed_wks": 3,
+      "primary_cuisine": "Vietnamese (Largest in Europe)",
+      "secondary_cuisine": "Russian & Eastern European",
+      "famous_specialty": "Bún Bò Huế, Nem Rán & Authentic Pelmeni",
+      "top_street_hotspot": "Dong Xuan Center & Herzbergstraße"
+    }
+  ],
+  "rentals_by_room": [
+    {
+      "district_name": "Charlottenburg",
+      "room_category": "1-Bedroom Flat (1+1 / 1+2)",
+      "average_monthly_rent_eur": 1501,
+      "sample_count": 380
+    },
+    {
+      "district_name": "Charlottenburg",
+      "room_category": "1-Room Studio (1+0)",
+      "average_monthly_rent_eur": 987,
+      "sample_count": 190
+    },
+    {
+      "district_name": "Charlottenburg",
+      "room_category": "WG Room",
+      "average_monthly_rent_eur": 660,
+      "sample_count": 250
+    },
+    {
+      "district_name": "Friedrichshain",
+      "room_category": "1-Bedroom Flat (1+1 / 1+2)",
+      "average_monthly_rent_eur": 1554,
+      "sample_count": 420
+    },
+    {
+      "district_name": "Friedrichshain",
+      "room_category": "1-Room Studio (1+0)",
+      "average_monthly_rent_eur": 1043,
+      "sample_count": 210
+    },
+    {
+      "district_name": "Friedrichshain",
+      "room_category": "WG Room",
+      "average_monthly_rent_eur": 708,
+      "sample_count": 440
+    },
+    {
+      "district_name": "Kreuzberg",
+      "room_category": "1-Bedroom Flat (1+1 / 1+2)",
+      "average_monthly_rent_eur": 1542,
+      "sample_count": 390
+    },
+    {
+      "district_name": "Kreuzberg",
+      "room_category": "1-Room Studio (1+0)",
+      "average_monthly_rent_eur": 1041,
+      "sample_count": 220
+    },
+    {
+      "district_name": "Kreuzberg",
+      "room_category": "WG Room",
+      "average_monthly_rent_eur": 717,
+      "sample_count": 470
+    },
+    {
+      "district_name": "Lichtenberg",
+      "room_category": "1-Bedroom Flat (1+1 / 1+2)",
+      "average_monthly_rent_eur": 1155,
+      "sample_count": 250
+    },
+    {
+      "district_name": "Lichtenberg",
+      "room_category": "1-Room Studio (1+0)",
+      "average_monthly_rent_eur": 807,
+      "sample_count": 120
+    },
+    {
+      "district_name": "Lichtenberg",
+      "room_category": "WG Room",
+      "average_monthly_rent_eur": 522,
+      "sample_count": 180
+    },
+    {
+      "district_name": "Mitte",
+      "room_category": "1-Bedroom Flat (1+1 / 1+2)",
+      "average_monthly_rent_eur": 1669,
+      "sample_count": 480
+    },
+    {
+      "district_name": "Mitte",
+      "room_category": "1-Room Studio (1+0)",
+      "average_monthly_rent_eur": 1125,
+      "sample_count": 240
+    },
+    {
+      "district_name": "Mitte",
+      "room_category": "WG Room",
+      "average_monthly_rent_eur": 744,
+      "sample_count": 380
+    },
+    {
+      "district_name": "Mitte (Moabit)",
+      "room_category": "1-Bedroom Flat (1+1 / 1+2)",
+      "average_monthly_rent_eur": 1370,
+      "sample_count": 240
+    },
+    {
+      "district_name": "Mitte (Moabit)",
+      "room_category": "1-Room Studio (1+0)",
+      "average_monthly_rent_eur": 935,
+      "sample_count": 130
+    },
+    {
+      "district_name": "Mitte (Moabit)",
+      "room_category": "WG Room",
+      "average_monthly_rent_eur": 608,
+      "sample_count": 240
+    },
+    {
+      "district_name": "Neukölln",
+      "room_category": "1-Bedroom Flat (1+1 / 1+2)",
+      "average_monthly_rent_eur": 1376,
+      "sample_count": 450
+    },
+    {
+      "district_name": "Neukölln",
+      "room_category": "1-Room Studio (1+0)",
+      "average_monthly_rent_eur": 950,
+      "sample_count": 250
+    },
+    {
+      "district_name": "Neukölln",
+      "room_category": "WG Room",
+      "average_monthly_rent_eur": 636,
+      "sample_count": 560
+    },
+    {
+      "district_name": "Pankow",
+      "room_category": "1-Bedroom Flat (1+1 / 1+2)",
+      "average_monthly_rent_eur": 1278,
+      "sample_count": 260
+    },
+    {
+      "district_name": "Pankow",
+      "room_category": "1-Room Studio (1+0)",
+      "average_monthly_rent_eur": 897,
+      "sample_count": 110
+    },
+    {
+      "district_name": "Pankow",
+      "room_category": "WG Room",
+      "average_monthly_rent_eur": 567,
+      "sample_count": 160
+    },
+    {
+      "district_name": "Prenzlauer Berg",
+      "room_category": "1-Bedroom Flat (1+1 / 1+2)",
+      "average_monthly_rent_eur": 1575,
+      "sample_count": 360
+    },
+    {
+      "district_name": "Prenzlauer Berg",
+      "room_category": "1-Room Studio (1+0)",
+      "average_monthly_rent_eur": 1014,
+      "sample_count": 180
+    },
+    {
+      "district_name": "Prenzlauer Berg",
+      "room_category": "WG Room",
+      "average_monthly_rent_eur": 689,
+      "sample_count": 310
+    },
+    {
+      "district_name": "Schöneberg",
+      "room_category": "1-Bedroom Flat (1+1 / 1+2)",
+      "average_monthly_rent_eur": 1423,
+      "sample_count": 310
+    },
+    {
+      "district_name": "Schöneberg",
+      "room_category": "1-Room Studio (1+0)",
+      "average_monthly_rent_eur": 966,
+      "sample_count": 160
+    },
+    {
+      "district_name": "Schöneberg",
+      "room_category": "WG Room",
+      "average_monthly_rent_eur": 644,
+      "sample_count": 290
+    },
+    {
+      "district_name": "Steglitz",
+      "room_category": "1-Bedroom Flat (1+1 / 1+2)",
+      "average_monthly_rent_eur": 1280,
+      "sample_count": 220
+    },
+    {
+      "district_name": "Steglitz",
+      "room_category": "1-Room Studio (1+0)",
+      "average_monthly_rent_eur": 884,
+      "sample_count": 100
+    },
+    {
+      "district_name": "Steglitz",
+      "room_category": "WG Room",
+      "average_monthly_rent_eur": 554,
+      "sample_count": 140
+    },
+    {
+      "district_name": "Wedding",
+      "room_category": "1-Bedroom Flat (1+1 / 1+2)",
+      "average_monthly_rent_eur": 1253,
+      "sample_count": 290
+    },
+    {
+      "district_name": "Wedding",
+      "room_category": "1-Room Studio (1+0)",
+      "average_monthly_rent_eur": 851,
+      "sample_count": 170
+    },
+    {
+      "district_name": "Wedding",
+      "room_category": "WG Room",
+      "average_monthly_rent_eur": 561,
+      "sample_count": 340
+    }
+  ]
+}

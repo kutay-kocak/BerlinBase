@@ -1,0 +1,37 @@
+﻿district_name,district_id,room_category,average_monthly_rent_eur,sample_count
+Charlottenburg,5,1-Bedroom Flat (1+1 / 1+2),1501,380
+Charlottenburg,5,1-Room Studio (1+0),987,190
+Charlottenburg,5,WG Room,660,250
+Friedrichshain,2,1-Bedroom Flat (1+1 / 1+2),1554,420
+Friedrichshain,2,1-Room Studio (1+0),1043,210
+Friedrichshain,2,WG Room,708,440
+Kreuzberg,3,1-Bedroom Flat (1+1 / 1+2),1542,390
+Kreuzberg,3,1-Room Studio (1+0),1041,220
+Kreuzberg,3,WG Room,717,470
+Lichtenberg,12,1-Bedroom Flat (1+1 / 1+2),1155,250
+Lichtenberg,12,1-Room Studio (1+0),807,120
+Lichtenberg,12,WG Room,522,180
+Mitte,1,1-Bedroom Flat (1+1 / 1+2),1669,480
+Mitte,1,1-Room Studio (1+0),1125,240
+Mitte,1,WG Room,744,380
+Moabit,7,1-Bedroom Flat (1+1 / 1+2),1370,240
+Moabit,7,1-Room Studio (1+0),935,130
+Moabit,7,WG Room,608,240
+Neukölln,8,1-Bedroom Flat (1+1 / 1+2),1376,450
+Neukölln,8,1-Room Studio (1+0),950,250
+Neukölln,8,WG Room,636,560
+Pankow,10,1-Bedroom Flat (1+1 / 1+2),1278,260
+Pankow,10,1-Room Studio (1+0),897,110
+Pankow,10,WG Room,567,160
+Prenzlauer Berg,4,1-Bedroom Flat (1+1 / 1+2),1575,360
+Prenzlauer Berg,4,1-Room Studio (1+0),1014,180
+Prenzlauer Berg,4,WG Room,689,310
+Schöneberg,6,1-Bedroom Flat (1+1 / 1+2),1423,310
+Schöneberg,6,1-Room Studio (1+0),966,160
+Schöneberg,6,WG Room,644,290
+Steglitz,11,1-Bedroom Flat (1+1 / 1+2),1280,220
+Steglitz,11,1-Room Studio (1+0),884,100
+Steglitz,11,WG Room,554,140
+Wedding,9,1-Bedroom Flat (1+1 / 1+2),1253,290
+Wedding,9,1-Room Studio (1+0),851,170
+Wedding,9,WG Room,561,340
