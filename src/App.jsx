@@ -117,10 +117,10 @@ export default function App() {
                 <span className="p-2 rounded-lg bg-bvg-yellow/10 text-bvg-yellow border border-bvg-yellow/20">
                   <Home className="w-5 h-5" />
                 </span>
-                <h1 className="text-2xl font-bold tracking-tight text-white">Housing & Rental Guide</h1>
+                <h1 className="text-2xl font-bold tracking-tight text-white">Berlin Relocation: Housing & Rental Guide</h1>
               </div>
               <p className="text-gray-300 text-sm max-w-2xl leading-relaxed">
-                Master the Berlin apartment hunt: navigate the housing crisis, understand Anmeldung bureaucracy, compare Kalt vs. Warm rent, and assemble a bulletproof tenant dossier.
+                Your data-driven guide for relocation to Berlin: master the apartment hunt, navigate the housing crisis, understand Anmeldung bureaucracy, compare Kaltmiete vs. Warmmiete, and calculate living costs.
               </p>
             </div>
 
