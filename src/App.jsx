@@ -20,6 +20,7 @@ import AIBerlinBuddy from './components/AIBerlinBuddy';
 import UsefulApps from './components/UsefulApps';
 import Activities from './components/Activities';
 import LivingCostCalculator from './components/LivingCostCalculator';
+import FeedbackModal from './components/FeedbackModal';
 
 
 export default function App() {
@@ -307,9 +308,12 @@ export default function App() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-white/10 bg-[#121218] py-6 text-center text-xs text-gray-500">
+      <footer className="border-t border-gray-200 dark:border-white/10 bg-white dark:bg-[#121218] py-6 text-center text-xs text-gray-500 transition-colors duration-300">
         <p>© 2026 BerlinBase. Non-commercial, data-driven Berlin relocation guide. Follows zero-PII GDPR standards.</p>
       </footer>
+
+      {/* Floating Center Feedback Modal */}
+      <FeedbackModal />
 
     </div>
   );
