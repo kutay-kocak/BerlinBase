@@ -26,7 +26,7 @@ const getOfficialDBTicketPrice = () => {
 };
 
 export default function LivingCostCalculator() {
-  const [netSalary, setNetSalary] = useState(3200);
+  const [netSalary, setNetSalary] = useState(2500);
   const [housingType, setHousingType] = useState('WG Room'); // 'WG Room', '1-Room Studio (1+0)', '1-Bedroom Flat (1+1 / 1+2)'
   const [diningStyle, setDiningStyle] = useState('balanced'); // 'budget', 'balanced', 'foodie'
   const [transitPass, setTransitPass] = useState('d_ticket'); // 'd_ticket', 'bike'
