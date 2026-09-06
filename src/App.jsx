@@ -21,6 +21,7 @@ import UsefulApps from './components/UsefulApps';
 import Activities from './components/Activities';
 import LivingCostCalculator from './components/LivingCostCalculator';
 import FeedbackModal from './components/FeedbackModal';
+import CinematicPortal from './components/CinematicPortal';
 
 
 export default function App() {
@@ -128,7 +129,12 @@ export default function App() {
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Tab Content Dispatcher */}
         {activeTab === 'housing' && (
-          <section className="space-y-6">
+          <section className="space-y-8">
+            {/* 3D Floral Gateway to Berlin TV Tower Drone Feed */}
+            <div className="rounded-2xl overflow-hidden shadow-2xl border border-gray-300 dark:border-white/10">
+              <CinematicPortal />
+            </div>
+
             {/* Dynamic Who-Are-You / Welcome Intent Selector (Direct Landing Screen) */}
             <div className="bg-gradient-to-r from-amber-50 to-orange-50 dark:from-[#21222C] dark:to-[#191924] border border-amber-200 dark:border-bvg-yellow/20 rounded-2xl p-5 sm:p-6 shadow-md transition-all">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
