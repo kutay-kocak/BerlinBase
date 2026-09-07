@@ -26,7 +26,7 @@ export default function NexumHero({ onSelectIntent }) {
           loop
           muted
           playsInline
-          className="h-full w-full object-cover brightness-[0.78] contrast-[1.15]"
+          className="h-full w-full object-cover object-[50%_30%] brightness-[0.80] contrast-[1.12]"
         >
           <source src={videoSrc} type="video/mp4" />
         </video>
@@ -45,19 +45,19 @@ export default function NexumHero({ onSelectIntent }) {
 
         {/* Section Headline */}
         <h1 className="text-3xl sm:text-5xl md:text-6xl font-black text-white tracking-tight leading-tight max-w-3xl drop-shadow-2xl">
-          What's Your Purpose <span className="text-bvg-yellow">in Berlin?</span>
+          What Brings You <span className="text-bvg-yellow">to Berlin?</span>
         </h1>
         <p className="text-sm sm:text-base text-gray-300 max-w-xl mx-auto mt-3 drop-shadow">
           Find your ideal Berlin neighborhood, calculate realistic living costs, or explore vibrant activities, flea markets, and lakes.
         </p>
 
-        {/* 2 Aceternity-Style Noise Background Destination Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 w-full max-w-3xl mt-8">
+        {/* 2 Aceternity-Style Noise Background Destination Cards - Compact & Sleek to keep TV Tower visible */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 sm:gap-5 w-full max-w-2xl mt-6">
           
           {/* Card 1: Thinking to move / Planning Relocation */}
           <button
             onClick={() => handleScrollTo('best-neighborhood')}
-            className="group relative overflow-hidden text-left p-6 rounded-2xl border border-white/15 hover:border-bvg-yellow bg-[#12131C]/85 backdrop-blur-xl shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-bvg-yellow/10 cursor-pointer"
+            className="group relative overflow-hidden text-left p-4 sm:p-5 rounded-2xl border border-white/15 hover:border-bvg-yellow bg-[#12131C]/75 backdrop-blur-md shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-bvg-yellow/10 cursor-pointer"
           >
             {/* Ambient Noise Overlay */}
             <div 
@@ -69,24 +69,24 @@ export default function NexumHero({ onSelectIntent }) {
             {/* Accent Glow */}
             <div className="absolute -top-12 -right-12 w-28 h-28 bg-bvg-yellow/10 rounded-full blur-2xl group-hover:bg-bvg-yellow/25 transition-all" />
 
-            <div className="relative z-10 flex flex-col justify-between h-full space-y-4">
+            <div className="relative z-10 flex flex-col justify-between h-full space-y-2.5">
               <div className="flex items-center justify-between">
-                <span className="text-3xl p-2.5 rounded-xl bg-white/10 border border-white/10">✈️</span>
-                <span className="text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-bvg-yellow/15 text-bvg-yellow border border-bvg-yellow/30">
+                <span className="text-2xl p-2 rounded-xl bg-white/10 border border-white/10">✈️</span>
+                <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-bvg-yellow/15 text-bvg-yellow border border-bvg-yellow/30">
                   Moving Soon
                 </span>
               </div>
               <div>
-                <h3 className="text-lg font-bold text-white group-hover:text-bvg-yellow transition-colors">
+                <h3 className="text-base font-bold text-white group-hover:text-bvg-yellow transition-colors">
                   I'm planning to move to Berlin
                 </h3>
-                <p className="text-xs text-gray-300 mt-1.5 leading-relaxed">
-                  Take the neighborhood finder quiz, compare rents, and simulate living expenses with the 2026 DB Deutschlandticket.
+                <p className="text-xs text-gray-300 mt-1 leading-relaxed">
+                  Take the neighborhood finder quiz, compare rents, and simulate living expenses.
                 </p>
               </div>
-              <div className="flex items-center text-xs font-bold text-bvg-yellow pt-1">
+              <div className="flex items-center text-xs font-bold text-bvg-yellow pt-0.5">
                 <span>Find my neighborhood</span>
-                <ArrowRight className="w-4 h-4 ml-1.5 group-hover:translate-x-1.5 transition-transform" />
+                <ArrowRight className="w-3.5 h-3.5 ml-1.5 group-hover:translate-x-1.5 transition-transform" />
               </div>
             </div>
           </button>
@@ -94,7 +94,7 @@ export default function NexumHero({ onSelectIntent }) {
           {/* Card 2: Visiting / Tourist / Exploring */}
           <button
             onClick={() => handleScrollTo('activities')}
-            className="group relative overflow-hidden text-left p-6 rounded-2xl border border-white/15 hover:border-cyan-400 bg-[#12131C]/85 backdrop-blur-xl shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-cyan-500/10 cursor-pointer"
+            className="group relative overflow-hidden text-left p-4 sm:p-5 rounded-2xl border border-white/15 hover:border-cyan-400 bg-[#12131C]/75 backdrop-blur-md shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-cyan-500/10 cursor-pointer"
           >
             {/* Ambient Noise Overlay */}
             <div 
@@ -106,24 +106,24 @@ export default function NexumHero({ onSelectIntent }) {
             {/* Accent Glow */}
             <div className="absolute -top-12 -right-12 w-28 h-28 bg-cyan-500/10 rounded-full blur-2xl group-hover:bg-cyan-500/25 transition-all" />
 
-            <div className="relative z-10 flex flex-col justify-between h-full space-y-4">
+            <div className="relative z-10 flex flex-col justify-between h-full space-y-2.5">
               <div className="flex items-center justify-between">
-                <span className="text-3xl p-2.5 rounded-xl bg-white/10 border border-white/10">🎒</span>
-                <span className="text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-cyan-500/15 text-cyan-300 border border-cyan-500/30">
+                <span className="text-2xl p-2 rounded-xl bg-white/10 border border-white/10">🎒</span>
+                <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-cyan-500/15 text-cyan-300 border border-cyan-500/30">
                   Visiting & Vibe
                 </span>
               </div>
               <div>
-                <h3 className="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors">
+                <h3 className="text-base font-bold text-white group-hover:text-cyan-300 transition-colors">
                   I'm visiting or exploring Berlin
                 </h3>
-                <p className="text-xs text-gray-300 mt-1.5 leading-relaxed">
-                  Discover Sunday flea markets (Mauerpark, RAW), swimming lakes (Schlachtensee, Wannsee), and nightlife tips.
+                <p className="text-xs text-gray-300 mt-1 leading-relaxed">
+                  Discover Sunday flea markets, swimming lakes, and essential nightlife tips.
                 </p>
               </div>
-              <div className="flex items-center text-xs font-bold text-cyan-300 pt-1">
+              <div className="flex items-center text-xs font-bold text-cyan-300 pt-0.5">
                 <span>Explore activities</span>
-                <ArrowRight className="w-4 h-4 ml-1.5 group-hover:translate-x-1.5 transition-transform" />
+                <ArrowRight className="w-3.5 h-3.5 ml-1.5 group-hover:translate-x-1.5 transition-transform" />
               </div>
             </div>
           </button>

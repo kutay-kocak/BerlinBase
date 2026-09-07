@@ -126,7 +126,7 @@ const DISTRICT_SCORES = {
 };
 
 export default function BerlinDistrictMap() {
-  const [selectedMetric, setSelectedMetric] = useState('cuisine');
+  const [selectedMetric, setSelectedMetric] = useState('rent');
   const [selectedRoomFilter, setSelectedRoomFilter] = useState('WG Room');
   const [ringFilter, setRingFilter] = useState('all'); // 'all', 'inside', 'outer'
   const [showNightTransit, setShowNightTransit] = useState(false);
@@ -295,19 +295,7 @@ export default function BerlinDistrictMap() {
         </div>
 
         {/* Metric Selector Tabs */}
-        <div className="flex items-center space-x-1.5 overflow-x-auto no-scrollbar py-1">
-          <button
-            onClick={() => setSelectedMetric('cuisine')}
-            className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-metro ${
-              selectedMetric === 'cuisine'
-                ? 'bg-bvg-yellow text-bvg-dark shadow-md'
-                : 'bg-bvg-gray text-gray-300 hover:text-white'
-            }`}
-          >
-            <Utensils className="w-3.5 h-3.5" />
-            <span>International Cuisine %</span>
-          </button>
-
+        <div className="flex flex-wrap gap-2">
           <button
             onClick={() => setSelectedMetric('rent')}
             className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-metro ${
@@ -318,6 +306,18 @@ export default function BerlinDistrictMap() {
           >
             <Home className="w-3.5 h-3.5" />
             <span>Rent Level</span>
+          </button>
+
+          <button
+            onClick={() => setSelectedMetric('cuisine')}
+            className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-metro ${
+              selectedMetric === 'cuisine'
+                ? 'bg-bvg-yellow text-bvg-dark shadow-md'
+                : 'bg-bvg-gray text-gray-300 hover:text-white'
+            }`}
+          >
+            <Utensils className="w-3.5 h-3.5" />
+            <span>International Cuisine %</span>
           </button>
 
           <button
@@ -505,7 +505,15 @@ export default function BerlinDistrictMap() {
                   radius={style.radius}
                   pathOptions={style}
                   eventHandlers={{
-                    click: () => setActiveDistrict(d),
+                    click: () => {
+                      setActiveDistrict(d);
+                      if (window.innerWidth < 1024) {
+                        const el = document.getElementById('district-detail-card');
+                        if (el) {
+                          el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        }
+                      }
+                    },
                   }}
                 >
                   <Tooltip permanent={false} direction="top" offset={[0, -10]}>
@@ -533,24 +541,6 @@ export default function BerlinDistrictMap() {
                       </div>
                     </div>
                   </Tooltip>
-
-                  <Popup>
-                    <div className="text-xs p-1 text-gray-900 font-sans">
-                      <div className="font-extrabold text-sm border-b pb-1 mb-1 text-gray-900 flex items-center justify-between">
-                        <span>{d.district_name}</span>
-                        <span className="text-[10px] font-mono text-gray-500">{d.inside_ringbahn ? 'Ringbahn Zone A' : 'Outer Zone B'}</span>
-                      </div>
-                      <div className="space-y-1">
-                        <div><strong>Top Cuisine:</strong> {d.primary_cuisine}</div>
-                        <div><strong>Famous Specialty:</strong> {d.famous_specialty}</div>
-                        <div><strong>Competition Score:</strong> {d.hunting_difficulty} / 5 ({d.hunting_difficulty_label})</div>
-                        <div><strong>Anmeldung Wait:</strong> ~{d.anmeldung_weeks} weeks</div>
-                        <div className="border-t pt-1 mt-1 text-[11px]">
-                          <strong>WG:</strong> €{d.rent_wg} | <strong>Flat:</strong> €{d.rent_flat} | <strong>Fiber:</strong> %{d.fiber_internet_pct}
-                        </div>
-                      </div>
-                    </div>
-                  </Popup>
                 </CircleMarker>
               );
             })}
@@ -586,7 +576,7 @@ export default function BerlinDistrictMap() {
               <div className="flex items-center space-x-1">
                 <span className="w-2.5 h-2.5 rounded-full bg-[#dc2626]"></span>
                 <span className="text-red-400 font-medium">
-                  {selectedMetric === 'fiber' ? 'Low Speed' : selectedMetric === 'rent' ? 'Premium Rent' : selectedMetric === 'cuisine' ? 'Highest Int. Share' : selectedMetric === 'transit' ? 'Furthest' : 'Highest Price'}
+                  {selectedMetric === 'fiber' ? 'Low Speed' : 'High / Premium'}
                 </span>
               </div>
             </div>
@@ -594,7 +584,7 @@ export default function BerlinDistrictMap() {
         </div>
 
         {/* District Detail Card */}
-        <div className="bg-bvg-gray/40 border border-white/10 rounded-xl p-5 flex flex-col justify-between space-y-4">
+        <div id="district-detail-card" className="bg-bvg-gray/40 border border-white/10 rounded-xl p-5 flex flex-col justify-between space-y-4 scroll-mt-20">
           {activeDistrict ? (
             <div className="space-y-4">
               <div>
@@ -609,7 +599,7 @@ export default function BerlinDistrictMap() {
                   <span className="text-xs text-gray-400 font-mono">ID: {activeDistrict.district_id}</span>
                 </div>
                 <h3 className="text-2xl font-black text-white mt-1">{activeDistrict.district_name}</h3>
-                <p className="text-xs text-gray-400">{activeDistrict.borough} District</p>
+                <p className="text-xs text-gray-400">{activeDistrict.district_name} Berlin</p>
 
                 {/* Vibe Tags Badge Row */}
                 <div className="flex flex-wrap gap-1.5 pt-2">

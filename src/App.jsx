@@ -120,7 +120,7 @@ export default function App() {
       )}
 
       {/* 3. MAIN CONTENT AREA (ANIMASYONUN HEMEN ALTI DİREKT BEST NEIGHBORHOOD İLE BAŞLAR) */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
+      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 pb-20 md:pb-8 space-y-12">
         
         {/* TAB 1: EXPLORE & VIBE */}
         {activeTab === 'explore' && (
@@ -195,8 +195,33 @@ export default function App() {
         )}
       </main>
 
+      {/* Mobile App Bottom Navigation Bar (Option 1-A) */}
+      <nav className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#0E0F17]/95 backdrop-blur-xl border-t border-white/10 px-2 py-2 flex items-center justify-around shadow-2xl">
+        {tabs.map((tab) => {
+          const Icon = tab.icon;
+          const isActive = activeTab === tab.id;
+          return (
+            <button
+              key={tab.id}
+              onClick={() => {
+                setActiveTab(tab.id);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className={`flex flex-col items-center justify-center py-1 px-3 rounded-xl transition-all duration-200 min-w-[64px] min-h-[48px] ${
+                isActive
+                  ? 'text-bvg-yellow font-bold bg-white/5'
+                  : 'text-gray-400 hover:text-white'
+              }`}
+            >
+              <Icon className={`w-5 h-5 mb-1 transition-transform ${isActive ? 'scale-110 text-bvg-yellow' : ''}`} />
+              <span className="text-[10px] tracking-tight">{tab.id === 'explore' ? 'Explore' : tab.id === 'apps' ? 'Apps' : tab.id === 'map' ? 'Map' : 'AI Buddy'}</span>
+            </button>
+          );
+        })}
+      </nav>
+
       {/* Footer */}
-      <footer className="border-t border-white/10 bg-[#0E0F17] py-6 text-center text-xs text-gray-500">
+      <footer className="border-t border-white/10 bg-[#0E0F17] py-6 pb-20 md:pb-6 text-center text-xs text-gray-500">
         <p>© 2026 BerlinBase. Non-commercial, data-driven Berlin relocation & discovery guide. Follows zero-PII GDPR standards.</p>
       </footer>
 
