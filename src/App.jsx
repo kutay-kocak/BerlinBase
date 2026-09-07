@@ -52,13 +52,12 @@ export default function App() {
             className="flex items-center space-x-3 cursor-pointer group" 
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
-            <div className="w-10 h-10 rounded-xl bg-white/10 border border-white/20 p-1 flex items-center justify-center group-hover:scale-105 transition-transform duration-200 shadow-sm">
+            <div className="w-14 h-14 rounded-2xl bg-white/10 border border-white/20 p-1.5 flex items-center justify-center group-hover:scale-105 transition-transform duration-200 shadow-md">
               <BBLogo className="w-full h-full" />
             </div>
             <div>
               <div className="flex items-center space-x-2">
-                <span className="font-extrabold text-xl tracking-tight text-white">Berlin<span className="text-bvg-yellow">Base</span></span>
-                <span className="text-[10px] font-semibold uppercase px-2 py-0.5 rounded-full bg-bvg-yellow/10 text-bvg-yellow border border-bvg-yellow/30">Berlin 2026</span>
+                <span className="font-extrabold text-2xl tracking-tight text-white">Berlin<span className="text-bvg-yellow">Base</span></span>
               </div>
               <p className="text-xs text-gray-400 hidden sm:block">Explore, Settle & Live in Berlin</p>
             </div>

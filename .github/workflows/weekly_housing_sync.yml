@@ -1,4 +1,4 @@
-name: Weekly Berlin Housing & Rental Sync
+name: Weekly Berlin Housing & Energy Sync
 
 on:
   schedule:
@@ -7,7 +7,7 @@ on:
   workflow_dispatch: # İstenildiğinde GitHub üzerinden tek tıkla da çalıştırılabilir
 
 jobs:
-  sync-rentals:
+  sync-all-data:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -27,9 +27,12 @@ jobs:
       - name: Run Housing Pipeline (100 Recent Listings Ingest & Medians Recalc)
         run: node scripts/update_housing_rentals.js
 
+      - name: Run Energy & Inflation Pipeline (Check24 & Destatis Sync)
+        run: node scripts/update_energy_inflation.js
+
       - name: Commit and Push Updated Dataset
         run: |
           git config --global user.name "BerlinBase Bot"
           git config --global user.email "bot@berlinbase.app"
           git add src/data/berlin_housing_mock.json src/data/berlinbase_master_analytics.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "chore(data): weekly automated housing sync (100 new listings) [skip ci]" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore(data): weekly automated housing & energy sync [skip ci]" && git push)

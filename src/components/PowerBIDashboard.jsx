@@ -524,12 +524,17 @@ export default function PowerBIDashboard() {
       )}
 
       {/* Footer Info Box */}
-      <div className="flex items-center justify-between text-xs text-gray-400 pt-2 border-t border-white/5">
-        <div className="flex items-center space-x-2">
-          <Database className="w-4 h-4 text-bvg-yellow" />
-          <span>Source: Verified Berlin Rental & Lifestyle Data Mart</span>
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between text-xs text-gray-400 pt-3 border-t border-white/10 gap-2">
+        <div className="space-y-1">
+          <div className="flex items-center space-x-2">
+            <Database className="w-4 h-4 text-bvg-yellow" />
+            <span className="text-gray-300 font-medium">Source: Verified Berlin Rental &amp; Lifestyle Data Mart (ImmoScout24, WG-Gesucht, Check24, Destatis)</span>
+          </div>
+          <div className="text-[11px] text-gray-400 font-mono pl-6">
+            Last Updated: {analyticsData.energy_and_inflation?.last_updated || new Date().toISOString().split('T')[0]} (Weekly Automated Sync)
+          </div>
         </div>
-        <span className="text-[11px] text-gray-500">Live Power BI Desktop Model Ready</span>
+        <span className="text-[11px] text-gray-500 font-mono">Live Power BI Desktop Model Ready</span>
       </div>
     </div>
   );
