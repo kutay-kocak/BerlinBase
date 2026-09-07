@@ -66,15 +66,6 @@ export default function App() {
 
           {/* Header Quick Actions */}
           <div className="flex items-center space-x-2 sm:space-x-3">
-            <button
-              onClick={() => handleHeroIntent('best-neighborhood')}
-              className="inline-flex items-center space-x-1.5 text-xs font-semibold text-bvg-dark bg-bvg-yellow hover:bg-yellow-400 transition-colors px-2.5 sm:px-3 py-1.5 rounded-lg shadow-sm cursor-pointer"
-              title="Find your best Berlin neighborhood"
-            >
-              <Compass className="w-3.5 h-3.5 text-bvg-dark" />
-              <span className="hidden sm:inline">Best Neighborhood</span>
-              <span className="sm:hidden">Quiz</span>
-            </button>
 
             {/* All About Berlin with Helpful & Detailed Blog label */}
             <div className="flex items-center space-x-1.5">

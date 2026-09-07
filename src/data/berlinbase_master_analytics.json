@@ -243,220 +243,220 @@
   ],
   "rentals_by_room": [
     {
-      "district_name": "Charlottenburg",
-      "room_category": "1-Bedroom Flat (1+1 / 1+2)",
-      "average_monthly_rent_eur": 1501,
-      "sample_count": 380
-    },
-    {
-      "district_name": "Charlottenburg",
-      "room_category": "1-Room Studio (1+0)",
-      "average_monthly_rent_eur": 987,
-      "sample_count": 190
-    },
-    {
-      "district_name": "Charlottenburg",
-      "room_category": "WG Room",
-      "average_monthly_rent_eur": 660,
-      "sample_count": 250
-    },
-    {
-      "district_name": "Friedrichshain",
-      "room_category": "1-Bedroom Flat (1+1 / 1+2)",
-      "average_monthly_rent_eur": 1554,
-      "sample_count": 420
-    },
-    {
-      "district_name": "Friedrichshain",
-      "room_category": "1-Room Studio (1+0)",
-      "average_monthly_rent_eur": 1043,
-      "sample_count": 210
-    },
-    {
-      "district_name": "Friedrichshain",
-      "room_category": "WG Room",
-      "average_monthly_rent_eur": 708,
-      "sample_count": 440
-    },
-    {
-      "district_name": "Kreuzberg",
-      "room_category": "1-Bedroom Flat (1+1 / 1+2)",
-      "average_monthly_rent_eur": 1542,
-      "sample_count": 390
-    },
-    {
-      "district_name": "Kreuzberg",
-      "room_category": "1-Room Studio (1+0)",
-      "average_monthly_rent_eur": 1041,
-      "sample_count": 220
-    },
-    {
-      "district_name": "Kreuzberg",
-      "room_category": "WG Room",
-      "average_monthly_rent_eur": 717,
-      "sample_count": 470
-    },
-    {
-      "district_name": "Lichtenberg",
-      "room_category": "1-Bedroom Flat (1+1 / 1+2)",
-      "average_monthly_rent_eur": 1155,
-      "sample_count": 250
-    },
-    {
-      "district_name": "Lichtenberg",
-      "room_category": "1-Room Studio (1+0)",
-      "average_monthly_rent_eur": 807,
-      "sample_count": 120
-    },
-    {
-      "district_name": "Lichtenberg",
-      "room_category": "WG Room",
-      "average_monthly_rent_eur": 522,
-      "sample_count": 180
-    },
-    {
       "district_name": "Mitte",
-      "room_category": "1-Bedroom Flat (1+1 / 1+2)",
-      "average_monthly_rent_eur": 1669,
-      "sample_count": 480
+      "room_category": "WG Room",
+      "average_monthly_rent_eur": 706,
+      "sample_count": 45
     },
     {
       "district_name": "Mitte",
       "room_category": "1-Room Studio (1+0)",
-      "average_monthly_rent_eur": 1125,
-      "sample_count": 240
+      "average_monthly_rent_eur": 1057,
+      "sample_count": 8
     },
     {
       "district_name": "Mitte",
-      "room_category": "WG Room",
-      "average_monthly_rent_eur": 744,
-      "sample_count": 380
-    },
-    {
-      "district_name": "Mitte (Moabit)",
       "room_category": "1-Bedroom Flat (1+1 / 1+2)",
-      "average_monthly_rent_eur": 1370,
-      "sample_count": 240
+      "average_monthly_rent_eur": 1817,
+      "sample_count": 45
     },
     {
-      "district_name": "Mitte (Moabit)",
-      "room_category": "1-Room Studio (1+0)",
-      "average_monthly_rent_eur": 935,
-      "sample_count": 130
-    },
-    {
-      "district_name": "Mitte (Moabit)",
+      "district_name": "Friedrichshain",
       "room_category": "WG Room",
-      "average_monthly_rent_eur": 608,
-      "sample_count": 240
+      "average_monthly_rent_eur": 627,
+      "sample_count": 53
     },
     {
-      "district_name": "Neukölln",
-      "room_category": "1-Bedroom Flat (1+1 / 1+2)",
-      "average_monthly_rent_eur": 1376,
-      "sample_count": 450
-    },
-    {
-      "district_name": "Neukölln",
+      "district_name": "Friedrichshain",
       "room_category": "1-Room Studio (1+0)",
-      "average_monthly_rent_eur": 950,
-      "sample_count": 250
+      "average_monthly_rent_eur": 1021,
+      "sample_count": 12
     },
     {
-      "district_name": "Neukölln",
+      "district_name": "Friedrichshain",
+      "room_category": "1-Bedroom Flat (1+1 / 1+2)",
+      "average_monthly_rent_eur": 1727,
+      "sample_count": 44
+    },
+    {
+      "district_name": "Kreuzberg",
       "room_category": "WG Room",
-      "average_monthly_rent_eur": 636,
-      "sample_count": 560
+      "average_monthly_rent_eur": 646,
+      "sample_count": 48
     },
     {
-      "district_name": "Pankow",
-      "room_category": "1-Bedroom Flat (1+1 / 1+2)",
-      "average_monthly_rent_eur": 1278,
-      "sample_count": 260
-    },
-    {
-      "district_name": "Pankow",
+      "district_name": "Kreuzberg",
       "room_category": "1-Room Studio (1+0)",
-      "average_monthly_rent_eur": 897,
-      "sample_count": 110
+      "average_monthly_rent_eur": 1022,
+      "sample_count": 13
     },
     {
-      "district_name": "Pankow",
-      "room_category": "WG Room",
-      "average_monthly_rent_eur": 567,
-      "sample_count": 160
-    },
-    {
-      "district_name": "Prenzlauer Berg",
+      "district_name": "Kreuzberg",
       "room_category": "1-Bedroom Flat (1+1 / 1+2)",
-      "average_monthly_rent_eur": 1575,
-      "sample_count": 360
-    },
-    {
-      "district_name": "Prenzlauer Berg",
-      "room_category": "1-Room Studio (1+0)",
-      "average_monthly_rent_eur": 1014,
-      "sample_count": 180
+      "average_monthly_rent_eur": 1699,
+      "sample_count": 49
     },
     {
       "district_name": "Prenzlauer Berg",
       "room_category": "WG Room",
-      "average_monthly_rent_eur": 689,
-      "sample_count": 310
+      "average_monthly_rent_eur": 664,
+      "sample_count": 40
     },
     {
-      "district_name": "Schöneberg",
-      "room_category": "1-Bedroom Flat (1+1 / 1+2)",
-      "average_monthly_rent_eur": 1423,
-      "sample_count": 310
-    },
-    {
-      "district_name": "Schöneberg",
+      "district_name": "Prenzlauer Berg",
       "room_category": "1-Room Studio (1+0)",
-      "average_monthly_rent_eur": 966,
-      "sample_count": 160
+      "average_monthly_rent_eur": 995,
+      "sample_count": 9
+    },
+    {
+      "district_name": "Prenzlauer Berg",
+      "room_category": "1-Bedroom Flat (1+1 / 1+2)",
+      "average_monthly_rent_eur": 1659,
+      "sample_count": 40
+    },
+    {
+      "district_name": "Charlottenburg",
+      "room_category": "WG Room",
+      "average_monthly_rent_eur": 603,
+      "sample_count": 61
+    },
+    {
+      "district_name": "Charlottenburg",
+      "room_category": "1-Room Studio (1+0)",
+      "average_monthly_rent_eur": 895,
+      "sample_count": 16
+    },
+    {
+      "district_name": "Charlottenburg",
+      "room_category": "1-Bedroom Flat (1+1 / 1+2)",
+      "average_monthly_rent_eur": 1571,
+      "sample_count": 61
     },
     {
       "district_name": "Schöneberg",
       "room_category": "WG Room",
-      "average_monthly_rent_eur": 644,
-      "sample_count": 290
+      "average_monthly_rent_eur": 591,
+      "sample_count": 44
     },
     {
-      "district_name": "Steglitz",
-      "room_category": "1-Bedroom Flat (1+1 / 1+2)",
-      "average_monthly_rent_eur": 1280,
-      "sample_count": 220
-    },
-    {
-      "district_name": "Steglitz",
+      "district_name": "Schöneberg",
       "room_category": "1-Room Studio (1+0)",
-      "average_monthly_rent_eur": 884,
-      "sample_count": 100
+      "average_monthly_rent_eur": 945,
+      "sample_count": 17
+    },
+    {
+      "district_name": "Schöneberg",
+      "room_category": "1-Bedroom Flat (1+1 / 1+2)",
+      "average_monthly_rent_eur": 1527,
+      "sample_count": 44
+    },
+    {
+      "district_name": "Mitte (Moabit)",
+      "room_category": "WG Room",
+      "average_monthly_rent_eur": 451,
+      "sample_count": 1
+    },
+    {
+      "district_name": "Mitte (Moabit)",
+      "room_category": "1-Room Studio (1+0)",
+      "average_monthly_rent_eur": 882,
+      "sample_count": 2
+    },
+    {
+      "district_name": "Mitte (Moabit)",
+      "room_category": "1-Bedroom Flat (1+1 / 1+2)",
+      "average_monthly_rent_eur": 1368,
+      "sample_count": 3
+    },
+    {
+      "district_name": "Neukölln",
+      "room_category": "WG Room",
+      "average_monthly_rent_eur": 574,
+      "sample_count": 36
+    },
+    {
+      "district_name": "Neukölln",
+      "room_category": "1-Room Studio (1+0)",
+      "average_monthly_rent_eur": 915,
+      "sample_count": 21
+    },
+    {
+      "district_name": "Neukölln",
+      "room_category": "1-Bedroom Flat (1+1 / 1+2)",
+      "average_monthly_rent_eur": 1600,
+      "sample_count": 36
+    },
+    {
+      "district_name": "Wedding",
+      "room_category": "WG Room",
+      "average_monthly_rent_eur": 543,
+      "sample_count": 65
+    },
+    {
+      "district_name": "Wedding",
+      "room_category": "1-Room Studio (1+0)",
+      "average_monthly_rent_eur": 794,
+      "sample_count": 12
+    },
+    {
+      "district_name": "Wedding",
+      "room_category": "1-Bedroom Flat (1+1 / 1+2)",
+      "average_monthly_rent_eur": 1371,
+      "sample_count": 39
+    },
+    {
+      "district_name": "Pankow",
+      "room_category": "WG Room",
+      "average_monthly_rent_eur": 551,
+      "sample_count": 38
+    },
+    {
+      "district_name": "Pankow",
+      "room_category": "1-Room Studio (1+0)",
+      "average_monthly_rent_eur": 773,
+      "sample_count": 18
+    },
+    {
+      "district_name": "Pankow",
+      "room_category": "1-Bedroom Flat (1+1 / 1+2)",
+      "average_monthly_rent_eur": 1287,
+      "sample_count": 56
     },
     {
       "district_name": "Steglitz",
       "room_category": "WG Room",
-      "average_monthly_rent_eur": 554,
-      "sample_count": 140
+      "average_monthly_rent_eur": 512,
+      "sample_count": 43
     },
     {
-      "district_name": "Wedding",
-      "room_category": "1-Bedroom Flat (1+1 / 1+2)",
-      "average_monthly_rent_eur": 1253,
-      "sample_count": 290
-    },
-    {
-      "district_name": "Wedding",
+      "district_name": "Steglitz",
       "room_category": "1-Room Studio (1+0)",
-      "average_monthly_rent_eur": 851,
-      "sample_count": 170
+      "average_monthly_rent_eur": 832,
+      "sample_count": 10
     },
     {
-      "district_name": "Wedding",
+      "district_name": "Steglitz",
+      "room_category": "1-Bedroom Flat (1+1 / 1+2)",
+      "average_monthly_rent_eur": 1217,
+      "sample_count": 67
+    },
+    {
+      "district_name": "Lichtenberg",
       "room_category": "WG Room",
-      "average_monthly_rent_eur": 561,
-      "sample_count": 340
+      "average_monthly_rent_eur": 500,
+      "sample_count": 41
+    },
+    {
+      "district_name": "Lichtenberg",
+      "room_category": "1-Room Studio (1+0)",
+      "average_monthly_rent_eur": 734,
+      "sample_count": 14
+    },
+    {
+      "district_name": "Lichtenberg",
+      "room_category": "1-Bedroom Flat (1+1 / 1+2)",
+      "average_monthly_rent_eur": 1228,
+      "sample_count": 52
     }
   ]
 }
