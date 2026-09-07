@@ -158,13 +158,13 @@ export default function UsefulApps() {
           </div>
         </div>
 
-        {/* Category Pills */}
-        <div className="flex items-center space-x-2 overflow-x-auto no-scrollbar pt-6 border-t border-white/10 mt-6">
+        {/* Category Pills - Multi-line Wrap / Chip Grid for effortless mobile access */}
+        <div className="flex flex-wrap gap-2 pt-6 border-t border-white/10 mt-6">
           {categories.map((c) => (
             <button
               key={c.id}
               onClick={() => setSelectedCategory(c.id)}
-              className={`px-3.5 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-metro cursor-pointer ${
+              className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-metro cursor-pointer flex-shrink-0 ${
                 selectedCategory === c.id
                   ? 'bg-bvg-yellow text-bvg-dark shadow-md ring-2 ring-bvg-yellow/20'
                   : 'bg-bvg-gray/40 text-gray-300 hover:text-white border border-white/5 hover:border-white/20'
@@ -190,13 +190,13 @@ export default function UsefulApps() {
               </div>
             </div>
 
-            {/* Subcategory Filter Pills */}
-            <div className="flex items-center space-x-1.5 overflow-x-auto no-scrollbar">
+            {/* Subcategory Filter Pills - Wrapped on mobile so no horizontal scrolling needed */}
+            <div className="flex flex-wrap gap-1.5 pt-1 sm:pt-0">
               {museumSubcategories.map((sub) => (
                 <button
                   key={sub.id}
                   onClick={() => setSelectedMuseumSubcategory(sub.id)}
-                  className={`px-2.5 py-1 rounded-lg text-[11px] font-bold whitespace-nowrap transition-metro cursor-pointer ${
+                  className={`px-2.5 py-1 rounded-lg text-[11px] font-bold transition-metro cursor-pointer flex-shrink-0 ${
                     selectedMuseumSubcategory === sub.id
                       ? 'bg-amber-400 text-black shadow-sm'
                       : 'bg-white/5 text-gray-300 hover:bg-white/10 border border-white/5'
