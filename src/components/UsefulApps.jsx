@@ -5,23 +5,18 @@ import {
   ExternalLink, 
   Zap, 
   PiggyBank,
-  Landmark,
   MapPin,
   Sparkles,
-  Ticket,
   Compass
 } from 'lucide-react';
-import museumsData from '../data/berlin_museums.json';
 
 export default function UsefulApps() {
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const [selectedMuseumSubcategory, setSelectedMuseumSubcategory] = useState('all');
   const [electricityKwh, setElectricityKwh] = useState(2000);
 
-  // Main Categories
+  // Main Categories for Expat Life Hacks & Apps
   const categories = [
     { id: 'all', label: 'All Life Hacks' },
-    { id: 'museums', label: '🏛️ Museums (15 Curated)' },
     { id: 'money', label: 'Fintech & Money Transfer' },
     { id: 'savings', label: 'Food & Daily Savings' },
     { id: 'logistics', label: 'Moving & Second-Hand' },
@@ -124,10 +119,6 @@ export default function UsefulApps() {
     ? apps 
     : apps.filter(a => a.category === selectedCategory);
 
-  const filteredMuseums = selectedMuseumSubcategory === 'all'
-    ? museumsData
-    : museumsData.filter(m => m.category === selectedMuseumSubcategory);
-
   // Check24 Calculator
   const annualDefaultCost = Math.round((electricityKwh * 0.42) + (12 * 12));
   const annualOptimizedCost = Math.round((electricityKwh * 0.28) + (10 * 12) - 120);
@@ -144,17 +135,17 @@ export default function UsefulApps() {
                 <Smartphone className="w-5 h-5" />
               </span>
               <h2 className="text-2xl font-black text-white tracking-tight">
-                Useful Apps, Museums & Expat Life Hacks
+                Useful Apps & Expat Life Hacks
               </h2>
             </div>
             <p className="text-xs sm:text-sm text-gray-400 mt-1 max-w-2xl">
-              Curated tools to thrive in Berlin: explore 15 top museums, avoid bank queue deadlocks, furnish on a budget, rescue food, and optimize contracts.
+              Curated tools to thrive in Berlin: avoid bank queue deadlocks, furnish on a budget, rescue food, and optimize contracts.
             </p>
           </div>
 
           <div className="bg-bvg-gray/60 border border-white/10 px-4 py-2.5 rounded-xl text-left sm:text-right">
-            <span className="text-[10px] uppercase font-bold text-gray-400 block">Culture & Living</span>
-            <span className="text-xl font-black text-bvg-yellow font-mono">15 Museums + Top Apps</span>
+            <span className="text-[10px] uppercase font-bold text-gray-400 block">Expat Utility Hub</span>
+            <span className="text-xl font-black text-bvg-yellow font-mono">Top Curated Apps</span>
           </div>
         </div>
 
@@ -176,95 +167,11 @@ export default function UsefulApps() {
         </div>
       </div>
 
-      {/* SPECIAL SECTION: MUSEUMS (When selected or in 'all') */}
-      {(selectedCategory === 'all' || selectedCategory === 'museums') && (
-        <div className="space-y-5 pt-2">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-white/10 pb-3">
-            <div className="flex items-center space-x-2.5">
-              <span className="p-2 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-400">
-                <Landmark className="w-5 h-5" />
-              </span>
-              <div>
-                <h3 className="text-xl font-black text-white">Top 15 Berlin Museums with Maps Access</h3>
-                <p className="text-xs text-gray-400">Direct Google Maps routing, category highlights and ticket insights.</p>
-              </div>
-            </div>
-
-            {/* Subcategory Filter Pills - Wrapped on mobile so no horizontal scrolling needed */}
-            <div className="flex flex-wrap gap-1.5 pt-1 sm:pt-0">
-              {museumSubcategories.map((sub) => (
-                <button
-                  key={sub.id}
-                  onClick={() => setSelectedMuseumSubcategory(sub.id)}
-                  className={`px-2.5 py-1 rounded-lg text-[11px] font-bold transition-metro cursor-pointer flex-shrink-0 ${
-                    selectedMuseumSubcategory === sub.id
-                      ? 'bg-amber-400 text-black shadow-sm'
-                      : 'bg-white/5 text-gray-300 hover:bg-white/10 border border-white/5'
-                  }`}
-                >
-                  {sub.label}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* 15 Museums Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {filteredMuseums.map((m) => (
-              <div
-                key={m.id}
-                className="bg-[#141520] border border-white/10 rounded-2xl p-5 flex flex-col justify-between hover:border-amber-400/50 hover:shadow-xl hover:shadow-amber-500/5 transition-all group relative"
-              >
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <span className="text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded-full bg-amber-400/10 text-amber-400 border border-amber-400/30">
-                      {m.categoryLabel}
-                    </span>
-                    <span className="text-[11px] font-medium text-gray-400 flex items-center space-x-1">
-                      <MapPin className="w-3 h-3 text-bvg-yellow" />
-                      <span>{m.district}</span>
-                    </span>
-                  </div>
-
-                  <h4 className="text-base font-bold text-white group-hover:text-amber-300 transition-colors">
-                    {m.name}
-                  </h4>
-
-                  <p className="text-xs text-gray-300 leading-relaxed">
-                    {m.highlight}
-                  </p>
-
-                  <div className="flex items-center space-x-2 text-[11px] text-gray-400 bg-black/40 p-2 rounded-xl border border-white/5">
-                    <Ticket className="w-3.5 h-3.5 text-amber-400 flex-shrink-0" />
-                    <span className="truncate">{m.ticketInfo}</span>
-                  </div>
-                </div>
-
-                {/* Google Maps External Action Button */}
-                <div className="pt-4 mt-4 border-t border-white/5">
-                  <a
-                    href={m.mapsUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full inline-flex items-center justify-center space-x-2 py-2.5 px-4 rounded-xl bg-amber-400 hover:bg-amber-300 text-black text-xs font-bold transition-all shadow-md cursor-pointer"
-                  >
-                    <MapPin className="w-3.5 h-3.5" />
-                    <span>Open in Google Maps</span>
-                    <ExternalLink className="w-3.5 h-3.5 ml-1 opacity-70" />
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* APPS SECTION (When not filtering only museums) */}
-      {selectedCategory !== 'museums' && (
-        <div className="space-y-4 pt-4">
-          <div className="border-b border-white/10 pb-2">
-            <h3 className="text-lg font-black text-white">Daily Expat Tools & Apps</h3>
-            <p className="text-xs text-gray-400">Practical apps for finances, moving, second-hand furniture and groceries.</p>
+      {/* APPS SECTION */}
+      <div className="space-y-4 pt-4">
+        <div className="border-b border-white/10 pb-2">
+          <h3 className="text-lg font-black text-white">Daily Expat Tools & Apps</h3>
+          <p className="text-xs text-gray-400">Practical apps for finances, moving, second-hand furniture and groceries.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -322,7 +229,6 @@ export default function UsefulApps() {
             ))}
           </div>
         </div>
-      )}
 
       {/* Interactive Feature: Check24 Contract Switching Optimizer */}
       {(selectedCategory === 'all' || selectedCategory === 'contracts') && (

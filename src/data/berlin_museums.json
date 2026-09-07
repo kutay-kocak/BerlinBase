@@ -8,7 +8,9 @@
     "highlight": "Iconic former train station housing Warhol, Beuys, Kiefer & cutting-edge contemporary installations.",
     "ticketInfo": "€14 / Free under 18 (Museum Pass eligible)",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Hamburger+Bahnhof+Berlin",
-    "address": "Invalidenstraße 50-51, 10557 Berlin"
+    "address": "Invalidenstraße 50-51, 10557 Berlin",
+    "ticketUrl": "https://www.smb.museum/en/museums-institutions/hamburger-bahnhof/tickets/",
+    "isFree": false
   },
   {
     "id": "berlinische-galerie",
@@ -19,7 +21,9 @@
     "highlight": "Berlin modern art, photography, and architecture from 1870 to today (Dadaism, Eastern European avant-garde).",
     "ticketInfo": "€10 / €6 concessions (Free 1st Sunday of month)",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Berlinische+Galerie+Berlin",
-    "address": "Alte Jakobstraße 124-128, 10969 Berlin"
+    "address": "Alte Jakobstraße 124-128, 10969 Berlin",
+    "ticketUrl": "https://berlinischegalerie.de/en/visit/tickets/",
+    "isFree": false
   },
   {
     "id": "gropius-bau",
@@ -30,7 +34,9 @@
     "highlight": "Renowned exhibition hall for world-class international contemporary art, immersive showcases, and architecture.",
     "ticketInfo": "€15 (Exhibition dependent)",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Gropius+Bau+Berlin",
-    "address": "Niederkirchnerstraße 7, 10963 Berlin"
+    "address": "Niederkirchnerstraße 7, 10963 Berlin",
+    "ticketUrl": "https://www.berlinerfestspiele.de/en/gropius-bau/tickets",
+    "isFree": false
   },
   {
     "id": "c-o-berlin",
@@ -41,7 +47,9 @@
     "highlight": "Premier cultural foundation for contemporary photography, visual media, and international photojournalism.",
     "ticketInfo": "€12 / €8 concessions",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=C%2FO+Berlin+Amerika+Haus",
-    "address": "Hardenbergstraße 22-24, 10623 Berlin"
+    "address": "Hardenbergstraße 22-24, 10623 Berlin",
+    "ticketUrl": "https://co-berlin.org/en/tickets",
+    "isFree": false
   },
   {
     "id": "topography-of-terror",
@@ -52,7 +60,9 @@
     "highlight": "Built on former SS & Gestapo headquarters alongside an authentic preserved stretch of the Berlin Wall.",
     "ticketInfo": "Free Admission (Always free)",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Topography+of+Terror+Berlin",
-    "address": "Niederkirchnerstraße 8, 10963 Berlin"
+    "address": "Niederkirchnerstraße 8, 10963 Berlin",
+    "ticketUrl": "https://www.topographie.de/en/",
+    "isFree": true
   },
   {
     "id": "ddr-museum",
@@ -63,7 +73,9 @@
     "highlight": "Highly interactive hands-on museum exploring everyday life, Stasi surveillance, and driving a simulated Trabant.",
     "ticketInfo": "€13.50 (Online advance discount)",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=DDR+Museum+Berlin",
-    "address": "Vera-Brittain-Ufer, 10178 Berlin"
+    "address": "Vera-Brittain-Ufer, 10178 Berlin",
+    "ticketUrl": "https://www.ddr-museum.de/en/tickets",
+    "isFree": false
   },
   {
     "id": "jewish-museum",
@@ -74,7 +86,9 @@
     "highlight": "Masterpiece architecture by Daniel Libeskind featuring Holocaust Tower, Garden of Exile, and Memory Void.",
     "ticketInfo": "Free General Admission (Permanent Exhibition)",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Jewish+Museum+Berlin",
-    "address": "Lindenstraße 9-14, 10969 Berlin"
+    "address": "Lindenstraße 9-14, 10969 Berlin",
+    "ticketUrl": "https://www.jmberlin.de/en/tickets",
+    "isFree": true
   },
   {
     "id": "stasi-museum",
@@ -85,7 +99,9 @@
     "highlight": "Authentic preserved headquarters and office of Stasi Minister Erich Mielke, displaying spy cameras and wiretaps.",
     "ticketInfo": "€10 / €8 concessions",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Stasi+Museum+Berlin",
-    "address": "Ruschestraße 103, Haus 1, 10365 Berlin"
+    "address": "Ruschestraße 103, Haus 1, 10365 Berlin",
+    "ticketUrl": "https://www.stasimuseum.de/en/enbesucherinfos.htm",
+    "isFree": false
   },
   {
     "id": "deutsches-historisches-museum",
@@ -96,7 +112,9 @@
     "highlight": "Germany’s national historical museum covering 2,000 years of German history within the historic Zeughaus & modern Pei-Bau.",
     "ticketInfo": "€7 / Free under 18",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Deutsches+Historisches+Museum+Berlin",
-    "address": "Unter den Linden 2, 10117 Berlin"
+    "address": "Unter den Linden 2, 10117 Berlin",
+    "ticketUrl": "https://www.dhm.de/en/visit/",
+    "isFree": false
   },
   {
     "id": "pergamonmuseum",
@@ -107,7 +125,9 @@
     "highlight": "Monumental 360° panorama of ancient Pergamon alongside original Roman architecture and Greek sculptures.",
     "ticketInfo": "€14 / Museum Pass eligible",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Pergamonmuseum+Das+Panorama+Berlin",
-    "address": "Am Kupfergraben 2, 10117 Berlin"
+    "address": "Am Kupfergraben 2, 10117 Berlin",
+    "ticketUrl": "https://www.smb.museum/en/museums-institutions/pergamonmuseum-das-panorama/tickets/",
+    "isFree": false
   },
   {
     "id": "neues-museum",
@@ -118,7 +138,9 @@
     "highlight": "Home to the iconic 3,300-year-old Bust of Nefertiti and world-renowned Egyptian & Papyrus collections.",
     "ticketInfo": "€14 / Free under 18",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Neues+Museum+Berlin",
-    "address": "Bodestraße 1-3, 10178 Berlin"
+    "address": "Bodestraße 1-3, 10178 Berlin",
+    "ticketUrl": "https://www.smb.museum/en/museums-institutions/neues-museum/tickets/",
+    "isFree": false
   },
   {
     "id": "alte-nationalgalerie",
@@ -129,7 +151,9 @@
     "highlight": "Masterpieces of Neoclassicism, Romanticism (Caspar David Friedrich), Biedermeier, and French Impressionism (Monet, Renoir).",
     "ticketInfo": "€12 / Museum Pass eligible",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Alte+Nationalgalerie+Berlin",
-    "address": "Bodestraße 1-3, 10178 Berlin"
+    "address": "Bodestraße 1-3, 10178 Berlin",
+    "ticketUrl": "https://www.smb.museum/en/museums-institutions/alte-nationalgalerie/tickets/",
+    "isFree": false
   },
   {
     "id": "bode-museum",
@@ -140,7 +164,9 @@
     "highlight": "Striking Neo-Baroque palace on the northern tip of Museum Island showcasing Byzantine art, Renaissance sculptures, and rare numismatics.",
     "ticketInfo": "€12 / Museum Pass eligible",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Bode+Museum+Berlin",
-    "address": "Am Kupfergraben, 10117 Berlin"
+    "address": "Am Kupfergraben, 10117 Berlin",
+    "ticketUrl": "https://www.smb.museum/en/museums-institutions/bode-museum/tickets/",
+    "isFree": false
   },
   {
     "id": "deutsches-technikmuseum",
@@ -151,7 +177,9 @@
     "highlight": "Huge interactive compound with historic steam locomotives, aircraft (the famous Candy Bomber on the roof), ships, and the Zuse Z3 computer.",
     "ticketInfo": "€12 / Free for children under 18 after 15:00",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Deutsches+Technikmuseum+Berlin",
-    "address": "Trebbiner Str. 9, 10963 Berlin"
+    "address": "Trebbiner Str. 9, 10963 Berlin",
+    "ticketUrl": "https://technikmuseum.berlin/en/visit/tickets/",
+    "isFree": false
   },
   {
     "id": "naturkundemuseum",
@@ -162,6 +190,21 @@
     "highlight": "World’s tallest mounted dinosaur skeleton (Giraffatitan), original Archaeopteryx fossil, and famous T-Rex Tristan Otto.",
     "ticketInfo": "€11 / €5 concessions",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Museum+fur+Naturkunde+Berlin",
-    "address": "Invalidenstraße 43, 10115 Berlin"
+    "address": "Invalidenstraße 43, 10115 Berlin",
+    "ticketUrl": "https://www.museumfuernaturkunde.berlin/en/museum/tickets",
+    "isFree": false
+  },
+  {
+    "id": "futurium",
+    "name": "Futurium – The House of Futures",
+    "category": "science",
+    "categoryLabel": "Science & Technology",
+    "district": "Mitte (Regierungsviertel)",
+    "highlight": "Spectacular futuristic exhibition hub showcasing sustainable architecture, artificial intelligence, climate labs, and speculative future scenarios.",
+    "ticketInfo": "Free Admission (Always free / Workshops may require booking)",
+    "ticketUrl": "https://futurium.de/en/tickets",
+    "isFree": true,
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Futurium+Berlin",
+    "address": "Alexanderufer 2, 10117 Berlin"
   }
 ]
