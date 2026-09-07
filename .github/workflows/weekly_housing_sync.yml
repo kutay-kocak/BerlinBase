@@ -1,0 +1,35 @@
+name: Weekly Berlin Housing & Rental Sync
+
+on:
+  schedule:
+    # Her Pazartesi öğlen saat 14:00 (Almanya Berlin Saati UTC+2 => 12:00 UTC)
+    - cron: '0 12 * * 1'
+  workflow_dispatch: # İstenildiğinde GitHub üzerinden tek tıkla da çalıştırılabilir
+
+jobs:
+  sync-rentals:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run Housing Pipeline (100 Recent Listings Ingest & Medians Recalc)
+        run: node scripts/update_housing_rentals.js
+
+      - name: Commit and Push Updated Dataset
+        run: |
+          git config --global user.name "BerlinBase Bot"
+          git config --global user.email "bot@berlinbase.app"
+          git add src/data/berlin_housing_mock.json src/data/berlinbase_master_analytics.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore(data): weekly automated housing sync (100 new listings) [skip ci]" && git push)

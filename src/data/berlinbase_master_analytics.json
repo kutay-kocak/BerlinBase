@@ -458,5 +458,37 @@
       "average_monthly_rent_eur": 1228,
       "sample_count": 52
     }
-  ]
+  ],
+  "energy_and_inflation": {
+    "last_updated": "2026-09-07",
+    "source_check24": "Check24 Berlin Stromvergleich (PLZ 10115)",
+    "source_destatis": "Statistisches Bundesamt Deutschland (Verbraucherpreisindex)",
+    "electricity_kwh_cents_avg": 35.3,
+    "single_household_monthly_eur": 56,
+    "couple_household_monthly_eur": 86,
+    "annual_general_inflation_pct": 2.1,
+    "annual_energy_inflation_pct": 1.8,
+    "recommended_providers": [
+      {
+        "name": "Vattenfall Berlin (Basic)",
+        "kwhCent": 36.5,
+        "greenEnergy": true
+      },
+      {
+        "name": "E.ON Berlin",
+        "kwhCent": 35.3,
+        "greenEnergy": true
+      },
+      {
+        "name": "LichtBlick (Ökostrom)",
+        "kwhCent": 34.5,
+        "greenEnergy": true
+      },
+      {
+        "name": "Ostrom (Dynamic Expat-Friendly)",
+        "kwhCent": 33.9,
+        "greenEnergy": true
+      }
+    ]
+  }
 }
