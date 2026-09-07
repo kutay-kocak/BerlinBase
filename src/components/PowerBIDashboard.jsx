@@ -40,15 +40,19 @@ export default function PowerBIDashboard() {
     '1-Bedroom Flat (1+1 / 1+2)'
   ];
 
-  // Filter rentals data based on selected room category
+  // Filter rentals data based on selected room category & round rents to nearest 10€ (e.g. 795 -> 800)
   const filteredRentals = rentals_by_room
     .filter(r => r.room_category === selectedRoomType)
+    .map(r => ({
+      ...r,
+      average_monthly_rent_eur: Math.round(r.average_monthly_rent_eur / 10) * 10
+    }))
     .sort((a, b) => b.average_monthly_rent_eur - a.average_monthly_rent_eur);
 
   const totalSampleCount = filteredRentals.reduce((sum, r) => sum + r.sample_count, 0);
   const avgRentCategory = Math.round(
-    filteredRentals.reduce((sum, r) => sum + r.average_monthly_rent_eur, 0) / (filteredRentals.length || 1)
-  );
+    (filteredRentals.reduce((sum, r) => sum + r.average_monthly_rent_eur, 0) / (filteredRentals.length || 1)) / 10
+  ) * 10;
 
   // Stats for Page 2
   const totalVerifiedDining = districts_lifestyle.reduce((sum, d) => sum + d.total_verified_restaurants, 0);
@@ -61,10 +65,9 @@ export default function PowerBIDashboard() {
     districts_lifestyle.reduce((sum, d) => sum + d.fiber_internet_pct, 0) / districts_lifestyle.length
   );
 
-  // Stats for Page 4
-  const avgCoffeePrice = (
-    districts_lifestyle.reduce((sum, d) => sum + d.flat_white_price_eur, 0) / districts_lifestyle.length
-  ).toFixed(2);
+  // Stats for Page 4 - Rounded to nearest 10 cents (e.g. 3.17 -> 3.20)
+  const avgCoffeeRaw = districts_lifestyle.reduce((sum, d) => sum + d.flat_white_price_eur, 0) / districts_lifestyle.length;
+  const avgCoffeePrice = (Math.round(avgCoffeeRaw * 10) / 10).toFixed(2);
 
   return (
     <div className="bg-[#15151D] border border-white/10 rounded-2xl p-6 shadow-2xl space-y-6">
@@ -216,7 +219,7 @@ export default function PowerBIDashboard() {
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/5 pb-2">
                 <h3 className="text-sm font-bold text-white flex items-center space-x-2">
                   <span>District Ranking by Total Monthly Rent (All-in)</span>
-                  <span className="text-[11px] text-gray-400 font-normal">Sorted Descending • 0 Decimals</span>
+                  <span className="text-[11px] text-gray-400 font-normal">Estimated District Averages (Rounded)</span>
                 </h3>
                 <div className="flex items-center space-x-3">
                   {/* Recharts Vector Toggle */}
@@ -498,25 +501,28 @@ export default function PowerBIDashboard() {
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 pt-4">
                 {[...districts_lifestyle]
                   .sort((a, b) => b.flat_white_price_eur - a.flat_white_price_eur)
-                  .map((d) => (
-                    <div 
-                      key={d.district_name}
-                      className="bg-bvg-dark/70 border border-white/10 rounded-xl p-4 flex flex-col justify-between hover:border-amber-500/40 transition-metro min-h-[100px]"
-                    >
-                      <div className="flex items-start justify-between">
-                        <div>
-                          <div className="font-bold text-sm text-gray-200">{d.district_name}</div>
-                          <div className="text-[10px] text-gray-400">Specialty café avg</div>
+                  .map((d) => {
+                    const roundedCoffee = (Math.round(d.flat_white_price_eur * 10) / 10).toFixed(2);
+                    return (
+                      <div 
+                        key={d.district_name}
+                        className="bg-bvg-dark/70 border border-white/10 rounded-xl p-4 flex flex-col justify-between hover:border-amber-500/40 transition-metro min-h-[100px]"
+                      >
+                        <div className="flex items-start justify-between">
+                          <div>
+                            <div className="font-bold text-sm text-gray-200">{d.district_name}</div>
+                            <div className="text-[10px] text-gray-400">Specialty café avg</div>
+                          </div>
+                          <Coffee className="w-4 h-4 text-amber-500/70" />
                         </div>
-                        <Coffee className="w-4 h-4 text-amber-500/70" />
-                      </div>
-                      <div className="text-right pt-2">
-                        <div className="text-lg font-black text-amber-400 font-mono">
-                          {d.flat_white_price_eur.toFixed(2)} €
+                        <div className="text-right pt-2">
+                          <div className="text-lg font-black text-amber-400 font-mono">
+                            {roundedCoffee} €
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  ))}
+                    );
+                  })}
               </div>
             </div>
           </div>

@@ -142,17 +142,23 @@ export default function BerlinDistrictMap() {
     // Look up vibes by district key (checking Moabit as fallback)
     const vibeEntry = vibesData[d.district_name] || vibesData[d.district_name.replace('Mitte (Moabit)', 'Moabit')] || { tags: ["Berlin Kiez", "Connected"], spati_density: "High" };
     
-    // Find rentals for this district
+    // Find rentals for this district & round to nearest 10€
     const wg = rentals_by_room.find(r => r.district_name === d.district_name && r.room_category === 'WG Room');
     const studio = rentals_by_room.find(r => r.district_name === d.district_name && r.room_category === '1-Room Studio (1+0)');
     const flat = rentals_by_room.find(r => r.district_name === d.district_name && r.room_category === '1-Bedroom Flat (1+1 / 1+2)');
 
+    const rentWg = wg ? Math.round(wg.average_monthly_rent_eur / 10) * 10 : 650;
+    const rentStudio = studio ? Math.round(studio.average_monthly_rent_eur / 10) * 10 : 950;
+    const rentFlat = flat ? Math.round(flat.average_monthly_rent_eur / 10) * 10 : 1450;
+    const roundedCoffee = Math.round(d.flat_white_price_eur * 10) / 10;
+
     return {
       ...d,
       coords,
-      rent_wg: wg ? wg.average_monthly_rent_eur : 650,
-      rent_studio: studio ? studio.average_monthly_rent_eur : 950,
-      rent_flat: flat ? flat.average_monthly_rent_eur : 1450,
+      rent_wg: rentWg,
+      rent_studio: rentStudio,
+      rent_flat: rentFlat,
+      flat_white_price_eur: roundedCoffee,
       hunting_difficulty: scores.difficulty,
       hunting_difficulty_label: scores.difficultyLabel,
       anmeldung_weeks: scores.anmeldungWeeks,
