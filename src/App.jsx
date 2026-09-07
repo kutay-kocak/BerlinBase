@@ -1,16 +1,11 @@
 import React, { useState } from 'react';
 import { 
-  Home, 
   Smartphone, 
   MapPin, 
   Compass, 
   Sparkles, 
   Bot,
-  ExternalLink,
-  ChevronRight,
-  Info,
-  ShieldAlert,
-  ArrowUpRight
+  ExternalLink
 } from 'lucide-react';
 import ThemeToggle from './components/ThemeToggle';
 import PowerBIDashboard from './components/PowerBIDashboard';
@@ -21,60 +16,64 @@ import UsefulApps from './components/UsefulApps';
 import Activities from './components/Activities';
 import LivingCostCalculator from './components/LivingCostCalculator';
 import FeedbackModal from './components/FeedbackModal';
-import CinematicPortal from './components/CinematicPortal';
-
+import NexumHero from './components/NexumHero';
+import { BBLogo } from './components/BBLogo';
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState('housing');
+  const [activeTab, setActiveTab] = useState('explore');
 
+  // Streamlined tabs: Explore, Apps, Map Analytics, AI Buddy
   const tabs = [
-    { id: 'housing', label: 'Housing Guide', icon: Home, badge: 'Crucial' },
+    { id: 'explore', label: 'Explore & Vibe', icon: Compass, badge: 'Main' },
     { id: 'apps', label: 'Apps & Life Hacks', icon: Smartphone },
     { id: 'map', label: 'Map & Price Analytics', icon: MapPin },
-    { id: 'quiz', label: 'Best Neighborhood', icon: Compass, highlight: true },
-    { id: 'activities', label: 'Activities & Flea Mkts', icon: Sparkles },
     { id: 'buddy', label: 'AI Berlin Buddy', icon: Bot, badge: 'Gemini' },
   ];
 
-  // User intent quick jumping & dynamic mode
-  const handleIntentSelect = (tabId, targetElementId) => {
-    setActiveTab(tabId);
+  // Smooth scroll handler for hero intent cards
+  const handleHeroIntent = (targetId) => {
+    setActiveTab('explore');
     setTimeout(() => {
-      if (targetElementId) {
-        const el = document.getElementById(targetElementId);
-        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const element = document.getElementById(targetId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     }, 120);
   };
 
   return (
-    <div className="min-h-screen bg-[#F5F6F9] dark:bg-bvg-dark text-gray-900 dark:text-bvg-light flex flex-col font-sans transition-colors duration-300 selection:bg-bvg-yellow selection:text-bvg-dark">
-      {/* Top Brand Notification Bar */}
-      <header className="border-b border-gray-200 dark:border-white/10 bg-white/90 dark:bg-[#15151D]/90 backdrop-blur-md sticky top-0 z-50 transition-colors duration-300">
+    <div className="min-h-screen bg-[#F5F6F9] dark:bg-bvg-dark text-gray-900 dark:text-bvg-light flex flex-col font-sans transition-colors duration-300 selection:bg-bvg-yellow selection:text-bvg-dark scroll-smooth">
+      
+      {/* Full-Screen Nexum Cinematic Video Hero */}
+      <NexumHero onSelectIntent={handleHeroIntent} />
+
+      {/* Sticky Secondary Navigation Bar */}
+      <header className="border-b border-gray-200 dark:border-white/10 bg-white/90 dark:bg-[#15151D]/90 backdrop-blur-md sticky top-0 z-40 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           
-          {/* Logo */}
-          <div className="flex items-center space-x-3 cursor-pointer" onClick={() => setActiveTab('housing')}>
-            <div className="w-10 h-10 rounded-xl bg-bvg-yellow flex items-center justify-center text-bvg-dark shadow-lg shadow-bvg-yellow/10 font-bold text-xl tracking-tighter">
-              BB
+          {/* Official BB Logo #31 Brand */}
+          <div 
+            className="flex items-center space-x-3 cursor-pointer group" 
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          >
+            <div className="w-10 h-10 rounded-xl bg-bvg-dark dark:bg-white/10 border border-black/10 dark:border-white/20 p-1 flex items-center justify-center group-hover:scale-105 transition-transform duration-200 shadow-sm">
+              <BBLogo className="w-full h-full" />
             </div>
             <div>
               <div className="flex items-center space-x-2">
                 <span className="font-extrabold text-xl tracking-tight text-gray-900 dark:text-white">Berlin<span className="text-bvg-yellow">Base</span></span>
-                <span className="text-[10px] font-semibold uppercase px-2 py-0.5 rounded-full bg-bvg-yellow/10 text-yellow-800 dark:text-bvg-yellow border border-bvg-yellow/30">Berlin MVP</span>
+                <span className="text-[10px] font-semibold uppercase px-2 py-0.5 rounded-full bg-bvg-yellow/10 text-yellow-800 dark:text-bvg-yellow border border-bvg-yellow/30">Berlin 2026</span>
               </div>
-              <p className="text-xs text-gray-500 dark:text-gray-400 hidden sm:block">Your Data-Driven Landing Hub in Berlin</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400 hidden sm:block">Explore, Settle & Live in Berlin</p>
             </div>
           </div>
 
-
           {/* Header Quick Actions */}
           <div className="flex items-center space-x-2 sm:space-x-3">
-            {/* Dark/Light Switch Toggle */}
             <ThemeToggle />
 
             <button
-              onClick={() => setActiveTab('quiz')}
+              onClick={() => handleHeroIntent('best-neighborhood')}
               className="inline-flex items-center space-x-1.5 text-xs font-semibold text-bvg-dark bg-bvg-yellow hover:bg-yellow-400 transition-colors px-2.5 sm:px-3 py-1.5 rounded-lg shadow-sm"
               title="Find your best Berlin neighborhood"
             >
@@ -87,6 +86,7 @@ export default function App() {
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center space-x-1 text-xs text-gray-600 dark:text-gray-400 hover:text-bvg-yellow transition-colors border border-gray-300 dark:border-white/10 px-2.5 sm:px-3 py-1.5 rounded-lg bg-gray-100 dark:bg-bvg-gray/50 hover:border-bvg-yellow/40"
+              title="Official German relocation bureaucracy and legal guides"
             >
               <span className="hidden sm:inline">All About Berlin</span>
               <span className="sm:hidden">AAB</span>
@@ -95,7 +95,7 @@ export default function App() {
           </div>
         </div>
 
-        {/* 6 Tabs Navigation */}
+        {/* Tab Navigation */}
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex space-x-1 overflow-x-auto no-scrollbar pb-1 pt-1 border-t border-gray-200 dark:border-white/5">
           {tabs.map((tab) => {
             const Icon = tab.icon;
@@ -126,161 +126,63 @@ export default function App() {
       </header>
 
       {/* Main Content Area */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Tab Content Dispatcher */}
-        {activeTab === 'housing' && (
-          <section className="space-y-8">
-            {/* 3D Floral Gateway to Berlin TV Tower Drone Feed */}
-            <div className="rounded-2xl overflow-hidden shadow-2xl border border-gray-300 dark:border-white/10">
-              <CinematicPortal />
-            </div>
-
-            {/* Dynamic Who-Are-You / Welcome Intent Selector (Direct Landing Screen) */}
-            <div className="bg-gradient-to-r from-amber-50 to-orange-50 dark:from-[#21222C] dark:to-[#191924] border border-amber-200 dark:border-bvg-yellow/20 rounded-2xl p-5 sm:p-6 shadow-md transition-all">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
-                <div>
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-amber-800 dark:text-bvg-yellow bg-amber-200/50 dark:bg-bvg-yellow/10 px-2.5 py-1 rounded-full border border-amber-300 dark:border-bvg-yellow/20">
-                    Welcome to BerlinBase
-                  </span>
-                  <h2 className="text-xl sm:text-2xl font-black text-gray-900 dark:text-white mt-2">
-                    What brings you to Berlin today?
-                  </h2>
-                  <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 mt-1">
-                    Select your situation to instantly highlight the exact tools and guide you need:
-                  </p>
+      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
+        
+        {/* TAB 1: EXPLORE & VIBE (Best Neighborhood + Activities Sequential Scroll) */}
+        {activeTab === 'explore' && (
+          <div className="space-y-16">
+            
+            {/* 1. Best Neighborhood Section */}
+            <section id="best-neighborhood" className="scroll-mt-24 space-y-8">
+              <div className="border-b border-gray-200 dark:border-white/10 pb-4">
+                <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-amber-700 dark:text-bvg-yellow bg-bvg-yellow/10 px-3 py-1 rounded-full border border-bvg-yellow/20 mb-2">
+                  <Compass className="w-3.5 h-3.5" />
+                  <span>Interactive Neighborhood Matching</span>
                 </div>
-              </div>
-
-              {/* 3 Intent Cards */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5">
-                {/* Intent 1: Tourist / Short Visit */}
-                <button
-                  onClick={() => handleIntentSelect('activities')}
-                  className="group text-left p-4 rounded-xl border border-gray-200 dark:border-white/10 bg-white dark:bg-bvg-gray/60 hover:border-bvg-yellow hover:shadow-lg dark:hover:shadow-bvg-yellow/5 transition-all duration-200"
-                >
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-2xl">🎒</span>
-                    <span className="text-[10px] font-bold uppercase px-2 py-0.5 rounded bg-blue-100 dark:bg-blue-950 text-blue-800 dark:text-blue-300 border border-blue-200 dark:border-blue-800">
-                      Visiting / Tourist
-                    </span>
-                  </div>
-                  <h3 className="font-bold text-sm text-gray-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-bvg-yellow transition-colors">
-                    I'm visiting or exploring Berlin
-                  </h3>
-                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-1 line-clamp-2">
-                    Discover flea markets (Mauerpark, RAW), swimming lakes, and essential Berlin life hacks.
-                  </p>
-                  <div className="mt-3 flex items-center text-xs font-semibold text-amber-700 dark:text-bvg-yellow">
-                    <span>Explore activities</span>
-                    <ArrowUpRight className="w-3.5 h-3.5 ml-1 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                  </div>
-                </button>
-
-                {/* Intent 2: Planning Relocation */}
-                <button
-                  onClick={() => handleIntentSelect('quiz')}
-                  className="group text-left p-4 rounded-xl border-2 border-bvg-yellow/60 bg-white dark:bg-bvg-gray/80 hover:border-bvg-yellow hover:shadow-lg transition-all duration-200"
-                >
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-2xl">✈️</span>
-                    <span className="text-[10px] font-bold uppercase px-2 py-0.5 rounded bg-amber-100 dark:bg-bvg-yellow/20 text-amber-900 dark:text-bvg-yellow border border-amber-300 dark:border-bvg-yellow/40">
-                      Moving Soon
-                    </span>
-                  </div>
-                  <h3 className="font-bold text-sm text-gray-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-bvg-yellow transition-colors">
-                    I'm planning to move to Berlin
-                  </h3>
-                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-1 line-clamp-2">
-                    Find your best neighborhood match and simulate your realistic monthly expenses with DB ticket.
-                  </p>
-                  <div className="mt-3 flex items-center text-xs font-semibold text-amber-700 dark:text-bvg-yellow">
-                    <span>Take quiz & budget</span>
-                    <ArrowUpRight className="w-3.5 h-3.5 ml-1 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                  </div>
-                </button>
-
-                {/* Intent 3: Just Arrived / New in Town */}
-                <button
-                  onClick={() => handleIntentSelect('housing', 'housing-reality-grid')}
-                  className="group text-left p-4 rounded-xl border border-gray-200 dark:border-white/10 bg-white dark:bg-bvg-gray/60 hover:border-bvg-yellow hover:shadow-lg transition-all duration-200"
-                >
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-2xl">🔑</span>
-                    <span className="text-[10px] font-bold uppercase px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
-                      Just Arrived
-                    </span>
-                  </div>
-                  <h3 className="font-bold text-sm text-gray-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-bvg-yellow transition-colors">
-                    I just arrived & need orientation
-                  </h3>
-                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-1 line-clamp-2">
-                    Learn Anmeldung registration, tenant dossier checklist (SCHUFA), and avoid rental scams.
-                  </p>
-                  <div className="mt-3 flex items-center text-xs font-semibold text-amber-700 dark:text-bvg-yellow">
-                    <span>Start housing guide</span>
-                    <ArrowUpRight className="w-3.5 h-3.5 ml-1 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                  </div>
-                </button>
-              </div>
-            </div>
-
-            {/* Housing Guide Overview Header */}
-            <div className="bg-white dark:bg-gradient-to-r dark:from-bvg-gray/80 dark:to-[#1e1f29] border border-gray-200 dark:border-white/10 rounded-xl p-6 shadow-md dark:shadow-xl transition-colors">
-              <div className="flex items-center space-x-3 mb-2">
-                <span className="p-2 rounded-lg bg-bvg-yellow/10 text-yellow-700 dark:text-bvg-yellow border border-bvg-yellow/30">
-                  <Home className="w-5 h-5" />
-                </span>
-                <h1 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Berlin Relocation: Housing & Rental Guide</h1>
-              </div>
-              <p className="text-gray-600 dark:text-gray-300 text-sm max-w-2xl leading-relaxed">
-                Your data-driven guide for relocation to Berlin: master the apartment hunt, navigate the housing crisis, understand Anmeldung bureaucracy, compare Kaltmiete vs. Warmmiete, and calculate living costs.
-              </p>
-            </div>
-
-            {/* Quick Overview Grid */}
-            <div id="housing-reality-grid" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              <div className="bg-white dark:bg-bvg-gray/70 border border-gray-200 dark:border-white/10 rounded-xl p-5 hover:border-bvg-yellow/60 transition-metro shadow-sm">
-                <span className="text-xs font-semibold uppercase text-amber-700 dark:text-bvg-yellow block mb-1">Pillar 1</span>
-                <h3 className="font-bold text-base text-gray-900 dark:text-white mb-2">The Housing Reality</h3>
-                <p className="text-xs text-gray-600 dark:text-gray-300">Extreme supply shortage, fast-closing listings, and realistic timing expectations.</p>
-              </div>
-              <div className="bg-white dark:bg-bvg-gray/70 border border-gray-200 dark:border-white/10 rounded-xl p-5 hover:border-bvg-yellow/60 transition-metro shadow-sm">
-                <span className="text-xs font-semibold uppercase text-amber-700 dark:text-bvg-yellow block mb-1">Pillar 2</span>
-                <h3 className="font-bold text-base text-gray-900 dark:text-white mb-2">Anmeldung Golden Key</h3>
-                <p className="text-xs text-gray-600 dark:text-gray-300">Why registration unlocks your tax ID, bank account, and health insurance.</p>
-              </div>
-              <div className="bg-white dark:bg-bvg-gray/70 border border-gray-200 dark:border-white/10 rounded-xl p-5 hover:border-bvg-yellow/60 transition-metro shadow-sm">
-                <span className="text-xs font-semibold uppercase text-amber-700 dark:text-bvg-yellow block mb-1">Pillar 3</span>
-                <h3 className="font-bold text-base text-gray-900 dark:text-white mb-2">Rental Contracts</h3>
-                <p className="text-xs text-gray-600 dark:text-gray-300">Kaltmiete vs. Warmmiete, Indexmiete, Staffelmiete, and legal rent brakes.</p>
-              </div>
-              <div className="bg-white dark:bg-bvg-gray/70 border border-gray-200 dark:border-white/10 rounded-xl p-5 hover:border-bvg-yellow/60 transition-metro shadow-sm">
-                <span className="text-xs font-semibold uppercase text-amber-700 dark:text-bvg-yellow block mb-1">Pillar 4</span>
-                <h3 className="font-bold text-base text-gray-900 dark:text-white mb-2">The Tenant Dossier</h3>
-                <p className="text-xs text-gray-600 dark:text-gray-300">SCHUFA, Gehaltsnachweise, Mietschuldenfreiheit, and cover letter mastery.</p>
-              </div>
-            </div>
-
-            {/* Scam Alert Banner */}
-            <div className="bg-red-100 dark:bg-red-950/30 border border-red-300 dark:border-red-500/30 rounded-xl p-4 flex items-start space-x-3 text-red-900 dark:text-red-200">
-              <ShieldAlert className="w-5 h-5 text-red-600 dark:text-red-400 mt-0.5 flex-shrink-0" />
-              <div>
-                <h4 className="font-bold text-sm text-red-800 dark:text-red-300">Strict Scam Prevention Alert</h4>
-                <p className="text-xs mt-1 text-red-700 dark:text-red-200/80 leading-relaxed">
-                  Never wire deposit money or rent in advance without viewing the apartment and receiving keys. Beware of landlords claiming to be abroad using fake AirBnB or courier services.
+                <h2 className="text-2xl sm:text-3xl font-black text-gray-900 dark:text-white tracking-tight">
+                  Best Neighborhood For You
+                </h2>
+                <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">
+                  Answer 5 quick lifestyle questions to discover your ideal Berlin district match and calculate your realistic monthly living budget.
                 </p>
               </div>
-            </div>
-          </section>
+
+              {/* Quiz Wizard */}
+              <BestNeighborhoodQuiz onNavigateToDistrict={() => setActiveTab('map')} />
+
+              {/* Living Cost Calculator */}
+              <LivingCostCalculator />
+            </section>
+
+            {/* 2. Activities & Flea Markets Section */}
+            <section id="activities" className="scroll-mt-24 space-y-6 pt-6 border-t border-gray-200 dark:border-white/10">
+              <div className="pb-2">
+                <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-cyan-600 dark:text-cyan-400 bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/20 mb-2">
+                  <Sparkles className="w-3.5 h-3.5" />
+                  <span>Culture, Lakes & Markets</span>
+                </div>
+                <h2 className="text-2xl sm:text-3xl font-black text-gray-900 dark:text-white tracking-tight">
+                  Explore Berlin Activities & Life
+                </h2>
+                <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">
+                  From iconic Mauerpark Sunday karaoke to swimming in Schlachtensee and discovering secret flea markets.
+                </p>
+              </div>
+
+              {/* Activities Component */}
+              <Activities />
+            </section>
+          </div>
         )}
 
-
+        {/* TAB 2: APPS & LIFE HACKS */}
         {activeTab === 'apps' && (
           <section className="space-y-4">
             <UsefulApps />
           </section>
         )}
 
+        {/* TAB 3: MAP & PRICE ANALYTICS */}
         {activeTab === 'map' && (
           <section className="space-y-8">
             {/* Interactive Leaflet Map Component with real PostgreSQL metric layers */}
@@ -291,21 +193,7 @@ export default function App() {
           </section>
         )}
 
-        {activeTab === 'quiz' && (
-          <section className="space-y-8">
-            <BestNeighborhoodQuiz onNavigateToDistrict={() => setActiveTab('map')} />
-
-            {/* Personalized Berlin Living Cost & Savings Calculator */}
-            <LivingCostCalculator />
-          </section>
-        )}
-
-        {activeTab === 'activities' && (
-          <section className="space-y-4">
-            <Activities />
-          </section>
-        )}
-
+        {/* TAB 4: AI BERLIN BUDDY */}
         {activeTab === 'buddy' && (
           <section className="space-y-6">
             <AIBerlinBuddy />
@@ -315,7 +203,7 @@ export default function App() {
 
       {/* Footer */}
       <footer className="border-t border-gray-200 dark:border-white/10 bg-white dark:bg-[#121218] py-6 text-center text-xs text-gray-500 transition-colors duration-300">
-        <p>© 2026 BerlinBase. Non-commercial, data-driven Berlin relocation guide. Follows zero-PII GDPR standards.</p>
+        <p>© 2026 BerlinBase. Non-commercial, data-driven Berlin relocation & discovery guide. Follows zero-PII GDPR standards.</p>
       </footer>
 
       {/* Floating Center Feedback Modal */}

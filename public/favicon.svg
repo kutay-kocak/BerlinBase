@@ -1,6 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <rect width="32" height="32" rx="8" fill="#1A1A24"/>
-  <path d="M16 5L5 14H8V25H24V14H27L16 5Z" stroke="#F0D722" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="16" cy="18" r="3.5" fill="#F0D722"/>
-  <path d="M12 21C13 23 15 24 16 24C17 24 19 23 20 21" stroke="#F0D722" stroke-width="2" stroke-linecap="round"/>
+﻿<svg xmlns=http://www.w3.org/2000/svg viewBox=0 0 160 160 fill=none>
+  <rect width=160 height=160 rx=36 fill=#0E0F17/>
+  <!-- BB Letters White -->
+  <path d=M 25 20 L 78 20 C 95 20 105 28 105 44 C 105 55 98 64 88 68 C 102 72 112 82 112 104 C 112 124 95 138 75 138 L 25 138 Z M 48 42 L 48 60 L 70 60 C 76 60 80 55 80 51 C 80 46 76 42 70 42 Z M 48 84 L 48 115 L 72 115 C 80 115 84 108 84 100 C 84 92 80 84 72 84 Z fill=#FFFFFF/>
+  <path d=M 80 30 L 128 30 C 142 30 152 38 152 50 C 152 60 145 68 136 72 C 148 76 156 86 156 102 C 156 120 142 132 124 132 L 80 132 Z M 100 48 L 100 64 L 118 64 C 122 64 126 60 126 56 C 126 52 122 48 118 48 Z M 100 86 L 100 114 L 120 114 C 126 114 130 108 130 100 C 130 92 126 86 120 86 Z fill=#FFFFFF opacity=0.88/>
+  <!-- Dark Fernsehturm Slit & Sphere -->
+  <polygon points=79,5 81,5 84,155 76,155 fill=#0E0F17/>
+  <circle cx=80 cy=55 r=10 fill=#0E0F17 stroke=#FFFFFF stroke-width=2.5/>
 </svg>
