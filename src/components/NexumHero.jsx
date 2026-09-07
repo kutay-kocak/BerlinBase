@@ -45,10 +45,10 @@ export default function NexumHero({ onSelectIntent }) {
 
         {/* Section Headline */}
         <h1 className="text-3xl sm:text-5xl md:text-6xl font-black text-white tracking-tight leading-tight max-w-3xl drop-shadow-2xl">
-          Best Neighborhood <span className="text-bvg-yellow">For You</span>
+          What's Your Purpose <span className="text-bvg-yellow">in Berlin?</span>
         </h1>
         <p className="text-sm sm:text-base text-gray-300 max-w-xl mx-auto mt-3 drop-shadow">
-          Find your ideal Berlin borough, calculate realistic living costs with the DB ticket, or explore vibrant activities, flea markets, and lakes.
+          Find your ideal Berlin neighborhood, calculate realistic living costs, or explore vibrant activities, flea markets, and lakes.
         </p>
 
         {/* 2 Aceternity-Style Noise Background Destination Cards */}

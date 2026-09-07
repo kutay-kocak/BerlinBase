@@ -8,7 +8,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "sync-rentals": "node scripts/update_housing_rentals.js",
-    "sync-energy": "node scripts/update_energy_inflation.js"
+    "sync-energy": "node scripts/update_energy_inflation.js",
+    "sync-lifestyle": "node scripts/update_lifestyle_venues.js"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",

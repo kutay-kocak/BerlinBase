@@ -416,7 +416,7 @@ export default function BestNeighborhoodQuiz({ onNavigateToDistrict }) {
 
                     <div>
                       <h4 className="text-2xl font-black text-white tracking-tight">{d.district_name}</h4>
-                      <p className="text-xs text-gray-400 mt-0.5">{d.borough} Borough</p>
+                      <p className="text-xs text-gray-400 mt-0.5">{d.borough} District</p>
                     </div>
 
                     {/* Highlighted Specs */}

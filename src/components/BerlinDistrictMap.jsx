@@ -609,7 +609,7 @@ export default function BerlinDistrictMap() {
                   <span className="text-xs text-gray-400 font-mono">ID: {activeDistrict.district_id}</span>
                 </div>
                 <h3 className="text-2xl font-black text-white mt-1">{activeDistrict.district_name}</h3>
-                <p className="text-xs text-gray-400">{activeDistrict.borough} Borough</p>
+                <p className="text-xs text-gray-400">{activeDistrict.borough} District</p>
 
                 {/* Vibe Tags Badge Row */}
                 <div className="flex flex-wrap gap-1.5 pt-2">

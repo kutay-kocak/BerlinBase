@@ -30,9 +30,12 @@ jobs:
       - name: Run Energy & Inflation Pipeline (Check24 & Destatis Sync)
         run: node scripts/update_energy_inflation.js
 
+      - name: Run Lifestyle & Späti Pipeline (OSM & Google Maps 50+ Reviews Benchmark)
+        run: node scripts/update_lifestyle_venues.js
+
       - name: Commit and Push Updated Dataset
         run: |
           git config --global user.name "BerlinBase Bot"
           git config --global user.email "bot@berlinbase.app"
           git add src/data/berlin_housing_mock.json src/data/berlinbase_master_analytics.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "chore(data): weekly automated housing & energy sync [skip ci]" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore(data): weekly automated housing, energy & lifestyle sync [skip ci]" && git push)
