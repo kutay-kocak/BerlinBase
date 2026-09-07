@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Calendar as CalendarIcon, 
   ChevronLeft, 
@@ -37,19 +38,26 @@ const BERLIN_EVENTS = [
   { name: 'Berliner Weihnachtsmarkt', month: 11, startDay: 1, endDay: 26, badge: '🎄 Traditional Christmas Markets' }
 ];
 
-// Curated Places with real Google Maps Queries & Geographic Zone Clusters
+// Curated Places with real Google Maps Queries, Categories & Geographic Zone Clusters
 const ITINERARY_PLACES = {
   museums: {
-    mitte: [
-      { name: 'Neues Museum (Nefertiti)', area: 'Mitte (Museum Island)', mapQuery: 'Neues Museum Berlin' },
-      { name: 'Alte Nationalgalerie', area: 'Mitte (Museum Island)', mapQuery: 'Alte Nationalgalerie Berlin' },
-      { name: 'Pergamonmuseum. Das Panorama', area: 'Mitte (Museum Island)', mapQuery: 'Pergamonmuseum Das Panorama Berlin' },
-      { name: 'Futurium (House of Futures)', area: 'Mitte (Regierungsviertel)', mapQuery: 'Futurium Berlin' }
+    art: [
+      { name: 'Hamburger Bahnhof (Contemporary Art)', area: 'Mitte (Moabit)', mapQuery: 'Hamburger Bahnhof Berlin' },
+      { name: 'Alte Nationalgalerie (Romanticism & Impressionism)', area: 'Mitte (Museum Island)', mapQuery: 'Alte Nationalgalerie Berlin' },
+      { name: 'Berlinische Galerie (Modern Art & Photography)', area: 'Kreuzberg', mapQuery: 'Berlinische Galerie Berlin' },
+      { name: 'Gropius Bau (Contemporary Exhibitions)', area: 'Kreuzberg', mapQuery: 'Gropius Bau Berlin' }
     ],
-    kreuzberg: [
-      { name: 'Jewish Museum Berlin', area: 'Kreuzberg', mapQuery: 'Jewish Museum Berlin' },
-      { name: 'Berlinische Galerie', area: 'Kreuzberg', mapQuery: 'Berlinische Galerie Berlin' },
-      { name: 'Deutsches Technikmuseum', area: 'Kreuzberg', mapQuery: 'Deutsches Technikmuseum Berlin' }
+    history: [
+      { name: 'Topography of Terror (SS/Gestapo & Preserved Wall)', area: 'Kreuzberg', mapQuery: 'Topography of Terror Berlin' },
+      { name: 'Jewish Museum Berlin (Daniel Libeskind)', area: 'Kreuzberg', mapQuery: 'Jewish Museum Berlin' },
+      { name: 'DDR Museum (Everyday Socialist Life)', area: 'Mitte', mapQuery: 'DDR Museum Berlin' },
+      { name: 'Deutsches Historisches Museum (DHM / Pei-Bau)', area: 'Mitte', mapQuery: 'Deutsches Historisches Museum Berlin' }
+    ],
+    general: [
+      { name: 'Neues Museum (Bust of Nefertiti)', area: 'Mitte (Museum Island)', mapQuery: 'Neues Museum Berlin' },
+      { name: 'Pergamonmuseum. Das Panorama', area: 'Mitte (Museum Island)', mapQuery: 'Pergamonmuseum Das Panorama Berlin' },
+      { name: 'Futurium (House of Futures & AI)', area: 'Mitte (Regierungsviertel)', mapQuery: 'Futurium Berlin' },
+      { name: 'Deutsches Technikmuseum (Vintage Trains & Aircraft)', area: 'Kreuzberg', mapQuery: 'Deutsches Technikmuseum Berlin' }
     ]
   },
   clubs: {
@@ -103,6 +111,7 @@ export default function ItineraryPlannerModal({ isOpen, onClose, onApplyToChat }
   const [endDate, setEndDate] = useState(new Date(today.getFullYear(), today.getMonth(), today.getDate() + 4));
   const [isCalendarOpen, setIsCalendarOpen] = useState(false);
 
+  // Priority order for the 7 selected activities
   const [priorityOrder, setPriorityOrder] = useState([
     'museums',
     'cold_war',
@@ -123,7 +132,8 @@ export default function ItineraryPlannerModal({ isOpen, onClose, onApplyToChat }
     boat_tours: false
   });
 
-  const [museumSubcategory, setMuseumSubcategory] = useState('popular');
+  // 3 Museum types: 'all', 'art', 'history'
+  const [museumType, setMuseumType] = useState('all');
   const [museumsPerDay, setMuseumsPerDay] = useState(1);
   const [clubGenre, setClubGenre] = useState('house');
   const [tempo, setTempo] = useState('balanced');
@@ -157,6 +167,7 @@ export default function ItineraryPlannerModal({ isOpen, onClose, onApplyToChat }
 
   if (!isOpen) return null;
 
+  // Calendar Day Selection (Does not close immediately; allows review + Apply button)
   const handleDayClick = (date) => {
     if (!startDate || (startDate && endDate)) {
       setStartDate(date);
@@ -167,7 +178,6 @@ export default function ItineraryPlannerModal({ isOpen, onClose, onApplyToChat }
         setEndDate(startDate);
       } else {
         setEndDate(date);
-        setIsCalendarOpen(false);
       }
     }
   };
@@ -195,6 +205,20 @@ export default function ItineraryPlannerModal({ isOpen, onClose, onApplyToChat }
       { name: 'Tiergarten, Charlottenburg & West Berlin', focus: 'Beer Gardens, Modern Architecture & Green Parks' }
     ];
 
+    // Build museum pool based on chosen museumType (All, Art, History)
+    let museumPool = [];
+    if (museumType === 'art') {
+      museumPool = [...ITINERARY_PLACES.museums.art];
+    } else if (museumType === 'history') {
+      museumPool = [...ITINERARY_PLACES.museums.history];
+    } else {
+      museumPool = [
+        ...ITINERARY_PLACES.museums.general,
+        ...ITINERARY_PLACES.museums.art,
+        ...ITINERARY_PLACES.museums.history
+      ];
+    }
+
     for (let i = 0; i < dayCount; i++) {
       const dayNum = i + 1;
       const zone = zones[i % zones.length];
@@ -212,17 +236,19 @@ export default function ItineraryPlannerModal({ isOpen, onClose, onApplyToChat }
         });
       }
 
+      // Museum addition adhering to museumType and museumsPerDay
       if (selectedActivities.museums && (i % 2 === 0 || tempo === 'efficient')) {
-        const musList = i % 2 === 0 ? ITINERARY_PLACES.museums.mitte : ITINERARY_PLACES.museums.kreuzberg;
-        const mus = musList[i % musList.length];
-        dayStops.push({
-          time: '11:00 AM',
-          type: '🏛️ Cultural Landmark',
-          title: mus.name,
-          location: mus.area,
-          detail: 'Book tickets online to skip queue. Allow ~1.5 to 2 hours.',
-          mapsQuery: mus.mapQuery
-        });
+        for (let mIdx = 0; mIdx < museumsPerDay; mIdx++) {
+          const mus = museumPool[(i * museumsPerDay + mIdx) % museumPool.length];
+          dayStops.push({
+            time: mIdx === 0 ? '11:00 AM' : '02:45 PM',
+            type: `🏛️ ${museumType === 'art' ? 'Art & Gallery' : museumType === 'history' ? 'Cold War & History Museum' : 'Cultural Landmark'}`,
+            title: mus.name,
+            location: mus.area,
+            detail: 'Book tickets in advance online to skip the lines. Allow ~1.5 to 2 hours.',
+            mapsQuery: mus.mapQuery
+          });
+        }
       }
 
       if (selectedActivities.doner) {
@@ -240,7 +266,7 @@ export default function ItineraryPlannerModal({ isOpen, onClose, onApplyToChat }
       if (selectedActivities.cold_war && i % 2 === 1) {
         const cw = ITINERARY_PLACES.cold_war[(i - 1) % ITINERARY_PLACES.cold_war.length];
         dayStops.push({
-          time: '03:30 PM',
+          time: '04:00 PM',
           type: '🧱 Historic Cold War Memorial',
           title: cw.name,
           location: cw.area,
@@ -250,7 +276,7 @@ export default function ItineraryPlannerModal({ isOpen, onClose, onApplyToChat }
       } else if (selectedActivities.boat_tours && i === 0) {
         const boat = ITINERARY_PLACES.boat_tours[0];
         dayStops.push({
-          time: '03:45 PM',
+          time: '04:15 PM',
           type: '🚢 Scenic Spree River Cruise',
           title: boat.name,
           location: boat.area,
@@ -262,7 +288,7 @@ export default function ItineraryPlannerModal({ isOpen, onClose, onApplyToChat }
       if (selectedActivities.beer_gardens && (tempo !== 'chill' || i % 2 === 0)) {
         const bg = ITINERARY_PLACES.beer_gardens[i % ITINERARY_PLACES.beer_gardens.length];
         dayStops.push({
-          time: '05:30 PM',
+          time: '06:00 PM',
           type: '🍺 Craft Beer & Garden Chill',
           title: bg.name,
           location: bg.area,
@@ -283,7 +309,7 @@ export default function ItineraryPlannerModal({ isOpen, onClose, onApplyToChat }
           location: mainClub.area,
           detail: `${mainClub.note}. Backup B-Plan: ${backupClub.name} (${backupClub.area}).`,
           mapsQuery: `${mainClub.name}, Berlin`,
-          doorWarning: 'Strict door policy: arrive sober, group of 1-2, know the lineup.'
+          doorWarning: 'Strict door policy: arrive sober, in group of 1-2, know the DJ lineup.'
         });
       }
 
@@ -327,13 +353,13 @@ export default function ItineraryPlannerModal({ isOpen, onClose, onApplyToChat }
                 </span>
               </div>
               <p className="text-xs text-gray-400">
-                Custom dates, geographic routing, seasonal rules & multi-day Google Maps export.
+                Custom dates, smooth priority ranking, 3 museum categories & daily Google Maps routes.
               </p>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="p-2 rounded-xl text-gray-400 hover:text-white hover:bg-white/10 transition-colors"
+            className="p-2 rounded-xl text-gray-400 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
           >
             <X className="w-5 h-5" />
           </button>
@@ -350,7 +376,7 @@ export default function ItineraryPlannerModal({ isOpen, onClose, onApplyToChat }
                   <div>
                     <label className="text-xs font-bold uppercase text-gray-400 block mb-1 flex items-center space-x-1.5">
                       <CalendarIcon className="w-3.5 h-3.5 text-bvg-yellow" />
-                      <span>1. Select Trip Dates (Up to 2 Years Ahead)</span>
+                      <span>1. Trip Dates (Up to 2 Years Ahead)</span>
                     </label>
                     <div className="text-sm font-black text-white">
                       {startDate ? startDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }) : 'Start'}
@@ -364,7 +390,7 @@ export default function ItineraryPlannerModal({ isOpen, onClose, onApplyToChat }
 
                   <button
                     onClick={() => setIsCalendarOpen(!isCalendarOpen)}
-                    className="inline-flex items-center space-x-2 px-3 py-2 rounded-lg bg-bvg-yellow text-bvg-dark font-extrabold text-xs transition-metro shadow-md cursor-pointer"
+                    className="inline-flex items-center space-x-2 px-3.5 py-2 rounded-lg bg-bvg-yellow text-bvg-dark font-extrabold text-xs transition-metro shadow-md cursor-pointer"
                   >
                     <CalendarIcon className="w-4 h-4" />
                     <span>{isCalendarOpen ? 'Hide Calendar' : 'Open Calendar Picker'}</span>
@@ -386,13 +412,13 @@ export default function ItineraryPlannerModal({ isOpen, onClose, onApplyToChat }
                   </div>
                 )}
 
-                {/* Calendar Dropdown UI */}
+                {/* Calendar Dropdown UI with Apply & Close Button */}
                 {isCalendarOpen && (
-                  <div className="pt-3 border-t border-white/10 mt-3">
-                    <div className="flex items-center justify-between mb-3">
+                  <div className="pt-3 border-t border-white/10 mt-3 space-y-3">
+                    <div className="flex items-center justify-between">
                       <button
                         onClick={() => setCurrentViewDate(new Date(currentViewDate.getFullYear(), currentViewDate.getMonth() - 1, 1))}
-                        className="p-1 rounded-lg hover:bg-white/10 text-gray-300"
+                        className="p-1.5 rounded-lg hover:bg-white/10 text-gray-300 cursor-pointer"
                       >
                         <ChevronLeft className="w-5 h-5" />
                       </button>
@@ -401,12 +427,13 @@ export default function ItineraryPlannerModal({ isOpen, onClose, onApplyToChat }
                       </span>
                       <button
                         onClick={() => setCurrentViewDate(new Date(currentViewDate.getFullYear(), currentViewDate.getMonth() + 1, 1))}
-                        className="p-1 rounded-lg hover:bg-white/10 text-gray-300"
+                        className="p-1.5 rounded-lg hover:bg-white/10 text-gray-300 cursor-pointer"
                       >
                         <ChevronRight className="w-5 h-5" />
                       </button>
                     </div>
 
+                    {/* Month Grid */}
                     <div className="grid grid-cols-7 gap-1 text-center text-xs">
                       {['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'].map(d => (
                         <span key={d} className="text-gray-500 font-bold py-1">{d}</span>
@@ -425,7 +452,7 @@ export default function ItineraryPlannerModal({ isOpen, onClose, onApplyToChat }
                           <button
                             key={dayNumber}
                             onClick={() => handleDayClick(cellDate)}
-                            className={`p-2 rounded-lg text-xs font-semibold transition-all ${
+                            className={`p-2 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
                               isStart || isEnd
                                 ? 'bg-bvg-yellow text-bvg-dark font-black shadow-md'
                                 : isInRange
@@ -437,6 +464,19 @@ export default function ItineraryPlannerModal({ isOpen, onClose, onApplyToChat }
                           </button>
                         );
                       })}
+                    </div>
+
+                    {/* Apply Dates & Close Panel Button */}
+                    <div className="flex items-center justify-between pt-2 border-t border-white/5">
+                      <span className="text-[11px] text-gray-400">
+                        {startDate && endDate ? `Selected: ${startDate.toLocaleDateString('en-GB')} – ${endDate.toLocaleDateString('en-GB')} (${dayCount} days)` : 'Click Start & End date on calendar'}
+                      </span>
+                      <button
+                        onClick={() => setIsCalendarOpen(false)}
+                        className="px-4 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold text-xs transition-colors shadow cursor-pointer"
+                      >
+                        Apply Dates & Close
+                      </button>
                     </div>
                   </div>
                 )}
@@ -472,98 +512,129 @@ export default function ItineraryPlannerModal({ isOpen, onClose, onApplyToChat }
                 </div>
               </div>
 
-              {/* 3. Selected Activities & Priority Ranking */}
+              {/* 3. Selected Activities & Priority Ranking with Smooth Motion */}
               <div className="bg-bvg-gray/30 border border-white/10 rounded-xl p-4 space-y-3">
                 <div className="flex items-center justify-between">
                   <label className="text-xs font-bold uppercase text-gray-400 block flex items-center space-x-1.5">
                     <Layers className="w-3.5 h-3.5 text-amber-400" />
-                    <span>3. Choose Activities & Set Priority Order</span>
+                    <span>3. Activities & Smooth Priority Order</span>
                   </label>
-                  <span className="text-[10px] text-gray-500">Use arrows to rank what matters most</span>
+                  <span className="text-[10px] text-gray-500">Smooth animation on reordering</span>
                 </div>
 
+                {/* Animated Reorderable List via Framer Motion layout */}
                 <div className="space-y-2">
-                  {priorityOrder.map((key, idx) => {
-                    const isSelected = selectedActivities[key];
+                  <AnimatePresence>
+                    {priorityOrder.map((key, idx) => {
+                      const isSelected = selectedActivities[key];
 
-                    const labels = {
-                      museums: { title: 'Museums & Galleries', icon: Landmark, desc: 'World-class arts, cold war relics & Nefertiti' },
-                      cold_war: { title: 'Cold War & Wall Memorials', icon: ShieldCheck, desc: 'East Side Gallery, Bernauer Str. & Checkpoint Charlie' },
-                      cafes: { title: 'Specialty Cafés & Roasteries', icon: Coffee, desc: 'Artisanal flat whites, third-wave espresso & bakeries' },
-                      doner: { title: 'Iconic Döner & Street Food', icon: Utensils, desc: 'Mustafa’s, Rüyam & crispy Berlin street gems' },
-                      beer_gardens: { title: 'Craft Beer & Historic Beer Gardens', icon: Beer, desc: 'Prater, BRLO and lakeside draughts' },
-                      clubs: { title: 'Legendary Berlin Club Culture', icon: Music, desc: 'House, techno and iconic nightlife institutions' },
-                      boat_tours: { title: 'Spree River & Canal Cruises', icon: Ship, desc: 'Historic 1h or 3.5h bridge sightseeing tours' }
-                    };
+                      const labels = {
+                        museums: { title: 'Museums & Galleries', icon: Landmark, desc: 'World-class arts, cold war relics & Nefertiti' },
+                        cold_war: { title: 'Cold War & Wall Memorials', icon: ShieldCheck, desc: 'East Side Gallery, Bernauer Str. & Checkpoint Charlie' },
+                        cafes: { title: 'Specialty Cafés & Roasteries', icon: Coffee, desc: 'Artisanal flat whites, third-wave espresso & bakeries' },
+                        doner: { title: 'Iconic Döner & Street Food', icon: Utensils, desc: 'Mustafa’s, Rüyam & crispy Berlin street gems' },
+                        beer_gardens: { title: 'Craft Beer & Historic Beer Gardens', icon: Beer, desc: 'Prater, BRLO and lakeside draughts' },
+                        clubs: { title: 'Legendary Berlin Club Culture', icon: Music, desc: 'House, techno and iconic nightlife institutions' },
+                        boat_tours: { title: 'Spree River & Canal Cruises', icon: Ship, desc: 'Historic 1h or 3.5h bridge sightseeing tours' }
+                      };
 
-                    const meta = labels[key];
-                    const Icon = meta.icon;
+                      const meta = labels[key];
+                      const Icon = meta.icon;
 
-                    return (
-                      <div
-                        key={key}
-                        className={`flex items-center justify-between p-3 rounded-xl border transition-all ${
-                          isSelected
-                            ? 'bg-bvg-dark/90 border-white/20'
-                            : 'bg-black/20 border-white/5 opacity-50'
-                        }`}
-                      >
-                        <div 
-                          className="flex items-center space-x-3 cursor-pointer flex-1"
-                          onClick={() => toggleActivity(key)}
+                      return (
+                        <motion.div
+                          key={key}
+                          layout
+                          transition={{ type: 'spring', stiffness: 350, damping: 25 }}
+                          className={`flex items-center justify-between p-3 rounded-xl border ${
+                            isSelected
+                              ? 'bg-bvg-dark/90 border-white/20'
+                              : 'bg-black/20 border-white/5 opacity-50'
+                          }`}
                         >
-                          <div className={`w-5 h-5 rounded-md flex items-center justify-center border transition-all ${
-                            isSelected ? 'bg-bvg-yellow text-bvg-dark border-bvg-yellow font-bold' : 'border-white/30'
-                          }`}>
-                            {isSelected && <Check className="w-3.5 h-3.5 stroke-[3]" />}
+                          <div 
+                            className="flex items-center space-x-3 cursor-pointer flex-1"
+                            onClick={() => toggleActivity(key)}
+                          >
+                            <div className={`w-5 h-5 rounded-md flex items-center justify-center border transition-all ${
+                              isSelected ? 'bg-bvg-yellow text-bvg-dark border-bvg-yellow font-bold' : 'border-white/30'
+                            }`}>
+                              {isSelected && <Check className="w-3.5 h-3.5 stroke-[3]" />}
+                            </div>
+                            <Icon className={`w-4 h-4 ${isSelected ? 'text-bvg-yellow' : 'text-gray-500'}`} />
+                            <div>
+                              <div className="text-xs font-bold text-white">{meta.title}</div>
+                              <div className="text-[10px] text-gray-400">{meta.desc}</div>
+                            </div>
                           </div>
-                          <Icon className={`w-4 h-4 ${isSelected ? 'text-bvg-yellow' : 'text-gray-500'}`} />
-                          <div>
-                            <div className="text-xs font-bold text-white">{meta.title}</div>
-                            <div className="text-[10px] text-gray-400">{meta.desc}</div>
-                          </div>
-                        </div>
 
-                        {/* Priority Arrows */}
-                        <div className="flex items-center space-x-1 pl-2 border-l border-white/10 ml-2">
-                          <button
-                            onClick={() => movePriority(idx, 'up')}
-                            disabled={idx === 0}
-                            className="p-1 rounded hover:bg-white/10 disabled:opacity-20 text-gray-400 hover:text-white cursor-pointer"
-                          >
-                            <ArrowUp className="w-3.5 h-3.5" />
-                          </button>
-                          <span className="text-[10px] font-mono text-gray-500 w-3 text-center">{idx + 1}</span>
-                          <button
-                            onClick={() => movePriority(idx, 'down')}
-                            disabled={idx === priorityOrder.length - 1}
-                            className="p-1 rounded hover:bg-white/10 disabled:opacity-20 text-gray-400 hover:text-white cursor-pointer"
-                          >
-                            <ArrowDown className="w-3.5 h-3.5" />
-                          </button>
-                        </div>
-                      </div>
-                    );
-                  })}
+                          {/* Priority Smooth Arrows */}
+                          <div className="flex items-center space-x-1 pl-2 border-l border-white/10 ml-2">
+                            <button
+                              onClick={() => movePriority(idx, 'up')}
+                              disabled={idx === 0}
+                              className="p-1 rounded hover:bg-white/10 disabled:opacity-20 text-gray-400 hover:text-white cursor-pointer transition-transform active:scale-90"
+                            >
+                              <ArrowUp className="w-3.5 h-3.5" />
+                            </button>
+                            <span className="text-[10px] font-mono text-gray-400 w-4 text-center font-bold">{idx + 1}</span>
+                            <button
+                              onClick={() => movePriority(idx, 'down')}
+                              disabled={idx === priorityOrder.length - 1}
+                              className="p-1 rounded hover:bg-white/10 disabled:opacity-20 text-gray-400 hover:text-white cursor-pointer transition-transform active:scale-90"
+                            >
+                              <ArrowDown className="w-3.5 h-3.5" />
+                            </button>
+                          </div>
+                        </motion.div>
+                      );
+                    })}
+                  </AnimatePresence>
                 </div>
               </div>
 
-              {/* 4. Sub-Filters for Selected Activities */}
+              {/* 4. Sub-Filters: Museum 3-Way Category & Clubs */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {/* Museum Specific 3-Category Slicer (All, Art, History) */}
                 {selectedActivities.museums && (
-                  <div className="bg-bvg-gray/30 border border-white/10 rounded-xl p-3.5 space-y-2">
-                    <span className="text-xs font-bold text-white flex items-center space-x-1.5">
+                  <div className="bg-bvg-gray/30 border border-amber-500/20 rounded-xl p-3.5 space-y-3">
+                    <span className="text-xs font-bold text-amber-300 flex items-center space-x-1.5">
                       <Landmark className="w-3.5 h-3.5 text-amber-400" />
-                      <span>Museum Preferences</span>
+                      <span>Museum Category & Pace</span>
                     </span>
-                    <div className="flex justify-between items-center text-gray-400 text-[11px]">
+
+                    {/* 3 Categories: All, Art, History */}
+                    <div className="space-y-1">
+                      <span className="text-[10px] uppercase font-bold text-gray-400">Museum Category:</span>
+                      <div className="grid grid-cols-3 gap-1.5 pt-0.5">
+                        {[
+                          { id: 'all', label: 'All Museums' },
+                          { id: 'art', label: '🎨 Art' },
+                          { id: 'history', label: '🧱 History' }
+                        ].map(m => (
+                          <button
+                            key={m.id}
+                            onClick={() => setMuseumType(m.id)}
+                            className={`py-1 px-2 rounded-lg text-[11px] font-bold text-center cursor-pointer transition-colors ${
+                              museumType === m.id
+                                ? 'bg-amber-400 text-black shadow'
+                                : 'bg-white/5 text-gray-300 hover:bg-white/10'
+                            }`}
+                          >
+                            {m.label}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="flex justify-between items-center text-gray-400 text-[11px] pt-1 border-t border-white/5">
                       <span>Max museums per day:</span>
                       <div className="flex space-x-1">
                         {[1, 2, 3].map(n => (
                           <button
                             key={n}
                             onClick={() => setMuseumsPerDay(n)}
-                            className={`px-2 py-0.5 rounded text-xs font-bold cursor-pointer ${
+                            className={`px-2.5 py-0.5 rounded text-xs font-bold cursor-pointer ${
                               museumsPerDay === n ? 'bg-amber-400 text-black' : 'bg-white/5 text-gray-400'
                             }`}
                           >
@@ -575,6 +646,7 @@ export default function ItineraryPlannerModal({ isOpen, onClose, onApplyToChat }
                   </div>
                 )}
 
+                {/* Club Specific Sub-options */}
                 {selectedActivities.clubs && (
                   <div className="bg-bvg-gray/30 border border-purple-500/20 rounded-xl p-3.5 space-y-2">
                     <span className="text-xs font-bold text-purple-300 flex items-center space-x-1.5">
@@ -590,7 +662,7 @@ export default function ItineraryPlannerModal({ isOpen, onClose, onApplyToChat }
                         <button
                           key={g.id}
                           onClick={() => setClubGenre(g.id)}
-                          className={`py-1 px-1.5 rounded-lg text-[10px] font-bold text-center cursor-pointer ${
+                          className={`py-1.5 px-1.5 rounded-lg text-[10px] font-bold text-center cursor-pointer ${
                             clubGenre === g.id
                               ? 'bg-purple-600 text-white shadow'
                               : 'bg-white/5 text-gray-400 hover:text-white'
@@ -640,12 +712,12 @@ export default function ItineraryPlannerModal({ isOpen, onClose, onApplyToChat }
                     {generatedPlan.dayCount}-Day Berlin Itinerary ({generatedPlan.startDate} – {generatedPlan.endDate})
                   </h4>
                   <p className="text-xs text-gray-300">
-                    Arranged geographically to minimize transit travel time. Each day has a dedicated Google Maps route.
+                    Geographically clustered with dedicated daily Google Maps routes.
                   </p>
                 </div>
                 <button
                   onClick={() => setGeneratedPlan(null)}
-                  className="text-xs font-bold px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-gray-200 self-start sm:self-auto cursor-pointer"
+                  className="text-xs font-bold px-3.5 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-gray-200 self-start sm:self-auto cursor-pointer"
                 >
                   Edit Inputs
                 </button>
