@@ -26,13 +26,13 @@ export default function NexumHero({ onSelectIntent }) {
           loop
           muted
           playsInline
-          className="h-full w-full object-cover object-[50%_30%] brightness-[0.92] contrast-[1.10]"
+          className="h-full w-full object-cover object-[50%_30%] brightness-[1.20] contrast-[1.10]"
         >
           <source src={videoSrc} type="video/mp4" />
         </video>
         {/* Dark Cinematic Vignette & Gradient Overlays - Tuned to let TV Tower shine */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B0C12] via-black/30 to-black/50 pointer-events-none" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-black/30 to-[#0B0C12] pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0B0C12] via-black/20 to-black/40 pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-black/20 to-[#0B0C12] pointer-events-none" />
       </div>
 
       {/* Center Hero Content */}

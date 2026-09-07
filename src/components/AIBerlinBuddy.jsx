@@ -10,23 +10,28 @@ import {
   FileText,
   Building,
   CheckCircle2,
-  RefreshCw
+  RefreshCw,
+  Compass,
+  Calendar
 } from 'lucide-react';
 import analyticsData from '../data/berlinbase_master_analytics.json';
+import ItineraryPlannerModal from './ItineraryPlannerModal';
 
 export default function AIBerlinBuddy() {
   const [messages, setMessages] = useState([
     {
       id: 1,
       sender: 'alex',
-      text: "Servus and welcome to Berlin! I'm Alex, your local Relocation Buddy. 🍻\n\nHunting for an apartment here can feel like the wild west, but don't sweat it. From Anmeldung hacks and SCHUFA workarounds to WG casting etiquette and neighborhood vibes, we'll navigate it all step by step.\n\nPick a quick question below or ask me anything on your mind!"
+      text: "Servus and welcome to Berlin! I'm Alex, your local Relocation & City Guide Buddy. 🍻\n\nWhether you need an optimized multi-day travel itinerary with Google Maps routes, or real-talk on Anmeldung, SCHUFA, and neighborhood vibes, I've got you covered.\n\nClick 'Plan Berlin Trip 🧭' above or ask me anything!"
     }
   ]);
   const [inputVal, setInputVal] = useState('');
   const [isTyping, setIsTyping] = useState(false);
+  const [isPlannerOpen, setIsPlannerOpen] = useState(false);
 
   // Ready prompt suggestions in clean 100% English
   const quickPrompts = [
+    "I want to plan a custom trip to Berlin!",
     "I can't find an Anmeldung slot, insider tip?",
     "Can I sign a lease without a SCHUFA credit record?",
     "What is the real difference between Kaltmiete & Warmmiete?"
@@ -169,6 +174,15 @@ export default function AIBerlinBuddy() {
         `Alex's Tip: ${matchedDistrict.inside_ringbahn ? 'Located inside the Ringbahn (Zone A). Expect intense viewing competition—always submit your dossier within the first 15 minutes of an ad dropping!' : 'Located in the peaceful outer ring (Zone B). You get significantly more square meters and lower competition!'}`;
     }
 
+    // Check if user clicked trip planning or sent itinerary prompt
+    if (lower.includes('plan a custom trip') || lower.includes('gezi planı') || lower.includes('trip itinerary')) {
+      if (lower.includes('generated a')) {
+        return "Awesome plan! 🎒 I reviewed your stops—grouping them geographically by district is the smartest move you could make in Berlin. Metro (U-Bahn & S-Bahn) line transfers between East and West can eat up 40+ minutes if you bounce back and forth.\n\nKey Alex Insider Advice for this trip:\n1. 🎫 Get a 24-Hour BVG AB Day Ticket (or 7-Day Pass) rather than single tickets. It pays for itself by your 3rd ride.\n2. 🥪 For Mustafa's Gemüsekebap: If the queue is over 45 minutes, walk 8 minutes to Rüyam on Hauptstraße or K'Ups in Prenzlauer Berg—equal or better quality with half the wait!\n3. 🪩 If you're heading out to clubs: Remember Sunday daytime (Sonntagstags) is Berliners' favorite clubbing time—fresher vibes, easier door policy, and garden sunshine.";
+      }
+      setIsPlannerOpen(true);
+      return "Let's build your dream Berlin trip! 🧭 I just opened the **Smart Itinerary Planner**. Pick your travel dates, choose your tempo (chill vs efficient), rank your favorite spots, and I'll generate a day-by-day route with individual Google Maps links!";
+    }
+
     // Default friendly response
     return `Great topic! Regarding "${userText}": Berlin has its quirks and bureaucracy, but once you know the playbook, it is one of the most exciting and affordable capitals in Western Europe. Keep your tenant dossier PDF ready, enable instant push alerts on WG-Gesucht/ImmoScout24, and feel free to ask me anything else about districts or relocation steps!`;
   };
@@ -226,13 +240,23 @@ export default function AIBerlinBuddy() {
           </div>
         </div>
 
-        <button
-          onClick={() => setMessages([messages[0]])}
-          className="inline-flex items-center space-x-1.5 text-xs text-gray-400 hover:text-white px-3 py-1.5 rounded-lg bg-bvg-gray/50 border border-white/5 hover:border-white/20 transition-colors"
-        >
-          <RefreshCw className="w-3.5 h-3.5" />
-          <span>Reset Chat</span>
-        </button>
+        <div className="flex items-center space-x-2">
+          <button
+            onClick={() => setIsPlannerOpen(true)}
+            className="inline-flex items-center space-x-1.5 text-xs font-black text-bvg-dark bg-bvg-yellow hover:bg-yellow-400 px-3.5 py-2 rounded-xl shadow-md transition-all cursor-pointer"
+          >
+            <Compass className="w-4 h-4" />
+            <span>Plan Berlin Trip 🧭</span>
+          </button>
+
+          <button
+            onClick={() => setMessages([messages[0]])}
+            className="inline-flex items-center space-x-1.5 text-xs text-gray-400 hover:text-white px-3 py-2 rounded-xl bg-bvg-gray/50 border border-white/5 hover:border-white/20 transition-colors"
+          >
+            <RefreshCw className="w-3.5 h-3.5" />
+            <span>Reset Chat</span>
+          </button>
+        </div>
       </div>
 
       {/* Quick Prompt Pills */}
@@ -306,6 +330,15 @@ export default function AIBerlinBuddy() {
           <Send className="w-4 h-4" />
         </button>
       </form>
+
+      {/* Itinerary Planner Modal Component */}
+      <ItineraryPlannerModal
+        isOpen={isPlannerOpen}
+        onClose={() => setIsPlannerOpen(false)}
+        onApplyToChat={(promptText) => {
+          handleSend(promptText);
+        }}
+      />
     </div>
   );
 }
