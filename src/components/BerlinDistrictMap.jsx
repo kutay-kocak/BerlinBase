@@ -162,8 +162,8 @@ const DISTRICT_SCORES = {
 };
 
 export default function BerlinDistrictMap() {
-  // Transportation is now the #1 TOP category!
-  const [selectedMetric, setSelectedMetric] = useState('transit');
+  // Rent Level is now the #1 primary category!
+  const [selectedMetric, setSelectedMetric] = useState('rent');
   const [selectedRoomFilter, setSelectedRoomFilter] = useState('WG Room');
   const [ringFilter, setRingFilter] = useState('all'); // 'all', 'inside', 'outer'
   const [showNightTransit, setShowNightTransit] = useState(false);
@@ -372,32 +372,32 @@ export default function BerlinDistrictMap() {
 
       {/* Direct Map Controls Bar (Directly Above the Map Canvas) */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-bvg-gray/40 p-3 rounded-xl border border-white/10">
-        {/* 5 Master Categories (Transportation prominently FIRST!) */}
+        {/* 5 Master Categories (Rent Level prominently FIRST!) */}
         <div className="flex flex-wrap items-center gap-1.5">
-          {/* 1. TRANSPORTATION FIRST! */}
+          {/* 1. RENT LEVEL FIRST! */}
           <button
-            onClick={() => setSelectedMetric('transit')}
+            onClick={() => setSelectedMetric('rent')}
             className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-black transition-metro ${
-              selectedMetric === 'transit'
+              selectedMetric === 'rent'
                 ? 'bg-bvg-yellow text-bvg-dark shadow-md ring-2 ring-bvg-yellow/50'
                 : 'bg-bvg-gray text-gray-200 hover:text-white hover:bg-white/10'
             }`}
           >
-            <Train className="w-3.5 h-3.5 text-blue-400" />
-            <span>1. Transportation & Hubs</span>
+            <Home className="w-3.5 h-3.5" />
+            <span>1. Rent Level</span>
           </button>
 
-          {/* 2. RENT LEVEL */}
+          {/* 2. TRANSPORTATION */}
           <button
-            onClick={() => setSelectedMetric('rent')}
+            onClick={() => setSelectedMetric('transit')}
             className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-metro ${
-              selectedMetric === 'rent'
+              selectedMetric === 'transit'
                 ? 'bg-bvg-yellow text-bvg-dark shadow-md ring-2 ring-bvg-yellow/50'
                 : 'bg-bvg-gray text-gray-300 hover:text-white'
             }`}
           >
-            <Home className="w-3.5 h-3.5" />
-            <span>2. Rent Level</span>
+            <Train className="w-3.5 h-3.5 text-blue-400" />
+            <span>2. Transportation & Hubs</span>
           </button>
 
           {/* 3. INTERNATIONAL CUISINE */}
