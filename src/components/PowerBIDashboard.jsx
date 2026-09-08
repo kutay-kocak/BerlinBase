@@ -542,7 +542,20 @@ export default function PowerBIDashboard() {
                   <span>Specialty Coffee Benchmark (Flat White in EUR)</span>
                   <span className="text-[11px] text-gray-400 font-normal">Ranked from Highest to Lowest</span>
                 </h3>
-                <span className="text-xs text-amber-400 font-mono">Third-Wave Roastery Median</span>
+                <div className="flex items-center space-x-3 text-xs font-mono">
+                  <div className="flex items-center space-x-1">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#dc2626]"></span>
+                    <span className="text-red-400">≥ €4.30 High</span>
+                  </div>
+                  <div className="flex items-center space-x-1">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#eab308]"></span>
+                    <span className="text-yellow-400">€3.50-€4.20 Moderate</span>
+                  </div>
+                  <div className="flex items-center space-x-1">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#10b981]"></span>
+                    <span className="text-emerald-400">&lt; €3.50 Affordable</span>
+                  </div>
+                </div>
               </div>
 
               {/* SVG Column Chart */}
@@ -596,12 +609,24 @@ export default function PowerBIDashboard() {
                         fontWeight={800}
                         offset={6}
                       />
-                      {sortedCoffeeData.map((entry, index) => (
-                        <Cell 
-                          key={`cell-coffee-${index}`} 
-                          fill={index < 4 ? '#dc2626' : index < 14 ? '#f59e0b' : '#10b981'} 
-                        />
-                      ))}
+                      {sortedCoffeeData.map((entry, index) => {
+                        const price = entry.rounded_coffee;
+                        let barColor = '#10b981'; // Green for affordable (< €3.50)
+                        if (price >= 4.30) {
+                          barColor = '#dc2626'; // Red for expensive / high-end (>= €4.30)
+                        } else if (price >= 3.90) {
+                          barColor = '#ea580c'; // Orange for above average (>= €3.90)
+                        } else if (price >= 3.50) {
+                          barColor = '#eab308'; // Amber / Yellow for moderate (>= €3.50)
+                        }
+
+                        return (
+                          <Cell 
+                            key={`cell-coffee-${entry.district_name}-${index}`} 
+                            fill={barColor} 
+                          />
+                        );
+                      })}
                     </Bar>
                   </BarChart>
                 </ResponsiveContainer>

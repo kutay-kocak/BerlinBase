@@ -984,38 +984,38 @@ export default function ItineraryPlannerModal({ isOpen, onClose, onApplyToChat }
 
               {/* 2. New Intelligent Toggles: Rain Contingency & Budget vs Splurge */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                {/* Weather Contingency Toggle */}
+                {/* Weather Adaptive Plan Toggle */}
                 <div className="bg-bvg-gray/30 border border-white/10 rounded-xl p-3.5 space-y-2">
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-bold text-white flex items-center space-x-1.5">
                       <CloudRain className="w-4 h-4 text-blue-400" />
-                      <span>Rain Contingency B-Plan</span>
+                      <span>Weather Adaptive Plan</span>
                     </span>
-                    <button
-                      onClick={() => setIsRainMode(!isRainMode)}
-                      className={`px-2.5 py-1 rounded-lg text-xs font-extrabold transition-all cursor-pointer flex items-center space-x-1.5 ${
-                        isRainMode 
-                          ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/30' 
-                          : 'bg-white/10 text-gray-400 hover:text-white'
-                      }`}
-                    >
-                      {isRainMode ? (
-                        <>
-                          <CloudRain className="w-3.5 h-3.5" />
-                          <span>Active ☔</span>
-                        </>
-                      ) : (
-                        <>
-                          <Sun className="w-3.5 h-3.5" />
-                          <span>Sunny Mode</span>
-                        </>
-                      )}
-                    </button>
+                    <div className="flex bg-white/5 p-0.5 rounded-lg border border-white/10">
+                      <button
+                        onClick={() => setIsRainMode(false)}
+                        className={`px-2.5 py-1 rounded-md text-[11px] font-extrabold transition-all cursor-pointer flex items-center space-x-1 ${
+                          !isRainMode ? 'bg-amber-400 text-black shadow' : 'text-gray-400 hover:text-white'
+                        }`}
+                      >
+                        <Sun className="w-3 h-3" />
+                        <span>Sunny Mode</span>
+                      </button>
+                      <button
+                        onClick={() => setIsRainMode(true)}
+                        className={`px-2.5 py-1 rounded-md text-[11px] font-extrabold transition-all cursor-pointer flex items-center space-x-1 ${
+                          isRainMode ? 'bg-blue-600 text-white shadow' : 'text-gray-400 hover:text-white'
+                        }`}
+                      >
+                        <CloudRain className="w-3 h-3" />
+                        <span>Rainy Mode</span>
+                      </button>
+                    </div>
                   </div>
                   <p className="text-[11px] text-gray-400 leading-snug">
                     {isRainMode 
                       ? '☔ Automatically reroutes outdoor parks & open-air memorials to covered vaults, heated glass boats and indoor galleries.' 
-                      : 'Standard outdoor & open-air itinerary with riverside beer gardens.'}
+                      : '☀️ Standard outdoor & open-air itinerary with riverside beer gardens.'}
                   </p>
                 </div>
 

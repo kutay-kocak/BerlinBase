@@ -37,11 +37,6 @@ export default function NexumHero({ onSelectIntent }) {
 
       {/* Center Hero Content */}
       <div className="relative z-10 max-w-5xl mx-auto w-full text-center flex flex-col items-center">
-        {/* Sub-badge */}
-        <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/15 text-bvg-yellow text-xs font-semibold mb-4 shadow-xl">
-          <Sparkles className="w-3.5 h-3.5 text-bvg-yellow" />
-          <span>Interactive City Discovery & District Matcher</span>
-        </div>
 
         {/* Section Headline */}
         <h1 className="text-3xl sm:text-5xl md:text-6xl font-black text-white tracking-tight leading-tight max-w-3xl drop-shadow-2xl">
