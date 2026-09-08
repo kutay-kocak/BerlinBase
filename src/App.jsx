@@ -59,7 +59,7 @@ export default function App() {
               <div className="flex items-center space-x-2">
                 <span className="font-extrabold text-2xl tracking-tight text-white">Berlin<span className="text-bvg-yellow">Base</span></span>
               </div>
-              <p className="text-xs text-gray-400 hidden sm:block">Explore, Settle & Live in Berlin</p>
+              <p className="text-xs text-gray-400 hidden sm:block">Real Data for Berlin Housing &amp; Living</p>
             </div>
           </div>
 

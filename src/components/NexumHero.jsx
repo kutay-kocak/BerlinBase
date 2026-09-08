@@ -48,7 +48,7 @@ export default function NexumHero({ onSelectIntent }) {
           What Brings You <span className="text-bvg-yellow">to Berlin?</span>
         </h1>
         <p className="text-sm sm:text-base text-gray-300 max-w-xl mx-auto mt-3 drop-shadow">
-          Find your ideal Berlin neighborhood, calculate realistic living costs, or explore vibrant activities, flea markets, and lakes.
+          Compare real rent prices, find your neighborhood, and explore city life.
         </p>
 
         {/* 2 Aceternity-Style Noise Background Destination Cards - Compact & Sleek to keep TV Tower visible */}
