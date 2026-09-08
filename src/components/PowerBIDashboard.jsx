@@ -526,7 +526,7 @@ export default function PowerBIDashboard() {
               <div className="text-xs font-bold uppercase text-amber-400">Berlin Average Flat White Price</div>
               <div className="text-3xl font-black text-amber-300 mt-1">{avgCoffeePrice} €</div>
               <p className="text-xs text-gray-300 mt-0.5">
-                Specialty third-wave café pricing benchmark. Wedding offers the most affordable cup (3.20 €).
+                Specialty third-wave café pricing benchmark. Marzahn (Zentrum) offers the most affordable cup (3.10 €).
               </p>
             </div>
             <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400">
@@ -599,7 +599,7 @@ export default function PowerBIDashboard() {
                       {sortedCoffeeData.map((entry, index) => (
                         <Cell 
                           key={`cell-coffee-${index}`} 
-                          fill={index < 4 ? '#10b981' : index < 14 ? '#f59e0b' : '#ea580c'} 
+                          fill={index < 4 ? '#dc2626' : index < 14 ? '#f59e0b' : '#10b981'} 
                         />
                       ))}
                     </Bar>
