@@ -145,7 +145,7 @@ export default function UsefulApps() {
 
           <div className="bg-bvg-gray/60 border border-white/10 px-4 py-2.5 rounded-xl text-left sm:text-right">
             <span className="text-[10px] uppercase font-bold text-gray-400 block">Expat Utility Hub</span>
-            <span className="text-xl font-black text-bvg-yellow font-mono">Top Curated Apps</span>
+            <span className="text-xl font-black text-bvg-yellow font-mono">Essential Expat Toolkit</span>
           </div>
         </div>
 

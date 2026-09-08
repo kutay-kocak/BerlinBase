@@ -307,13 +307,13 @@ export default function BerlinDistrictMap() {
       weight: 2,
       opacity: 1,
       fillOpacity: 0.85,
-      radius: Math.max(12, Math.min(30, radius))
+      radius: Math.max(10, Math.min(26, Math.round(radius * 0.85)))
     };
   };
 
   return (
     <div className="bg-[#15151D] border border-white/10 rounded-2xl p-6 shadow-2xl space-y-6">
-      {/* Top Header & Slicers */}
+      {/* Top Header & Ringbahn Zone Filter */}
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-white/10 pb-5">
         <div>
           <div className="flex items-center space-x-2">
@@ -329,8 +329,51 @@ export default function BerlinDistrictMap() {
           </p>
         </div>
 
+        {/* Ringbahn Zone Slicer moved right under header */}
+        <div className="flex items-center space-x-2 bg-bvg-gray/50 px-3 py-1.5 rounded-xl border border-white/10 self-start lg:self-center">
+          <span className="text-xs text-gray-300 font-semibold flex items-center space-x-1.5">
+            <Compass className="w-3.5 h-3.5 text-bvg-yellow" />
+            <span>Filter by Ring:</span>
+          </span>
+          <div className="flex space-x-1.5">
+            <button
+              onClick={() => setRingFilter('all')}
+              className={`text-xs px-2.5 py-1 rounded-md font-bold transition-metro ${
+                ringFilter === 'all'
+                  ? 'bg-bvg-yellow text-bvg-dark shadow'
+                  : 'bg-white/5 text-gray-400 hover:text-white'
+              }`}
+            >
+              All (22 Kieze)
+            </button>
+            <button
+              onClick={() => setRingFilter('inside')}
+              className={`text-xs px-2.5 py-1 rounded-md font-bold transition-metro ${
+                ringFilter === 'inside'
+                  ? 'bg-bvg-yellow text-bvg-dark shadow'
+                  : 'bg-white/5 text-gray-400 hover:text-white'
+              }`}
+            >
+              Inside Ring (Zone A)
+            </button>
+            <button
+              onClick={() => setRingFilter('outer')}
+              className={`text-xs px-2.5 py-1 rounded-md font-bold transition-metro ${
+                ringFilter === 'outer'
+                  ? 'bg-bvg-yellow text-bvg-dark shadow'
+                  : 'bg-white/5 text-gray-400 hover:text-white'
+              }`}
+            >
+              Outer Ring (Zone B)
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Direct Map Controls Bar (Directly Above the Map Canvas) */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-bvg-gray/40 p-3 rounded-xl border border-white/10">
         {/* 5 Master Categories (Transportation prominently FIRST!) */}
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap items-center gap-1.5">
           {/* 1. TRANSPORTATION FIRST! */}
           <button
             onClick={() => setSelectedMetric('transit')}
@@ -396,55 +439,12 @@ export default function BerlinDistrictMap() {
             <span>5. Flat White €</span>
           </button>
         </div>
-      </div>
 
-      {/* Sub-slicers: Rent Filter & Ringbahn Zone Filter */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-bvg-gray/40 px-4 py-2.5 rounded-xl border border-white/10">
-        {/* Ringbahn Zone Filter */}
-        <div className="flex items-center space-x-2">
-          <span className="text-xs text-gray-300 font-semibold flex items-center space-x-1.5">
-            <Compass className="w-3.5 h-3.5 text-bvg-yellow" />
-            <span>Filter by Ring:</span>
-          </span>
-          <div className="flex space-x-1.5">
-            <button
-              onClick={() => setRingFilter('all')}
-              className={`text-xs px-2.5 py-1 rounded-md font-bold transition-metro ${
-                ringFilter === 'all'
-                  ? 'bg-bvg-yellow text-bvg-dark'
-                  : 'bg-white/5 text-gray-400 hover:text-white'
-              }`}
-            >
-              All (22 Kieze)
-            </button>
-            <button
-              onClick={() => setRingFilter('inside')}
-              className={`text-xs px-2.5 py-1 rounded-md font-bold transition-metro ${
-                ringFilter === 'inside'
-                  ? 'bg-bvg-yellow text-bvg-dark'
-                  : 'bg-white/5 text-gray-400 hover:text-white'
-              }`}
-            >
-              Inside Ring (Zone A)
-            </button>
-            <button
-              onClick={() => setRingFilter('outer')}
-              className={`text-xs px-2.5 py-1 rounded-md font-bold transition-metro ${
-                ringFilter === 'outer'
-                  ? 'bg-bvg-yellow text-bvg-dark'
-                  : 'bg-white/5 text-gray-400 hover:text-white'
-              }`}
-            >
-              Outer Ring (Zone B: Karlshorst, Spandau...)
-            </button>
-          </div>
-        </div>
-
-        {/* Room Category Sub-Filter (when Rent metric is active) */}
-        {selectedMetric === 'rent' ? (
-          <div className="flex items-center space-x-2">
-            <span className="text-xs text-gray-300 font-semibold">Room Type:</span>
-            <div className="flex space-x-1.5">
+        {/* Right side sub-action: Room Category Slicer (when rent is selected) */}
+        {selectedMetric === 'rent' && (
+          <div className="flex items-center space-x-1.5 self-start sm:self-auto">
+            <span className="text-xs text-gray-400 font-semibold hidden md:inline">Type:</span>
+            <div className="flex space-x-1">
               {['WG Room', '1-Room Studio (1+0)', '1-Bedroom Flat (1+1 / 1+2)'].map((room) => (
                 <button
                   key={room}
@@ -459,20 +459,6 @@ export default function BerlinDistrictMap() {
                 </button>
               ))}
             </div>
-          </div>
-        ) : (
-          <div className="flex items-center space-x-2">
-            <button
-              onClick={() => setShowNightTransit(!showNightTransit)}
-              className={`text-xs px-3 py-1 rounded-md font-bold transition-metro border flex items-center space-x-1.5 cursor-pointer ${
-                showNightTransit
-                  ? 'bg-blue-600 text-white border-blue-400 shadow'
-                  : 'bg-white/5 text-gray-400 border-white/10 hover:text-white'
-              }`}
-            >
-              <Train className="w-3 h-3" />
-              <span>{showNightTransit ? '24h U-Bahn Overlay ON' : 'Show 24h Transit Overlay'}</span>
-            </button>
           </div>
         )}
       </div>
@@ -609,6 +595,21 @@ export default function BerlinDistrictMap() {
               );
             })}
           </MapContainer>
+
+          {/* Top-Right Floating Control: 24h Transportation Routes Button */}
+          <div className="absolute top-3 right-3 z-[1000]">
+            <button
+              onClick={() => setShowNightTransit(!showNightTransit)}
+              className={`text-xs px-3 py-1.5 rounded-lg font-bold transition-metro border flex items-center space-x-1.5 shadow-xl backdrop-blur-md cursor-pointer ${
+                showNightTransit
+                  ? 'bg-blue-600 text-white border-blue-400 shadow-blue-500/20'
+                  : 'bg-[#1A1A24]/90 text-gray-200 border-white/20 hover:text-white hover:bg-[#1A1A24] hover:border-bvg-yellow/50'
+              }`}
+            >
+              <Train className="w-3.5 h-3.5 text-blue-400" />
+              <span>{showNightTransit ? '24h Routes Active' : '24h Transportation Routes'}</span>
+            </button>
+          </div>
 
           {/* Map Overlay Quick Legend */}
           <div className="absolute bottom-3 left-3 bg-bvg-dark/95 backdrop-blur-md border border-white/10 p-2.5 rounded-lg text-xs z-[1000] text-gray-200 shadow-xl">
