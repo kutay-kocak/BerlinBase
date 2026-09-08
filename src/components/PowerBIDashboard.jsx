@@ -23,7 +23,8 @@ import {
   ResponsiveContainer, 
   Cell,
   LabelList,
-  CartesianGrid
+  CartesianGrid,
+  Legend
 } from 'recharts';
 import analyticsData from '../data/berlinbase_master_analytics.json';
 
@@ -55,17 +56,27 @@ export default function PowerBIDashboard() {
   ) * 10;
 
   // Stats for Page 2
+  const sortedCuisineData = [...districts_lifestyle]
+    .sort((a, b) => b.foreign_cuisine_pct - a.foreign_cuisine_pct);
   const totalVerifiedDining = districts_lifestyle.reduce((sum, d) => sum + d.total_verified_restaurants, 0);
   const avgForeignShare = Math.round(
     districts_lifestyle.reduce((sum, d) => sum + d.foreign_cuisine_pct, 0) / districts_lifestyle.length
   );
 
   // Stats for Page 3
+  const sortedFiberData = [...districts_lifestyle]
+    .sort((a, b) => b.fiber_internet_pct - a.fiber_internet_pct);
   const avgFiberCoverage = Math.round(
     districts_lifestyle.reduce((sum, d) => sum + d.fiber_internet_pct, 0) / districts_lifestyle.length
   );
 
   // Stats for Page 4 - Rounded to nearest 10 cents (e.g. 3.17 -> 3.20)
+  const sortedCoffeeData = [...districts_lifestyle]
+    .map(d => ({
+      ...d,
+      rounded_coffee: parseFloat((Math.round(d.flat_white_price_eur * 10) / 10).toFixed(2))
+    }))
+    .sort((a, b) => a.rounded_coffee - b.rounded_coffee); // Sorted ascending (affordable to high-end)
   const avgCoffeeRaw = districts_lifestyle.reduce((sum, d) => sum + d.flat_white_price_eur, 0) / districts_lifestyle.length;
   const avgCoffeePrice = (Math.round(avgCoffeeRaw * 10) / 10).toFixed(2);
 
@@ -323,58 +334,90 @@ export default function PowerBIDashboard() {
             </div>
           </div>
 
-          {/* 100% Stacked Bar Chart */}
-          <div className="bg-bvg-gray/30 border border-white/10 rounded-xl p-5 min-h-[580px] flex flex-col justify-between space-y-4">
+          {/* PAGE 2: 100% Stacked Cuisine SVG Recharts Bar Chart */}
+          <div className="bg-bvg-gray/30 border border-white/10 rounded-xl p-5 min-h-[600px] flex flex-col justify-between space-y-3">
             <div>
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/5 pb-2">
-                <h3 className="text-sm font-bold text-white">
-                  100% Stacked Cuisine Distribution: International vs. Traditional German
+                <h3 className="text-sm font-bold text-white flex items-center space-x-2">
+                  <span>100% Stacked Cuisine Distribution: International vs. Traditional German</span>
+                  <span className="text-[11px] text-gray-400 font-normal">Ranked by International Cuisine Share</span>
                 </h3>
-              {/* Legend */}
-              <div className="flex items-center space-x-4 text-xs">
-                <div className="flex items-center space-x-1.5">
-                  <span className="w-3 h-3 rounded bg-bvg-yellow"></span>
-                  <span className="text-gray-300 font-medium">International Cuisine (%)</span>
-                </div>
-                <div className="flex items-center space-x-1.5">
-                  <span className="w-3 h-3 rounded bg-[#2C2D35] border border-white/20"></span>
-                  <span className="text-gray-300 font-medium">Traditional German (%)</span>
+                <div className="flex items-center space-x-4 text-xs font-mono">
+                  <div className="flex items-center space-x-1.5">
+                    <span className="w-2.5 h-2.5 rounded bg-bvg-yellow"></span>
+                    <span className="text-gray-300">International %</span>
+                  </div>
+                  <div className="flex items-center space-x-1.5">
+                    <span className="w-2.5 h-2.5 rounded bg-[#475569]"></span>
+                    <span className="text-gray-300">Traditional German %</span>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="space-y-3 pt-2">
-              {[...districts_lifestyle]
-                .sort((a, b) => b.foreign_cuisine_pct - a.foreign_cuisine_pct)
-                .map((d) => (
-                  <div key={d.district_name} className="space-y-1">
-                    <div className="flex items-center justify-between text-xs">
-                      <span className="font-bold text-gray-200">{d.district_name}</span>
-                      <div className="flex items-center space-x-2 font-mono text-[11px]">
-                        <span className="text-bvg-yellow font-bold">%{d.foreign_cuisine_pct} Int.</span>
-                        <span className="text-gray-400">/</span>
-                        <span className="text-gray-400">%{d.german_cuisine_pct} Ger.</span>
-                      </div>
-                    </div>
-
-                    {/* Stacked Progress */}
-                    <div className="h-4 w-full bg-[#2C2D35] rounded-md overflow-hidden flex border border-white/10">
-                      <div
-                        className="bg-bvg-yellow h-full text-bvg-dark font-extrabold text-[10px] flex items-center justify-center transition-all duration-500"
-                        style={{ width: `${d.foreign_cuisine_pct}%` }}
-                      >
-                        {d.foreign_cuisine_pct >= 25 ? `%${d.foreign_cuisine_pct}` : ''}
-                      </div>
-                      <div
-                        className="h-full text-gray-300 font-medium text-[10px] flex items-center justify-center transition-all duration-500"
-                        style={{ width: `${d.german_cuisine_pct}%` }}
-                      >
-                        {d.german_cuisine_pct >= 25 ? `%${d.german_cuisine_pct}` : ''}
-                      </div>
-                    </div>
-                  </div>
-                ))}
-            </div>
+              {/* SVG Stacked Bar Chart */}
+              <div className="pt-4 h-[560px] w-full">
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart
+                    data={sortedCuisineData}
+                    margin={{ top: 25, right: 20, left: 10, bottom: 90 }}
+                  >
+                    <CartesianGrid strokeDasharray="3 3" stroke="#ffffff15" vertical={false} />
+                    <XAxis 
+                      dataKey="district_name" 
+                      interval={0} 
+                      angle={-45} 
+                      textAnchor="end" 
+                      tick={{ fill: '#e2e8f0', fontSize: 11, fontWeight: 700 }}
+                      stroke="#475569"
+                      height={95}
+                      dy={8}
+                    />
+                    <YAxis 
+                      type="number" 
+                      domain={[0, 100]} 
+                      stroke="#64748b" 
+                      tickFormatter={(v) => `%${v}`}
+                      tick={{ fill: '#94a3b8', fontSize: 11 }}
+                      width={45}
+                    />
+                    <RechartsTooltip
+                      cursor={{ fill: 'rgba(255, 255, 255, 0.06)' }}
+                      contentStyle={{ 
+                        backgroundColor: '#1A1A24', 
+                        borderColor: '#F0D722', 
+                        borderWidth: '1.5px',
+                        borderRadius: '10px', 
+                        color: '#FFFFFF', 
+                        padding: '8px 12px',
+                        boxShadow: '0 12px 30px rgba(0, 0, 0, 0.7)' 
+                      }}
+                      itemStyle={{ fontWeight: 800, fontSize: '13px' }}
+                      labelStyle={{ color: '#FFFFFF', fontWeight: 800, fontSize: '13px', marginBottom: '2px' }}
+                      formatter={(value, name) => [`%${value}`, name === 'foreign_cuisine_pct' ? 'International Cuisine' : 'Traditional German']}
+                    />
+                    <Bar dataKey="foreign_cuisine_pct" stackId="cuisine" fill="#F0D722" radius={[0, 0, 0, 0]}>
+                      <LabelList 
+                        dataKey="foreign_cuisine_pct" 
+                        position="center" 
+                        formatter={(val) => val >= 25 ? `%${val}` : ''} 
+                        fill="#1A1A24" 
+                        fontSize={9} 
+                        fontWeight={900} 
+                      />
+                    </Bar>
+                    <Bar dataKey="german_cuisine_pct" stackId="cuisine" fill="#475569" radius={[4, 4, 0, 0]}>
+                      <LabelList 
+                        dataKey="german_cuisine_pct" 
+                        position="center" 
+                        formatter={(val) => val >= 25 ? `%${val}` : ''} 
+                        fill="#FFFFFF" 
+                        fontSize={9} 
+                        fontWeight={800} 
+                      />
+                    </Bar>
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
             </div>
           </div>
         </div>
@@ -397,39 +440,77 @@ export default function PowerBIDashboard() {
             </div>
           </div>
 
-          {/* Clustered Bar Visual in Tech Cyan */}
-          <div className="bg-bvg-gray/30 border border-white/10 rounded-xl p-5 min-h-[580px] flex flex-col justify-between space-y-3">
+          {/* SVG Recharts Bar Chart in Tech Cyan */}
+          <div className="bg-bvg-gray/30 border border-white/10 rounded-xl p-5 min-h-[600px] flex flex-col justify-between space-y-3">
             <div>
-              <div className="flex items-center justify-between border-b border-white/5 pb-2">
-                <h3 className="text-sm font-bold text-white">
-                  Fiber Internet (FTTH/Gigabit) Coverage by District (%)
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/5 pb-2">
+                <h3 className="text-sm font-bold text-white flex items-center space-x-2">
+                  <span>Fiber Internet (FTTH/Gigabit) Coverage by District (%)</span>
+                  <span className="text-[11px] text-gray-400 font-normal">Broadband Infrastructure Benchmark</span>
                 </h3>
-                <span className="text-xs text-cyan-400 font-mono">FTTH High Speed Benchmark</span>
+                <span className="text-xs text-cyan-400 font-mono">FTTH High Speed Standard</span>
               </div>
 
-              <div className="space-y-2.5 pt-3">
-                {[...districts_lifestyle]
-                  .sort((a, b) => b.fiber_internet_pct - a.fiber_internet_pct)
-                  .map((d, idx) => (
-                    <div key={d.district_name}>
-                      <div className="flex items-center justify-between text-xs mb-1">
-                        <div className="flex items-center space-x-2">
-                          <span className="text-gray-500 font-mono w-4">{idx + 1}</span>
-                          <span className="font-bold text-gray-200">{d.district_name}</span>
-                        </div>
-                        <span className="font-mono font-bold text-cyan-300 text-sm">
-                          %{d.fiber_internet_pct}
-                        </span>
-                      </div>
-
-                      <div className="h-4 bg-bvg-dark/80 rounded-md overflow-hidden p-0.5 border border-white/5">
-                        <div
-                          className="h-full rounded bg-gradient-to-r from-cyan-600 to-cyan-400 transition-all duration-500 shadow-sm shadow-cyan-400/30"
-                          style={{ width: `${d.fiber_internet_pct}%` }}
-                        ></div>
-                      </div>
-                    </div>
-                  ))}
+              {/* SVG Column Chart */}
+              <div className="pt-4 h-[560px] w-full">
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart
+                    data={sortedFiberData}
+                    margin={{ top: 25, right: 20, left: 10, bottom: 90 }}
+                  >
+                    <CartesianGrid strokeDasharray="3 3" stroke="#ffffff15" vertical={false} />
+                    <XAxis 
+                      dataKey="district_name" 
+                      interval={0} 
+                      angle={-45} 
+                      textAnchor="end" 
+                      tick={{ fill: '#e2e8f0', fontSize: 11, fontWeight: 700 }}
+                      stroke="#475569"
+                      height={95}
+                      dy={8}
+                    />
+                    <YAxis 
+                      type="number" 
+                      domain={[0, 80]} 
+                      stroke="#64748b" 
+                      tickFormatter={(v) => `%${v}`}
+                      tick={{ fill: '#94a3b8', fontSize: 11 }}
+                      width={45}
+                    />
+                    <RechartsTooltip
+                      cursor={{ fill: 'rgba(255, 255, 255, 0.06)' }}
+                      contentStyle={{ 
+                        backgroundColor: '#1A1A24', 
+                        borderColor: '#22d3ee', 
+                        borderWidth: '1.5px',
+                        borderRadius: '10px', 
+                        color: '#FFFFFF', 
+                        padding: '8px 12px',
+                        boxShadow: '0 12px 30px rgba(0, 0, 0, 0.7)' 
+                      }}
+                      itemStyle={{ color: '#22d3ee', fontWeight: 900, fontSize: '15px' }}
+                      labelStyle={{ color: '#FFFFFF', fontWeight: 800, fontSize: '13px', marginBottom: '2px' }}
+                      formatter={(value) => [`%${value}`, 'Fiber FTTH Coverage']}
+                    />
+                    <Bar dataKey="fiber_internet_pct" radius={[4, 4, 0, 0]}>
+                      <LabelList 
+                        dataKey="fiber_internet_pct" 
+                        position="top" 
+                        formatter={(val) => `%${val}`} 
+                        fill="#22d3ee" 
+                        fontSize={10} 
+                        fontWeight={800}
+                        offset={6}
+                      />
+                      {sortedFiberData.map((entry, index) => (
+                        <Cell 
+                          key={`cell-fiber-${index}`} 
+                          fill={index < 4 ? '#22d3ee' : index < 12 ? '#06b6d4' : '#0891b2'} 
+                        />
+                      ))}
+                    </Bar>
+                  </BarChart>
+                </ResponsiveContainer>
               </div>
             </div>
           </div>
@@ -453,41 +534,77 @@ export default function PowerBIDashboard() {
             </div>
           </div>
 
-          {/* Column / Bar Visual */}
-          <div className="bg-bvg-gray/30 border border-white/10 rounded-xl p-5 min-h-[580px] flex flex-col justify-between space-y-3">
+          {/* SVG Recharts Column Chart for Specialty Coffee */}
+          <div className="bg-bvg-gray/30 border border-white/10 rounded-xl p-5 min-h-[600px] flex flex-col justify-between space-y-3">
             <div>
-              <div className="flex items-center justify-between border-b border-white/5 pb-2">
-                <h3 className="text-sm font-bold text-white">
-                  Specialty Coffee Benchmark (Flat White in EUR)
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/5 pb-2">
+                <h3 className="text-sm font-bold text-white flex items-center space-x-2">
+                  <span>Specialty Coffee Benchmark (Flat White in EUR)</span>
+                  <span className="text-[11px] text-gray-400 font-normal">Sorted from Most Affordable to Premium</span>
                 </h3>
                 <span className="text-xs text-amber-400 font-mono">Third-Wave Roastery Median</span>
               </div>
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 pt-4">
-                {[...districts_lifestyle]
-                  .sort((a, b) => b.flat_white_price_eur - a.flat_white_price_eur)
-                  .map((d) => {
-                    const roundedCoffee = (Math.round(d.flat_white_price_eur * 10) / 10).toFixed(2);
-                    return (
-                      <div 
-                        key={d.district_name}
-                        className="bg-bvg-dark/70 border border-white/10 rounded-xl p-4 flex flex-col justify-between hover:border-amber-500/40 transition-metro min-h-[100px]"
-                      >
-                        <div className="flex items-start justify-between">
-                          <div>
-                            <div className="font-bold text-sm text-gray-200">{d.district_name}</div>
-                            <div className="text-[10px] text-gray-400">Specialty café avg</div>
-                          </div>
-                          <Coffee className="w-4 h-4 text-amber-500/70" />
-                        </div>
-                        <div className="text-right pt-2">
-                          <div className="text-lg font-black text-amber-400 font-mono">
-                            {roundedCoffee} €
-                          </div>
-                        </div>
-                      </div>
-                    );
-                  })}
+              {/* SVG Column Chart */}
+              <div className="pt-4 h-[560px] w-full">
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart
+                    data={sortedCoffeeData}
+                    margin={{ top: 25, right: 20, left: 10, bottom: 90 }}
+                  >
+                    <CartesianGrid strokeDasharray="3 3" stroke="#ffffff15" vertical={false} />
+                    <XAxis 
+                      dataKey="district_name" 
+                      interval={0} 
+                      angle={-45} 
+                      textAnchor="end" 
+                      tick={{ fill: '#e2e8f0', fontSize: 11, fontWeight: 700 }}
+                      stroke="#475569"
+                      height={95}
+                      dy={8}
+                    />
+                    <YAxis 
+                      type="number" 
+                      domain={[2.5, 5.0]} 
+                      stroke="#64748b" 
+                      tickFormatter={(v) => `${v.toFixed(1)}€`}
+                      tick={{ fill: '#94a3b8', fontSize: 11 }}
+                      width={45}
+                    />
+                    <RechartsTooltip
+                      cursor={{ fill: 'rgba(255, 255, 255, 0.06)' }}
+                      contentStyle={{ 
+                        backgroundColor: '#1A1A24', 
+                        borderColor: '#f59e0b', 
+                        borderWidth: '1.5px',
+                        borderRadius: '10px', 
+                        color: '#FFFFFF', 
+                        padding: '8px 12px',
+                        boxShadow: '0 12px 30px rgba(0, 0, 0, 0.7)' 
+                      }}
+                      itemStyle={{ color: '#fbbf24', fontWeight: 900, fontSize: '15px' }}
+                      labelStyle={{ color: '#FFFFFF', fontWeight: 800, fontSize: '13px', marginBottom: '2px' }}
+                      formatter={(value) => [`€${Number(value).toFixed(2)}`, 'Flat White Median']}
+                    />
+                    <Bar dataKey="rounded_coffee" radius={[4, 4, 0, 0]}>
+                      <LabelList 
+                        dataKey="rounded_coffee" 
+                        position="top" 
+                        formatter={(val) => `€${Number(val).toFixed(2)}`} 
+                        fill="#fbbf24" 
+                        fontSize={10} 
+                        fontWeight={800}
+                        offset={6}
+                      />
+                      {sortedCoffeeData.map((entry, index) => (
+                        <Cell 
+                          key={`cell-coffee-${index}`} 
+                          fill={index < 4 ? '#10b981' : index < 14 ? '#f59e0b' : '#ea580c'} 
+                        />
+                      ))}
+                    </Bar>
+                  </BarChart>
+                </ResponsiveContainer>
               </div>
             </div>
           </div>
