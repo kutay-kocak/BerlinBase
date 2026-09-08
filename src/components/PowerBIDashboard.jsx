@@ -30,7 +30,6 @@ import analyticsData from '../data/berlinbase_master_analytics.json';
 export default function PowerBIDashboard() {
   const [activePage, setActivePage] = useState('rent');
   const [selectedRoomType, setSelectedRoomType] = useState('WG Room');
-  const [useVectorChart, setUseVectorChart] = useState(false);
 
   const { districts_lifestyle, rentals_by_room } = analyticsData;
 
@@ -214,8 +213,8 @@ export default function PowerBIDashboard() {
             </div>
           </div>
 
-          {/* Visual: Clustered Bar Chart representation */}
-          <div className="bg-bvg-gray/30 border border-white/10 rounded-xl p-5 min-h-[580px] flex flex-col justify-between space-y-3">
+          {/* Visual: High-Performance Recharts SVG Column Chart */}
+          <div className="bg-bvg-gray/30 border border-white/10 rounded-xl p-5 min-h-[600px] flex flex-col justify-between space-y-3">
             <div>
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/5 pb-2">
                 <h3 className="text-sm font-bold text-white flex items-center space-x-2">
@@ -223,24 +222,11 @@ export default function PowerBIDashboard() {
                   <span className="text-[11px] text-gray-400 font-normal">Estimated District Averages (Rounded)</span>
                 </h3>
                 <div className="flex items-center space-x-3">
-                  {/* Recharts Vector Toggle */}
-                  <button
-                    onClick={() => setUseVectorChart(!useVectorChart)}
-                    className={`inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-lg text-[11px] font-bold border transition-metro ${
-                      useVectorChart 
-                        ? 'bg-bvg-yellow text-bvg-dark border-bvg-yellow' 
-                        : 'bg-bvg-dark/80 text-gray-300 border-white/10 hover:border-bvg-yellow/40'
-                    }`}
-                  >
-                    <Sparkles className="w-3 h-3" />
-                    <span>{useVectorChart ? 'SVG Recharts Active' : 'Switch to SVG Recharts Mode'}</span>
-                  </button>
-                  <span className="text-xs text-bvg-yellow font-mono hidden md:inline">100% Warm Standard</span>
+                  <span className="text-xs text-bvg-yellow font-mono">100% Warm Rent Benchmark</span>
                 </div>
               </div>
 
-            {/* Recharts SVG Vector Engine Mode */}
-            {useVectorChart ? (
+              {/* Permanent SVG Vector Engine Chart */}
               <div className="pt-4 h-[560px] w-full">
                 <ResponsiveContainer width="100%" height="100%">
                   <BarChart
@@ -302,40 +288,6 @@ export default function PowerBIDashboard() {
                   </BarChart>
                 </ResponsiveContainer>
               </div>
-            ) : (
-            /* Standard Native Metro Bar List */
-            <div className="space-y-2.5 pt-2">
-              {filteredRentals.map((r, idx) => {
-                const maxRent = 1700;
-                const widthPct = Math.min(100, Math.round((r.average_monthly_rent_eur / maxRent) * 100));
-
-                return (
-                  <div key={r.district_name} className="group">
-                    <div className="flex items-center justify-between text-xs mb-1">
-                      <div className="flex items-center space-x-2">
-                        <span className="text-gray-500 font-mono w-4">{idx + 1}</span>
-                        <span className="font-bold text-gray-200 group-hover:text-bvg-yellow transition-colors">
-                          {r.district_name}
-                        </span>
-                      </div>
-                      <div className="flex items-center space-x-3">
-                        <span className="font-extrabold text-white text-sm font-mono">
-                          {r.average_monthly_rent_eur} €
-                        </span>
-                      </div>
-                    </div>
-
-                    <div className="h-4 bg-bvg-dark/80 rounded-md overflow-hidden p-0.5 border border-white/5">
-                      <div
-                        className="h-full rounded bg-gradient-to-r from-bvg-yellow/70 to-bvg-yellow transition-all duration-500 flex items-center justify-end pr-2"
-                        style={{ width: `${widthPct}%` }}
-                      ></div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-            )}
             </div>
           </div>
         </div>
