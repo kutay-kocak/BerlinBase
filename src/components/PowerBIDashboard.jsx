@@ -22,7 +22,8 @@ import {
   Tooltip as RechartsTooltip, 
   ResponsiveContainer, 
   Cell,
-  LabelList
+  LabelList,
+  CartesianGrid
 } from 'recharts';
 import analyticsData from '../data/berlinbase_master_analytics.json';
 
@@ -240,23 +241,34 @@ export default function PowerBIDashboard() {
 
             {/* Recharts SVG Vector Engine Mode */}
             {useVectorChart ? (
-              <div className="pt-4 h-[480px] w-full">
+              <div className="pt-4 h-[560px] w-full">
                 <ResponsiveContainer width="100%" height="100%">
                   <BarChart
-                    layout="vertical"
                     data={filteredRentals}
-                    margin={{ top: 10, right: 60, left: 70, bottom: 5 }}
+                    margin={{ top: 25, right: 20, left: 10, bottom: 90 }}
                   >
-                    <XAxis type="number" domain={[0, 1850]} stroke="#64748b" tickFormatter={(v) => `${v}€`} />
-                    <YAxis 
-                      type="category" 
+                    {/* Subtle grid lines to guide the eye across the chart */}
+                    <CartesianGrid strokeDasharray="3 3" stroke="#ffffff15" vertical={false} />
+                    <XAxis 
                       dataKey="district_name" 
-                      stroke="#cbd5e1" 
-                      width={105}
-                      tick={{ fill: '#e2e8f0', fontSize: 12, fontWeight: 600 }} 
+                      interval={0} 
+                      angle={-45} 
+                      textAnchor="end" 
+                      tick={{ fill: '#e2e8f0', fontSize: 11, fontWeight: 700 }}
+                      stroke="#475569"
+                      height={95}
+                      dy={8}
+                    />
+                    <YAxis 
+                      type="number" 
+                      domain={[0, 1850]} 
+                      stroke="#64748b" 
+                      tickFormatter={(v) => `${v}€`}
+                      tick={{ fill: '#94a3b8', fontSize: 11 }}
+                      width={45}
                     />
                     <RechartsTooltip
-                      cursor={{ fill: 'rgba(255, 255, 255, 0.05)' }}
+                      cursor={{ fill: 'rgba(255, 255, 255, 0.06)' }}
                       contentStyle={{ 
                         backgroundColor: '#1A1A24', 
                         borderColor: '#F0D722', 
@@ -268,21 +280,22 @@ export default function PowerBIDashboard() {
                       }}
                       itemStyle={{ color: '#F0D722', fontWeight: 900, fontSize: '15px' }}
                       labelStyle={{ color: '#FFFFFF', fontWeight: 800, fontSize: '13px', marginBottom: '2px' }}
-                      formatter={(value) => [`€${value} / mo`, '']}
+                      formatter={(value) => [`€${value} / mo`, 'Warm Rent']}
                     />
-                    <Bar dataKey="average_monthly_rent_eur" radius={[0, 4, 4, 0]}>
+                    <Bar dataKey="average_monthly_rent_eur" radius={[4, 4, 0, 0]}>
                       <LabelList 
                         dataKey="average_monthly_rent_eur" 
-                        position="right" 
+                        position="top" 
                         formatter={(val) => `€${val}`} 
                         fill="#F0D722" 
-                        fontSize={13} 
-                        fontWeight={800} 
+                        fontSize={10} 
+                        fontWeight={800}
+                        offset={6}
                       />
                       {filteredRentals.map((entry, index) => (
                         <Cell 
                           key={`cell-${index}`} 
-                          fill={index < 3 ? '#F0D722' : index < 7 ? '#facc15' : '#ca8a04'} 
+                          fill={index < 4 ? '#F0D722' : index < 12 ? '#facc15' : '#ca8a04'} 
                         />
                       ))}
                     </Bar>
