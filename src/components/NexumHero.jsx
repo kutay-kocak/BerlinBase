@@ -1,9 +1,41 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Sparkles, ArrowRight, ChevronDown } from 'lucide-react';
 
 export default function NexumHero({ onSelectIntent }) {
   // Scenic view of Berlin TV Tower loop
   const videoSrc = '/berlin-night.mp4';
+  const videoRef = useRef(null);
+  const heroRef = useRef(null);
+
+  useEffect(() => {
+    const videoElement = videoRef.current;
+    const heroElement = heroRef.current;
+    if (!videoElement || !heroElement) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Kadraja girdiğinde oynat
+            if (videoElement.paused) {
+              videoElement.play().catch(() => {});
+            }
+          } else {
+            // Kadrajdan tamamen çıktığında duraklat (GPU/CPU tasarrufu)
+            if (!videoElement.paused) {
+              videoElement.pause();
+            }
+          }
+        });
+      },
+      { threshold: 0.05 }
+    );
+
+    observer.observe(heroElement);
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   const handleScrollTo = (targetId) => {
     if (onSelectIntent) {
@@ -17,15 +49,17 @@ export default function NexumHero({ onSelectIntent }) {
   };
 
   return (
-    <section className="relative min-h-[calc(100vh-112px)] w-full overflow-hidden flex flex-col justify-center items-center bg-[#0B0C12] text-white py-12 px-4 sm:px-6">
+    <section ref={heroRef} className="relative min-h-[calc(100vh-112px)] w-full overflow-hidden flex flex-col justify-center items-center bg-[#0B0C12] text-white py-12 px-4 sm:px-6">
       {/* Background Full-Bleed Video */}
       <div className="absolute inset-0 z-0">
         <video
+          ref={videoRef}
           key={videoSrc}
           autoPlay
           loop
           muted
           playsInline
+          preload="metadata"
           className="h-full w-full object-cover object-[50%_30%] brightness-[1.20] contrast-[1.10]"
         >
           <source src={videoSrc} type="video/mp4" />

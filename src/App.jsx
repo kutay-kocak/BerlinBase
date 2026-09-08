@@ -1,22 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, lazy, Suspense } from 'react';
 import { 
   Smartphone, 
   MapPin, 
   Compass, 
   Sparkles, 
   Bot,
-  ExternalLink
+  ExternalLink,
+  Loader2
 } from 'lucide-react';
-import PowerBIDashboard from './components/PowerBIDashboard';
-import BerlinDistrictMap from './components/BerlinDistrictMap';
 import BestNeighborhoodQuiz from './components/BestNeighborhoodQuiz';
-import AIBerlinBuddy from './components/AIBerlinBuddy';
 import UsefulApps from './components/UsefulApps';
 import Activities from './components/Activities';
 import LivingCostCalculator from './components/LivingCostCalculator';
 import FeedbackModal from './components/FeedbackModal';
 import NexumHero from './components/NexumHero';
 import { BBLogo } from './components/BBLogo';
+
+// Heavy secondary tabs loaded on-demand (Code-Splitting for speed & zero initial lag)
+const BerlinDistrictMap = lazy(() => import('./components/BerlinDistrictMap'));
+const PowerBIDashboard = lazy(() => import('./components/PowerBIDashboard'));
+const AIBerlinBuddy = lazy(() => import('./components/AIBerlinBuddy'));
+
+// Elegant BVG-styled skeleton loader for deferred tab transitions
+const TabFallbackLoader = ({ message = 'Loading Berlin module...' }) => (
+  <div className="flex flex-col items-center justify-center min-h-[360px] p-12 rounded-2xl bg-[#12131C]/60 border border-white/10 space-y-4">
+    <div className="w-12 h-12 rounded-full border-2 border-bvg-yellow/20 border-t-bvg-yellow animate-spin flex items-center justify-center">
+      <div className="w-3 h-3 rounded-full bg-bvg-yellow animate-pulse" />
+    </div>
+    <p className="text-sm font-medium text-gray-300 tracking-wide">{message}</p>
+  </div>
+);
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('explore');
@@ -179,18 +192,22 @@ export default function App() {
         {/* TAB 3: MAP & PRICE ANALYTICS */}
         {activeTab === 'map' && (
           <section className="space-y-8">
-            {/* Interactive Leaflet Map Component with real PostgreSQL metric layers */}
-            <BerlinDistrictMap />
+            <Suspense fallback={<TabFallbackLoader message="Rendering interactive Berlin district map & metrics..." />}>
+              {/* Interactive Leaflet Map Component with real PostgreSQL metric layers */}
+              <BerlinDistrictMap />
 
-            {/* Embedded Interactive 4-Page Power BI Dashboard Hub */}
-            <PowerBIDashboard />
+              {/* Embedded Interactive 4-Page Power BI Dashboard Hub */}
+              <PowerBIDashboard />
+            </Suspense>
           </section>
         )}
 
         {/* TAB 4: AI BERLIN BUDDY */}
         {activeTab === 'buddy' && (
           <section className="space-y-6">
-            <AIBerlinBuddy />
+            <Suspense fallback={<TabFallbackLoader message="Initializing AI Berlin Travel & Relocation Buddy..." />}>
+              <AIBerlinBuddy />
+            </Suspense>
           </section>
         )}
       </main>
