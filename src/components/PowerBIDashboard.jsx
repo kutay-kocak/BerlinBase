@@ -76,7 +76,7 @@ export default function PowerBIDashboard() {
       ...d,
       rounded_coffee: parseFloat((Math.round(d.flat_white_price_eur * 10) / 10).toFixed(2))
     }))
-    .sort((a, b) => a.rounded_coffee - b.rounded_coffee); // Sorted ascending (affordable to high-end)
+    .sort((a, b) => b.rounded_coffee - a.rounded_coffee); // Sorted descending (highest to lowest)
   const avgCoffeeRaw = districts_lifestyle.reduce((sum, d) => sum + d.flat_white_price_eur, 0) / districts_lifestyle.length;
   const avgCoffeePrice = (Math.round(avgCoffeeRaw * 10) / 10).toFixed(2);
 
@@ -399,7 +399,7 @@ export default function PowerBIDashboard() {
                       <LabelList 
                         dataKey="foreign_cuisine_pct" 
                         position="center" 
-                        formatter={(val) => val >= 25 ? `%${val}` : ''} 
+                        formatter={(val) => val > 0 ? `%${val}` : ''} 
                         fill="#1A1A24" 
                         fontSize={9} 
                         fontWeight={900} 
@@ -409,7 +409,7 @@ export default function PowerBIDashboard() {
                       <LabelList 
                         dataKey="german_cuisine_pct" 
                         position="center" 
-                        formatter={(val) => val >= 25 ? `%${val}` : ''} 
+                        formatter={(val) => val > 0 ? `%${val}` : ''} 
                         fill="#FFFFFF" 
                         fontSize={9} 
                         fontWeight={800} 
@@ -540,7 +540,7 @@ export default function PowerBIDashboard() {
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/5 pb-2">
                 <h3 className="text-sm font-bold text-white flex items-center space-x-2">
                   <span>Specialty Coffee Benchmark (Flat White in EUR)</span>
-                  <span className="text-[11px] text-gray-400 font-normal">Sorted from Most Affordable to Premium</span>
+                  <span className="text-[11px] text-gray-400 font-normal">Ranked from Highest to Lowest</span>
                 </h3>
                 <span className="text-xs text-amber-400 font-mono">Third-Wave Roastery Median</span>
               </div>
