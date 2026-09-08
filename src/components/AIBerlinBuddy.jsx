@@ -42,6 +42,9 @@ export default function AIBerlinBuddy() {
   const getBuddyResponse = (userText) => {
     const lower = userText.toLowerCase();
 
+    // Robust English syntax check: if sentence starts with or contains characteristic English question patterns/grammar
+    const isEnglish = /\b(what|how|where|when|why|who|can|could|should|would|is|are|do|does|did|difference|between|the|this|that|please|tell|give|my|your|i|you|we|recommend|tip|tips)\b/i.test(userText);
+
     // Language detection heuristics
     const isTurkish = /[çğıöşü]/i.test(userText) || 
       lower.includes('merhaba') || lower.includes('nasılsın') || lower.includes('selam') ||
@@ -49,10 +52,14 @@ export default function AIBerlinBuddy() {
       lower.includes('neresi') || lower.includes('tavsiye') || lower.includes('nasıl') ||
       lower.includes('hangi') || lower.includes('semt') || lower.includes('mahalle');
 
-    const isGerman = lower.includes('hallo') || lower.includes('guten tag') || lower.includes('wie') ||
+    // German is only matched if the sentence isn't clearly English grammar/syntax
+    const isGerman = !isEnglish && (
+      lower.includes('hallo') || lower.includes('guten tag') || lower.includes('wie ') ||
       lower.includes('wohnung') || lower.includes('miete') || lower.includes('bezirk') ||
       lower.includes('bitte') || lower.includes('danke') || lower.includes('tipp') ||
-      lower.includes('bürgeramt') || lower.includes('termin');
+      lower.includes('bürgeramt') || lower.includes('termin') || lower.includes('kaltmiete') ||
+      lower.includes('warmmiete') || lower.includes('ich ') || lower.includes('kann ich')
+    );
 
     // Arabic detection (Arabic script or common transliterated words)
     const isArabic = /[\u0600-\u06FF]/.test(userText) ||
@@ -227,7 +234,7 @@ export default function AIBerlinBuddy() {
           <div>
             <div className="flex items-center space-x-2">
               <h2 className="text-xl font-black text-white tracking-tight">
-                AI Berlin Buddy (Alex)
+                AI Travel Planner (Alex)
               </h2>
               <span className="text-[10px] uppercase font-bold px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center space-x-1">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
@@ -235,7 +242,7 @@ export default function AIBerlinBuddy() {
               </span>
             </div>
             <p className="text-xs text-gray-400 mt-0.5">
-              Anmeldung hacks, SCHUFA guidance, neighborhood vibes, and apartment hunting advice.
+              Trip planning, neighborhood routing, Anmeldung hacks, SCHUFA guidance, and apartment hunting advice.
             </p>
           </div>
         </div>

@@ -26,7 +26,7 @@ export default function App() {
     { id: 'explore', label: 'Explore & Vibe', icon: Compass, badge: 'Main' },
     { id: 'apps', label: 'Apps & Life Hacks', icon: Smartphone },
     { id: 'map', label: 'Map & Price Analytics', icon: MapPin },
-    { id: 'buddy', label: 'AI Berlin Buddy', icon: Bot, badge: 'Gemini' },
+    { id: 'buddy', label: 'AI Travel Planner', icon: Bot, badge: 'Gemini' },
   ];
 
   // Smooth scroll handler for hero intent cards
@@ -214,7 +214,7 @@ export default function App() {
               }`}
             >
               <Icon className={`w-5 h-5 mb-1 transition-transform ${isActive ? 'scale-110 text-bvg-yellow' : ''}`} />
-              <span className="text-[10px] tracking-tight">{tab.id === 'explore' ? 'Explore' : tab.id === 'apps' ? 'Apps' : tab.id === 'map' ? 'Map' : 'AI Buddy'}</span>
+              <span className="text-[10px] tracking-tight">{tab.id === 'explore' ? 'Explore' : tab.id === 'apps' ? 'Apps' : tab.id === 'map' ? 'Map' : 'AI Planner'}</span>
             </button>
           );
         })}
