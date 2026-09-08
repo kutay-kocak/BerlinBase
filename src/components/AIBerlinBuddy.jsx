@@ -22,7 +22,7 @@ export default function AIBerlinBuddy() {
     {
       id: 1,
       sender: 'alex',
-      text: "Servus and welcome to Berlin! I'm Alex, your local Relocation & City Guide Buddy. 🍻\n\nWhether you need an optimized multi-day travel itinerary with Google Maps routes, or real-talk on Anmeldung, SCHUFA, and neighborhood vibes, I've got you covered.\n\nClick 'Plan Berlin Trip 🧭' above or ask me anything!"
+      text: "Servus and welcome to Berlin! I'm Alex, your local Relocation & City Guide Buddy. 🍻\n\nWhether you need an optimized multi-day travel itinerary with Google Maps routes, or real-talk on Anmeldung, SCHUFA, and neighborhood vibes, I've got you covered.\n\nClick 'Plan Berlin Trip' on the banner above or ask me anything!"
     }
   ]);
   const [inputVal, setInputVal] = useState('');
@@ -226,7 +226,7 @@ export default function AIBerlinBuddy() {
   return (
     <div className="bg-[#15151D] border border-white/10 rounded-2xl p-6 shadow-2xl space-y-6">
       {/* Top Bar */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-white/10 pb-5">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-white/10 pb-4">
         <div className="flex items-center space-x-3">
           <div className="w-10 h-10 rounded-xl bg-bvg-yellow flex items-center justify-center text-bvg-dark font-black shadow-lg shadow-bvg-yellow/10">
             <Bot className="w-6 h-6" />
@@ -247,23 +247,43 @@ export default function AIBerlinBuddy() {
           </div>
         </div>
 
-        <div className="flex items-center space-x-2">
-          <button
-            onClick={() => setIsPlannerOpen(true)}
-            className="inline-flex items-center space-x-1.5 text-xs font-black text-bvg-dark bg-bvg-yellow hover:bg-yellow-400 px-3.5 py-2 rounded-xl shadow-md transition-all cursor-pointer"
-          >
-            <Compass className="w-4 h-4" />
-            <span>Plan Berlin Trip 🧭</span>
-          </button>
+        <button
+          onClick={() => setMessages([messages[0]])}
+          className="inline-flex items-center space-x-1.5 text-xs text-gray-400 hover:text-white px-3 py-1.5 rounded-xl bg-bvg-gray/50 border border-white/5 hover:border-white/20 transition-colors self-start sm:self-auto"
+        >
+          <RefreshCw className="w-3.5 h-3.5" />
+          <span>Reset Chat</span>
+        </button>
+      </div>
 
-          <button
-            onClick={() => setMessages([messages[0]])}
-            className="inline-flex items-center space-x-1.5 text-xs text-gray-400 hover:text-white px-3 py-2 rounded-xl bg-bvg-gray/50 border border-white/5 hover:border-white/20 transition-colors"
-          >
-            <RefreshCw className="w-3.5 h-3.5" />
-            <span>Reset Chat</span>
-          </button>
+      {/* Central High-Visibility Banner for Trip Planner */}
+      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-bvg-yellow/20 via-bvg-gray/70 to-blue-500/10 border border-bvg-yellow/30 p-4 sm:p-5 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="flex items-center space-x-3.5 text-left w-full sm:w-auto">
+          <div className="w-12 h-12 rounded-xl bg-bvg-yellow flex items-center justify-center text-bvg-dark font-black shadow-lg shadow-bvg-yellow/20 flex-shrink-0">
+            <Compass className="w-6 h-6" />
+          </div>
+          <div>
+            <div className="flex items-center space-x-2">
+              <span className="text-sm sm:text-base font-black text-white tracking-tight">
+                Smart Berlin Itinerary Generator
+              </span>
+              <span className="text-[9px] uppercase font-bold px-2 py-0.5 rounded-md bg-bvg-yellow text-bvg-dark font-mono">
+                1-7 Days Custom
+              </span>
+            </div>
+            <p className="text-xs text-gray-300 mt-0.5">
+              Build a personalized daily route with transit times, Google Maps links, budget vs. luxury options, and local food spots.
+            </p>
+          </div>
         </div>
+
+        <button
+          onClick={() => setIsPlannerOpen(true)}
+          className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 text-sm font-black text-bvg-dark bg-bvg-yellow hover:bg-yellow-300 px-6 py-3 rounded-xl shadow-lg shadow-bvg-yellow/25 hover:shadow-bvg-yellow/40 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer whitespace-nowrap"
+        >
+          <Compass className="w-4 h-4" />
+          <span>Plan Berlin Trip 🧭</span>
+        </button>
       </div>
 
       {/* Quick Prompt Pills */}
