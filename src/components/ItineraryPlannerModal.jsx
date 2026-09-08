@@ -1024,7 +1024,7 @@ export default function ItineraryPlannerModal({ isOpen, onClose, onApplyToChat }
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-bold text-white flex items-center space-x-1.5">
                       <Coins className="w-4 h-4 text-emerald-400" />
-                      <span>Budget vs. Splurge</span>
+                      <span>Budget vs. Luxury</span>
                     </span>
                     <div className="flex bg-white/5 p-0.5 rounded-lg border border-white/10">
                       <button
@@ -1042,7 +1042,7 @@ export default function ItineraryPlannerModal({ isOpen, onClose, onApplyToChat }
                         }`}
                       >
                         <Gem className="w-3 h-3" />
-                        <span>✨ Splurge</span>
+                        <span>✨ Luxury</span>
                       </button>
                     </div>
                   </div>
@@ -1290,7 +1290,7 @@ export default function ItineraryPlannerModal({ isOpen, onClose, onApplyToChat }
                     )}
                     {generatedPlan.budgetTier === 'splurge' && (
                       <span className="text-[10px] font-black px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30">
-                        ✨ Splurge Mode
+                        ✨ Luxury Mode
                       </span>
                     )}
                   </div>

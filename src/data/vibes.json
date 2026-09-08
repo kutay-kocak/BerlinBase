@@ -60,7 +60,7 @@
     ],
     "spati_count": 95,
     "spati_density": "High",
-    "avg_doner_eur": 8.0,
+    "avg_doner_eur": 8,
     "transit_alex_min": 12,
     "anmeldung_weeks": 4
   },
@@ -112,7 +112,7 @@
     ],
     "spati_count": 70,
     "spati_density": "High",
-    "avg_doner_eur": 7.0,
+    "avg_doner_eur": 7,
     "transit_alex_min": 18,
     "anmeldung_weeks": 5
   },
@@ -154,5 +154,135 @@
     "avg_doner_eur": 7.4,
     "transit_alex_min": 32,
     "anmeldung_weeks": 3
+  },
+  "Karlshorst": {
+    "tags": [
+      "Quiet Villa Quarters",
+      "Fast S3 to Ostkreuz",
+      "University Campus",
+      "Affordable Family Living"
+    ],
+    "spati_count": 18,
+    "spati_density": "Medium",
+    "avg_doner_eur": 6.5,
+    "transit_alex_min": 16,
+    "anmeldung_weeks": 2
+  },
+  "Tempelhof": {
+    "tags": [
+      "Tempelhofer Feld Backyard",
+      "S-Ring & U6 Junction",
+      "Bustling High Street",
+      "Active Community"
+    ],
+    "spati_count": 42,
+    "spati_density": "High",
+    "avg_doner_eur": 7,
+    "transit_alex_min": 18,
+    "anmeldung_weeks": 3
+  },
+  "Alt-Treptow": {
+    "tags": [
+      "Step to Kreuzberg/Neukölln",
+      "Treptower Park Green",
+      "Direct Ring S-Bahn",
+      "Bohemian Waterfront"
+    ],
+    "spati_count": 36,
+    "spati_density": "High",
+    "avg_doner_eur": 7.2,
+    "transit_alex_min": 12,
+    "anmeldung_weeks": 3
+  },
+  "Weißensee": {
+    "tags": [
+      "Scenic Bathing Lake",
+      "24h M4 Tram to Alex",
+      "Art School & Studios",
+      "Calm Green Haven"
+    ],
+    "spati_count": 24,
+    "spati_density": "Medium",
+    "avg_doner_eur": 6.8,
+    "transit_alex_min": 18,
+    "anmeldung_weeks": 3
+  },
+  "Rummelsburg": {
+    "tags": [
+      "Bay Waterfront Promenade",
+      "Instant Ostkreuz S-Bahn",
+      "Modern Eco-Flats",
+      "Club Proximity"
+    ],
+    "spati_count": 20,
+    "spati_density": "Medium",
+    "avg_doner_eur": 7,
+    "transit_alex_min": 14,
+    "anmeldung_weeks": 2
+  },
+  "Spandau (Zentrum)": {
+    "tags": [
+      "Historic Citadel Fortress",
+      "Express RE Trains to Hbf",
+      "Pedestrian Old Town",
+      "Maximum Space for Rent"
+    ],
+    "spati_count": 38,
+    "spati_density": "High",
+    "avg_doner_eur": 6.2,
+    "transit_alex_min": 24,
+    "anmeldung_weeks": 2
+  },
+  "Köpenick (Altstadt)": {
+    "tags": [
+      "Island Palace & Old Town",
+      "Lakes & Sailing Capital",
+      "Direct S3 Corridor",
+      "Quiet Green Waterfront"
+    ],
+    "spati_count": 22,
+    "spati_density": "Medium",
+    "avg_doner_eur": 6.4,
+    "transit_alex_min": 24,
+    "anmeldung_weeks": 2
+  },
+  "Reinickendorf (Tegel)": {
+    "tags": [
+      "Lake Tegel Promenade",
+      "U6 Direct North Line",
+      "Urban Tech Republic Hub",
+      "Nature & Forest Border"
+    ],
+    "spati_count": 28,
+    "spati_density": "Medium",
+    "avg_doner_eur": 6.3,
+    "transit_alex_min": 25,
+    "anmeldung_weeks": 2
+  },
+  "Lichtenrade": {
+    "tags": [
+      "Direct S2 to Potsdamer Platz",
+      "Peaceful Suburban Garden",
+      "Lowest Average Rents",
+      "Friendly Local Kiez"
+    ],
+    "spati_count": 14,
+    "spati_density": "Low",
+    "avg_doner_eur": 6,
+    "transit_alex_min": 28,
+    "anmeldung_weeks": 2
+  },
+  "Marzahn (Zentrum)": {
+    "tags": [
+      "Highest Green Space Ratio",
+      "Gärten der Welt Cable Car",
+      "Fastest Anmeldung in Berlin",
+      "Affordable Plattenbau"
+    ],
+    "spati_count": 26,
+    "spati_density": "Medium",
+    "avg_doner_eur": 5.9,
+    "transit_alex_min": 23,
+    "anmeldung_weeks": 1
   }
 }

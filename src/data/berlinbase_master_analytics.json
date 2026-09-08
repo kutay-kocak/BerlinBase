@@ -18,7 +18,16 @@
       "primary_cuisine": "Contemporary Asian & Global Fusion",
       "secondary_cuisine": "Artisan Coffee & Nordic Brunch",
       "famous_specialty": "Vietnamese Pho, Specialty Ramen & Poke",
-      "top_street_hotspot": "Torstraße & Rosenthaler Platz"
+      "top_street_hotspot": "Torstraße & Rosenthaler Platz",
+      "transit_hubs": {
+        "hauptbahnhof": 4,
+        "alexanderplatz": 4,
+        "gesundbrunnen": 8,
+        "zoo_garten": 10,
+        "ostkreuz": 11,
+        "suedkreuz": 14,
+        "spandau": 21
+      }
     },
     {
       "district_id": 2,
@@ -38,7 +47,16 @@
       "primary_cuisine": "Vietnamese & East Asian Vegan",
       "secondary_cuisine": "Vegan Burgers & Street Food",
       "famous_specialty": "Bánh Mì, Vegan Tapas & Dumplings",
-      "top_street_hotspot": "Boxhagener Platz & Simon-Dach-Straße"
+      "top_street_hotspot": "Boxhagener Platz & Simon-Dach-Straße",
+      "transit_hubs": {
+        "ostkreuz": 4,
+        "alexanderplatz": 10,
+        "hauptbahnhof": 16,
+        "gesundbrunnen": 14,
+        "suedkreuz": 16,
+        "zoo_garten": 21,
+        "spandau": 28
+      }
     },
     {
       "district_id": 3,
@@ -58,7 +76,16 @@
       "primary_cuisine": "Turkish & Anatolian Traditional",
       "secondary_cuisine": "Levantine & Middle Eastern",
       "famous_specialty": "Döner Kebab, Gözleme, Baklava & Lahmacun",
-      "top_street_hotspot": "Kottbusser Damm & Oranienstraße"
+      "top_street_hotspot": "Kottbusser Damm & Oranienstraße",
+      "transit_hubs": {
+        "alexanderplatz": 12,
+        "suedkreuz": 12,
+        "hauptbahnhof": 14,
+        "ostkreuz": 12,
+        "gesundbrunnen": 16,
+        "zoo_garten": 16,
+        "spandau": 26
+      }
     },
     {
       "district_id": 4,
@@ -78,7 +105,16 @@
       "primary_cuisine": "Mediterranean & Italian Trattorias",
       "secondary_cuisine": "Organic Alpine & Bakery Culture",
       "famous_specialty": "Handmade Sourdough, Neapolitan Pizza & French Pastries",
-      "top_street_hotspot": "Kastanienallee & Kollwitzplatz"
+      "top_street_hotspot": "Kastanienallee & Kollwitzplatz",
+      "transit_hubs": {
+        "gesundbrunnen": 6,
+        "alexanderplatz": 10,
+        "hauptbahnhof": 15,
+        "ostkreuz": 14,
+        "zoo_garten": 20,
+        "suedkreuz": 22,
+        "spandau": 27
+      }
     },
     {
       "district_id": 5,
@@ -98,7 +134,16 @@
       "primary_cuisine": "Authentic Chinese & Szechuan",
       "secondary_cuisine": "Japanese Izakaya & Korean BBQ",
       "famous_specialty": "Dim Sum, Hand-pulled Biang Biang Noodles & Hot Pot",
-      "top_street_hotspot": "Kantstraße (Chinatown of Berlin)"
+      "top_street_hotspot": "Kantstraße (Chinatown of Berlin)",
+      "transit_hubs": {
+        "zoo_garten": 4,
+        "hauptbahnhof": 10,
+        "spandau": 14,
+        "suedkreuz": 14,
+        "gesundbrunnen": 16,
+        "alexanderplatz": 18,
+        "ostkreuz": 25
+      }
     },
     {
       "district_id": 6,
@@ -118,7 +163,16 @@
       "primary_cuisine": "Levantine, Syrian & Israeli",
       "secondary_cuisine": "Classic Austro-German Wirtshaus",
       "famous_specialty": "Hummus, Shakshuka, Falafel & Wiener Schnitzel",
-      "top_street_hotspot": "Goltzstraße & Akazienstraße"
+      "top_street_hotspot": "Goltzstraße & Akazienstraße",
+      "transit_hubs": {
+        "suedkreuz": 4,
+        "zoo_garten": 8,
+        "hauptbahnhof": 12,
+        "alexanderplatz": 18,
+        "ostkreuz": 18,
+        "gesundbrunnen": 19,
+        "spandau": 23
+      }
     },
     {
       "district_id": 7,
@@ -138,7 +192,16 @@
       "primary_cuisine": "Middle Eastern & Turkish Grill",
       "secondary_cuisine": "North African & Sudani",
       "famous_specialty": "Köfte, Shawarma & Sudanese Peanut Sauce Falafel",
-      "top_street_hotspot": "Turmstraße & Arminiusmarkthalle"
+      "top_street_hotspot": "Turmstraße & Arminiusmarkthalle",
+      "transit_hubs": {
+        "hauptbahnhof": 5,
+        "zoo_garten": 8,
+        "gesundbrunnen": 10,
+        "alexanderplatz": 14,
+        "spandau": 18,
+        "suedkreuz": 18,
+        "ostkreuz": 20
+      }
     },
     {
       "district_id": 8,
@@ -158,7 +221,16 @@
       "primary_cuisine": "Arabic, Lebanese & Syrian Street Food",
       "secondary_cuisine": "Trendy Expat Third-Wave Brunch",
       "famous_specialty": "Fresh Pita Shawarma, Halloumi, Knafeh & Flat Whites",
-      "top_street_hotspot": "Sonnenallee (Arabische Straße) & Weserstraße"
+      "top_street_hotspot": "Sonnenallee (Arabische Straße) & Weserstraße",
+      "transit_hubs": {
+        "suedkreuz": 10,
+        "ostkreuz": 12,
+        "alexanderplatz": 16,
+        "hauptbahnhof": 19,
+        "gesundbrunnen": 20,
+        "zoo_garten": 21,
+        "spandau": 32
+      }
     },
     {
       "district_id": 9,
@@ -178,7 +250,16 @@
       "primary_cuisine": "Turkish Ocakbaşı & West African",
       "secondary_cuisine": "Sudanese & Balkan Comfort",
       "famous_specialty": "Charcoal Lamb Chops, Fufu & Yassa",
-      "top_street_hotspot": "Müllerstraße & Leopoldplatz"
+      "top_street_hotspot": "Müllerstraße & Leopoldplatz",
+      "transit_hubs": {
+        "gesundbrunnen": 4,
+        "hauptbahnhof": 8,
+        "alexanderplatz": 14,
+        "zoo_garten": 14,
+        "spandau": 20,
+        "suedkreuz": 20,
+        "ostkreuz": 20
+      }
     },
     {
       "district_id": 10,
@@ -198,7 +279,16 @@
       "primary_cuisine": "Traditional German Cuisine & Bakeries",
       "secondary_cuisine": "Czech & Eastern European",
       "famous_specialty": "Kassler, Eisbein, Currywurst & Apfelstrudel",
-      "top_street_hotspot": "Florastraße & Pankow Rathaus"
+      "top_street_hotspot": "Florastraße & Pankow Rathaus",
+      "transit_hubs": {
+        "gesundbrunnen": 8,
+        "alexanderplatz": 18,
+        "hauptbahnhof": 20,
+        "ostkreuz": 18,
+        "zoo_garten": 24,
+        "suedkreuz": 26,
+        "spandau": 30
+      }
     },
     {
       "district_id": 11,
@@ -218,7 +308,16 @@
       "primary_cuisine": "Classic German & Bavarian Wirtshaus",
       "secondary_cuisine": "Traditional Italian & Greek",
       "famous_specialty": "Spätzle, Rouladen & Mediterranean Fish",
-      "top_street_hotspot": "Schloßstraße & Steglitz Zentrum"
+      "top_street_hotspot": "Schloßstraße & Steglitz Zentrum",
+      "transit_hubs": {
+        "suedkreuz": 8,
+        "zoo_garten": 16,
+        "hauptbahnhof": 18,
+        "alexanderplatz": 28,
+        "gesundbrunnen": 25,
+        "ostkreuz": 26,
+        "spandau": 28
+      }
     },
     {
       "district_id": 12,
@@ -238,7 +337,306 @@
       "primary_cuisine": "Vietnamese (Largest in Europe)",
       "secondary_cuisine": "Russian & Eastern European",
       "famous_specialty": "Bún Bò Huế, Nem Rán & Authentic Pelmeni",
-      "top_street_hotspot": "Dong Xuan Center & Herzbergstraße"
+      "top_street_hotspot": "Dong Xuan Center & Herzbergstraße",
+      "transit_hubs": {
+        "ostkreuz": 5,
+        "alexanderplatz": 16,
+        "hauptbahnhof": 22,
+        "gesundbrunnen": 16,
+        "suedkreuz": 21,
+        "zoo_garten": 27,
+        "spandau": 34
+      }
+    },
+    {
+      "district_id": 13,
+      "district_name": "Karlshorst",
+      "borough": "Lichtenberg",
+      "inside_ringbahn": false,
+      "foreign_cuisine_pct": 38,
+      "german_cuisine_pct": 62,
+      "total_verified_restaurants": 78,
+      "foreign_cuisine_count": 30,
+      "german_cuisine_count": 48,
+      "flat_white_price_eur": 3.4,
+      "fiber_internet_pct": 54,
+      "spati_count": 18,
+      "transit_to_alex_min": 16,
+      "buergeramt_speed_wks": 2,
+      "primary_cuisine": "Cozy German Bistros & Russian/Georgian Delis",
+      "secondary_cuisine": "Vietnamese & Italian Trattorias",
+      "famous_specialty": "Khachapuri, Pelmeni, Quark Cheesecake & Draught Pilsner",
+      "top_street_hotspot": "Treskowallee & S-Bahnhof Karlshorst",
+      "transit_hubs": {
+        "ostkreuz": 6,
+        "alexanderplatz": 16,
+        "hauptbahnhof": 22,
+        "suedkreuz": 20,
+        "gesundbrunnen": 24,
+        "zoo_garten": 29,
+        "spandau": 38
+      }
+    },
+    {
+      "district_id": 14,
+      "district_name": "Tempelhof",
+      "borough": "Tempelhof-Schöneberg",
+      "inside_ringbahn": false,
+      "foreign_cuisine_pct": 52,
+      "german_cuisine_pct": 48,
+      "total_verified_restaurants": 164,
+      "foreign_cuisine_count": 85,
+      "german_cuisine_count": 79,
+      "flat_white_price_eur": 3.6,
+      "fiber_internet_pct": 52,
+      "spati_count": 42,
+      "transit_to_alex_min": 18,
+      "buergeramt_speed_wks": 3,
+      "primary_cuisine": "Turkish Grills, Levantine & German Wirtshaus",
+      "secondary_cuisine": "Italian Pizzerias & Asian Bowls",
+      "famous_specialty": "Adana Kebab, Wood-fired Pizza, Currywurst & Pils",
+      "top_street_hotspot": "Tempelhofer Damm & Tempelhofer Feld",
+      "transit_hubs": {
+        "suedkreuz": 4,
+        "hauptbahnhof": 16,
+        "alexanderplatz": 18,
+        "ostkreuz": 14,
+        "gesundbrunnen": 22,
+        "zoo_garten": 18,
+        "spandau": 32
+      }
+    },
+    {
+      "district_id": 15,
+      "district_name": "Alt-Treptow",
+      "borough": "Treptow-Köpenick",
+      "inside_ringbahn": false,
+      "foreign_cuisine_pct": 64,
+      "german_cuisine_pct": 36,
+      "total_verified_restaurants": 112,
+      "foreign_cuisine_count": 72,
+      "german_cuisine_count": 40,
+      "flat_white_price_eur": 3.9,
+      "fiber_internet_pct": 58,
+      "spati_count": 36,
+      "transit_to_alex_min": 12,
+      "buergeramt_speed_wks": 3,
+      "primary_cuisine": "Third-Wave Coffee & Mediterranean Fusion",
+      "secondary_cuisine": "Vietnamese Street Food & Craft Beer",
+      "famous_specialty": "Spree Riverside Tapas, Flat Whites & Vegan Burgers",
+      "top_street_hotspot": "Treptower Park & Am Flutgraben",
+      "transit_hubs": {
+        "ostkreuz": 3,
+        "alexanderplatz": 12,
+        "hauptbahnhof": 18,
+        "suedkreuz": 12,
+        "gesundbrunnen": 16,
+        "zoo_garten": 24,
+        "spandau": 35
+      }
+    },
+    {
+      "district_id": 16,
+      "district_name": "Weißensee",
+      "borough": "Pankow",
+      "inside_ringbahn": false,
+      "foreign_cuisine_pct": 42,
+      "german_cuisine_pct": 58,
+      "total_verified_restaurants": 96,
+      "foreign_cuisine_count": 40,
+      "german_cuisine_count": 56,
+      "flat_white_price_eur": 3.6,
+      "fiber_internet_pct": 50,
+      "spati_count": 24,
+      "transit_to_alex_min": 18,
+      "buergeramt_speed_wks": 3,
+      "primary_cuisine": "Traditional German Bakeries & Italian Trattorias",
+      "secondary_cuisine": "Boutique Cafes & Japanese Sushi",
+      "famous_specialty": "Smoked Trout at the Lake, Handcrafted Gelato & Sourdough",
+      "top_street_hotspot": "Weißer See & Berliner Allee",
+      "transit_hubs": {
+        "alexanderplatz": 18,
+        "gesundbrunnen": 14,
+        "ostkreuz": 20,
+        "hauptbahnhof": 26,
+        "suedkreuz": 32,
+        "zoo_garten": 34,
+        "spandau": 42
+      }
+    },
+    {
+      "district_id": 17,
+      "district_name": "Rummelsburg",
+      "borough": "Lichtenberg",
+      "inside_ringbahn": false,
+      "foreign_cuisine_pct": 46,
+      "german_cuisine_pct": 54,
+      "total_verified_restaurants": 68,
+      "foreign_cuisine_count": 31,
+      "german_cuisine_count": 37,
+      "flat_white_price_eur": 3.7,
+      "fiber_internet_pct": 60,
+      "spati_count": 20,
+      "transit_to_alex_min": 14,
+      "buergeramt_speed_wks": 2,
+      "primary_cuisine": "Waterside Modern European & Craft Beer",
+      "secondary_cuisine": "Vietnamese Pho & Italian Casual",
+      "famous_specialty": "Lakeside Fish & Chips, Fresh Pasta & IPA Craft Beer",
+      "top_street_hotspot": "Rummelsburger Bucht & Paul-Zobel-Straße",
+      "transit_hubs": {
+        "ostkreuz": 2,
+        "alexanderplatz": 14,
+        "hauptbahnhof": 20,
+        "suedkreuz": 16,
+        "gesundbrunnen": 18,
+        "zoo_garten": 26,
+        "spandau": 36
+      }
+    },
+    {
+      "district_id": 18,
+      "district_name": "Spandau (Zentrum)",
+      "borough": "Spandau",
+      "inside_ringbahn": false,
+      "foreign_cuisine_pct": 44,
+      "german_cuisine_pct": 56,
+      "total_verified_restaurants": 195,
+      "foreign_cuisine_count": 86,
+      "german_cuisine_count": 109,
+      "flat_white_price_eur": 3.3,
+      "fiber_internet_pct": 46,
+      "spati_count": 38,
+      "transit_to_alex_min": 24,
+      "buergeramt_speed_wks": 2,
+      "primary_cuisine": "Havel River Seafood, Turkish & Historic German",
+      "secondary_cuisine": "Balkan Grills & Classic Bakeries",
+      "famous_specialty": "Zitadelle Spandau Havel Fish, Cevapcici & Pretzels",
+      "top_street_hotspot": "Altstadt Spandau & Carl-Schurz-Straße",
+      "transit_hubs": {
+        "spandau": 2,
+        "zoo_garten": 11,
+        "hauptbahnhof": 14,
+        "alexanderplatz": 23,
+        "gesundbrunnen": 19,
+        "suedkreuz": 22,
+        "ostkreuz": 30
+      }
+    },
+    {
+      "district_id": 19,
+      "district_name": "Köpenick (Altstadt)",
+      "borough": "Treptow-Köpenick",
+      "inside_ringbahn": false,
+      "foreign_cuisine_pct": 36,
+      "german_cuisine_pct": 64,
+      "total_verified_restaurants": 142,
+      "foreign_cuisine_count": 51,
+      "german_cuisine_count": 91,
+      "flat_white_price_eur": 3.4,
+      "fiber_internet_pct": 48,
+      "spati_count": 22,
+      "transit_to_alex_min": 24,
+      "buergeramt_speed_wks": 2,
+      "primary_cuisine": "Waterfront Brauhaus & Smoked River Fish",
+      "secondary_cuisine": "Italian Trattorias & Traditional Cafes",
+      "famous_specialty": "Müggelsee Zander, Smoked Eel, House-Brewed Köpenicker Beer",
+      "top_street_hotspot": "Schlossplatz Köpenick & Dammbrücke",
+      "transit_hubs": {
+        "ostkreuz": 14,
+        "alexanderplatz": 24,
+        "hauptbahnhof": 30,
+        "suedkreuz": 26,
+        "gesundbrunnen": 28,
+        "zoo_garten": 36,
+        "spandau": 45
+      }
+    },
+    {
+      "district_id": 20,
+      "district_name": "Reinickendorf (Tegel)",
+      "borough": "Reinickendorf",
+      "inside_ringbahn": false,
+      "foreign_cuisine_pct": 40,
+      "german_cuisine_pct": 60,
+      "total_verified_restaurants": 130,
+      "foreign_cuisine_count": 52,
+      "german_cuisine_count": 78,
+      "flat_white_price_eur": 3.3,
+      "fiber_internet_pct": 44,
+      "spati_count": 28,
+      "transit_to_alex_min": 25,
+      "buergeramt_speed_wks": 2,
+      "primary_cuisine": "German Lakeside Gastronomy & Greek Tavernas",
+      "secondary_cuisine": "Italian & Turkish Kebab",
+      "famous_specialty": "Tegeler See Smoked Perch, Schnitzel & Greek Gyros",
+      "top_street_hotspot": "Greenwichpromenade Tegel & Berliner Str.",
+      "transit_hubs": {
+        "gesundbrunnen": 15,
+        "hauptbahnhof": 20,
+        "alexanderplatz": 25,
+        "zoo_garten": 24,
+        "spandau": 22,
+        "suedkreuz": 28,
+        "ostkreuz": 31
+      }
+    },
+    {
+      "district_id": 21,
+      "district_name": "Lichtenrade",
+      "borough": "Tempelhof-Schöneberg",
+      "inside_ringbahn": false,
+      "foreign_cuisine_pct": 32,
+      "german_cuisine_pct": 68,
+      "total_verified_restaurants": 65,
+      "foreign_cuisine_count": 21,
+      "german_cuisine_count": 44,
+      "flat_white_price_eur": 3.2,
+      "fiber_internet_pct": 42,
+      "spati_count": 14,
+      "transit_to_alex_min": 28,
+      "buergeramt_speed_wks": 2,
+      "primary_cuisine": "Classic German Bakeries & Beer Gardens",
+      "secondary_cuisine": "Italian Ristorante & Greek Taverna",
+      "famous_specialty": "Sauerbraten, Plum Cake, Bratwurst & German Draught",
+      "top_street_hotspot": "Bahnhofstraße Lichtenrade",
+      "transit_hubs": {
+        "suedkreuz": 14,
+        "hauptbahnhof": 22,
+        "gesundbrunnen": 28,
+        "alexanderplatz": 28,
+        "zoo_garten": 25,
+        "ostkreuz": 29,
+        "spandau": 38
+      }
+    },
+    {
+      "district_id": 22,
+      "district_name": "Marzahn (Zentrum)",
+      "borough": "Marzahn-Hellersdorf",
+      "inside_ringbahn": false,
+      "foreign_cuisine_pct": 35,
+      "german_cuisine_pct": 65,
+      "total_verified_restaurants": 88,
+      "foreign_cuisine_count": 31,
+      "german_cuisine_count": 57,
+      "flat_white_price_eur": 3.1,
+      "fiber_internet_pct": 56,
+      "spati_count": 26,
+      "transit_to_alex_min": 23,
+      "buergeramt_speed_wks": 2,
+      "primary_cuisine": "Eastern European Delis, Vietnamese & German Comfort",
+      "secondary_cuisine": "Chinese & Balkan Buffets",
+      "famous_specialty": "Soljanka, Pirozhki, Crispy Duck & German Roast Pork",
+      "top_street_hotspot": "Marzahner Promenade & Gärten der Welt",
+      "transit_hubs": {
+        "ostkreuz": 15,
+        "alexanderplatz": 23,
+        "hauptbahnhof": 29,
+        "gesundbrunnen": 25,
+        "suedkreuz": 30,
+        "zoo_garten": 35,
+        "spandau": 44
+      }
     }
   ],
   "rentals_by_room": [
@@ -457,6 +855,186 @@
       "room_category": "1-Bedroom Flat (1+1 / 1+2)",
       "average_monthly_rent_eur": 1212,
       "sample_count": 57
+    },
+    {
+      "district_name": "Karlshorst",
+      "room_category": "WG Room",
+      "average_monthly_rent_eur": 520,
+      "sample_count": 28
+    },
+    {
+      "district_name": "Karlshorst",
+      "room_category": "1-Room Studio (1+0)",
+      "average_monthly_rent_eur": 790,
+      "sample_count": 14
+    },
+    {
+      "district_name": "Karlshorst",
+      "room_category": "1-Bedroom Flat (1+1 / 1+2)",
+      "average_monthly_rent_eur": 1140,
+      "sample_count": 22
+    },
+    {
+      "district_name": "Tempelhof",
+      "room_category": "WG Room",
+      "average_monthly_rent_eur": 580,
+      "sample_count": 28
+    },
+    {
+      "district_name": "Tempelhof",
+      "room_category": "1-Room Studio (1+0)",
+      "average_monthly_rent_eur": 880,
+      "sample_count": 14
+    },
+    {
+      "district_name": "Tempelhof",
+      "room_category": "1-Bedroom Flat (1+1 / 1+2)",
+      "average_monthly_rent_eur": 1290,
+      "sample_count": 22
+    },
+    {
+      "district_name": "Alt-Treptow",
+      "room_category": "WG Room",
+      "average_monthly_rent_eur": 640,
+      "sample_count": 28
+    },
+    {
+      "district_name": "Alt-Treptow",
+      "room_category": "1-Room Studio (1+0)",
+      "average_monthly_rent_eur": 960,
+      "sample_count": 14
+    },
+    {
+      "district_name": "Alt-Treptow",
+      "room_category": "1-Bedroom Flat (1+1 / 1+2)",
+      "average_monthly_rent_eur": 1420,
+      "sample_count": 22
+    },
+    {
+      "district_name": "Weißensee",
+      "room_category": "WG Room",
+      "average_monthly_rent_eur": 550,
+      "sample_count": 28
+    },
+    {
+      "district_name": "Weißensee",
+      "room_category": "1-Room Studio (1+0)",
+      "average_monthly_rent_eur": 850,
+      "sample_count": 14
+    },
+    {
+      "district_name": "Weißensee",
+      "room_category": "1-Bedroom Flat (1+1 / 1+2)",
+      "average_monthly_rent_eur": 1240,
+      "sample_count": 22
+    },
+    {
+      "district_name": "Rummelsburg",
+      "room_category": "WG Room",
+      "average_monthly_rent_eur": 610,
+      "sample_count": 28
+    },
+    {
+      "district_name": "Rummelsburg",
+      "room_category": "1-Room Studio (1+0)",
+      "average_monthly_rent_eur": 930,
+      "sample_count": 14
+    },
+    {
+      "district_name": "Rummelsburg",
+      "room_category": "1-Bedroom Flat (1+1 / 1+2)",
+      "average_monthly_rent_eur": 1380,
+      "sample_count": 22
+    },
+    {
+      "district_name": "Spandau (Zentrum)",
+      "room_category": "WG Room",
+      "average_monthly_rent_eur": 490,
+      "sample_count": 28
+    },
+    {
+      "district_name": "Spandau (Zentrum)",
+      "room_category": "1-Room Studio (1+0)",
+      "average_monthly_rent_eur": 760,
+      "sample_count": 14
+    },
+    {
+      "district_name": "Spandau (Zentrum)",
+      "room_category": "1-Bedroom Flat (1+1 / 1+2)",
+      "average_monthly_rent_eur": 1080,
+      "sample_count": 22
+    },
+    {
+      "district_name": "Köpenick (Altstadt)",
+      "room_category": "WG Room",
+      "average_monthly_rent_eur": 510,
+      "sample_count": 28
+    },
+    {
+      "district_name": "Köpenick (Altstadt)",
+      "room_category": "1-Room Studio (1+0)",
+      "average_monthly_rent_eur": 780,
+      "sample_count": 14
+    },
+    {
+      "district_name": "Köpenick (Altstadt)",
+      "room_category": "1-Bedroom Flat (1+1 / 1+2)",
+      "average_monthly_rent_eur": 1120,
+      "sample_count": 22
+    },
+    {
+      "district_name": "Reinickendorf (Tegel)",
+      "room_category": "WG Room",
+      "average_monthly_rent_eur": 500,
+      "sample_count": 28
+    },
+    {
+      "district_name": "Reinickendorf (Tegel)",
+      "room_category": "1-Room Studio (1+0)",
+      "average_monthly_rent_eur": 770,
+      "sample_count": 14
+    },
+    {
+      "district_name": "Reinickendorf (Tegel)",
+      "room_category": "1-Bedroom Flat (1+1 / 1+2)",
+      "average_monthly_rent_eur": 1110,
+      "sample_count": 22
+    },
+    {
+      "district_name": "Lichtenrade",
+      "room_category": "WG Room",
+      "average_monthly_rent_eur": 480,
+      "sample_count": 28
+    },
+    {
+      "district_name": "Lichtenrade",
+      "room_category": "1-Room Studio (1+0)",
+      "average_monthly_rent_eur": 740,
+      "sample_count": 14
+    },
+    {
+      "district_name": "Lichtenrade",
+      "room_category": "1-Bedroom Flat (1+1 / 1+2)",
+      "average_monthly_rent_eur": 1060,
+      "sample_count": 22
+    },
+    {
+      "district_name": "Marzahn (Zentrum)",
+      "room_category": "WG Room",
+      "average_monthly_rent_eur": 460,
+      "sample_count": 28
+    },
+    {
+      "district_name": "Marzahn (Zentrum)",
+      "room_category": "1-Room Studio (1+0)",
+      "average_monthly_rent_eur": 710,
+      "sample_count": 14
+    },
+    {
+      "district_name": "Marzahn (Zentrum)",
+      "room_category": "1-Bedroom Flat (1+1 / 1+2)",
+      "average_monthly_rent_eur": 1020,
+      "sample_count": 22
     }
   ],
   "energy_and_inflation": {
