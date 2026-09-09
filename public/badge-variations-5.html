@@ -1,0 +1,417 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BerlinBase — High Resolution Badge Variations</title>
+  <style>
+    body {
+      background: #0B0C12;
+      color: #F8F9FA;
+      font-family: system-ui, -apple-system, sans-serif;
+      padding: 30px;
+      margin: 0;
+    }
+    h1 { font-size: 24px; color: #F0D722; margin-bottom: 6px; }
+    p { color: #9CA3AF; margin-bottom: 24px; font-size: 14px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 22px;
+      margin-bottom: 40px;
+    }
+    .card {
+      background: #14151F;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: all 0.2s;
+    }
+    .card:hover {
+      border-color: #F0D722;
+      transform: translateY(-4px);
+    }
+    .badge-box {
+      width: 140px;
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 24px;
+      background: #12131C;
+      border: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 14px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+    .title { font-weight: bold; font-size: 14px; color: #fff; text-align: center; }
+    .sub { font-size: 12px; color: #9CA3AF; margin-top: 4px; text-align: center; line-height: 1.4; }
+  </style>
+</head>
+<body>
+  <h1>BerlinBase — İki Kutu İçin 5'er Yeni İnce Ayar Varyasyonu</h1>
+  <p>Kutu 1'de evin en az %40'ı net görünüyor (çatı, katlar, pencereler ve kapı açıkça seçiliyor). Kutu 2'de Varyasyon 8 tarzı: Lüks Leica rangefinder gövde, mekanik lens halkaları, retro deri doku ve üstünde dinlenen polarize gözlük detayları.</p>
+
+  <h2 style="color: #F0D722; font-size: 18px;">Kutu 1: BER Bileti & Net Görünen Ev (%40+ Görünürlük)</h2>
+  <div class="grid" id="box1Grid"></div>
+
+  <h2 style="color: #22D3EE; font-size: 18px;">Kutu 2: Varyasyon 8 — Leica Tarzı Rangefinder & Polarize Gözlük</h2>
+  <div class="grid" id="box2Grid"></div>
+
+  <script>
+    // BOX 1: 5 Variations of BER Ticket + Highly Visible Altbau House (%40-50% visible)
+    const box1Items = [
+      {
+        id: 'HOUSE-1',
+        title: 'Varyasyon 1.1: Altın Çatılı Altbau & Alt Bilet',
+        desc: 'Ev arka-üstte yükseliyor (çatı, 4 pencere ve katlar %45 net görünür), bilet alt ön kısımda yatay duruyor',
+        svg: `
+          <svg viewBox="0 0 120 120" width="115" height="115">
+            <!-- Altbau House Rising High in Background (%45+ fully visible) -->
+            <!-- Roof & Chimney -->
+            <polygon points="60,10 98,34 22,34" fill="#F0D722" />
+            <rect x="76" y="8" width="6" height="14" fill="#B45309" />
+            <!-- Main Brick Facade -->
+            <rect x="26" y="34" width="68" height="58" fill="#1C1E2B" stroke="#F0D722" stroke-width="1.5" />
+            <!-- Top Floor Windows (4 glowing amber windows) -->
+            <rect x="34" y="40" width="10" height="12" rx="2" fill="#F0D722" />
+            <rect x="49" y="40" width="10" height="12" rx="2" fill="#F0D722" />
+            <rect x="64" y="40" width="10" height="12" rx="2" fill="#F0D722" />
+            <rect x="78" y="40" width="10" height="12" rx="2" fill="#F0D722" />
+            <!-- Mid Floor Windows (visible above ticket) -->
+            <rect x="34" y="58" width="10" height="10" rx="1.5" fill="#FBBF24" opacity="0.8" />
+            <rect x="78" y="58" width="10" height="10" rx="1.5" fill="#FBBF24" opacity="0.8" />
+
+            <!-- Foreground Floating Boarding Pass (BER Ticket) -->
+            <g transform="rotate(-6 60 85)">
+              <rect x="14" y="66" width="92" height="42" rx="6" fill="#0B0C12" stroke="#FFFFFF" stroke-width="1.8" />
+              <!-- Cutout notches -->
+              <circle cx="14" cy="87" r="4.5" fill="#12131C" />
+              <circle cx="106" cy="87" r="4.5" fill="#12131C" />
+              <line x1="75" y1="68" x2="75" y2="106" stroke="#4B5563" stroke-dasharray="3,2" stroke-width="1.2" />
+              <!-- Text -->
+              <text x="24" y="86" fill="#F0D722" font-size="16" font-weight="900" font-family="sans-serif">BER</text>
+              <text x="25" y="98" fill="#E2E8F0" font-size="7.5" font-weight="800" letter-spacing="1">BERLIN</text>
+              <!-- Minimal Barcode -->
+              <line x1="82" y1="74" x2="82" y2="100" stroke="#FFFFFF" stroke-width="1.8" />
+              <line x1="86" y1="74" x2="86" y2="100" stroke="#FFFFFF" stroke-width="2.8" />
+              <line x1="91" y1="74" x2="91" y2="100" stroke="#FFFFFF" stroke-width="1.2" />
+              <line x1="96" y1="74" x2="96" y2="100" stroke="#FFFFFF" stroke-width="2.2" />
+            </g>
+          </svg>
+        `
+      },
+      {
+        id: 'HOUSE-2',
+        title: 'Varyasyon 1.2: İkiz Yan Yana Denge',
+        desc: 'Sol tarafta 3 katlı komple Berlin evi (%50 görünür), sağ ön tarafta dikey açılı BER bileti',
+        svg: `
+          <svg viewBox="0 0 120 120" width="115" height="115">
+            <!-- House on Left Side (Fully unblocked) -->
+            <polygon points="42,16 68,36 16,36" fill="#F59E0B" />
+            <rect x="20" y="36" width="44" height="66" fill="#161824" stroke="#F0D722" stroke-width="1.6" />
+            <!-- Windows in pair -->
+            <rect x="26" y="44" width="9" height="12" rx="1.5" fill="#F0D722" />
+            <rect x="44" y="44" width="9" height="12" rx="1.5" fill="#F0D722" />
+            <rect x="26" y="62" width="9" height="12" rx="1.5" fill="#FDE047" />
+            <rect x="44" y="62" width="9" height="12" rx="1.5" fill="#FDE047" />
+            <rect x="33" y="82" width="12" height="20" rx="1" fill="#B45309" />
+
+            <!-- Angled Boarding Pass on Right Side -->
+            <g transform="rotate(12 80 70)">
+              <rect x="45" y="46" width="62" height="46" rx="6" fill="#0B0C12" stroke="#FFFFFF" stroke-width="1.8" />
+              <circle cx="45" cy="69" r="4" fill="#12131C" />
+              <circle cx="107" cy="69" r="4" fill="#12131C" />
+              <text x="56" y="67" fill="#F0D722" font-size="14" font-weight="900" font-family="sans-serif">BER</text>
+              <text x="57" y="78" fill="#FFFFFF" font-size="7" font-weight="800">BERLIN</text>
+              <line x1="88" y1="52" x2="88" y2="86" stroke="#4B5563" stroke-dasharray="2,2" stroke-width="1" />
+              <line x1="94" y1="56" x2="94" y2="82" stroke="#FFFFFF" stroke-width="1.5" />
+              <line x1="98" y1="56" x2="98" y2="82" stroke="#FFFFFF" stroke-width="2.5" />
+            </g>
+          </svg>
+        `
+      },
+      {
+        id: 'HOUSE-3',
+        title: 'Varyasyon 1.3: Şeffaf Cam Bilet & Arkada Tam Ev',
+        desc: 'Bilet yarı saydam buzlu cam olduğu için evin pencereleri ve tuğla hatları biletin arkasından da seçiliyor',
+        svg: `
+          <svg viewBox="0 0 120 120" width="115" height="115">
+            <!-- Full Altbau House -->
+            <polygon points="60,12 102,40 18,40" fill="#1E202E" stroke="#F0D722" stroke-width="2" />
+            <rect x="24" y="40" width="72" height="64" fill="#141624" stroke="#F0D722" stroke-width="1.5" />
+            <!-- 6 Glowing Windows -->
+            <rect x="32" y="46" width="11" height="14" rx="2" fill="#F0D722" />
+            <rect x="54" y="46" width="11" height="14" rx="2" fill="#F0D722" />
+            <rect x="76" y="46" width="11" height="14" rx="2" fill="#F0D722" />
+            <rect x="32" y="68" width="11" height="14" rx="2" fill="#FDE047" opacity="0.75" />
+            <rect x="54" y="68" width="11" height="14" rx="2" fill="#FDE047" opacity="0.75" />
+            <rect x="76" y="68" width="11" height="14" rx="2" fill="#FDE047" opacity="0.75" />
+
+            <!-- Translucent Frosted Glass Boarding Pass -->
+            <rect x="15" y="70" width="90" height="40" rx="7" fill="#0B0C12" fill-opacity="0.82" stroke="#FFFFFF" stroke-width="1.6" backdrop-filter="blur(4px)" />
+            <circle cx="15" cy="90" r="4" fill="#12131C" />
+            <circle cx="105" cy="90" r="4" fill="#12131C" />
+            <text x="26" y="89" fill="#F0D722" font-size="15" font-weight="900" font-family="sans-serif">BER</text>
+            <text x="27" y="101" fill="#FFFFFF" font-size="7" font-weight="800">DESTINATION: BERLIN</text>
+            <line x1="82" y1="74" x2="82" y2="106" stroke="#FFFFFF" stroke-width="2" />
+            <line x1="87" y1="74" x2="87" y2="106" stroke="#FFFFFF" stroke-width="1" />
+            <line x1="92" y1="74" x2="92" y2="106" stroke="#FFFFFF" stroke-width="2.5" />
+          </svg>
+        `
+      },
+      {
+        id: 'HOUSE-4',
+        title: 'Varyasyon 1.4: Çapraz Köşe Katmanlama',
+        desc: 'Ev sol yukarıdan heybetli iniyor, bilet sağ alttan çapraz yükseliyor; evin çatısı ve üst katı tamamen açıkta',
+        svg: `
+          <svg viewBox="0 0 120 120" width="115" height="115">
+            <!-- House Top Half Fully Clear -->
+            <polygon points="50,14 88,38 16,38" fill="#F0D722" />
+            <rect x="22" y="38" width="60" height="60" fill="#181A28" stroke="#F0D722" stroke-width="1.5" />
+            <rect x="30" y="45" width="12" height="14" rx="2" fill="#FDE047" />
+            <rect x="52" y="45" width="12" height="14" rx="2" fill="#FDE047" />
+            <rect x="30" y="68" width="12" height="14" rx="2" fill="#FDE047" opacity="0.6" />
+
+            <!-- Angled Modern BER Pass -->
+            <g transform="rotate(-12 70 85)">
+              <rect x="30" y="62" width="78" height="42" rx="6" fill="#0A0B10" stroke="#FFFFFF" stroke-width="1.8" />
+              <circle cx="30" cy="83" r="4" fill="#12131C" />
+              <circle cx="108" cy="83" r="4" fill="#12131C" />
+              <text x="42" y="82" fill="#F0D722" font-size="15" font-weight="900" font-family="sans-serif">BER</text>
+              <text x="43" y="93" fill="#E2E8F0" font-size="7" font-weight="700">BERLIN</text>
+              <line x1="84" y1="65" x2="84" y2="101" stroke="#4B5563" stroke-dasharray="2,2" stroke-width="1" />
+              <line x1="91" y1="70" x2="91" y2="95" stroke="#FFFFFF" stroke-width="2" />
+              <line x1="96" y1="70" x2="96" y2="95" stroke="#FFFFFF" stroke-width="1" />
+              <line x1="100" y1="70" x2="100" y2="95" stroke="#FFFFFF" stroke-width="2.5" />
+            </g>
+          </svg>
+        `
+      },
+      {
+        id: 'HOUSE-5',
+        title: 'Varyasyon 1.5: Mimari Altbau Kemer & Kompakt Bilet',
+        desc: 'Berlin klasik kemerli tavan penceresi ve çatısı net görünür, bilet zarifçe evin ön basamağında durur',
+        svg: `
+          <svg viewBox="0 0 120 120" width="115" height="115">
+            <!-- Arch & Gable House Roof -->
+            <path d="M 22 40 Q 60 10 98 40 L 98 96 L 22 96 Z" fill="#151724" stroke="#F0D722" stroke-width="1.8" />
+            <circle cx="60" cy="32" r="8" fill="#F0D722" />
+            <!-- 2 Large Victorian Windows -->
+            <rect x="32" y="46" width="14" height="18" rx="2" fill="#F0D722" opacity="0.9" />
+            <rect x="74" y="46" width="14" height="18" rx="2" fill="#F0D722" opacity="0.9" />
+
+            <!-- Clean Floating Boarding Pass (BER) -->
+            <rect x="18" y="74" width="84" height="36" rx="6" fill="#0B0C12" stroke="#FFFFFF" stroke-width="1.8" />
+            <circle cx="18" cy="92" r="4" fill="#12131C" />
+            <circle cx="102" cy="92" r="4" fill="#12131C" />
+            <text x="28" y="92" fill="#F0D722" font-size="14" font-weight="900" font-family="sans-serif">BER</text>
+            <text x="29" y="102" fill="#FFFFFF" font-size="6.5" font-weight="700">ONE-WAY • BERLIN</text>
+            <line x1="74" y1="77" x2="74" y2="107" stroke="#4B5563" stroke-dasharray="2,2" stroke-width="1" />
+            <line x1="82" y1="80" x2="82" y2="104" stroke="#FFFFFF" stroke-width="2" />
+            <line x1="86" y1="80" x2="86" y2="104" stroke="#FFFFFF" stroke-width="1" />
+            <line x1="90" y1="80" x2="90" y2="104" stroke="#FFFFFF" stroke-width="2.5" />
+          </svg>
+        `
+      }
+    ];
+
+    // BOX 2: 5 Variations of Variation 8 (Leica Rangefinder + Polarized Sunglasses)
+    const box2Items = [
+      {
+        id: 'LEICA-1',
+        title: 'Varyasyon 2.1: Klasik Leica Rangefinder & Üstte Polarize Gözlük',
+        desc: 'Varyasyon 8 birebir: Gümüş & siyah deri Leica gövde, mekanik lens kadranı, üstünde dinlenen yuvarlak polarize gözlük',
+        svg: `
+          <svg viewBox="0 0 120 120" width="115" height="115">
+            <!-- Leica Classic Rangefinder Camera Body -->
+            <!-- Top Silver Plate -->
+            <rect x="20" y="44" width="80" height="14" rx="2" fill="#CBD5E1" stroke="#94A3B8" stroke-width="1" />
+            <!-- Dials & Shutter button -->
+            <rect x="28" y="39" width="10" height="5" rx="1" fill="#94A3B8" />
+            <rect x="76" y="38" width="12" height="6" rx="1" fill="#64748B" />
+            <circle cx="70" cy="41" r="3" fill="#E2E8F0" />
+            <!-- Viewfinder window -->
+            <rect x="84" y="48" width="8" height="6" fill="#38BDF8" opacity="0.85" />
+            <circle cx="28" cy="51" r="2" fill="#E30613" /> <!-- Iconic Red Leica Dot -->
+
+            <!-- Camera Lower Leatherette Body (Black cross-hatch leather) -->
+            <rect x="20" y="58" width="80" height="38" rx="3" fill="#111827" stroke="#475569" stroke-width="1" />
+            <!-- Baseplate Silver -->
+            <rect x="20" y="92" width="80" height="4" rx="1" fill="#94A3B8" />
+
+            <!-- Circular Leica Summicron Lens & Aperture Rings -->
+            <circle cx="56" cy="74" r="19" fill="#1E293B" stroke="#94A3B8" stroke-width="2" />
+            <circle cx="56" cy="74" r="15" fill="#0F172A" stroke="#38BDF8" stroke-width="1.5" />
+            <circle cx="56" cy="74" r="10" fill="#020617" />
+            <!-- Cyan Light Reflection in Lens Glass -->
+            <path d="M 48 68 Q 56 64 64 68" stroke="#38BDF8" stroke-width="2" fill="none" opacity="0.8" />
+
+            <!-- Polarized Sunglasses Resting Casually on Top / Lens -->
+            <g transform="rotate(-12 55 35)">
+              <!-- Left polarized circular lens -->
+              <circle cx="40" cy="36" r="11" fill="#0F172A" fill-opacity="0.85" stroke="#D97706" stroke-width="1.8" />
+              <line x1="33" y1="32" x2="45" y2="32" stroke="#38BDF8" stroke-width="1" opacity="0.75" />
+              <!-- Right polarized lens -->
+              <circle cx="68" cy="36" r="11" fill="#0F172A" fill-opacity="0.85" stroke="#D97706" stroke-width="1.8" />
+              <line x1="61" y1="32" x2="73" y2="32" stroke="#38BDF8" stroke-width="1" opacity="0.75" />
+              <!-- Tortoiseshell / Gold Bridge -->
+              <path d="M 51 34 Q 54 31 57 34" stroke="#F59E0B" stroke-width="2" fill="none" />
+              <!-- Folded arms -->
+              <line x1="29" y1="34" x2="20" y2="28" stroke="#D97706" stroke-width="2" />
+              <line x1="79" y1="34" x2="88" y2="28" stroke="#D97706" stroke-width="2" />
+            </g>
+          </svg>
+        `
+      },
+      {
+        id: 'LEICA-2',
+        title: 'Varyasyon 2.2: Mat Siyah Leica & Cyan Polarize Lens',
+        desc: 'Mat antrasit gövde, lens üzerinde yansıyan Berlin Spree mavisi polarize filtre ve kemik gözlük',
+        svg: `
+          <svg viewBox="0 0 120 120" width="115" height="115">
+            <!-- Full Matte Black Stealth Leica -->
+            <rect x="22" y="46" width="76" height="13" rx="2" fill="#1F2937" stroke="#374151" stroke-width="1" />
+            <rect x="74" y="41" width="10" height="5" fill="#4B5563" />
+            <rect x="22" y="59" width="76" height="38" rx="2" fill="#090A0F" stroke="#374151" stroke-width="1" />
+            <circle cx="30" cy="53" r="2.5" fill="#E30613" />
+
+            <!-- Large 50mm Lens in Center -->
+            <circle cx="60" cy="74" r="18" fill="#111827" stroke="#22D3EE" stroke-width="1.6" />
+            <circle cx="60" cy="74" r="13" fill="#030712" stroke="#67E8F9" stroke-width="1" />
+            <circle cx="60" cy="74" r="7" fill="#000000" />
+            <circle cx="63" cy="71" r="2" fill="#FFFFFF" opacity="0.9" />
+
+            <!-- Polarized Sunglasses Across the Top Edge -->
+            <g transform="translate(0, 5)">
+              <circle cx="44" cy="36" r="12" fill="#08090F" fill-opacity="0.9" stroke="#E2E8F0" stroke-width="2" />
+              <circle cx="76" cy="36" r="12" fill="#08090F" fill-opacity="0.9" stroke="#E2E8F0" stroke-width="2" />
+              <path d="M 56 35 Q 60 32 64 35" stroke="#FFFFFF" stroke-width="2" fill="none" />
+              <!-- Polarized blue sheen -->
+              <line x1="36" y1="33" x2="50" y2="33" stroke="#22D3EE" stroke-width="1.5" opacity="0.8" />
+              <line x1="68" y1="33" x2="82" y2="33" stroke="#22D3EE" stroke-width="1.5" opacity="0.8" />
+            </g>
+          </svg>
+        `
+      },
+      {
+        id: 'LEICA-3',
+        title: 'Varyasyon 2.3: Leica M3 Vintage & Damla Polarize Gözlük',
+        desc: 'Klasik gümüş M3 mekanik silüeti, lensinin önüne çapraz inen retro Aviator/Damla polarize gözlük',
+        svg: `
+          <svg viewBox="0 0 120 120" width="115" height="115">
+            <!-- Classic Silver / Chrome Plate -->
+            <rect x="20" y="44" width="80" height="14" rx="2" fill="#E2E8F0" stroke="#CBD5E1" stroke-width="1" />
+            <circle cx="72" cy="40" r="3" fill="#94A3B8" />
+            <rect x="80" y="38" width="10" height="6" fill="#64748B" />
+            <rect x="28" y="48" width="8" height="6" rx="1" fill="#38BDF8" opacity="0.8" />
+            
+            <!-- Black Textured Body -->
+            <rect x="20" y="58" width="80" height="38" rx="2" fill="#14161F" stroke="#475569" stroke-width="1" />
+            <!-- Lens Barrel -->
+            <circle cx="56" cy="74" r="18" fill="#1E202C" stroke="#E2E8F0" stroke-width="2" />
+            <circle cx="56" cy="74" r="13" fill="#0B0C12" stroke="#22D3EE" stroke-width="1.5" />
+
+            <!-- Teardrop Aviator Polarized Sunglasses in Front of Lens -->
+            <g transform="rotate(-15 65 65)">
+              <path d="M 36 50 C 36 44 48 44 52 50 C 54 58 48 68 42 68 C 36 68 36 58 36 50 Z" fill="#090A10" fill-opacity="0.88" stroke="#F59E0B" stroke-width="1.8" />
+              <path d="M 64 50 C 64 44 76 44 80 50 C 82 58 76 68 70 68 C 64 68 64 58 64 50 Z" fill="#090A10" fill-opacity="0.88" stroke="#F59E0B" stroke-width="1.8" />
+              <!-- Double Gold Bridge -->
+              <line x1="51" y1="48" x2="65" y2="48" stroke="#F59E0B" stroke-width="1.5" />
+              <line x1="51" y1="52" x2="65" y2="52" stroke="#F59E0B" stroke-width="1.5" />
+              <!-- Glare -->
+              <line x1="40" y1="49" x2="48" y2="49" stroke="#38BDF8" stroke-width="1.2" opacity="0.8" />
+              <line x1="68" y1="49" x2="76" y2="49" stroke="#38BDF8" stroke-width="1.2" opacity="0.8" />
+            </g>
+          </svg>
+        `
+      },
+      {
+        id: 'LEICA-4',
+        title: 'Varyasyon 2.4: İzometrik 3D Leica & Spree Gözlüğü',
+        desc: 'Varyasyon 8\'deki açılı perspektif: Kamera hafif izometrik açıda, üst kenarında eğik duran retro gözlük',
+        svg: `
+          <svg viewBox="0 0 120 120" width="115" height="115">
+            <!-- Isometric Camera Body -->
+            <g transform="rotate(8 60 70)">
+              <!-- Body -->
+              <rect x="22" y="44" width="76" height="50" rx="4" fill="#181A24" stroke="#CBD5E1" stroke-width="1.5" />
+              <rect x="22" y="44" width="76" height="14" fill="#94A3B8" />
+              <circle cx="84" cy="51" r="2.5" fill="#E30613" />
+              <!-- Lens projecting forward -->
+              <ellipse cx="56" cy="72" rx="18" ry="17" fill="#0B0C12" stroke="#CBD5E1" stroke-width="2" />
+              <ellipse cx="56" cy="72" rx="13" ry="12" fill="#1E293B" stroke="#38BDF8" stroke-width="1.5" />
+              <ellipse cx="56" cy="72" rx="8" ry="7" fill="#030712" />
+              <circle cx="58" cy="70" r="2" fill="#FFFFFF" />
+            </g>
+
+            <!-- Polarized Sunglasses perched on top corner -->
+            <g transform="rotate(-18 50 35)">
+              <circle cx="36" cy="38" r="11" fill="#0F172A" stroke="#D97706" stroke-width="1.8" />
+              <circle cx="62" cy="38" r="11" fill="#0F172A" stroke="#D97706" stroke-width="1.8" />
+              <path d="M 47 37 Q 49 34 51 37" stroke="#F59E0B" stroke-width="1.8" fill="none" />
+              <line x1="30" y1="34" x2="42" y2="34" stroke="#22D3EE" stroke-width="1.2" opacity="0.85" />
+              <line x1="56" y1="34" x2="68" y2="34" stroke="#22D3EE" stroke-width="1.2" opacity="0.85" />
+            </g>
+          </svg>
+        `
+      },
+      {
+        id: 'LEICA-5',
+        title: 'Varyasyon 2.5: Minimalist Retro Rangefinder & Kemik Çerçeve',
+        desc: 'Çok temiz hatlar, lensinde TV Kulesi yansıması olan Leica ve üzerinde asılı güneş gözlüğü',
+        svg: `
+          <svg viewBox="0 0 120 120" width="115" height="115">
+            <!-- Sleek Modern Rangefinder -->
+            <rect x="20" y="44" width="80" height="52" rx="4" fill="#0F111A" stroke="#FFFFFF" stroke-width="1.5" />
+            <rect x="20" y="44" width="80" height="13" fill="#334155" />
+            <circle cx="86" cy="50" r="2" fill="#E30613" />
+            <rect x="26" y="47" width="8" height="6" fill="#38BDF8" />
+
+            <!-- Lens with TV Tower Spire Reflection inside! -->
+            <circle cx="56" cy="74" r="18" fill="#1E293B" stroke="#FFFFFF" stroke-width="2" />
+            <circle cx="56" cy="74" r="14" fill="#0A0B12" stroke="#22D3EE" stroke-width="1" />
+            <!-- Miniature TV Tower in Lens Reflection -->
+            <line x1="56" y1="64" x2="56" y2="82" stroke="#F0D722" stroke-width="1.2" />
+            <circle cx="56" cy="71" r="3" fill="#F0D722" />
+
+            <!-- Tortoiseshell Sunglasses resting across top plate -->
+            <g transform="rotate(-6 55 38)">
+              <circle cx="38" cy="38" r="11" fill="#08090E" fill-opacity="0.85" stroke="#B45309" stroke-width="2" />
+              <circle cx="66" cy="38" r="11" fill="#08090E" fill-opacity="0.85" stroke="#B45309" stroke-width="2" />
+              <path d="M 49 37 Q 52 34 55 37" stroke="#F59E0B" stroke-width="2" fill="none" />
+              <line x1="31" y1="34" x2="44" y2="34" stroke="#38BDF8" stroke-width="1.2" opacity="0.8" />
+              <line x1="60" y1="34" x2="72" y2="34" stroke="#38BDF8" stroke-width="1.2" opacity="0.8" />
+            </g>
+          </svg>
+        `
+      }
+    ];
+
+    const b1 = document.getElementById('box1Grid');
+    box1Items.forEach(item => {
+      const c = document.createElement('div');
+      c.className = 'card';
+      c.innerHTML = `
+        <div class="badge-box">${item.svg}</div>
+        <div class="title">${item.title}</div>
+        <div class="sub">${item.desc}</div>
+      `;
+      b1.appendChild(c);
+    });
+
+    const b2 = document.getElementById('box2Grid');
+    box2Items.forEach(item => {
+      const c = document.createElement('div');
+      c.className = 'card';
+      c.innerHTML = `
+        <div class="badge-box">${item.svg}</div>
+        <div class="title">${item.title}</div>
+        <div class="sub">${item.desc}</div>
+      `;
+      b2.appendChild(c);
+    });
+  </script>
+</body>
+</html>

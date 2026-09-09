@@ -1,0 +1,258 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BerlinBase — 30 New Curated BB + TV Tower Logos</title>
+  <style>
+    body {
+      background: #0B0C12;
+      color: #F8F9FA;
+      font-family: system-ui, -apple-system, sans-serif;
+      padding: 30px;
+      margin: 0;
+    }
+    h1 { font-size: 26px; margin-bottom: 6px; color: #F0D722; }
+    p { color: #9CA3AF; margin-bottom: 24px; font-size: 14px; }
+    .filters {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .badge {
+      background: #181926;
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #E2E8F0;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    .badge.active {
+      background: #F0D722;
+      color: #111;
+      border-color: #F0D722;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 22px;
+    }
+    .card {
+      background: #12131C;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+    .card:hover {
+      border-color: #F0D722;
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.5), 0 0 15px rgba(240,215,34,0.15);
+    }
+    .num {
+      position: absolute;
+      top: 12px;
+      left: 14px;
+      font-size: 11px;
+      font-weight: 800;
+      color: #F0D722;
+      background: rgba(240,215,34,0.1);
+      padding: 2px 8px;
+      border-radius: 10px;
+      border: 1px solid rgba(240,215,34,0.2);
+    }
+    .logo-box {
+      width: 140px;
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 10px;
+      margin-bottom: 16px;
+      background: #0E0F17;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+    .title { font-weight: bold; font-size: 14px; color: #fff; text-align: center; }
+    .sub { font-size: 12px; color: #9CA3AF; margin-top: 4px; text-align: center; line-height: 1.4; }
+  </style>
+</head>
+<body>
+  <h1>BerlinBase — 30 Curated Logo Variations</h1>
+  <p>Kurallar: Koyu zemin (#0E0F17), 1. B Beyaz, 2. B Sarı (#F0D722). Kule sapı B bittikten sonra belirgin şekilde uzuyor, küre daha yukarıda konumlanıyor. Farklı B tipografi stilleri ve uyumlu kule renkleri.</p>
+
+  <div class="grid" id="grid"></div>
+
+  <script>
+    // 30 distinct variations combining 5 typography styles & 6 tower color / structure treatments
+    // B Styles:
+    // 1. Geometric Bauhaus Solid
+    // 2. Rounded Modern Sans
+    // 3. Stencil / Cutout Architectural
+    // 4. Ultra-Thick Heavy Display
+    // 5. Minimalist Outline / Dual-Stroke
+
+    const styles = [
+      // 1-6: Geometric Bauhaus Solid
+      { id: 1, style: 'Bauhaus Solid', towerCol: '#FFFFFF', sphereCol: '#FFFFFF', spireCol: '#FFFFFF', desc: 'Beyaz B ile tam bütünleşen saf beyaz kule & sivri anten' },
+      { id: 2, style: 'Bauhaus Solid', towerCol: '#F0D722', sphereCol: '#F0D722', spireCol: '#FFFFFF', desc: 'B1 beyaz, yükselen kule sapı & küresi BVG Sarısı' },
+      { id: 3, style: 'Bauhaus Solid', towerCol: '#E2E8F0', sphereCol: '#F0D722', spireCol: '#E2E8F0', desc: 'Gövde gümüş beyaz, küre parlayan BVG sarısı' },
+      { id: 4, style: 'Bauhaus Solid', towerCol: '#22D3EE', sphereCol: '#22D3EE', spireCol: '#FFFFFF', desc: 'Spree Cyan vurgulu kule & küre (Turkuaz kontrast)' },
+      { id: 5, style: 'Bauhaus Solid', towerCol: '#94A3B8', sphereCol: '#F8FAFC', spireCol: '#F0D722', desc: 'Titanyum gri gövde, saf beyaz küre, altın anten ucu' },
+      { id: 6, style: 'Bauhaus Solid', towerCol: '#F0D722', sphereCol: '#E30613', spireCol: '#FFFFFF', desc: 'Sarı kule gövdesi, ikonik U-Bahn kırmızı seyir küresi' },
+
+      // 7-12: Rounded Modern Sans (Yumuşak Köşeli Neo-Grotesk)
+      { id: 7, style: 'Rounded Modern', towerCol: '#FFFFFF', sphereCol: '#FFFFFF', spireCol: '#FFFFFF', desc: 'Yumuşak kavisli B harfleri, minimalist monokrom kule' },
+      { id: 8, style: 'Rounded Modern', towerCol: '#FFFFFF', sphereCol: '#F0D722', spireCol: '#F0D722', desc: 'B1 devamı beyaz sap, yukarıda parlayan sarı küre' },
+      { id: 9, style: 'Rounded Modern', towerCol: '#F0D722', sphereCol: '#F0D722', spireCol: '#FFFFFF', desc: 'Tam boy sarı kule, beyaz ve sarı B arasında köprü' },
+      { id: 10, style: 'Rounded Modern', towerCol: '#38BDF8', sphereCol: '#38BDF8', spireCol: '#F0D722', desc: 'Gökyüzü mavisi kule gövdesi, sarı anten iğnesi' },
+      { id: 11, style: 'Rounded Modern', towerCol: '#CBD5E1', sphereCol: '#94A3B8', spireCol: '#E2E8F0', desc: 'Nötr soğuk çelik kule, harfleri öne çıkaran denge' },
+      { id: 12, style: 'Rounded Modern', towerCol: '#F59E0B', sphereCol: '#F0D722', spireCol: '#FFFFFF', desc: 'Sıcak amber geçişli kule & altın sarısı küre' },
+
+      // 13-18: Stencil / Architectural Cutout (Mimari Kesikli B)
+      { id: 13, style: 'Architectural Stencil', towerCol: '#FFFFFF', sphereCol: '#FFFFFF', spireCol: '#FFFFFF', desc: 'Mimari kat kesikleri olan B, saf beyaz keskin kule' },
+      { id: 14, style: 'Architectural Stencil', towerCol: '#E2E8F0', sphereCol: '#F0D722', spireCol: '#F0D722', desc: 'Kesikli dikey gövde, yüksek irtifada sarı küre' },
+      { id: 15, style: 'Architectural Stencil', towerCol: '#F0D722', sphereCol: '#F0D722', spireCol: '#FFFFFF', desc: 'Kule sapı ve küre kesintisiz BVG sarısı' },
+      { id: 16, style: 'Architectural Stencil', towerCol: '#22D3EE', sphereCol: '#F0D722', spireCol: '#22D3EE', desc: 'Cyan mimari hatlar ile sarı seyir küresi kombinasyonu' },
+      { id: 17, style: 'Architectural Stencil', towerCol: '#A855F7', sphereCol: '#F0D722', spireCol: '#FFFFFF', desc: 'Gece kulübü neon mor kule sapı & sarı küre' },
+      { id: 18, style: 'Architectural Stencil', towerCol: '#64748B', sphereCol: '#F8FAFC', spireCol: '#94A3B8', desc: 'Koyu betonarme antrasit sap, parlak beyaz küre' },
+
+      // 19-24: Ultra-Heavy Bold Display (Kuvvetli & Tok Blok B)
+      { id: 19, style: 'Heavy Bold Display', towerCol: '#FFFFFF', sphereCol: '#FFFFFF', spireCol: '#FFFFFF', desc: 'Çok kalın tok harfler, göğe yükselen güçlü beyaz kule' },
+      { id: 20, style: 'Heavy Bold Display', towerCol: '#F0D722', sphereCol: '#F0D722', spireCol: '#F0D722', desc: 'Görkemli kalın gövdeden fırlayan parlak sarı kule' },
+      { id: 21, style: 'Heavy Bold Display', towerCol: '#FFFFFF', sphereCol: '#F0D722', spireCol: '#FFFFFF', desc: 'Kule beyaz, küre sarı kontrast vurgusu' },
+      { id: 22, style: 'Heavy Bold Display', towerCol: '#38BDF8', sphereCol: '#22D3EE', spireCol: '#FFFFFF', desc: 'Elektrik mavisi kule, modern teknoloji hissi' },
+      { id: 23, style: 'Heavy Bold Display', towerCol: '#E2E8F0', sphereCol: '#E30613', spireCol: '#F0D722', desc: 'Beyaz gövde, U-Bahn kırmızı küre, sarı sivri uç' },
+      { id: 24, style: 'Heavy Bold Display', towerCol: '#94A3B8', sphereCol: '#F0D722', spireCol: '#FFFFFF', desc: 'Koyu platin gövde, parıldayan altın küre' },
+
+      // 25-30: Clean Outline & Minimalist Dual-Stroke (Çizgisel & Modern Tel Kafes)
+      { id: 25, style: 'Outline Minimalist', towerCol: '#FFFFFF', sphereCol: '#FFFFFF', spireCol: '#FFFFFF', desc: 'Çizgisel beyaz B1 ve sarı B2, zarif beyaz kule' },
+      { id: 26, style: 'Outline Minimalist', towerCol: '#F0D722', sphereCol: '#F0D722', spireCol: '#FFFFFF', desc: 'İnce hatlı harfler üzerinde parlayan sarı kule' },
+      { id: 27, style: 'Outline Minimalist', towerCol: '#22D3EE', sphereCol: '#22D3EE', spireCol: '#F0D722', desc: 'Cyan neon konturlu kule ve sarı anten iğnesi' },
+      { id: 28, style: 'Outline Minimalist', towerCol: '#FFFFFF', sphereCol: '#F0D722', spireCol: '#FFFFFF', desc: 'Beyaz hat üzerinde altın sarısı dairesel küre' },
+      { id: 29, style: 'Outline Minimalist', towerCol: '#E30613', sphereCol: '#F0D722', spireCol: '#FFFFFF', desc: 'Kırmızı kule çizgisi, sarı küre (Almanya bayrak uyumu)' },
+      { id: 30, style: 'Outline Minimalist', towerCol: '#F0D722', sphereCol: '#FFFFFF', spireCol: '#F0D722', desc: 'Sarı kule gövdesi, saf beyaz içi dolu seyir küresi' }
+    ];
+
+    const grid = document.getElementById('grid');
+
+    styles.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'card';
+
+      // Dimensions tuned so:
+      // B letters are from Y=72 to Y=152 (height 80px)
+      // TV Tower stem shoots from Y=72 all the way up to Y=26 (extends 46px above B before sphere!)
+      // Sphere sits at Y=24 (well above B top boundary!)
+      // Spire/Antenna shoots from Y=18 to Y=2.
+      
+      let bSvg = '';
+
+      if (item.style === 'Bauhaus Solid') {
+        bSvg = `
+          <!-- B1: White Solid -->
+          <path d="M 30 72 L 72 72 C 86 72 95 80 95 91 C 95 99 89 106 80 109 C 91 113 99 122 99 135 C 99 146 88 154 72 154 L 30 154 Z 
+                   M 48 86 L 48 102 L 68 102 C 73 102 77 98 77 94 C 77 90 73 86 68 86 Z 
+                   M 48 118 L 48 140 L 70 140 C 76 140 81 135 81 129 C 81 123 76 118 70 118 Z" 
+                fill="#FFFFFF" />
+          <!-- B2: Yellow Solid (#F0D722) -->
+          <path d="M 88 80 L 126 80 C 139 80 148 87 148 97 C 148 105 142 111 133 114 C 144 117 151 126 151 137 C 151 148 140 154 126 154 L 88 154 Z 
+                   M 104 93 L 104 107 L 122 107 C 127 107 131 104 131 100 C 131 96 127 93 122 93 Z 
+                   M 104 121 L 104 141 L 124 141 C 130 141 134 136 134 131 C 134 126 130 121 124 121 Z" 
+                fill="#F0D722" />
+        `;
+      } else if (item.style === 'Rounded Modern') {
+        bSvg = `
+          <!-- B1: Rounded White -->
+          <path d="M 32 72 L 68 72 C 84 72 94 81 94 92 C 94 100 88 107 80 110 C 90 114 98 122 98 135 C 98 147 86 154 70 154 L 32 154 Z 
+                   M 48 86 Q 48 86 48 102 L 66 102 Q 74 102 74 94 Q 74 86 66 86 Z 
+                   M 48 116 Q 48 116 48 140 L 68 140 Q 78 140 78 128 Q 78 116 68 116 Z" 
+                fill="#FFFFFF" rx="4" />
+          <!-- B2: Rounded Yellow -->
+          <path d="M 86 82 L 122 82 C 136 82 146 89 146 99 C 146 106 141 112 133 115 C 143 118 149 127 149 137 C 149 148 138 154 124 154 L 86 154 Z 
+                   M 102 94 L 102 107 L 120 107 Q 128 107 128 100.5 Q 128 94 120 94 Z 
+                   M 102 121 L 102 141 L 122 141 Q 131 141 131 131 Q 131 121 122 121 Z" 
+                fill="#F0D722" rx="4" />
+        `;
+      } else if (item.style === 'Architectural Stencil') {
+        bSvg = `
+          <!-- B1: Architectural Stencil White -->
+          <path d="M 32 72 L 72 72 C 86 72 95 80 95 91 C 95 98 90 104 82 108 L 82 112 C 91 116 98 123 98 134 C 98 146 87 154 72 154 L 32 154 Z 
+                   M 50 86 L 50 101 L 68 101 C 73 101 77 98 77 93.5 C 77 89 73 86 68 86 Z 
+                   M 50 119 L 50 139 L 70 139 C 76 139 80 135 80 129 C 80 123 76 119 70 119 Z" 
+                fill="#FFFFFF" />
+          <line x1="30" y1="110" x2="98" y2="110" stroke="#0E0F17" stroke-width="4" />
+          <!-- B2: Architectural Stencil Yellow -->
+          <path d="M 88 80 L 126 80 C 139 80 148 87 148 97 C 148 104 143 110 135 113 L 135 117 C 144 120 151 127 151 138 C 151 148 140 154 126 154 L 88 154 Z 
+                   M 104 93 L 104 107 L 122 107 C 127 107 131 104 131 100 C 131 96 127 93 122 93 Z 
+                   M 104 122 L 104 141 L 124 141 C 130 141 134 136 134 131.5 C 134 127 130 122 124 122 Z" 
+                fill="#F0D722" />
+          <line x1="88" y1="115" x2="152" y2="115" stroke="#0E0F17" stroke-width="4" />
+        `;
+      } else if (item.style === 'Heavy Bold Display') {
+        bSvg = `
+          <!-- B1: Heavy Bold White -->
+          <path d="M 30 72 L 76 72 C 92 72 102 82 102 94 C 102 102 96 108 88 111 C 99 115 106 124 106 136 C 106 149 94 155 76 155 L 30 155 Z 
+                   M 52 89 L 52 101 L 70 101 C 74 101 77 98 77 95 C 77 92 74 89 70 89 Z 
+                   M 52 119 L 52 138 L 72 138 C 77 138 80 134 80 128.5 C 80 123 77 119 72 119 Z" 
+                fill="#FFFFFF" />
+          <!-- B2: Heavy Bold Yellow -->
+          <path d="M 94 80 L 132 80 C 146 80 155 88 155 98 C 155 105 150 111 142 114 C 151 117 158 126 158 137 C 158 149 147 155 132 155 L 94 155 Z 
+                   M 112 94 L 112 105 L 126 105 C 130 105 133 102 133 99.5 C 133 97 130 94 126 94 Z 
+                   M 112 123 L 112 140 L 128 140 C 133 140 136 136 136 131.5 C 136 127 133 123 128 123 Z" 
+                fill="#F0D722" />
+        `;
+      } else {
+        // Outline Minimalist
+        bSvg = `
+          <!-- B1: Outline White -->
+          <path d="M 32 72 L 72 72 C 86 72 95 80 95 91 C 95 99 89 106 80 109 C 91 113 99 122 99 135 C 99 146 88 154 72 154 L 32 154 Z 
+                   M 48 86 L 48 102 L 68 102 C 73 102 77 98 77 94 C 77 90 73 86 68 86 Z 
+                   M 48 118 L 48 140 L 70 140 C 76 140 81 135 81 129 C 81 123 76 118 70 118 Z" 
+                fill="none" stroke="#FFFFFF" stroke-width="3.5" />
+          <!-- B2: Outline Yellow -->
+          <path d="M 88 80 L 126 80 C 139 80 148 87 148 97 C 148 105 142 111 133 114 C 144 117 151 126 151 137 C 151 148 140 154 126 154 L 88 154 Z 
+                   M 104 93 L 104 107 L 122 107 C 127 107 131 104 131 100 C 131 96 127 93 122 93 Z 
+                   M 104 121 L 104 141 L 124 141 C 130 141 134 136 134 131 C 134 126 130 121 124 121 Z" 
+                fill="none" stroke="#F0D722" stroke-width="3.5" />
+        `;
+      }
+
+      // TV Tower Spire & Sphere extended high above B (Sphere at Y=24, B starts at Y=72, difference = 48px high!)
+      const towerSvg = `
+        <!-- High-Rising TV Tower Shaft connecting from B1 stem at Y=72 up to Y=28 -->
+        <polygon points="32,72 38,72 36,28 34,28" fill="${item.towerCol}" />
+        
+        <!-- Extended Neck & Sphere well above B (Y=24) -->
+        <circle cx="35" cy="24" r="10" fill="${item.sphereCol}" stroke="#0E0F17" stroke-width="1.5" />
+        
+        <!-- Distinct Television Tower Disc / Halo accent -->
+        <ellipse cx="35" cy="24" rx="12.5" ry="3" fill="none" stroke="${item.towerCol}" stroke-width="1.5" opacity="0.85" />
+        
+        <!-- Spire & Needle to the sky -->
+        <polygon points="34,18 36,18 35.5,5 34.5,5" fill="${item.spireCol}" />
+        <line x1="35" y1="1" x2="35" y2="5" stroke="${item.spireCol}" stroke-width="1.5" />
+      `;
+
+      card.innerHTML = `
+        <div class="num">#${item.id}</div>
+        <div class="logo-box">
+          <svg viewBox="0 0 170 170" width="115" height="115" style="overflow: visible;">
+            ${towerSvg}
+            ${bSvg}
+          </svg>
+        </div>
+        <div class="title">${item.style}</div>
+        <div class="sub">${item.desc}</div>
+      `;
+
+      grid.appendChild(card);
+    });
+  </script>
+</body>
+</html>

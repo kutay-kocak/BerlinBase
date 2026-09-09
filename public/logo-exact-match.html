@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BerlinBase Logo — TV Tower in First B's Left Stem</title>
+  <style>
+    body {
+      background: #0B0C12;
+      color: #F8F9FA;
+      font-family: system-ui, -apple-system, sans-serif;
+      padding: 30px;
+      margin: 0;
+    }
+    h1 { font-size: 24px; margin-bottom: 6px; color: #F0D722; }
+    p { color: #9CA3AF; margin-bottom: 24px; font-size: 14px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 24px;
+    }
+    .card {
+      background: #14151F;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+    .card:hover {
+      border-color: #F0D722;
+      transform: translateY(-4px);
+    }
+    .badge {
+      position: absolute;
+      top: 14px;
+      left: 16px;
+      font-size: 11px;
+      font-weight: 800;
+      color: #F0D722;
+      background: rgba(240,215,34,0.1);
+      padding: 2px 8px;
+      border-radius: 8px;
+      border: 1px solid rgba(240,215,34,0.2);
+    }
+    .logo-frame {
+      width: 130px;
+      height: 130px;
+      border-radius: 26px;
+      background: #1E2028;
+      border: 1px solid rgba(255,255,255,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 12px;
+      margin-bottom: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+    .title { font-weight: bold; font-size: 15px; color: #fff; text-align: center; }
+    .sub { font-size: 12px; color: #9CA3AF; margin-top: 4px; text-align: center; line-height: 1.4; }
+  </style>
+</head>
+<body>
+  <h1>BerlinBase Logo — Kule İlk B'nin Sol Sütununda</h1>
+  <p>Mevcut logondaki aynı BB geometrisi, gölgesi ve oranı korundu. Kule orta yarıktan alınıp ilk B'nin sol sütununa taşındı.</p>
+
+  <div class="grid" id="container"></div>
+
+  <script>
+    // In current logo:
+    // Left edge of B1 is around X=25. B1 inner hollow is from X=48.
+    // Center of left stem is at X=36.
+    // Base of tower cuts through X=36 from Y=5 to Y=155.
+    // Sphere can be centered at X=36, with various Y positions (middle, slightly higher, with white/yellow accents).
+
+    const options = [
+      {
+        id: 'A',
+        title: 'Seçenek A: Orijinal İkiz Negatif (Sol Sütun)',
+        desc: 'Mevcut logonun birebir aynı koyu negatif kule silüeti ve beyaz konturlu küresi, tam sol sütunun ortasında',
+        svg: `
+          <svg viewBox="0 0 160 160" width="105" height="105">
+            <!-- First B (Pure White) -->
+            <path d="M 25 20 L 78 20 C 95 20 105 28 105 44 C 105 55 98 64 88 68 C 102 72 112 82 112 104 C 112 124 95 138 75 138 L 25 138 Z 
+                     M 50 42 L 50 60 L 70 60 C 76 60 80 55 80 51 C 80 46 76 42 70 42 Z 
+                     M 50 84 L 50 115 L 72 115 C 80 115 84 108 84 100 C 84 92 80 84 72 84 Z" 
+                  fill="#FFFFFF" />
+            <!-- Second B (Subtle Gray-White with opacity) -->
+            <path d="M 80 30 L 128 30 C 142 30 152 38 152 50 C 152 60 145 68 136 72 C 148 76 156 86 156 102 C 156 120 142 132 124 132 L 80 132 Z 
+                     M 100 48 L 100 64 L 118 64 C 122 64 126 60 126 56 C 126 52 122 48 118 48 Z 
+                     M 100 86 L 100 114 L 120 114 C 126 114 130 108 130 100 C 130 92 126 86 120 86 Z" 
+                  fill="#D8DCE3" />
+            <!-- Tower Silhouette in Left Stem (X=37.5) -->
+            <polygon points="36.5,5 38.5,5 41,155 34,155" fill="#1E2028" />
+            <circle cx="37.5" cy="55" r="9.5" fill="#1E2028" stroke="#FFFFFF" stroke-width="2.5" />
+          </svg>
+        `
+      },
+      {
+        id: 'B',
+        title: 'Seçenek B: Sarı Vurgulu Küre (BVG Accent)',
+        desc: 'Sol sütundaki kule gövdesi zemin tonunda, seyir küresi ve sivri anteni parlak BVG Sarısı (#F0D722)',
+        svg: `
+          <svg viewBox="0 0 160 160" width="105" height="105">
+            <!-- First B (Pure White) -->
+            <path d="M 25 20 L 78 20 C 95 20 105 28 105 44 C 105 55 98 64 88 68 C 102 72 112 82 112 104 C 112 124 95 138 75 138 L 25 138 Z 
+                     M 50 42 L 50 60 L 70 60 C 76 60 80 55 80 51 C 80 46 76 42 70 42 Z 
+                     M 50 84 L 50 115 L 72 115 C 80 115 84 108 84 100 C 84 92 80 84 72 84 Z" 
+                  fill="#FFFFFF" />
+            <!-- Second B (Gray-White) -->
+            <path d="M 80 30 L 128 30 C 142 30 152 38 152 50 C 152 60 145 68 136 72 C 148 76 156 86 156 102 C 156 120 142 132 124 132 L 80 132 Z 
+                     M 100 48 L 100 64 L 118 64 C 122 64 126 60 126 56 C 126 52 122 48 118 48 Z 
+                     M 100 86 L 100 114 L 120 114 C 126 114 130 108 130 100 C 130 92 126 86 120 86 Z" 
+                  fill="#D8DCE3" />
+            <!-- Tower Silhouette in Left Stem with BVG Yellow Sphere & Tip -->
+            <polygon points="36.5,12 38.5,12 41,155 34,155" fill="#1E2028" />
+            <circle cx="37.5" cy="55" r="9.5" fill="#F0D722" stroke="#1E2028" stroke-width="2" />
+            <polygon points="36.8,5 38.2,5 38.5,12 36.5,12" fill="#F0D722" />
+          </svg>
+        `
+      },
+      {
+        id: 'C',
+        title: 'Seçenek C: Sarı İkinci B & Sol Kule',
+        desc: 'İlk B Beyaz, İkinci B BVG Sarısı; kule sol sütunun içinde tam netlikte dikey yükselir',
+        svg: `
+          <svg viewBox="0 0 160 160" width="105" height="105">
+            <!-- First B (Pure White) -->
+            <path d="M 25 20 L 78 20 C 95 20 105 28 105 44 C 105 55 98 64 88 68 C 102 72 112 82 112 104 C 112 124 95 138 75 138 L 25 138 Z 
+                     M 50 42 L 50 60 L 70 60 C 76 60 80 55 80 51 C 80 46 76 42 70 42 Z 
+                     M 50 84 L 50 115 L 72 115 C 80 115 84 108 84 100 C 84 92 80 84 72 84 Z" 
+                  fill="#FFFFFF" />
+            <!-- Second B (Official BVG Yellow #F0D722) -->
+            <path d="M 80 30 L 128 30 C 142 30 152 38 152 50 C 152 60 145 68 136 72 C 148 76 156 86 156 102 C 156 120 142 132 124 132 L 80 132 Z 
+                     M 100 48 L 100 64 L 118 64 C 122 64 126 60 126 56 C 126 52 122 48 118 48 Z 
+                     M 100 86 L 100 114 L 120 114 C 126 114 130 108 130 100 C 130 92 126 86 120 86 Z" 
+                  fill="#F0D722" />
+            <!-- Tower Silhouette in Left Stem (X=37.5) -->
+            <polygon points="36.5,5 38.5,5 41,155 34,155" fill="#1E2028" />
+            <circle cx="37.5" cy="55" r="9.5" fill="#1E2028" stroke="#FFFFFF" stroke-width="2.5" />
+          </svg>
+        `
+      },
+      {
+        id: 'D',
+        title: 'Seçenek D: Yüksek İrtifa Küre (B Tavanına Yakın)',
+        desc: 'Kulenin seyir küresi sol sütunun biraz daha yukarısında (Y=38), anteni ise yukarı daha çok uzanıyor',
+        svg: `
+          <svg viewBox="0 0 160 160" width="105" height="105">
+            <!-- First B (Pure White) -->
+            <path d="M 25 24 L 78 24 C 95 24 105 32 105 48 C 105 59 98 68 88 72 C 102 76 112 86 112 108 C 112 128 95 142 75 142 L 25 142 Z 
+                     M 50 46 L 50 64 L 70 64 C 76 64 80 59 80 55 C 80 50 76 46 70 46 Z 
+                     M 50 88 L 50 119 L 72 119 C 80 119 84 112 84 104 C 84 96 80 88 72 88 Z" 
+                  fill="#FFFFFF" />
+            <!-- Second B (BVG Yellow) -->
+            <path d="M 80 34 L 128 34 C 142 34 152 42 152 54 C 152 64 145 72 136 76 C 148 80 156 90 156 106 C 156 124 142 136 124 136 L 80 136 Z 
+                     M 100 52 L 100 68 L 118 68 C 122 68 126 64 126 60 C 126 56 122 52 118 52 Z 
+                     M 100 90 L 100 118 L 120 118 C 126 118 130 112 130 104 C 130 96 126 90 120 90 Z" 
+                  fill="#F0D722" />
+            <!-- High Tower Silhouette in Left Stem -->
+            <polygon points="36.5,2 38.5,2 41.5,158 33.5,158" fill="#1E2028" />
+            <circle cx="37.5" cy="38" r="9.5" fill="#1E2028" stroke="#FFFFFF" stroke-width="2.5" />
+          </svg>
+        `
+      }
+    ];
+
+    const c = document.getElementById('container');
+    options.forEach(opt => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <div class="badge">${opt.id}</div>
+        <div class="logo-frame">
+          ${opt.svg}
+        </div>
+        <div class="title">${opt.title}</div>
+        <div class="sub">${opt.desc}</div>
+      `;
+      c.appendChild(card);
+    });
+  </script>
+</body>
+</html>

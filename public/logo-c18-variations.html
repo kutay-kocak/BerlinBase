@@ -1,0 +1,210 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BerlinBase — C-18 Style with Yellow B in Background (10 Variations)</title>
+  <style>
+    body {
+      background: #0B0C12;
+      color: #F8F9FA;
+      font-family: system-ui, -apple-system, sans-serif;
+      padding: 30px;
+      margin: 0;
+    }
+    h1 { font-size: 24px; margin-bottom: 6px; color: #F0D722; }
+    p { color: #9CA3AF; margin-bottom: 24px; font-size: 14px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 22px;
+    }
+    .card {
+      background: #14151F;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+    .card:hover {
+      border-color: #F0D722;
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 15px rgba(240,215,34,0.15);
+    }
+    .badge {
+      position: absolute;
+      top: 14px;
+      left: 16px;
+      font-size: 11px;
+      font-weight: 800;
+      color: #F0D722;
+      background: rgba(240,215,34,0.1);
+      padding: 2px 8px;
+      border-radius: 8px;
+      border: 1px solid rgba(240,215,34,0.2);
+    }
+    .logo-frame {
+      width: 130px;
+      height: 130px;
+      border-radius: 26px;
+      background: #1E2028;
+      border: 1px solid rgba(255,255,255,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 12px;
+      margin-bottom: 14px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+    .title { font-weight: bold; font-size: 14px; color: #fff; text-align: center; }
+    .sub { font-size: 12px; color: #9CA3AF; margin-top: 4px; text-align: center; line-height: 1.4; }
+  </style>
+</head>
+<body>
+  <h1>BerlinBase — C-18 Heybetli Kule & Sarı B Arka Planda</h1>
+  <p>C-18'in güçlü ve tok gövdesi temel alındı. Hepsinde sarı B harfi arka planda derinlik oluşturuyor, beyaz B önde ve kule gövde kalınlıkları, koni açıları ve küre yapıları 10 farklı ince ayarla çeşitlendirildi.</p>
+
+  <div class="grid" id="container"></div>
+
+  <script>
+    // Yellow B in Background
+    const b2YellowBack = `
+      <path d="M 82 26 L 132 26 C 146 26 156 34 156 46 C 156 56 149 64 140 68 C 152 72 160 82 160 98 C 160 116 146 128 128 128 L 82 128 Z 
+               M 104 44 L 104 60 L 122 60 C 126 60 130 56 130 52 C 130 48 126 44 122 44 Z 
+               M 104 82 L 104 110 L 124 110 C 130 110 134 104 134 96 C 134 88 130 82 124 82 Z" 
+            fill="#F0D722" />
+    `;
+
+    // White B1 in Foreground
+    const b1WhiteFront = `
+      <path d="M 25 20 L 78 20 C 95 20 105 28 105 44 C 105 55 98 64 88 68 C 102 72 112 82 112 104 C 112 124 95 138 75 138 L 25 138 Z 
+               M 50 42 L 50 60 L 70 60 C 76 60 80 55 80 51 C 80 46 76 42 70 42 Z 
+               M 50 84 L 50 115 L 72 115 C 80 115 84 108 84 100 C 84 92 80 84 72 84 Z" 
+            fill="#FFFFFF" />
+    `;
+
+    // 10 variations around C-18 (Base width ~8px to 13px, top width 2px to 4px, sphere radius 9.5px to 12.5px)
+    const variations = [
+      {
+        id: '18-A',
+        title: '18-A: Orijinal C-18 (Sarı B Arkada)',
+        desc: 'Taban w:10px, tepe w:2.5px, küre r:11, Y=55 — C-18 oranının doğrudan sarı arkada versiyonu',
+        topW: 2.5, botW: 10, y: 55, r: 11, antY: 4, strokeW: 2.5
+      },
+      {
+        id: '18-B',
+        title: '18-B: Ekstra Geniş Taban (w:12px)',
+        desc: 'Taban daha geniş (w:12px, tepe:3px), piramidal kule gövdesi heybetli bir temel oluşturur',
+        topW: 3.0, botW: 12, y: 55, r: 11.5, antY: 3, strokeW: 2.5
+      },
+      {
+        id: '18-C',
+        title: '18-C: Yüksek Seyir Küresi (Y=45)',
+        desc: 'Gövde kalın (taban:10px), küre B harfinin üst kıvrımına yakın yukarıda (Y=45), daha dinamik',
+        topW: 2.4, botW: 9.8, y: 45, r: 10.5, antY: 2, strokeW: 2.5
+      },
+      {
+        id: '18-D',
+        title: '18-D: Düz & Tok Sütun (w:6.5px Düz)',
+        desc: 'Koni açısı yerine düz dikey kalın sütun yarığı (sabit 6.5px), küre r:11',
+        topW: 6.5, botW: 6.5, y: 54, r: 11, antY: 4, strokeW: 2.5
+      },
+      {
+        id: '18-E',
+        title: '18-E: Dev Odak Küre (r:12.5)',
+        desc: 'Kule gövdesi w:10.5px, seyir küresi ekstra büyük (r:12.5), tek bakışta kuleyi hissettirir',
+        topW: 2.8, botW: 10.5, y: 55, r: 12.5, antY: 3, strokeW: 2.8
+      },
+      {
+        id: '18-F',
+        title: '18-F: Orta-Tok Denge (w:8.5px)',
+        desc: 'C-18 ile standart kule arasında altın denge (taban:8.5px, tepe:2px), harf dengesini bozmaz',
+        topW: 2.0, botW: 8.5, y: 52, r: 10, antY: 3, strokeW: 2.5
+      },
+      {
+        id: '18-G',
+        title: '18-G: Uzun İğne Anten (Y=0)',
+        desc: 'Kule tabanı 10px tok, sivri anten çerçevenin en tepesine sıfırlanıyor (Y=0)',
+        topW: 2.2, botW: 10.2, y: 50, r: 10.5, antY: 0, strokeW: 2.5
+      },
+      {
+        id: '18-H',
+        title: '18-H: Kalın Gövde & Sarı Küre',
+        desc: 'C-18 kalın gövdesi (taban:10px) ile iç çekirdeği sarı arka B ile eşleşen küre (#F0D722)',
+        topW: 2.5, botW: 10, y: 54, r: 10.5, antY: 4, strokeW: 2.2, yellowSphere: true
+      },
+      {
+        id: '18-I',
+        title: '18-I: Çift Halkalı Mimari Küre',
+        desc: 'Kalın gövdenin üstünde TV Kulesi seyir diski haleli çift halkalı küre detayı',
+        topW: 2.6, botW: 10.5, y: 52, r: 10, antY: 3, strokeW: 2.2, doubleRing: true
+      },
+      {
+        id: '18-J',
+        title: '18-J: Ultra-Heavy Monumental (w:13.5px)',
+        desc: 'Serinin en güçlü ve heybetli kulesi (taban:13.5px, tepe:3.5px, küre:12px), anıtsal duruş',
+        topW: 3.5, botW: 13.5, y: 55, r: 12, antY: 2, strokeW: 3.0
+      }
+    ];
+
+    const container = document.getElementById('container');
+
+    variations.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'card';
+
+      const cx = 37.5;
+      const tHalf = item.topW / 2;
+      const bHalf = item.botW / 2;
+      const antTop = item.antY;
+      const baseBot = 155;
+
+      const towerPoints = `${cx - tHalf},${antTop} ${cx + tHalf},${antTop} ${cx + bHalf},${baseBot} ${cx - bHalf},${baseBot}`;
+
+      let sphereSvg = '';
+      if (item.yellowSphere) {
+        sphereSvg = `
+          <circle cx="${cx}" cy="${item.y}" r="${item.r}" fill="#F0D722" stroke="#1E2028" stroke-width="${item.strokeW}" />
+        `;
+      } else if (item.doubleRing) {
+        sphereSvg = `
+          <circle cx="${cx}" cy="${item.y}" r="${item.r + 3.5}" fill="none" stroke="#FFFFFF" stroke-width="1.2" opacity="0.85" />
+          <circle cx="${cx}" cy="${item.y}" r="${item.r}" fill="#1E2028" stroke="#FFFFFF" stroke-width="${item.strokeW}" />
+        `;
+      } else {
+        sphereSvg = `
+          <circle cx="${cx}" cy="${item.y}" r="${item.r}" fill="#1E2028" stroke="#FFFFFF" stroke-width="${item.strokeW}" />
+        `;
+      }
+
+      const svgHtml = `
+        <svg viewBox="0 0 160 160" width="105" height="105">
+          <!-- Layer 1: Yellow B in Background -->
+          ${b2YellowBack}
+
+          <!-- Layer 2: White B in Foreground -->
+          ${b1WhiteFront}
+
+          <!-- Layer 3: TV Tower in B1's Left Stem -->
+          <polygon points="${towerPoints}" fill="#1E2028" />
+          ${sphereSvg}
+        </svg>
+      `;
+
+      card.innerHTML = `
+        <div class="badge">${item.id}</div>
+        <div class="logo-frame">
+          ${svgHtml}
+        </div>
+        <div class="title">${item.title}</div>
+        <div class="sub">${item.desc}</div>
+      `;
+
+      container.appendChild(card);
+    });
+  </script>
+</body>
+</html>

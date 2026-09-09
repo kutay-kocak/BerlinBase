@@ -1,0 +1,210 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BerlinBase — 21 Variations of Logo C</title>
+  <style>
+    body {
+      background: #0B0C12;
+      color: #F8F9FA;
+      font-family: system-ui, -apple-system, sans-serif;
+      padding: 30px;
+      margin: 0;
+    }
+    h1 { font-size: 24px; margin-bottom: 6px; color: #F0D722; }
+    p { color: #9CA3AF; margin-bottom: 24px; font-size: 14px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 22px;
+    }
+    .card {
+      background: #14151F;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+    .card:hover {
+      border-color: #F0D722;
+      transform: translateY(-4px);
+    }
+    .card.special {
+      border-color: #F0D722;
+      background: #181926;
+      box-shadow: 0 0 25px rgba(240,215,34,0.15);
+    }
+    .badge {
+      position: absolute;
+      top: 14px;
+      left: 16px;
+      font-size: 11px;
+      font-weight: 800;
+      color: #F0D722;
+      background: rgba(240,215,34,0.1);
+      padding: 2px 8px;
+      border-radius: 8px;
+      border: 1px solid rgba(240,215,34,0.2);
+    }
+    .logo-frame {
+      width: 130px;
+      height: 130px;
+      border-radius: 26px;
+      background: #1E2028;
+      border: 1px solid rgba(255,255,255,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 12px;
+      margin-bottom: 14px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+    .title { font-weight: bold; font-size: 14px; color: #fff; text-align: center; }
+    .sub { font-size: 12px; color: #9CA3AF; margin-top: 4px; text-align: center; line-height: 1.4; }
+  </style>
+</head>
+<body>
+  <h1>BerlinBase — Logo C İnce Ayar Varyasyonları</h1>
+  <p>Temel: 1. B Beyaz, 2. B BVG Sarısı (#F0D722), kule sol sütunda. #1 - #20 kule boyu, genişliği, gövde inceliği ve küre yapısı varyasyonları. #21 ise sarı B'nin arkaya geçtiği özel katman testi.</p>
+
+  <div class="grid" id="container"></div>
+
+  <script>
+    // Base B paths:
+    const b1White = `
+      <path d="M 25 20 L 78 20 C 95 20 105 28 105 44 C 105 55 98 64 88 68 C 102 72 112 82 112 104 C 112 124 95 138 75 138 L 25 138 Z 
+               M 50 42 L 50 60 L 70 60 C 76 60 80 55 80 51 C 80 46 76 42 70 42 Z 
+               M 50 84 L 50 115 L 72 115 C 80 115 84 108 84 100 C 84 92 80 84 72 84 Z" 
+            fill="#FFFFFF" />
+    `;
+
+    const b2YellowForeground = `
+      <path d="M 80 30 L 128 30 C 142 30 152 38 152 50 C 152 60 145 68 136 72 C 148 76 156 86 156 102 C 156 120 142 132 124 132 L 80 132 Z 
+               M 100 48 L 100 64 L 118 64 C 122 64 126 60 126 56 C 126 52 122 48 118 48 Z 
+               M 100 86 L 100 114 L 120 114 C 126 114 130 108 130 100 C 130 92 126 86 120 86 Z" 
+            fill="#F0D722" />
+    `;
+
+    // 20 variations exploring:
+    // - Tower stem thickness (narrow, medium, wide conic)
+    // - Tower length (cutting all the way through, high antenna, shorter base)
+    // - Sphere position (Y=35 high, Y=45 mid-high, Y=55 middle, Y=65 lower)
+    // - Sphere size & style (radius 7 to 12, double ring, solid cutout, yellow core)
+    // - Antenna spire length (reaching Y=2, Y=5, Y=10)
+
+    const list = [
+      { id: 1, title: 'C-1: Standart İnce Kule', desc: 'İnce gövde (w:1.5px tepe, 6px taban), küre Y=55, r:9', y: 55, r: 9, topW: 1.5, botW: 6, antY: 5, strokeW: 2.5 },
+      { id: 2, title: 'C-2: Yüksek İrtifa Küre (Y=42)', desc: 'Küre yukarı taşınmış, B üst kıvrımıyla paralel hizada', y: 42, r: 9, topW: 1.5, botW: 6, antY: 2, strokeW: 2.5 },
+      { id: 3, title: 'C-3: Ultra Sivri Uzun Anten', desc: 'Anten çerçevenin en tepesine (Y=1) kadar uzanıyor', y: 48, r: 9, topW: 1.2, botW: 5.5, antY: 0, strokeW: 2.5 },
+      { id: 4, title: 'C-4: Geniş Tabanlı Koni Gövde', desc: 'Taban daha geniş (w:9px), kuleye sağlam bir mimari ağırlık katar', y: 55, r: 9.5, topW: 2, botW: 9, antY: 5, strokeW: 2.5 },
+      { id: 5, title: 'C-5: İnce Narin Mimari Çizgi', desc: 'Çok zarif ince hat (taban w:4.5px, tepe w:1px), küre r:8', y: 52, r: 8, topW: 1, botW: 4.5, antY: 4, strokeW: 2 },
+      { id: 6, title: 'C-6: Büyük Vurgulu Küre (r:11.5)', desc: 'Seyir küresi daha büyük ve belirgin, güçlü odak', y: 54, r: 11.5, topW: 2, botW: 7, antY: 5, strokeW: 2.5 },
+      { id: 7, title: 'C-7: Kompakt Minik Küre (r:7)', desc: 'Daha küçük ve minimal küre, harf boşluklarını boğmaz', y: 50, r: 7, topW: 1.5, botW: 5.5, antY: 6, strokeW: 2 },
+      { id: 8, title: 'C-8: Sarı Çekirdekli Küre', desc: 'Kürenin içi BVG sarısı, dış konturu beyaz halka', y: 55, r: 9.5, topW: 1.8, botW: 6.5, antY: 5, strokeW: 2, sphereFill: '#F0D722' },
+      { id: 9, title: 'C-9: Yüksek Küre & Geniş Gövde', desc: 'Küre Y=40, taban w:8px, kule çok net seçilir', y: 40, r: 10, topW: 2, botW: 8, antY: 3, strokeW: 2.5 },
+      { id: 10, title: 'C-10: Düz Paralel Kule Sapı', desc: 'Koni yerine düz dikey yarık (sabit 3px genişlik)', y: 52, r: 9, topW: 3, botW: 3, antY: 5, strokeW: 2.5 },
+      { id: 11, title: 'C-11: İğne Uçlu Kule Anteni', desc: 'Gövde üstte iğne gibi inceliyor (w:0.8px)', y: 46, r: 8.5, topW: 0.8, botW: 6, antY: 2, strokeW: 2.5 },
+      { id: 12, title: 'C-12: Çift Halkalı Seyir Diski', desc: 'Kürenin etrafında TV Kulesi seyir diski efekti veren ikinci halka', y: 52, r: 9, topW: 1.8, botW: 6.5, antY: 5, strokeW: 2, doubleRing: true },
+      { id: 13, title: 'C-13: Alçak Merkezli Küre (Y=62)', desc: 'Küre ilk B’nin tam ortadaki boğumuna denk geliyor', y: 62, r: 9.5, topW: 2, botW: 7, antY: 6, strokeW: 2.5 },
+      { id: 14, title: 'C-14: Ekstra Kalın Konturlu Küre', desc: '3.5px kalın beyaz kontur, yüksek kontrast', y: 52, r: 9.5, topW: 2, botW: 6.5, antY: 4, strokeW: 3.5 },
+      { id: 15, title: 'C-15: Koyu Tabanlı Kesilmemiş Kule', desc: 'Kule tabanı B’nin altında bitmeyip çerçeveye sıfırlanıyor', y: 48, r: 9, topW: 1.8, botW: 7.5, antY: 2, strokeW: 2.5, fullBleed: true },
+      { id: 16, title: 'C-16: Sarı Anten İğnesi', desc: 'Gövde zemin rengi, antenin en üstteki ucu sarı parıltı', y: 50, r: 9, topW: 1.8, botW: 6, antY: 2, strokeW: 2.5, yellowSpire: true },
+      { id: 17, title: 'C-17: Mikro Minimalist Çizgi', desc: 'Taban 4px, tepe 1px, küre r:7.5, çok hafif ve modern', y: 45, r: 7.5, topW: 1, botW: 4, antY: 3, strokeW: 2 },
+      { id: 18, title: 'C-18: Heybetli Tok Gövde (w:10px)', desc: 'Taban 10px genişlikte, kule bir anıt gibi yükselir', y: 55, r: 11, topW: 2.5, botW: 10, antY: 4, strokeW: 2.5 },
+      { id: 19, title: 'C-19: Kusursuz Altın Oran (Y=44, r:9)', desc: 'Kulenin B harfi oranlarıyla en dengeli yüksekliği', y: 44, r: 9, topW: 1.6, botW: 6.2, antY: 3, strokeW: 2.5 },
+      { id: 20, title: 'C-20: Beyaz İçi Dolu Küre & Siyah Nokta', desc: 'Küre beyaz dolgulu, ortasında siyah lens gözü', y: 50, r: 9.5, topW: 1.8, botW: 6.5, antY: 4, strokeW: 0, solidWhiteSphere: true },
+
+      // 21: ÖZEL VARYASYON (Sarı B Arkada)
+      { id: 21, isSpecial: true, title: 'C-21 (ÖZEL): Sarı B Arka Planda', desc: 'Sarı B arka planda (B1 Beyaz önde ve baskın, kule sol sütunda net belirgin)', y: 46, r: 9.5, topW: 1.6, botW: 6.5, antY: 3, strokeW: 2.5 }
+    ];
+
+    const c = document.getElementById('container');
+
+    list.forEach(item => {
+      const card = document.createElement('div');
+      card.className = item.isSpecial ? 'card special' : 'card';
+
+      const cx = 37.5;
+      const tHalf = item.topW / 2;
+      const bHalf = item.botW / 2;
+      const antTop = item.antY;
+      const baseBot = item.fullBleed ? 165 : 155;
+
+      const towerPoints = `${cx - tHalf},${antTop} ${cx + tHalf},${antTop} ${cx + bHalf},${baseBot} ${cx - bHalf},${baseBot}`;
+
+      let sphereSvg = '';
+      if (item.solidWhiteSphere) {
+        sphereSvg = `
+          <circle cx="${cx}" cy="${item.y}" r="${item.r}" fill="#FFFFFF" />
+          <circle cx="${cx}" cy="${item.y}" r="3.5" fill="#1E2028" />
+        `;
+      } else if (item.doubleRing) {
+        sphereSvg = `
+          <circle cx="${cx}" cy="${item.y}" r="${item.r + 3}" fill="none" stroke="#FFFFFF" stroke-width="1.2" opacity="0.75" />
+          <circle cx="${cx}" cy="${item.y}" r="${item.r}" fill="#1E2028" stroke="#FFFFFF" stroke-width="${item.strokeW}" />
+        `;
+      } else {
+        const sFill = item.sphereFill || '#1E2028';
+        sphereSvg = `
+          <circle cx="${cx}" cy="${item.y}" r="${item.r}" fill="${sFill}" stroke="#FFFFFF" stroke-width="${item.strokeW}" />
+        `;
+      }
+
+      let spireAccent = '';
+      if (item.yellowSpire) {
+        spireAccent = `<line x1="${cx}" y1="${antTop}" x2="${cx}" y2="${antTop + 12}" stroke="#F0D722" stroke-width="2.5" />`;
+      }
+
+      const towerComplete = `
+        <polygon points="${towerPoints}" fill="#1E2028" />
+        ${sphereSvg}
+        ${spireAccent}
+      `;
+
+      let lettersSvg = '';
+      if (item.isSpecial) {
+        // C-21: Yellow B is in the BACKGROUND (rendered first), White B1 is in the FOREGROUND (rendered on top)
+        lettersSvg = `
+          <!-- Layer 1: Yellow B in Background (X shifted slightly right/back, lower or equal) -->
+          <path d="M 82 26 L 132 26 C 146 26 156 34 156 46 C 156 56 149 64 140 68 C 152 72 160 82 160 98 C 160 116 146 128 128 128 L 82 128 Z 
+                   M 104 44 L 104 60 L 122 60 C 126 60 130 56 130 52 C 130 48 126 44 122 44 Z 
+                   M 104 82 L 104 110 L 124 110 C 130 110 134 104 134 96 C 134 88 130 82 124 82 Z" 
+                fill="#F0D722" />
+
+          <!-- Layer 2: White B1 in Foreground (Overlaps Yellow B) -->
+          <path d="M 25 20 L 78 20 C 95 20 105 28 105 44 C 105 55 98 64 88 68 C 102 72 112 82 112 104 C 112 124 95 138 75 138 L 25 138 Z 
+                   M 50 42 L 50 60 L 70 60 C 76 60 80 55 80 51 C 80 46 76 42 70 42 Z 
+                   M 50 84 L 50 115 L 72 115 C 80 115 84 108 84 100 C 84 92 80 84 72 84 Z" 
+                fill="#FFFFFF" />
+
+          <!-- Layer 3: TV Tower in B1's Left Stem -->
+          ${towerComplete}
+        `;
+      } else {
+        // Standard C: B1 White, then B2 Yellow on top
+        lettersSvg = `
+          ${b1White}
+          ${b2YellowForeground}
+          ${towerComplete}
+        `;
+      }
+
+      card.innerHTML = `
+        <div class="badge">#${item.id}</div>
+        <div class="logo-frame">
+          <svg viewBox="0 0 160 160" width="105" height="105">
+            ${lettersSvg}
+          </svg>
+        </div>
+        <div class="title">${item.title}</div>
+        <div class="sub">${item.desc}</div>
+      `;
+      c.appendChild(card);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BerlinBase BB + TV Tower Logo Showcase</title>
+  <style>
+    body {
+      background: #0B0C12;
+      color: #F8F9FA;
+      font-family: system-ui, -apple-system, sans-serif;
+      padding: 30px;
+      margin: 0;
+    }
+    h1 { font-size: 24px; margin-bottom: 8px; color: #F0D722; }
+    p { color: #9CA3AF; margin-bottom: 24px; font-size: 14px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #14151F;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: all 0.2s;
+    }
+    .card:hover {
+      border-color: #F0D722;
+      transform: translateY(-4px);
+    }
+    .logo-box {
+      width: 120px;
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      background: #0E0F17;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+    .title { font-weight: bold; font-size: 13px; color: #fff; text-align: center; }
+    .sub { font-size: 11px; color: #6B7280; margin-top: 4px; }
+  </style>
+</head>
+<body>
+  <h1>BerlinBase — Logo Variations (BB + TV Tower Above B)</h1>
+  <p>2. Konsept: İlk B'nin sol dikey çizgisi kule gövdesi; kulenin seyir küresi ve sivri anteni ilk B'nin tavan çizgisinin üstüne taşıyor.</p>
+
+  <div class="grid" id="showcase"></div>
+
+  <script>
+    const variations = [
+      // Siyah Seri (5 Varyasyon)
+      { id: 'black-1', cat: 'Siyah Seri #1', name: 'Mat Siyah & Beyaz Zemin', bg: '#ffffff', stroke: '#111827', fill: '#111827', sphereFill: '#111827', antenna: '#111827' },
+      { id: 'black-2', cat: 'Siyah Seri #2', name: 'Obsidian Black (Dark UI)', bg: '#1c1d29', stroke: '#000000', fill: '#0a0a0f', sphereFill: '#000000', antenna: '#374151', border: '1px solid #333' },
+      { id: 'black-3', cat: 'Siyah Seri #3', name: 'Siyah Gövde + Beyaz Kontur', bg: '#111827', stroke: '#ffffff', fill: '#030712', sphereFill: '#000000', antenna: '#ffffff' },
+      { id: 'black-4', cat: 'Siyah Seri #4', name: 'Mono Charcoal', bg: '#f3f4f6', stroke: '#1f2937', fill: '#1f2937', sphereFill: '#111827', antenna: '#111827' },
+      { id: 'black-5', cat: 'Siyah Seri #5', name: 'Stealth Cutout', bg: '#181926', stroke: '#27273a', fill: '#0b0c12', sphereFill: '#000000', antenna: '#4b5563' },
+
+      // Gri Seri (5 Varyasyon)
+      { id: 'gray-1', cat: 'Gri Seri #1', name: 'Titanyum Gri & Gümüş İğne', bg: '#12131C', stroke: '#9CA3AF', fill: '#4B5563', sphereFill: '#D1D5DB', antenna: '#E5E7EB' },
+      { id: 'gray-2', cat: 'Gri Seri #2', name: 'Space Gray Minimalist', bg: '#0E0F17', stroke: '#6B7280', fill: '#374151', sphereFill: '#9CA3AF', antenna: '#D1D5DB' },
+      { id: 'gray-3', cat: 'Gri Seri #3', name: 'Alüminyum Metalik Hat', bg: '#1E202C', stroke: '#D1D5DB', fill: 'none', sphereFill: '#E5E7EB', antenna: '#FFFFFF', strokeWidth: 3 },
+      { id: 'gray-4', cat: 'Gri Seri #4', name: 'Soğuk Çelik & Arduvaz', bg: '#0B0C12', stroke: '#64748B', fill: '#334155', sphereFill: '#94A3B8', antenna: '#CBD5E1' },
+      { id: 'gray-5', cat: 'Gri Seri #5', name: 'Frosted Chrome', bg: '#151722', stroke: '#E2E8F0', fill: '#64748B', sphereFill: '#F8FAFC', antenna: '#FFFFFF' },
+
+      // Neon Seri (5 Varyasyon)
+      { id: 'neon-1', cat: 'Neon Seri #1', name: 'BVG Neon Sarısı (Official)', bg: '#0B0C12', stroke: '#F0D722', fill: '#F0D722', sphereFill: '#F0D722', antenna: '#FFFFFF', glow: '#F0D722' },
+      { id: 'neon-2', cat: 'Neon Seri #2', name: 'Cyber Cyan / Spree River', bg: '#0B0C12', stroke: '#22D3EE', fill: '#0891B2', sphereFill: '#22D3EE', antenna: '#67E8F9', glow: '#22D3EE' },
+      { id: 'neon-3', cat: 'Neon Seri #3', name: 'Neon Sarı Gövde + Cyan Küre', bg: '#0E0F17', stroke: '#F0D722', fill: '#F0D722', sphereFill: '#22D3EE', antenna: '#22D3EE', glow: '#F0D722' },
+      { id: 'neon-4', cat: 'Neon Seri #4', name: 'U-Bahn Kırmızı Accent & Neon', bg: '#0B0C12', stroke: '#E30613', fill: '#1E1B24', sphereFill: '#F0D722', antenna: '#F0D722', glow: '#E30613' },
+      { id: 'neon-5', cat: 'Neon Seri #5', name: 'Neon Sarı İçi Boş Tel Kafes', bg: '#0B0C12', stroke: '#F0D722', fill: 'none', sphereFill: '#F0D722', antenna: '#FFFFFF', strokeWidth: 2.5, glow: '#F0D722' }
+    ];
+
+    const container = document.getElementById('showcase');
+
+    variations.forEach(v => {
+      const card = document.createElement('div');
+      card.className = 'card';
+
+      const filterDrop = v.glow ? `filter: drop-shadow(0 0 8px ${v.glow}66);` : '';
+
+      // SVG with TV Tower stem as the left edge of B1, with Sphere + Spire ABOVE B1 top curve
+      // B1 body starts around Y=55 to Y=150.
+      // TV Tower Spire shoots up from Y=55 up to Y=10.
+      // TV Tower Sphere sits at Y=38 (above B1 curve top which is at Y=55).
+      const svgHtml = `
+        <svg viewBox="0 0 160 160" width="95" height="95" style="${filterDrop}">
+          <!-- TV Tower Spire & Antenna (shooting up from left stem above B) -->
+          <polygon points="26,8 28,8 30,35 24,35" fill="${v.antenna}" />
+          <circle cx="27" cy="38" r="10" fill="${v.sphereFill}" stroke="${v.stroke}" stroke-width="1.5" />
+          <line x1="27" y1="3" x2="27" y2="8" stroke="${v.antenna}" stroke-width="2" />
+
+          <!-- First B: Left stem connects seamlessly with TV tower, curves sit below sphere (Y=52 to 148) -->
+          <path d="M 23 52 L 68 52 C 82 52 92 60 92 72 C 92 81 86 88 77 92 C 89 96 98 105 98 120 C 98 138 84 148 66 148 L 23 148 Z 
+                   M 42 68 L 42 84 L 62 84 C 68 84 72 80 72 76 C 72 72 68 68 62 68 Z 
+                   M 42 102 L 42 132 L 64 132 C 72 132 77 126 77 117 C 77 108 72 102 64 102 Z" 
+                fill="${v.fill}" stroke="${v.stroke}" stroke-width="${v.strokeWidth || 1}" />
+
+          <!-- Second B: Sits next to B1 with subtle offset -->
+          <path d="M 85 64 L 124 64 C 136 64 145 71 145 81 C 145 89 140 95 132 98 C 142 102 150 110 150 123 C 150 139 137 148 122 148 L 85 148 Z 
+                   M 102 78 L 102 92 L 118 92 C 123 92 127 89 127 85 C 127 81 123 78 118 78 Z 
+                   M 102 106 L 102 134 L 120 134 C 127 134 131 129 131 120 C 131 112 127 106 120 106 Z" 
+                fill="${v.fill}" stroke="${v.stroke}" stroke-width="${v.strokeWidth || 1}" opacity="0.88" />
+        </svg>
+      `;
+
+      card.innerHTML = `
+        <div class="logo-box" style="background: ${v.bg}; ${v.border || ''}">
+          ${svgHtml}
+        </div>
+        <div class="title">${v.cat}</div>
+        <div class="sub">${v.name}</div>
+      `;
+      container.appendChild(card);
+    });
+  </script>
+</body>
+</html>
+
+  <h2 style="color: #38BDF8; margin-top: 40px; margin-bottom: 12px;">3. Konsept: "The Overlapping Optical Vibe" (3 Canlı Örnek)</h2>
+  <p>İki B harfi birbirinin içine geçiyor ve kesiştikleri negatif alanda TV Kulesi oluşuyor.</p>
+  <div class="grid" id="concept3"></div>
+
+  <script>
+    const c3Container = document.getElementById('concept3');
+    const c3Items = [
+      {
+        id: 'c3-1',
+        title: 'Örnek 3.1: Glassmorphic Venn',
+        desc: 'İki yarı saydam B harfinin kesiştiği orta eksende oluşan beyaz TV Kulesi ve küresi',
+        svg: `
+          <svg viewBox="0 0 180 160" width="110" height="110">
+            <!-- Left B (Yellow Glass) -->
+            <path d="M 25 35 L 75 35 C 95 35 105 45 105 60 C 105 72 96 80 85 84 C 100 88 110 98 110 118 C 110 136 95 145 75 145 L 25 145 Z" fill="#F0D722" opacity="0.65" />
+            <!-- Right B (Cyan Glass, overlapping by 40px) -->
+            <path d="M 65 35 L 115 35 C 135 35 145 45 145 60 C 145 72 136 80 125 84 C 140 88 150 98 150 118 C 150 136 135 145 115 145 L 65 145 Z" fill="#22D3EE" opacity="0.65" />
+            <!-- Center Overlap Negative Spire (TV Tower) -->
+            <polygon points="90,12 92,12 94,145 86,145" fill="#FFFFFF" />
+            <circle cx="90" cy="55" r="11" fill="#FFFFFF" />
+            <circle cx="90" cy="55" r="6" fill="#0B0C12" />
+            <line x1="90" y1="5" x2="90" y2="12" stroke="#FFFFFF" stroke-width="2.5" />
+          </svg>
+        `
+      },
+      {
+        id: 'c3-2',
+        title: 'Örnek 3.2: Blueprint Interlock',
+        desc: 'İki kalın B harfi sırt sırta kenetleniyor, aralarındaki negatif boşluk TV Kulesi oluşturuyor',
+        svg: `
+          <svg viewBox="0 0 180 160" width="110" height="110">
+            <!-- Left mirrored B -->
+            <path d="M 80 30 L 35 30 C 18 30 8 40 8 58 C 8 70 16 78 28 82 C 14 86 4 96 4 116 C 4 135 18 145 35 145 L 80 145 Z M 60 48 L 60 72 L 40 72 C 32 72 26 66 26 58 C 26 50 32 48 40 48 Z M 60 92 L 60 127 L 40 127 C 32 127 24 122 24 114 C 24 102 32 92 40 92 Z" fill="#E2E8F0" />
+            <!-- Right standard B -->
+            <path d="M 100 30 L 145 30 C 162 30 172 40 172 58 C 172 70 164 78 152 82 C 166 86 176 96 176 116 C 176 135 162 145 145 145 L 100 145 Z M 120 48 L 120 72 L 140 72 C 148 72 154 66 154 58 C 154 50 148 48 140 48 Z M 120 92 L 120 127 L 140 127 C 148 127 156 122 156 114 C 156 102 148 92 140 92 Z" fill="#E2E8F0" />
+            <!-- Central Tower in Gold -->
+            <polygon points="89,8 91,8 93,148 87,148" fill="#F0D722" />
+            <circle cx="90" cy="52" r="10" fill="#F0D722" />
+            <line x1="90" y1="2" x2="90" y2="8" stroke="#F0D722" stroke-width="2" />
+          </svg>
+        `
+      },
+      {
+        id: 'c3-3',
+        title: 'Örnek 3.3: Neon Kinetic Pulse',
+        desc: 'Birbirini takip eden iki neon B hat çizgisinin kesişim noktalarında parlayan kule ve küre',
+        svg: `
+          <svg viewBox="0 0 180 160" width="110" height="110" style="filter: drop-shadow(0 0 10px rgba(240,215,34,0.4));">
+            <!-- First B Outline -->
+            <path d="M 30 40 L 75 40 C 92 40 102 48 102 62 C 102 72 94 80 84 83 C 98 86 108 96 108 114 C 108 132 94 142 75 142 L 30 142 Z" fill="none" stroke="#F0D722" stroke-width="3" />
+            <!-- Second B Outline (Offset & Shifted) -->
+            <path d="M 60 25 L 105 25 C 122 25 132 33 132 47 C 132 57 124 65 114 68 C 128 71 138 81 138 99 C 138 117 124 127 105 127 L 60 127 Z" fill="none" stroke="#22D3EE" stroke-width="3" opacity="0.85" />
+            <!-- Spire Rising Through Intersection -->
+            <line x1="60" y1="25" x2="60" y2="2" stroke="#FFFFFF" stroke-width="3" />
+            <circle cx="60" cy="18" r="7" fill="#F0D722" stroke="#FFFFFF" stroke-width="2" />
+            <line x1="60" y1="2" x2="60" y2="7" stroke="#FFFFFF" stroke-width="1.5" />
+          </svg>
+        `
+      }
+    ];
+
+    c3Items.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <div class="logo-box">${item.svg}</div>
+        <div class="title" style="color: #38BDF8;">${item.title}</div>
+        <div class="sub">${item.desc}</div>
+      `;
+      c3Container.appendChild(card);
+    });
+  </script>
+</body>
+</html>

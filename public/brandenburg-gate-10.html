@@ -1,0 +1,394 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BerlinBase — Brandenburg Gate (10 Variations)</title>
+  <style>
+    body {
+      background: #0B0C12;
+      color: #F8F9FA;
+      font-family: system-ui, -apple-system, sans-serif;
+      padding: 30px;
+      margin: 0;
+    }
+    h1 { font-size: 24px; color: #22D3EE; margin-bottom: 6px; }
+    p { color: #9CA3AF; margin-bottom: 24px; font-size: 14px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 22px;
+    }
+    .card {
+      background: #14151F;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: all 0.2s;
+    }
+    .card:hover {
+      border-color: #22D3EE;
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5), 0 0 15px rgba(34,211,238,0.2);
+    }
+    .badge {
+      font-size: 11px;
+      font-weight: 800;
+      color: #22D3EE;
+      background: rgba(34,211,238,0.1);
+      padding: 2px 8px;
+      border-radius: 8px;
+      border: 1px solid rgba(34,211,238,0.2);
+      margin-bottom: 10px;
+      align-self: flex-start;
+    }
+    .badge-box {
+      width: 140px;
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 24px;
+      background: #12131C;
+      border: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 14px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+    .title { font-weight: bold; font-size: 14px; color: #fff; text-align: center; }
+    .sub { font-size: 12px; color: #9CA3AF; margin-top: 4px; text-align: center; line-height: 1.4; }
+  </style>
+</head>
+<body>
+  <h1>BerlinBase — Brandenburg Kapısı İçin 10 Farklı Görsel Varyasyonu</h1>
+  <p>2. Kutu ("Visiting & Vibe") için: Brandenburg Gate (Brandenburger Tor) ve Quadriga heykelini modern UI estetiğinde farklı üsluplarla işleyen 10 özgün konsept.</p>
+
+  <div class="grid" id="gateGrid"></div>
+
+  <script>
+    const gateVariations = [
+      {
+        id: 'GATE-1',
+        title: 'Gate 1: Altın Quadriga & Neoklasik Sütunlar (Mimari Vurgu)',
+        desc: 'Üstte parıldayan altın Quadriga (dört at ve zafer tanrıçası), altta 6 dorik sütun ve geçit kemerleri',
+        svg: `
+          <svg viewBox="0 0 120 120" width="115" height="115">
+            <!-- Sky Glow behind Quadriga -->
+            <circle cx="60" cy="38" r="22" fill="#F0D722" opacity="0.12" />
+
+            <!-- Detailed Golden Quadriga at Top (Dört At ve Zafer Heykeli) -->
+            <g transform="translate(60, 28) scale(0.95)">
+              <rect x="-14" y="0" width="28" height="4" fill="#F0D722" rx="1" />
+              <!-- Winged Goddess of Victory -->
+              <path d="M 0 -17 L 3.5 -8 L -3.5 -8 Z" fill="#FFFFFF" />
+              <circle cx="0" cy="-19.5" r="2.2" fill="#FFFFFF" />
+              <line x1="5" y1="-24" x2="5" y2="-4" stroke="#F0D722" stroke-width="1.2" />
+              <circle cx="5" cy="-24" r="1.8" fill="#F0D722" />
+              <!-- 4 Galloping Horses -->
+              <path d="M -13 -4 Q -16 -12 -11 -13 Q -9 -11 -9 -4 Z" fill="#FDE047" />
+              <path d="M -6 -4 Q -8 -15 -4 -15 Q -2 -13 -3 -4 Z" fill="#FFFFFF" />
+              <path d="M 2 -4 Q 3 -15 6 -15 Q 8 -13 7 -4 Z" fill="#FFFFFF" />
+              <path d="M 10 -4 Q 12 -12 14 -13 Q 16 -11 15 -4 Z" fill="#FDE047" />
+            </g>
+
+            <!-- Gate Entablature & Pediment (Üst Kiriş) -->
+            <polygon points="18,34 102,34 98,39 22,39" fill="#CBD5E1" />
+            <rect x="20" y="39" width="80" height="7" fill="#E2E8F0" />
+            <!-- Relief frieze bar -->
+            <line x1="22" y1="42.5" x2="98" y2="42.5" stroke="#94A3B8" stroke-width="2" stroke-dasharray="4,2" />
+
+            <!-- 6 Classical Doric Columns -->
+            <line x1="27" y1="46" x2="27" y2="98" stroke="#FFFFFF" stroke-width="3.5" />
+            <line x1="40" y1="46" x2="40" y2="98" stroke="#FFFFFF" stroke-width="3.5" />
+            <line x1="53" y1="46" x2="53" y2="98" stroke="#FFFFFF" stroke-width="3.5" />
+            <line x1="67" y1="46" x2="67" y2="98" stroke="#FFFFFF" stroke-width="3.5" />
+            <line x1="80" y1="46" x2="80" y2="98" stroke="#FFFFFF" stroke-width="3.5" />
+            <line x1="93" y1="46" x2="93" y2="98" stroke="#FFFFFF" stroke-width="3.5" />
+
+            <!-- Pedestal Base Foundation -->
+            <rect x="18" y="98" width="84" height="6" fill="#CBD5E1" rx="1" />
+          </svg>
+        `
+      },
+      {
+        id: 'GATE-2',
+        title: 'Gate 2: Cyber Neon Cyan Brandenburg',
+        desc: 'Berlin gece hayatı & Spree mavisiyle aydınlanan fütüristik neon kontur Brandenburg Kapısı',
+        svg: `
+          <svg viewBox="0 0 120 120" width="115" height="115" style="filter: drop-shadow(0 0 8px rgba(34,211,238,0.4));">
+            <!-- Neon Quadriga -->
+            <g transform="translate(60, 26)">
+              <line x1="-12" y1="0" x2="12" y2="0" stroke="#22D3EE" stroke-width="2" />
+              <path d="M 0 -14 L 3 -6 L -3 -6 Z" fill="#22D3EE" />
+              <circle cx="0" cy="-16" r="2" fill="#FFFFFF" />
+              <!-- Wing/Staff -->
+              <line x1="4" y1="-20" x2="4" y2="-4" stroke="#FFFFFF" stroke-width="1.2" />
+              <!-- 4 Horses Neon lines -->
+              <line x1="-10" y1="-3" x2="-8" y2="-11" stroke="#22D3EE" stroke-width="1.5" />
+              <line x1="-4" y1="-3" x2="-3" y2="-13" stroke="#22D3EE" stroke-width="1.8" />
+              <line x1="4" y1="-3" x2="3" y2="-13" stroke="#22D3EE" stroke-width="1.8" />
+              <line x1="10" y1="-3" x2="8" y2="-11" stroke="#22D3EE" stroke-width="1.5" />
+            </g>
+
+            <!-- Neon Gate Architrave -->
+            <rect x="20" y="32" width="80" height="9" fill="#0B0C12" stroke="#22D3EE" stroke-width="1.8" rx="1" />
+
+            <!-- 6 Neon Columns -->
+            <line x1="26" y1="41" x2="26" y2="96" stroke="#22D3EE" stroke-width="3" />
+            <line x1="39" y1="41" x2="39" y2="96" stroke="#22D3EE" stroke-width="3" />
+            <line x1="53" y1="41" x2="53" y2="96" stroke="#22D3EE" stroke-width="3" />
+            <line x1="67" y1="41" x2="67" y2="96" stroke="#22D3EE" stroke-width="3" />
+            <line x1="81" y1="41" x2="81" y2="96" stroke="#22D3EE" stroke-width="3" />
+            <line x1="94" y1="41" x2="94" y2="96" stroke="#22D3EE" stroke-width="3" />
+
+            <rect x="18" y="96" width="84" height="5" fill="#0B0C12" stroke="#22D3EE" stroke-width="1.8" />
+          </svg>
+        `
+      },
+      {
+        id: 'GATE-3',
+        title: 'Gate 3: Techno Güneş Gözlüğü & Üstünde Quadriga (Tasarımın)',
+        desc: 'Tarif ettiğin gibi: Mat siyah sivri techno gözlük burun köprüsünün üstünde doğrudan duran Quadriga ve alt sütunlar',
+        svg: `
+          <svg viewBox="0 0 120 120" width="115" height="115">
+            <!-- Classical Gate Pillars (Background) -->
+            <line x1="28" y1="64" x2="28" y2="102" stroke="#64748B" stroke-width="3" opacity="0.6" />
+            <line x1="40" y1="64" x2="40" y2="102" stroke="#64748B" stroke-width="3" opacity="0.6" />
+            <line x1="53" y1="64" x2="53" y2="102" stroke="#64748B" stroke-width="3" opacity="0.6" />
+            <line x1="67" y1="64" x2="67" y2="102" stroke="#64748B" stroke-width="3" opacity="0.6" />
+            <line x1="80" y1="64" x2="80" y2="102" stroke="#64748B" stroke-width="3" opacity="0.6" />
+            <line x1="92" y1="64" x2="92" y2="102" stroke="#64748B" stroke-width="3" opacity="0.6" />
+            <rect x="22" y="102" width="76" height="5" fill="#475569" opacity="0.7" />
+
+            <!-- Quadriga exactly mounted on the glasses bridge -->
+            <g transform="translate(60, 38) scale(0.9)">
+              <rect x="-13" y="-1" width="26" height="3.5" rx="1" fill="#22D3EE" />
+              <path d="M 0 -16 L 3.5 -8 L -3.5 -8 Z" fill="#FFFFFF" />
+              <circle cx="0" cy="-18" r="2" fill="#FFFFFF" />
+              <line x1="4.5" y1="-22" x2="4.5" y2="-4" stroke="#22D3EE" stroke-width="1" />
+              <circle cx="4.5" cy="-22" r="1.5" fill="#F0D722" />
+              <!-- 4 Horses -->
+              <path d="M -11 -4 Q -13 -11 -9 -12 Q -7 -10 -8 -4 Z" fill="#CBD5E1" />
+              <path d="M -5 -4 Q -6 -13 -3 -13 Q -1 -11 -2 -4 Z" fill="#FFFFFF" />
+              <path d="M 2 -4 Q 3 -13 5 -13 Q 7 -11 6 -4 Z" fill="#FFFFFF" />
+              <path d="M 8 -4 Q 10 -11 12 -12 Q 14 -10 13 -4 Z" fill="#CBD5E1" />
+            </g>
+
+            <!-- Sharp Black Techno Glasses -->
+            <polygon points="14,54 53,52 48,72 24,74" fill="#05060A" stroke="#22D3EE" stroke-width="1.4" />
+            <line x1="22" y1="57" x2="42" y2="57" stroke="#22D3EE" stroke-width="1.2" opacity="0.8" />
+            <polygon points="67,52 106,54 96,74 72,72" fill="#05060A" stroke="#22D3EE" stroke-width="1.4" />
+            <line x1="78" y1="57" x2="98" y2="57" stroke="#22D3EE" stroke-width="1.2" opacity="0.8" />
+            <!-- Nose Bridge -->
+            <rect x="53" y="51" width="14" height="4" rx="0.5" fill="#000000" stroke="#22D3EE" stroke-width="1" />
+          </svg>
+        `
+      },
+      {
+        id: 'GATE-4',
+        title: 'Gate 4: Minimalist 2.5D İzometrik Kapı',
+        desc: 'Açılı 3D perspektifle çizilmiş modern taş dokulu kapı ve heykeller',
+        svg: `
+          <svg viewBox="0 0 120 120" width="115" height="115">
+            <g transform="rotate(10 60 60)">
+              <!-- Base 3D shadow -->
+              <rect x="20" y="96" width="80" height="8" rx="2" fill="#181A24" stroke="#334155" stroke-width="1" />
+              <!-- Columns -->
+              <rect x="25" y="44" width="70" height="52" fill="#141622" stroke="#CBD5E1" stroke-width="1.5" />
+              <!-- Arch Openings (5 Passage cuts) -->
+              <rect x="30" y="58" width="8" height="38" rx="3" fill="#0B0C12" />
+              <rect x="42" y="54" width="9" height="42" rx="3" fill="#0B0C12" />
+              <rect x="55" y="50" width="10" height="46" rx="3" fill="#0B0C12" stroke="#22D3EE" stroke-width="1" />
+              <rect x="69" y="54" width="9" height="42" rx="3" fill="#0B0C12" />
+              <rect x="82" y="58" width="8" height="38" rx="3" fill="#0B0C12" />
+              <!-- Roof & Golden Statue -->
+              <rect x="20" y="36" width="80" height="8" rx="1" fill="#94A3B8" />
+              <circle cx="60" cy="24" r="8" fill="#F0D722" />
+              <line x1="60" y1="14" x2="60" y2="24" stroke="#FFFFFF" stroke-width="2" />
+            </g>
+          </svg>
+        `
+      },
+      {
+        id: 'GATE-5',
+        title: 'Gate 5: Altın Güneş & Silüet Brandenburg (Günbatımı)',
+        desc: 'Arkasında batan altın sarısı dev Berlin güneşi, önünde koyu silüet kapı ve atlar',
+        svg: `
+          <svg viewBox="0 0 120 120" width="115" height="115">
+            <!-- Massive Glowing Sunset Sun -->
+            <circle cx="60" cy="54" r="32" fill="#F0D722" opacity="0.9" />
+            <!-- Sun halo ring -->
+            <circle cx="60" cy="54" r="38" fill="none" stroke="#F59E0B" stroke-width="1.5" opacity="0.6" />
+
+            <!-- Dark Silhouette Brandenburg Gate -->
+            <polygon points="52,22 68,22 65,30 55,30" fill="#0B0C12" />
+            <circle cx="60" cy="18" r="3" fill="#0B0C12" />
+            <!-- Entablature -->
+            <rect x="18" y="32" width="84" height="8" fill="#0B0C12" />
+            <!-- Columns in Silhouette against Golden Sun -->
+            <rect x="24" y="40" width="4" height="60" fill="#0B0C12" />
+            <rect x="38" y="40" width="4" height="60" fill="#0B0C12" />
+            <rect x="52" y="40" width="4" height="60" fill="#0B0C12" />
+            <rect x="64" y="40" width="4" height="60" fill="#0B0C12" />
+            <rect x="78" y="40" width="4" height="60" fill="#0B0C12" />
+            <rect x="92" y="40" width="4" height="60" fill="#0B0C12" />
+            <rect x="16" y="98" width="88" height="6" fill="#0B0C12" />
+          </svg>
+        `
+      },
+      {
+        id: 'GATE-6',
+        title: 'Gate 6: Gece Kulübü Holografik Kapı',
+        desc: 'Cyan ve neon sarı lazer hatlarıyla çizilmiş elektro-estetik Brandenburg Kapısı',
+        svg: `
+          <svg viewBox="0 0 120 120" width="115" height="115">
+            <!-- Laser grid in background -->
+            <line x1="20" y1="100" x2="60" y2="30" stroke="#F0D722" stroke-width="0.8" opacity="0.3" />
+            <line x1="100" y1="100" x2="60" y2="30" stroke="#F0D722" stroke-width="0.8" opacity="0.3" />
+            
+            <!-- Quadriga Laser Outline -->
+            <polygon points="50,26 70,26 68,32 52,32" fill="#F0D722" />
+            <circle cx="60" cy="20" r="4" fill="#FFFFFF" />
+
+            <!-- Neon Dual-Tone Roof -->
+            <rect x="20" y="34" width="80" height="8" fill="#12131C" stroke="#22D3EE" stroke-width="1.8" />
+            <!-- Glowing Yellow Beam Columns -->
+            <line x1="27" y1="42" x2="27" y2="98" stroke="#F0D722" stroke-width="2.8" />
+            <line x1="40" y1="42" x2="40" y2="98" stroke="#22D3EE" stroke-width="2.8" />
+            <line x1="53" y1="42" x2="53" y2="98" stroke="#FFFFFF" stroke-width="3" />
+            <line x1="67" y1="42" x2="67" y2="98" stroke="#FFFFFF" stroke-width="3" />
+            <line x1="80" y1="42" x2="80" y2="98" stroke="#22D3EE" stroke-width="2.8" />
+            <line x1="93" y1="42" x2="93" y2="98" stroke="#F0D722" stroke-width="2.8" />
+            <rect x="18" y="98" width="84" height="4" fill="#F0D722" />
+          </svg>
+        `
+      },
+      {
+        id: 'GATE-7',
+        title: 'Gate 7: Mimari Kat Planı / Blueprint Kapı',
+        desc: 'Mühendislik ve veri analitiği havası veren mavi çizim hatlı (blueprint) detaylı kapı',
+        svg: `
+          <svg viewBox="0 0 120 120" width="115" height="115">
+            <!-- Blueprint grid box -->
+            <rect x="16" y="16" width="88" height="88" fill="#0C1427" stroke="#1E3A8A" stroke-width="1" rx="4" />
+            <line x1="16" y1="60" x2="104" y2="60" stroke="#1E3A8A" stroke-width="0.8" stroke-dasharray="3,3" />
+            <line x1="60" y1="16" x2="60" y2="104" stroke="#1E3A8A" stroke-width="0.8" stroke-dasharray="3,3" />
+
+            <!-- White Blueprint Lines of Gate -->
+            <!-- Statue -->
+            <polygon points="52,24 68,24 64,28 56,28" fill="none" stroke="#38BDF8" stroke-width="1.2" />
+            <circle cx="60" cy="21" r="2.5" fill="none" stroke="#38BDF8" stroke-width="1.2" />
+            <!-- Entablature -->
+            <rect x="22" y="30" width="76" height="8" fill="none" stroke="#FFFFFF" stroke-width="1.4" />
+            <!-- 6 Columns -->
+            <rect x="28" y="38" width="4" height="54" fill="none" stroke="#38BDF8" stroke-width="1.2" />
+            <rect x="40" y="38" width="4" height="54" fill="none" stroke="#38BDF8" stroke-width="1.2" />
+            <rect x="52" y="38" width="4" height="54" fill="none" stroke="#38BDF8" stroke-width="1.2" />
+            <rect x="64" y="38" width="4" height="54" fill="none" stroke="#38BDF8" stroke-width="1.2" />
+            <rect x="76" y="38" width="4" height="54" fill="none" stroke="#38BDF8" stroke-width="1.2" />
+            <rect x="88" y="38" width="4" height="54" fill="none" stroke="#38BDF8" stroke-width="1.2" />
+            <!-- Base -->
+            <rect x="20" y="92" width="80" height="5" fill="none" stroke="#FFFFFF" stroke-width="1.4" />
+          </svg>
+        `
+      },
+      {
+        id: 'GATE-8',
+        title: 'Gate 8: Berlin TV Kulesi & Brandenburg Kapısı Füzyonu',
+        desc: 'Brandenburg Kapısı’nın merkez geçidinden arka planda yükselen Berlin TV Kulesi',
+        svg: `
+          <svg viewBox="0 0 120 120" width="115" height="115">
+            <!-- TV Tower Spire Rising High in Background Center -->
+            <polygon points="59.5,8 60.5,8 62,60 58,60" fill="#F0D722" />
+            <circle cx="60" cy="24" r="7" fill="#F0D722" stroke="#FFFFFF" stroke-width="1.5" />
+            <line x1="60" y1="2" x2="60" y2="8" stroke="#FFFFFF" stroke-width="1.5" />
+
+            <!-- Forefront Brandenburg Gate -->
+            <rect x="20" y="36" width="80" height="8" fill="#1C1E2B" stroke="#CBD5E1" stroke-width="1.5" />
+            <!-- Columns (White classical) -->
+            <line x1="27" y1="44" x2="27" y2="98" stroke="#FFFFFF" stroke-width="3.5" />
+            <line x1="40" y1="44" x2="40" y2="98" stroke="#FFFFFF" stroke-width="3.5" />
+            <line x1="52" y1="44" x2="52" y2="98" stroke="#FFFFFF" stroke-width="3.5" />
+            <line x1="68" y1="44" x2="68" y2="98" stroke="#FFFFFF" stroke-width="3.5" />
+            <line x1="80" y1="44" x2="80" y2="98" stroke="#FFFFFF" stroke-width="3.5" />
+            <line x1="93" y1="44" x2="93" y2="98" stroke="#FFFFFF" stroke-width="3.5" />
+            <!-- Center Portal Frame -->
+            <rect x="18" y="98" width="84" height="6" fill="#CBD5E1" />
+          </svg>
+        `
+      },
+      {
+        id: 'GATE-9',
+        title: 'Gate 9: Vintage Berlin Posta Pulu & Brandenburg',
+        desc: 'Vintage gravür çizgileri ve tırtıklı posta pulu çerçevesi içinde klasik kapı ve atlar',
+        svg: `
+          <svg viewBox="0 0 120 120" width="115" height="115">
+            <!-- Stamp Border with Notches -->
+            <rect x="18" y="18" width="84" height="84" rx="4" fill="#141520" stroke="#F0D722" stroke-width="1.5" stroke-dasharray="8,4" />
+            <text x="60" y="30" fill="#F0D722" font-size="7" font-weight="900" text-anchor="middle" letter-spacing="1">BERLIN • 1791</text>
+            
+            <!-- Gate Line Art -->
+            <!-- Quadriga -->
+            <polygon points="52,36 68,36 64,40 56,40" fill="#FFFFFF" />
+            <circle cx="60" cy="34" r="2.5" fill="#F0D722" />
+            <!-- Roof -->
+            <rect x="26" y="42" width="68" height="6" fill="#CBD5E1" />
+            <!-- Pillars -->
+            <line x1="33" y1="48" x2="33" y2="84" stroke="#FFFFFF" stroke-width="2.5" />
+            <line x1="44" y1="48" x2="44" y2="84" stroke="#FFFFFF" stroke-width="2.5" />
+            <line x1="55" y1="48" x2="55" y2="84" stroke="#FFFFFF" stroke-width="2.5" />
+            <line x1="65" y1="48" x2="65" y2="84" stroke="#FFFFFF" stroke-width="2.5" />
+            <line x1="76" y1="48" x2="76" y2="84" stroke="#FFFFFF" stroke-width="2.5" />
+            <line x1="87" y1="48" x2="87" y2="84" stroke="#FFFFFF" stroke-width="2.5" />
+            <rect x="24" y="84" width="72" height="4" fill="#CBD5E1" />
+          </svg>
+        `
+      },
+      {
+        id: 'GATE-10',
+        title: 'Gate 10: Altın Madalyon & Gece Çerçevesi',
+        desc: 'Buzlu koyu cam madalyon içinde zarif kabartma altın Brandenburg Kapısı ve heykeli',
+        svg: `
+          <svg viewBox="0 0 120 120" width="115" height="115">
+            <!-- Circular Golden Medallion Ring -->
+            <circle cx="60" cy="60" r="44" fill="#13141F" stroke="#F0D722" stroke-width="1.8" />
+            <circle cx="60" cy="60" r="40" fill="none" stroke="#F0D722" stroke-width="0.8" stroke-dasharray="2,2" opacity="0.6" />
+
+            <!-- Golden Embossed Gate -->
+            <g transform="translate(60, 36) scale(0.9)">
+              <rect x="-12" y="0" width="24" height="3" fill="#F0D722" />
+              <path d="M 0 -14 L 3 -7 L -3 -7 Z" fill="#FFFFFF" />
+              <circle cx="0" cy="-16" r="2" fill="#FFFFFF" />
+              <line x1="4" y1="-20" x2="4" y2="-4" stroke="#F0D722" stroke-width="1" />
+            </g>
+
+            <rect x="28" y="42" width="64" height="7" fill="#F0D722" rx="1" />
+            <!-- 6 Columns in Gold -->
+            <line x1="34" y1="49" x2="34" y2="84" stroke="#FDE047" stroke-width="2.8" />
+            <line x1="44" y1="49" x2="44" y2="84" stroke="#FDE047" stroke-width="2.8" />
+            <line x1="55" y1="49" x2="55" y2="84" stroke="#FDE047" stroke-width="2.8" />
+            <line x1="65" y1="49" x2="65" y2="84" stroke="#FDE047" stroke-width="2.8" />
+            <line x1="76" y1="49" x2="76" y2="84" stroke="#FDE047" stroke-width="2.8" />
+            <line x1="86" y1="49" x2="86" y2="84" stroke="#FDE047" stroke-width="2.8" />
+            <rect x="26" y="84" width="68" height="4" fill="#F0D722" rx="1" />
+          </svg>
+        `
+      }
+    ];
+
+    const gateGrid = document.getElementById('gateGrid');
+    gateVariations.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <div class="badge">${item.id}</div>
+        <div class="badge-box">${item.svg}</div>
+        <div class="title">${item.title}</div>
+        <div class="sub">${item.desc}</div>
+      `;
+      gateGrid.appendChild(card);
+    });
+  </script>
+</body>
+</html>

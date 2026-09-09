@@ -1,0 +1,483 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BerlinBase — High Detail Brandenburg Quadriga (10 Variations)</title>
+  <style>
+    body {
+      background: #0B0C12;
+      color: #F8F9FA;
+      font-family: system-ui, -apple-system, sans-serif;
+      padding: 30px;
+      margin: 0;
+    }
+    h1 { font-size: 24px; color: #22D3EE; margin-bottom: 6px; }
+    p { color: #9CA3AF; margin-bottom: 24px; font-size: 14px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .card {
+      background: #14151F;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: all 0.2s;
+    }
+    .card:hover {
+      border-color: #22D3EE;
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5), 0 0 15px rgba(34,211,238,0.2);
+    }
+    .badge {
+      font-size: 11px;
+      font-weight: 800;
+      color: #22D3EE;
+      background: rgba(34,211,238,0.1);
+      padding: 2px 8px;
+      border-radius: 8px;
+      border: 1px solid rgba(34,211,238,0.2);
+      margin-bottom: 10px;
+      align-self: flex-start;
+    }
+    .badge-box {
+      width: 150px;
+      height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 26px;
+      background: #12131C;
+      border: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 14px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+    .title { font-weight: bold; font-size: 14px; color: #fff; text-align: center; }
+    .sub { font-size: 12px; color: #9CA3AF; margin-top: 4px; text-align: center; line-height: 1.4; }
+  </style>
+</head>
+<body>
+  <h1>BerlinBase — 10 Net At Heykelli Brandenburg Kapısı (Quadriga Odaklı)</h1>
+  <p>Gözlük kaldırıldı. 4 şaha kalkan atın başı, yelesi, göğsü ve bacakları tek tek anatomik olarak belirginleştirildi; zafer arabası ve kanatlı tanrıça heykeliyle birlikte Brandenburg Kapısı'nın üstüne yerleştirildi.</p>
+
+  <div class="grid" id="container"></div>
+
+  <script>
+    // Detailed Realistic 4 Rearing Horses (Quadriga)
+    // Left outer horse, left inner horse, right inner horse, right outer horse, with distinct ears, muzzle, neck arch, and front hooves.
+
+    const list = [
+      {
+        id: 'QUAD-1',
+        title: 'Q-1: Altın Quadriga & Mermer Sütunlar (Klasik Zirve)',
+        desc: 'Atların şaha kalkan ön bacakları, yeleleri ve başları çok net. Altında 6 dorik sütunlu mermer kapı',
+        svg: `
+          <svg viewBox="0 0 140 140" width="130" height="130">
+            <!-- Background Sun Glow -->
+            <circle cx="70" cy="40" r="28" fill="#F0D722" opacity="0.15" />
+
+            <!-- Detailed Quadriga Sculptures -->
+            <!-- Chariot Box -->
+            <rect x="56" y="34" width="28" height="6" rx="1.5" fill="#F59E0B" />
+            <circle cx="70" cy="40" r="4" fill="#B45309" />
+            <!-- Winged Goddess of Victory holding laurel staff -->
+            <path d="M 68 14 L 73 24 L 67 24 Z" fill="#FFFFFF" />
+            <circle cx="70" cy="12" r="2.5" fill="#FFFFFF" />
+            <!-- Spread Wings -->
+            <path d="M 67 18 Q 58 12 55 18 Q 63 22 67 22 Z" fill="#E2E8F0" />
+            <path d="M 73 18 Q 82 12 85 18 Q 77 22 73 22 Z" fill="#E2E8F0" />
+            <!-- Staff with Iron Cross / Laurel Wreath -->
+            <line x1="77" y1="6" x2="75" y2="34" stroke="#F0D722" stroke-width="1.2" />
+            <circle cx="77" cy="6" r="2.5" fill="#F0D722" />
+
+            <!-- 4 Distinct Galloping / Rearing Horses -->
+            <!-- Horse 1 (Far Left, rearing outwards) -->
+            <path d="M 44 34 Q 38 28 42 21 Q 45 16 47 18 Q 49 19 46 25 Q 43 28 46 34 Z" fill="#FDE047" />
+            <path d="M 47 18 L 49 15 L 48 18 Z" fill="#F0D722" /> <!-- Ears -->
+            <line x1="42" y1="26" x2="36" y2="23" stroke="#FDE047" stroke-width="1.5" stroke-linecap="round" /> <!-- Raised Front Leg -->
+
+            <!-- Horse 2 (Center Left) -->
+            <path d="M 54 34 Q 50 24 53 18 Q 56 13 58 15 Q 60 17 58 23 Q 56 27 58 34 Z" fill="#FFFFFF" />
+            <line x1="53" y1="22" x2="49" y2="18" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" />
+
+            <!-- Horse 3 (Center Right) -->
+            <path d="M 82 34 Q 84 27 82 23 Q 80 17 82 15 Q 84 13 87 18 Q 90 24 86 34 Z" fill="#FFFFFF" />
+            <line x1="87" y1="22" x2="91" y2="18" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" />
+
+            <!-- Horse 4 (Far Right, rearing outwards) -->
+            <path d="M 94 34 Q 97 28 94 25 Q 91 19 93 18 Q 95 16 98 21 Q 102 28 96 34 Z" fill="#FDE047" />
+            <line x1="98" y1="26" x2="104" y2="23" stroke="#FDE047" stroke-width="1.5" stroke-linecap="round" />
+
+            <!-- Gate Entablature & Pediment (Roof) -->
+            <polygon points="18,40 122,40 118,46 22,46" fill="#CBD5E1" />
+            <rect x="20" y="46" width="100" height="9" fill="#E2E8F0" />
+            <line x1="22" y1="50.5" x2="118" y2="50.5" stroke="#94A3B8" stroke-width="2" stroke-dasharray="5,3" />
+
+            <!-- 6 Doric Pillars (Classical White Marble) -->
+            <line x1="28" y1="55" x2="28" y2="114" stroke="#FFFFFF" stroke-width="4" />
+            <line x1="44" y1="55" x2="44" y2="114" stroke="#FFFFFF" stroke-width="4" />
+            <line x1="61" y1="55" x2="61" y2="114" stroke="#FFFFFF" stroke-width="4" />
+            <line x1="79" y1="55" x2="79" y2="114" stroke="#FFFFFF" stroke-width="4" />
+            <line x1="96" y1="55" x2="96" y2="114" stroke="#FFFFFF" stroke-width="4" />
+            <line x1="112" y1="55" x2="112" y2="114" stroke="#FFFFFF" stroke-width="4" />
+
+            <!-- Solid Foundation Pedestal -->
+            <rect x="18" y="114" width="104" height="8" fill="#CBD5E1" rx="1.5" />
+          </svg>
+        `
+      },
+      {
+        id: 'QUAD-2',
+        title: 'Q-2: Yakın Çekim Quadriga (Dev At Başları & Yeleler)',
+        desc: 'Kamera atlara daha da yakınlaşmış; 4 şaha kalkan atın silüeti ve zafer tanrıçası çok baskın',
+        svg: `
+          <svg viewBox="0 0 140 140" width="130" height="130">
+            <!-- Large Focus Quadriga -->
+            <g transform="translate(70, 42) scale(1.35)">
+              <!-- Base -->
+              <rect x="-16" y="6" width="32" height="4" fill="#F0D722" rx="1" />
+              <!-- Winged Goddess -->
+              <path d="M 0 -13 L 4 -2 L -4 -2 Z" fill="#FFFFFF" />
+              <circle cx="0" cy="-15" r="2.8" fill="#FFFFFF" />
+              <path d="M -3 -8 Q -12 -14 -8 -6 Z" fill="#E2E8F0" />
+              <path d="M 3 -8 Q 12 -14 8 -6 Z" fill="#E2E8F0" />
+              <!-- Standard -->
+              <line x1="6" y1="-21" x2="4" y2="6" stroke="#F0D722" stroke-width="1.2" />
+              <circle cx="6" cy="-21" r="2" fill="#F0D722" />
+
+              <!-- Highly Sculpted 4 Horses -->
+              <!-- Horse 1 Left -->
+              <path d="M -16 6 Q -22 -1 -17 -8 Q -13 -13 -11 -10 Q -9 -8 -13 -2 Q -15 3 -12 6 Z" fill="#F59E0B" />
+              <line x1="-16" y1="-2" x2="-23" y2="-6" stroke="#F59E0B" stroke-width="1.6" stroke-linecap="round" />
+              <!-- Horse 2 Mid-Left -->
+              <path d="M -8 6 Q -12 -3 -8 -11 Q -5 -16 -3 -13 Q -1 -9 -4 -2 Q -7 3 -5 6 Z" fill="#FFFFFF" />
+              <line x1="-6" y1="-4" x2="-10" y2="-10" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" />
+              <!-- Horse 3 Mid-Right -->
+              <path d="M 5 6 Q 7 3 4 -2 Q 1 -9 3 -13 Q 5 -16 8 -11 Q 12 -3 8 6 Z" fill="#FFFFFF" />
+              <line x1="6" y1="-4" x2="10" y2="-10" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" />
+              <!-- Horse 4 Right -->
+              <path d="M 12 6 Q 15 3 13 -2 Q 9 -8 11 -10 Q 13 -13 17 -8 Q 22 -1 16 6 Z" fill="#F59E0B" />
+              <line x1="16" y1="-2" x2="23" y2="-6" stroke="#F59E0B" stroke-width="1.6" stroke-linecap="round" />
+            </g>
+
+            <!-- Gate Cornice & Columns (Bottom half) -->
+            <rect x="22" y="60" width="96" height="8" fill="#CBD5E1" />
+            <line x1="30" y1="68" x2="30" y2="116" stroke="#FFFFFF" stroke-width="4.5" />
+            <line x1="46" y1="68" x2="46" y2="116" stroke="#FFFFFF" stroke-width="4.5" />
+            <line x1="62" y1="68" x2="62" y2="116" stroke="#FFFFFF" stroke-width="4.5" />
+            <line x1="78" y1="68" x2="78" y2="116" stroke="#FFFFFF" stroke-width="4.5" />
+            <line x1="94" y1="68" x2="94" y2="116" stroke="#FFFFFF" stroke-width="4.5" />
+            <line x1="110" y1="68" x2="110" y2="116" stroke="#FFFFFF" stroke-width="4.5" />
+            <rect x="18" y="116" width="104" height="6" fill="#94A3B8" />
+          </svg>
+        `
+      },
+      {
+        id: 'QUAD-3',
+        title: 'Q-3: Spree Cyan Işıklı Quadriga (Turkuaz & Beyaz)',
+        desc: 'Neon turkuaz ışıkla konturlanmış 4 at figürü, modern Berlin gece keşfi hissi verir',
+        svg: `
+          <svg viewBox="0 0 140 140" width="130" height="130" style="filter: drop-shadow(0 0 10px rgba(34,211,238,0.35));">
+            <!-- Chariot Platform -->
+            <rect x="56" y="32" width="28" height="5" fill="#22D3EE" rx="1" />
+            <!-- Goddess in White & Cyan -->
+            <path d="M 68 14 L 72 23 L 68 23 Z" fill="#FFFFFF" />
+            <circle cx="70" cy="12" r="2.5" fill="#FFFFFF" />
+            <line x1="76" y1="6" x2="74" y2="32" stroke="#22D3EE" stroke-width="1.4" />
+            <circle cx="76" cy="6" r="2" fill="#F0D722" />
+
+            <!-- 4 Vivid Cyan-Bordered Horses -->
+            <path d="M 44 32 Q 38 26 42 20 Q 45 15 47 17 Q 49 19 46 24 Q 43 27 46 32 Z" fill="#0A1624" stroke="#22D3EE" stroke-width="1.2" />
+            <line x1="42" y1="24" x2="36" y2="21" stroke="#22D3EE" stroke-width="1.6" stroke-linecap="round" />
+
+            <path d="M 54 32 Q 50 23 53 17 Q 56 12 58 14 Q 60 16 58 22 Q 56 26 58 32 Z" fill="#0A1624" stroke="#FFFFFF" stroke-width="1.4" />
+            <line x1="53" y1="21" x2="49" y2="17" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" />
+
+            <path d="M 82 32 Q 84 26 82 22 Q 80 16 82 14 Q 84 12 87 17 Q 90 23 86 32 Z" fill="#0A1624" stroke="#FFFFFF" stroke-width="1.4" />
+            <line x1="87" y1="21" x2="91" y2="17" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" />
+
+            <path d="M 94 32 Q 97 27 94 24 Q 91 18 93 17 Q 95 15 98 20 Q 102 26 96 32 Z" fill="#0A1624" stroke="#22D3EE" stroke-width="1.2" />
+            <line x1="98" y1="24" x2="104" y2="21" stroke="#22D3EE" stroke-width="1.6" stroke-linecap="round" />
+
+            <!-- Gate Architrave -->
+            <rect x="22" y="38" width="96" height="8" fill="#111827" stroke="#22D3EE" stroke-width="1.5" />
+            <!-- 6 Pillars in Cyan & White -->
+            <line x1="28" y1="46" x2="28" y2="114" stroke="#22D3EE" stroke-width="3.5" />
+            <line x1="45" y1="46" x2="45" y2="114" stroke="#FFFFFF" stroke-width="3.5" />
+            <line x1="62" y1="46" x2="62" y2="114" stroke="#22D3EE" stroke-width="3.5" />
+            <line x1="78" y1="46" x2="78" y2="114" stroke="#22D3EE" stroke-width="3.5" />
+            <line x1="95" y1="46" x2="95" y2="114" stroke="#FFFFFF" stroke-width="3.5" />
+            <line x1="112" y1="46" x2="112" y2="114" stroke="#22D3EE" stroke-width="3.5" />
+            <rect x="18" y="114" width="104" height="6" fill="#111827" stroke="#22D3EE" stroke-width="1.5" />
+          </svg>
+        `
+      },
+      {
+        id: 'QUAD-4',
+        title: 'Q-4: Yandan Şaha Kalkan Yan Profil Atlar',
+        desc: 'Atların dörtnala koşusu yandan perspektifle çizilmiş, yeleler ve bacaklar daha dramatik',
+        svg: `
+          <svg viewBox="0 0 140 140" width="130" height="130">
+            <!-- Chariot in side profile -->
+            <path d="M 52 32 L 68 32 L 64 36 L 54 36 Z" fill="#F0D722" />
+            <circle cx="58" cy="36" r="3.5" fill="#FFFFFF" stroke="#0B0C12" />
+            <!-- Standing Victory Goddess leaning forward -->
+            <path d="M 64 16 L 68 28 L 62 28 Z" fill="#FFFFFF" />
+            <circle cx="65" cy="13" r="2.5" fill="#FFFFFF" />
+
+            <!-- Profile Rearing Horses (Stepping outward in stagger) -->
+            <!-- Horse 1 & 2 Left -->
+            <path d="M 38 32 Q 42 22 40 16 Q 44 14 47 18 Q 48 24 45 32 Z" fill="#FDE047" />
+            <line x1="42" y1="20" x2="34" y2="16" stroke="#FDE047" stroke-width="2" stroke-linecap="round" />
+
+            <path d="M 50 32 Q 54 20 52 14 Q 56 12 59 16 Q 60 22 57 32 Z" fill="#FFFFFF" />
+            <line x1="54" y1="18" x2="48" y2="13" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" />
+
+            <!-- Horse 3 & 4 Right -->
+            <path d="M 83 32 Q 80 22 82 16 Q 86 14 89 18 Q 88 24 85 32 Z" fill="#FFFFFF" />
+            <line x1="86" y1="18" x2="92" y2="13" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" />
+
+            <path d="M 95 32 Q 92 20 94 14 Q 98 12 101 16 Q 100 22 97 32 Z" fill="#FDE047" />
+            <line x1="98" y1="20" x2="106" y2="16" stroke="#FDE047" stroke-width="2" stroke-linecap="round" />
+
+            <!-- Gate Structure -->
+            <rect x="20" y="36" width="100" height="9" fill="#E2E8F0" />
+            <line x1="28" y1="45" x2="28" y2="114" stroke="#FFFFFF" stroke-width="4" />
+            <line x1="45" y1="45" x2="45" y2="114" stroke="#FFFFFF" stroke-width="4" />
+            <line x1="62" y1="45" x2="62" y2="114" stroke="#FFFFFF" stroke-width="4" />
+            <line x1="78" y1="45" x2="78" y2="114" stroke="#FFFFFF" stroke-width="4" />
+            <line x1="95" y1="45" x2="95" y2="114" stroke="#FFFFFF" stroke-width="4" />
+            <line x1="112" y1="45" x2="112" y2="114" stroke="#FFFFFF" stroke-width="4" />
+            <rect x="18" y="114" width="104" height="6" fill="#94A3B8" />
+          </svg>
+        `
+      },
+      {
+        id: 'QUAD-5',
+        title: 'Q-5: Altın Silüet & Günbatımı Halesi',
+        desc: 'Arkada batan altın Berlin güneşi, önünde capcanlı altın 4 atın görkemli şahlanışı',
+        svg: `
+          <svg viewBox="0 0 140 140" width="130" height="130">
+            <!-- Sunset Orb -->
+            <circle cx="70" cy="46" r="32" fill="#F59E0B" opacity="0.3" />
+            <circle cx="70" cy="46" r="24" fill="#F0D722" opacity="0.85" />
+
+            <!-- Dark Chariot Base -->
+            <rect x="56" y="32" width="28" height="5" fill="#0B0C12" />
+            <circle cx="70" cy="14" r="2.5" fill="#0B0C12" />
+            <line x1="76" y1="6" x2="74" y2="32" stroke="#0B0C12" stroke-width="1.4" />
+
+            <!-- 4 Bold Horses in Silhouette against Sun -->
+            <path d="M 44 32 Q 38 26 42 20 Q 45 15 47 17 Q 49 19 46 24 Q 43 27 46 32 Z" fill="#0B0C12" />
+            <line x1="42" y1="24" x2="35" y2="20" stroke="#0B0C12" stroke-width="2" stroke-linecap="round" />
+
+            <path d="M 54 32 Q 50 23 53 17 Q 56 12 58 14 Q 60 16 58 22 Q 56 26 58 32 Z" fill="#0B0C12" />
+            <line x1="53" y1="21" x2="48" y2="16" stroke="#0B0C12" stroke-width="2" stroke-linecap="round" />
+
+            <path d="M 82 32 Q 84 26 82 22 Q 80 16 82 14 Q 84 12 87 17 Q 90 23 86 32 Z" fill="#0B0C12" />
+            <line x1="87" y1="21" x2="92" y2="16" stroke="#0B0C12" stroke-width="2" stroke-linecap="round" />
+
+            <path d="M 94 32 Q 97 27 94 24 Q 91 18 93 17 Q 95 15 98 20 Q 102 26 96 32 Z" fill="#0B0C12" />
+            <line x1="98" y1="24" x2="105" y2="20" stroke="#0B0C12" stroke-width="2" stroke-linecap="round" />
+
+            <!-- Gate Entablature & Columns in Silhouette -->
+            <rect x="20" y="38" width="100" height="8" fill="#0B0C12" />
+            <line x1="28" y1="46" x2="28" y2="114" stroke="#0B0C12" stroke-width="4.5" />
+            <line x1="45" y1="46" x2="45" y2="114" stroke="#0B0C12" stroke-width="4.5" />
+            <line x1="62" y1="46" x2="62" y2="114" stroke="#0B0C12" stroke-width="4.5" />
+            <line x1="78" y1="46" x2="78" y2="114" stroke="#0B0C12" stroke-width="4.5" />
+            <line x1="95" y1="46" x2="95" y2="114" stroke="#0B0C12" stroke-width="4.5" />
+            <line x1="112" y1="46" x2="112" y2="114" stroke="#0B0C12" stroke-width="4.5" />
+            <rect x="18" y="114" width="104" height="6" fill="#0B0C12" />
+          </svg>
+        `
+      },
+      {
+        id: 'QUAD-6',
+        title: 'Q-6: Çift Renkli Altın & Mavi Kontur Heykeller',
+        desc: 'Heykelin sol iki atı altın sarısı, sağ iki atı Spree mavisi kontur; modern tasarım armonisi',
+        svg: `
+          <svg viewBox="0 0 140 140" width="130" height="130">
+            <!-- Base Chariot -->
+            <rect x="56" y="34" width="28" height="5" fill="#334155" rx="1" />
+            <circle cx="70" cy="14" r="2.5" fill="#FFFFFF" />
+            <line x1="75" y1="6" x2="74" y2="34" stroke="#FFFFFF" stroke-width="1.2" />
+
+            <!-- Left Horses (BVG Yellow) -->
+            <path d="M 44 34 Q 38 28 42 21 Q 45 16 47 18 Q 49 19 46 25 Q 43 28 46 34 Z" fill="#F0D722" />
+            <line x1="42" y1="26" x2="36" y2="23" stroke="#F0D722" stroke-width="1.8" stroke-linecap="round" />
+            <path d="M 54 34 Q 50 24 53 18 Q 56 13 58 15 Q 60 17 58 23 Q 56 27 58 34 Z" fill="#FDE047" />
+            <line x1="53" y1="22" x2="49" y2="18" stroke="#FDE047" stroke-width="1.8" stroke-linecap="round" />
+
+            <!-- Right Horses (Spree Cyan) -->
+            <path d="M 82 34 Q 84 27 82 23 Q 80 17 82 15 Q 84 13 87 18 Q 90 24 86 34 Z" fill="#22D3EE" />
+            <line x1="87" y1="22" x2="91" y2="18" stroke="#22D3EE" stroke-width="1.8" stroke-linecap="round" />
+            <path d="M 94 34 Q 97 28 94 25 Q 91 19 93 18 Q 95 16 98 21 Q 102 28 96 34 Z" fill="#67E8F9" />
+            <line x1="98" y1="26" x2="104" y2="23" stroke="#67E8F9" stroke-width="1.8" stroke-linecap="round" />
+
+            <!-- Gate Pillars -->
+            <rect x="22" y="40" width="96" height="8" fill="#E2E8F0" />
+            <line x1="28" y1="48" x2="28" y2="114" stroke="#FFFFFF" stroke-width="4" />
+            <line x1="45" y1="48" x2="45" y2="114" stroke="#FFFFFF" stroke-width="4" />
+            <line x1="62" y1="48" x2="62" y2="114" stroke="#FFFFFF" stroke-width="4" />
+            <line x1="78" y1="48" x2="78" y2="114" stroke="#FFFFFF" stroke-width="4" />
+            <line x1="95" y1="48" x2="95" y2="114" stroke="#FFFFFF" stroke-width="4" />
+            <line x1="112" y1="48" x2="112" y2="114" stroke="#FFFFFF" stroke-width="4" />
+            <rect x="18" y="114" width="104" height="6" fill="#94A3B8" />
+          </svg>
+        `
+      },
+      {
+        id: 'QUAD-7',
+        title: 'Q-7: Minimalist Geometrik Kesim Atlar',
+        desc: 'Bauhaus ekolünde keskin açılı geometrik at silüetleri; çok şık ve çağdaş',
+        svg: `
+          <svg viewBox="0 0 140 140" width="130" height="130">
+            <!-- Modern Sharp Geometric Horses -->
+            <polygon points="46,34 38,24 45,16 48,19 44,25 48,34" fill="#F0D722" />
+            <polygon points="56,34 50,22 55,14 59,17 56,23 58,34" fill="#FFFFFF" />
+            <polygon points="84,34 82,23 85,17 89,14 94,22 88,34" fill="#FFFFFF" />
+            <polygon points="94,34 98,25 94,19 97,16 104,24 96,34" fill="#F0D722" />
+
+            <!-- Goddess -->
+            <polygon points="68,14 72,25 68,25" fill="#FFFFFF" />
+            <circle cx="70" cy="11" r="2.5" fill="#FFFFFF" />
+            <line x1="76" y1="5" x2="74" y2="34" stroke="#F0D722" stroke-width="1.5" />
+
+            <!-- Flat Bauhaus Gate -->
+            <rect x="22" y="34" width="96" height="8" fill="#CBD5E1" />
+            <rect x="28" y="42" width="5" height="72" fill="#FFFFFF" />
+            <rect x="45" y="42" width="5" height="72" fill="#FFFFFF" />
+            <rect x="62" y="42" width="5" height="72" fill="#FFFFFF" />
+            <rect x="78" y="42" width="5" height="72" fill="#FFFFFF" />
+            <rect x="95" y="42" width="5" height="72" fill="#FFFFFF" />
+            <rect x="112" y="42" width="5" height="72" fill="#FFFFFF" />
+            <rect x="18" y="114" width="104" height="6" fill="#94A3B8" />
+          </svg>
+        `
+      },
+      {
+        id: 'QUAD-8',
+        title: 'Q-8: TV Kulesi & Şaha Kalkan Quadriga',
+        desc: 'Berlin’in iki sembolü bir arada: Kapının ortasından göğe uzanan TV Kulesi ve önünde 4 at',
+        svg: `
+          <svg viewBox="0 0 140 140" width="130" height="130">
+            <!-- TV Tower Spire in background -->
+            <polygon points="69.5,8 70.5,8 72,50 68,50" fill="#F0D722" />
+            <circle cx="70" cy="22" r="6" fill="#F0D722" stroke="#FFFFFF" stroke-width="1.2" />
+            <line x1="70" y1="3" x2="70" y2="8" stroke="#FFFFFF" stroke-width="1.4" />
+
+            <!-- Quadriga Horses in foreground -->
+            <path d="M 44 34 Q 38 28 42 21 Q 45 16 47 18 Q 49 19 46 25 Q 43 28 46 34 Z" fill="#FDE047" />
+            <line x1="42" y1="26" x2="36" y2="23" stroke="#FDE047" stroke-width="1.5" stroke-linecap="round" />
+
+            <path d="M 54 34 Q 50 24 53 18 Q 56 13 58 15 Q 60 17 58 23 Q 56 27 58 34 Z" fill="#FFFFFF" />
+            <path d="M 82 34 Q 84 27 82 23 Q 80 17 82 15 Q 84 13 87 18 Q 90 24 86 34 Z" fill="#FFFFFF" />
+
+            <path d="M 94 34 Q 97 28 94 25 Q 91 19 93 18 Q 95 16 98 21 Q 102 28 96 34 Z" fill="#FDE047" />
+            <line x1="98" y1="26" x2="104" y2="23" stroke="#FDE047" stroke-width="1.5" stroke-linecap="round" />
+
+            <!-- Gate Columns -->
+            <rect x="22" y="38" width="96" height="8" fill="#E2E8F0" />
+            <line x1="28" y1="46" x2="28" y2="114" stroke="#FFFFFF" stroke-width="4" />
+            <line x1="45" y1="46" x2="45" y2="114" stroke="#FFFFFF" stroke-width="4" />
+            <line x1="62" y1="46" x2="62" y2="114" stroke="#FFFFFF" stroke-width="4" />
+            <line x1="78" y1="46" x2="78" y2="114" stroke="#FFFFFF" stroke-width="4" />
+            <line x1="95" y1="46" x2="95" y2="114" stroke="#FFFFFF" stroke-width="4" />
+            <line x1="112" y1="46" x2="112" y2="114" stroke="#FFFFFF" stroke-width="4" />
+            <rect x="18" y="114" width="104" height="6" fill="#94A3B8" />
+          </svg>
+        `
+      },
+      {
+        id: 'QUAD-9',
+        title: 'Q-9: Saf Beyaz Mermer Rölyef (Minimal High-Contrast)',
+        desc: 'Antrasit karanlıkta bembeyaz parlayan heykeller ve sütunlar; Apple/Minimalist tarz',
+        svg: `
+          <svg viewBox="0 0 140 140" width="130" height="130">
+            <!-- All Pure White Sculptures -->
+            <rect x="56" y="34" width="28" height="5" fill="#FFFFFF" rx="1" />
+            <path d="M 68 14 L 73 24 L 67 24 Z" fill="#FFFFFF" />
+            <circle cx="70" cy="12" r="2.5" fill="#FFFFFF" />
+            <line x1="77" y1="6" x2="75" y2="34" stroke="#FFFFFF" stroke-width="1.2" />
+
+            <!-- 4 Pure White Horses -->
+            <path d="M 44 34 Q 38 28 42 21 Q 45 16 47 18 Q 49 19 46 25 Q 43 28 46 34 Z" fill="#FFFFFF" />
+            <line x1="42" y1="26" x2="36" y2="23" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" />
+
+            <path d="M 54 34 Q 50 24 53 18 Q 56 13 58 15 Q 60 17 58 23 Q 56 27 58 34 Z" fill="#FFFFFF" />
+            <line x1="53" y1="22" x2="49" y2="18" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" />
+
+            <path d="M 82 34 Q 84 27 82 23 Q 80 17 82 15 Q 84 13 87 18 Q 90 24 86 34 Z" fill="#FFFFFF" />
+            <line x1="87" y1="22" x2="91" y2="18" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" />
+
+            <path d="M 94 34 Q 97 28 94 25 Q 91 19 93 18 Q 95 16 98 21 Q 102 28 96 34 Z" fill="#FFFFFF" />
+            <line x1="98" y1="26" x2="104" y2="23" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" />
+
+            <!-- Roof & Columns -->
+            <rect x="22" y="40" width="96" height="8" fill="#FFFFFF" />
+            <line x1="28" y1="48" x2="28" y2="114" stroke="#FFFFFF" stroke-width="4.5" />
+            <line x1="45" y1="48" x2="45" y2="114" stroke="#FFFFFF" stroke-width="4.5" />
+            <line x1="62" y1="48" x2="62" y2="114" stroke="#FFFFFF" stroke-width="4.5" />
+            <line x1="78" y1="48" x2="78" y2="114" stroke="#FFFFFF" stroke-width="4.5" />
+            <line x1="95" y1="48" x2="95" y2="114" stroke="#FFFFFF" stroke-width="4.5" />
+            <line x1="112" y1="48" x2="112" y2="114" stroke="#FFFFFF" stroke-width="4.5" />
+            <rect x="18" y="114" width="104" height="6" fill="#FFFFFF" />
+          </svg>
+        `
+      },
+      {
+        id: 'QUAD-10',
+        title: 'Q-10: Altın Madalyon & Kabartma 4 At (Premium Coin)',
+        desc: 'Zarif dairesel altın çerçeve içinde şaha kalkan 4 at ve mermer kapı',
+        svg: `
+          <svg viewBox="0 0 140 140" width="130" height="130">
+            <!-- Medallion Frame -->
+            <circle cx="70" cy="70" r="54" fill="#141522" stroke="#F0D722" stroke-width="2" />
+            <circle cx="70" cy="70" r="50" fill="none" stroke="#F59E0B" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.6" />
+
+            <!-- Gold Horses -->
+            <path d="M 46 44 Q 40 38 44 31 Q 47 26 49 28 Q 51 29 48 35 Q 45 38 48 44 Z" fill="#F0D722" />
+            <line x1="44" y1="36" x2="38" y2="33" stroke="#F0D722" stroke-width="1.8" stroke-linecap="round" />
+
+            <path d="M 56 44 Q 52 34 55 28 Q 58 23 60 25 Q 62 27 60 33 Q 58 37 60 44 Z" fill="#FDE047" />
+            <path d="M 80 44 Q 82 37 80 33 Q 78 27 80 25 Q 82 23 85 28 Q 88 34 84 44 Z" fill="#FDE047" />
+
+            <path d="M 92 44 Q 95 38 92 35 Q 89 29 91 28 Q 93 26 96 31 Q 100 38 94 44 Z" fill="#F0D722" />
+            <line x1="96" y1="36" x2="102" y2="33" stroke="#F0D722" stroke-width="1.8" stroke-linecap="round" />
+
+            <circle cx="70" cy="22" r="2.5" fill="#FFFFFF" />
+
+            <!-- Gate -->
+            <rect x="28" y="48" width="84" height="7" fill="#F0D722" />
+            <line x1="36" y1="55" x2="36" y2="100" stroke="#FFFFFF" stroke-width="3" />
+            <line x1="50" y1="55" x2="50" y2="100" stroke="#FFFFFF" stroke-width="3" />
+            <line x1="63" y1="55" x2="63" y2="100" stroke="#FFFFFF" stroke-width="3" />
+            <line x1="77" y1="55" x2="77" y2="100" stroke="#FFFFFF" stroke-width="3" />
+            <line x1="90" y1="55" x2="90" y2="100" stroke="#FFFFFF" stroke-width="3" />
+            <line x1="104" y1="55" x2="104" y2="100" stroke="#FFFFFF" stroke-width="3" />
+            <rect x="26" y="100" width="88" height="5" fill="#F0D722" />
+          </svg>
+        `
+      }
+    ];
+
+    const container = document.getElementById('container');
+    list.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <div class="badge">${item.id}</div>
+        <div class="badge-box">${item.svg}</div>
+        <div class="title">${item.title}</div>
+        <div class="sub">${item.desc}</div>
+      `;
+      container.appendChild(card);
+    });
+  </script>
+</body>
+</html>
