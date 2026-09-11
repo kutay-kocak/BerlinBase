@@ -1,4 +1,4 @@
-# Project: BerliNest (MVP)
+# Project: BerlinBase (MVP)
 Duration: 14 Days Sprint
 Stack: React (Vite), Tailwind CSS (BVG Yellow Theme), Lucide-react, Leaflet.js, Power BI (Embedded), Google Gemini 1.5 Flash (API)
 

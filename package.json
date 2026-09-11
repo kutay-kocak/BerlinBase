@@ -1,5 +1,5 @@
 {
-  "name": "berlinest",
+  "name": "berlinbase",
   "private": true,
   "version": "0.1.0",
   "type": "module",
@@ -12,13 +12,10 @@
     "sync-lifestyle": "node scripts/update_lifestyle_venues.js"
   },
   "dependencies": {
-    "@google/generative-ai": "^0.24.1",
-    "@gsap/react": "^2.1.1",
     "canvas-confetti": "^1.9.4",
     "clsx": "^2.1.1",
     "dompurify": "^3.4.14",
     "framer-motion": "^13.2.0",
-    "gsap": "^3.12.5",
     "leaflet": "^1.9.4",
     "lucide-react": "^1.16.0",
     "react": "^18.3.1",

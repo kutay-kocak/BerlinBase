@@ -1,5 +1,5 @@
 -- ============================================================
--- BerliNest: PostgreSQL Relational Schema & Analytical Models
+-- BerlinBase: PostgreSQL Relational Schema & Analytical Models
 -- Day 3 of 14-Day Sprint (MVP Star-Schema Architecture)
 -- ============================================================
 

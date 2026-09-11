@@ -1,6 +1,6 @@
-# BerliNest: Uçtan Uca Master Proje Spesifikasyonu ve 14 Günlük Sprint Kılavuzu
+# BerlinBase: Uçtan Uca Master Proje Spesifikasyonu ve 14 Günlük Sprint Kılavuzu
 
-Bu doküman; BerliNest platformunun mimarisini, veri modellerini, siber güvenlik protokollerini, sayfa bazlı içeriklerini ve 14 günlük detaylı geliştirme yol haritasını içerir. Antigravity ajanı tüm geliştirmelerde bu dosyayı ana referans alır.
+Bu doküman; BerlinBase platformunun mimarisini, veri modellerini, siber güvenlik protokollerini, sayfa bazlı içeriklerini ve 14 günlük detaylı geliştirme yol haritasını içerir. Antigravity ajanı tüm geliştirmelerde bu dosyayı ana referans alır.
 
 ---
 
@@ -8,7 +8,7 @@ Bu doküman; BerliNest platformunun mimarisini, veri modellerini, siber güvenli
 
 ### 1. Temel Parametreler ve Teknoloji Yığını
 
-* **Proje Adı:** BerliNest
+* **Proje Adı:** BerlinBase
 * **Slogan:** Your Data-Driven Landing Hub in Berlin
 * **Frontend:** React (Vite tabanlı), Tailwind CSS, Lucide-react (Modern ikon kütüphanesi)
 * **Harita Altyapısı:** Leaflet.js / OpenStreetMap + Berlin İlçeleri GeoJSON poligon katmanı
@@ -234,7 +234,7 @@ WHERE t.year = 2026;
 Gün 1-2   : Temel İskelet, Tailwind BVG Teması, 6 Sekmeli Navigasyon & Mock Emlak Veri Seti
 Gün 3-4   : SQL Modelleme, PostgreSQL Şemaları ve Pencere Fonksiyonları
 Gün 5-6   : Power BI Dashboard Tasarımı, DAX Metrikleri ve Güvenli Web Embed Yapılandırması
-Gün 7     : Housing Guide ve Useful Apps Sekmelerinin Geliştirilmesi, BerliNest Logo Entegrasyonu
+Gün 7     : Housing Guide ve Useful Apps Sekmelerinin Geliştirilmesi, BerlinBase Logo Entegrasyonu
 
 [HAFTA 2: UI/UX, İNTERAKTİF HARİTA, ANKET VE AI]
 Gün 8-9   : Leaflet.js İnteraktif Haritası, GeoJSON Mahalle Poligonları, 5 Hover Metriği & Toggle
@@ -339,7 +339,7 @@ Gün 14    : Vercel Canlı Dağıtımı, GitHub Portföy README Dokümantasyonu 
 
 ---
 
-### GÜN 7: Housing Guide & Useful Apps Sekmelerinin Geliştirilmesi ve BerliNest Logosu
+### GÜN 7: Housing Guide & Useful Apps Sekmelerinin Geliştirilmesi ve BerlinBase Logosu
 
 * **Major Hedef:** Konut ve uygulama sekmelerini tam metinleriyle, bilgi kutularıyla ve yeni logoyla eksiksiz inşa etmek.
 * **Minor Görevler:**
@@ -351,7 +351,7 @@ Gün 14    : Vercel Canlı Dağıtımı, GitHub Portföy README Dokümantasyonu 
 
 
 * **Antigravity Görev Prompt'u:**
-> `"GÜN 7: Navbar için BerliNest yuva temalı SVG logoyu kodla. src/components/HousingGuide.jsx ve src/components/UsefulApps.jsx bileşenlerini MASTER_PLAN.md içerisindeki tüm bilgi kutuları, portal linkleri ve Check24 stratejisiyle eksiksiz inşa et."`
+> `"GÜN 7: Navbar için BerlinBase yuva temalı SVG logoyu kodla. src/components/HousingGuide.jsx ve src/components/UsefulApps.jsx bileşenlerini MASTER_PLAN.md içerisindeki tüm bilgi kutuları, portal linkleri ve Check24 stratejisiyle eksiksiz inşa et."`
 
 
 
@@ -466,7 +466,7 @@ Gün 14    : Vercel Canlı Dağıtımı, GitHub Portföy README Dokümantasyonu 
 
 
 * **Antigravity Görev Prompt'u:**
-> `"GÜN 14: BerliNest için profesyonel bir GitHub README.md dosyası oluştur. Mimari diyagramı, tech-stack detaylarını, SQL analitik örneklerini ve Power BI kurgusunu içeren zengin bir portföy dokümantasyonu yaz."`
+> `"GÜN 14: BerlinBase için profesyonel bir GitHub README.md dosyası oluştur. Mimari diyagramı, tech-stack detaylarını, SQL analitik örneklerini ve Power BI kurgusunu içeren zengin bir portföy dokümantasyonu yaz."`
 
 
 

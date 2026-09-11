@@ -1,6 +1,6 @@
-# BerliNest UI/UX, Motion and Design System Rules
+# BerlinBase UI/UX, Motion and Design System Rules
 
-These rules are ALWAYS ACTIVE for Antigravity when developing BerliNest.
+These rules are ALWAYS ACTIVE for Antigravity when developing BerlinBase.
 
 ## 1. Impeccable & UI UX Pro Principles
 - **Visual Hierarchy:** Essential relocation data (Anmeldung, Rent, District match) must take immediate optical prominence.
@@ -29,4 +29,4 @@ These rules are ALWAYS ACTIVE for Antigravity when developing BerliNest.
 ## 4. AThevon/genjutsu Dynamic Fluidity
 - **State Transition Transitions:** Smooth tab transitions between the 6 main tabs.
 - **Quiz Wizard Motion:** Horizontal slide and fade for step navigation in "Best Neighborhood for You".
-- **Hover Micro-interactions:** Subtly elevate cards on hover (`translate-y-[-2px]`) with smooth CSS/GSAP transition.
+- **Hover Micro-interactions:** Subtly elevate cards on hover (`translate-y-[-2px]`) with smooth CSS/Framer Motion transitions.
