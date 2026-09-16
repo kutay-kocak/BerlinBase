@@ -54,7 +54,7 @@ export default function LivingCostCalculator() {
 
   const currentLifestyleCost = diningCosts[diningStyle] + transitCosts[transitPass] + fixedUtilitiesCost;
 
-  // Calculate net savings for each of the 12 districts
+  // Calculate net savings for each of the 22 districts
   const districtCalculations = districts_lifestyle.map((d) => {
     const rental = rentals_by_room.find(
       r => r.district_name === d.district_name && r.room_category === housingType

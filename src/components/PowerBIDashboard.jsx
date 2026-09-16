@@ -100,7 +100,7 @@ export default function PowerBIDashboard() {
                 </span>
               </div>
               <p className="text-xs text-gray-400 mt-0.5">
-                4-page interactive analytical report powered by dual-table architecture (9,890+ verified listings).
+                4-page interactive analytical report powered by dual-table architecture (2,500+ trap-filtered verified listings).
               </p>
             </div>
           </div>
@@ -110,7 +110,7 @@ export default function PowerBIDashboard() {
         <div className="flex items-center space-x-2">
           <div className="bg-bvg-gray/60 px-3 py-1.5 rounded-lg border border-white/10 text-xs text-gray-300 flex items-center space-x-2">
             <span className="w-2 h-2 rounded-full bg-bvg-yellow"></span>
-            <span>9,890+ Verified Listings Active</span>
+            <span>2,500+ Verified Market Listings</span>
           </div>
         </div>
       </div>
@@ -228,10 +228,14 @@ export default function PowerBIDashboard() {
           <div className="bg-bvg-gray/30 border border-white/10 rounded-xl p-5 min-h-[600px] flex flex-col justify-between space-y-3">
             <div>
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/5 pb-2">
-                <h3 className="text-sm font-bold text-white flex items-center space-x-2">
-                  <span>District Ranking by Total Monthly Rent (All-in)</span>
-                  <span className="text-[11px] text-gray-400 font-normal">Estimated District Averages (Rounded)</span>
-                </h3>
+                <div>
+                  <h3 className="text-sm font-bold text-white flex items-center space-x-2">
+                    <span>District Ranking by Total Monthly Rent (All-in)</span>
+                  </h3>
+                  <p className="text-[11px] text-emerald-400 font-medium mt-0.5">
+                    Realistic rent averages — no swap ads, no WBS traps, just real homes
+                  </p>
+                </div>
                 <div className="flex items-center space-x-3">
                   <span className="text-xs text-bvg-yellow font-mono">100% Warm Rent Benchmark</span>
                 </div>

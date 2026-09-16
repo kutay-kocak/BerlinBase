@@ -34,11 +34,11 @@ const DISTRICT_PROS_CONS = {
   },
   "Kreuzberg": {
     pros: ["Legendary multicultural energy and Landwehrkanal walks", "World-class street food and historic market halls", "Vibrant community and creative startup scene"],
-    cons: ["Elevated Bürgeramt bureaucracy waiting times", "Older Altbau building stock can have varying energy ratings", "Rent levels near the top tier (€717 WG avg)"]
+    cons: ["Elevated Bürgeramt bureaucracy waiting times", "Older Altbau building stock can have varying energy ratings", "Rent levels near the top tier (€670 WG avg)"]
   },
   "Prenzlauer Berg": {
     pros: ["Beautifully restored Altbau facades and green squares (Kollwitzplatz)", "Very quiet, clean, safe and family-friendly atmosphere", "Rich organic bakery, brunch and boutique cafe culture"],
-    cons: ["Premium rental costs (€1,575 flat avg)", "Low nightlife—quieter evening scene after 10 PM", "High demand for kindergarten and school spots"]
+    cons: ["Premium rental costs (€1,400 studio / €2,310 flat avg)", "Low nightlife—quieter evening scene after 10 PM", "High demand for kindergarten and school spots"]
   },
   "Charlottenburg": {
     pros: ["Classic Western elegance, wide leafy boulevards and Kurfürstendamm", "Authentic Asian culinary corridor along Kantstraße", "Fast Bürgeramt processing speeds (~4 weeks)"],
@@ -49,7 +49,7 @@ const DISTRICT_PROS_CONS = {
     cons: ["Moderate rent levels with fewer budget bargains", "Fiber broadband is average (46%)", "Parking can be challenging in central pockets"]
   },
   "Mitte (Moabit)": {
-    pros: ["Central location right next to Hauptbahnhof and Tiergarten", "More affordable rent than central Mitte (€608 WG avg)", "Diverse Middle Eastern street dining along Turmstraße"],
+    pros: ["Central location right next to Hauptbahnhof and Tiergarten", "More affordable rent than central Mitte (€610 WG avg)", "Diverse Middle Eastern street dining along Turmstraße"],
     cons: ["Industrial and transit-heavy pockets", "Gentrification is uneven across northern blocks", "Lower fiber deployment (42%)"]
   },
   "Neukölln": {
@@ -57,7 +57,7 @@ const DISTRICT_PROS_CONS = {
     cons: ["Bürgeramt appointment wait times are longest (~7 weeks)", "Busy street noise on Sonnenallee and Karl-Marx-Straße", "Fast rising rents over recent years"]
   },
   "Wedding": {
-    pros: ["Most affordable central rental rates (€561 WG, €1,253 flat avg)", "Cheapest specialty coffee and döner index in central Berlin", "Fast U-Bahn connection (U6/U8 direct to Mitte in 16 min)"],
+    pros: ["Most affordable central rental rates (€640 WG, €1,160 studio avg)", "Cheapest specialty coffee and döner index in central Berlin", "Fast U-Bahn connection (U6/U8 direct to Mitte in 16 min)"],
     cons: ["Grungier industrial streetscapes in certain quarters", "Fewer polished parks compared to southern boroughs", "Fiber coverage is moderate (45%)"]
   },
   "Pankow": {
@@ -69,7 +69,7 @@ const DISTRICT_PROS_CONS = {
     cons: ["32-minute transit latency to central Alexanderplatz", "Lowest fiber broadband coverage in Berlin (36%)", "Quiet nightlife geared toward families and retirees"]
   },
   "Lichtenberg": {
-    pros: ["Lowest average apartment rent in Berlin (€1,155 flat, €522 WG)", "Home to Europe's largest Vietnamese hub (Dong Xuan Center)", "Spacious flats with high availability"],
+    pros: ["Very affordable rental rates compared to central Kieze (€540 WG, €1,070 studio avg)", "Home to Europe's largest Vietnamese hub (Dong Xuan Center)", "Spacious flats with high availability"],
     cons: ["Outside the Ringbahn ring zone", "Predominance of post-Soviet Plattenbau architecture", "Longer commute to West Berlin business centers"]
   }
 };

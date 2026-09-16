@@ -83,8 +83,9 @@ export default function BerlinDistrictMap() {
               22 Districts Live
             </span>
           </div>
-          <p className="text-xs text-gray-400 mt-1">
-            Now covers 10 fast-transit outer districts (Karlshorst, Tempelhof, Alt-Treptow, Weißensee, Spandau & more).
+          <p className="text-xs text-gray-400 mt-1 flex flex-wrap items-center gap-x-2">
+            <span>Now covers 10 fast-transit outer districts (Karlshorst, Tempelhof, Alt-Treptow, Weißensee, Spandau & more).</span>
+            <span className="text-emerald-400 font-medium text-[11px]">• Realistic rent averages — no swap ads, no WBS traps, just real homes</span>
           </p>
         </div>
 
