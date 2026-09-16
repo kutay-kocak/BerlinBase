@@ -113,7 +113,7 @@ If you'd like to run BerlinBase on your computer or explore the code:
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/your-username/berlinbase.git
+git clone https://github.com/kutay-kocak/berlinbase.git
 
 # 2. Open the project folder
 cd berlinbase

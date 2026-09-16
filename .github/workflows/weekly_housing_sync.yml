@@ -35,7 +35,7 @@ jobs:
 
       - name: Commit and Push Updated Dataset
         run: |
-          git config --global user.name "BerlinBase Bot"
-          git config --global user.email "bot@berlinbase.app"
+          git config --global user.name "kutay-kocak"
+          git config --global user.email "kutay1kocak@gmail.com"
           git add src/data/berlin_housing_mock.json src/data/berlinbase_master_analytics.json
           git diff --quiet && git diff --staged --quiet || (git commit -m "chore(data): weekly automated housing, energy & lifestyle sync [skip ci]" && git push)
