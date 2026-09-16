@@ -26,6 +26,12 @@ CREATE TABLE IF NOT EXISTS fact_listings (
     year INT NOT NULL,
     listing_date DATE NOT NULL,
     property_type VARCHAR(20) CHECK (property_type IN ('Room', 'Apartment')),
+    lease_type VARCHAR(20) DEFAULT 'unbefristet' CHECK (lease_type IN ('unbefristet', 'befristet')),
+    rental_duration_days INT DEFAULT 365, -- 7, 10, 30, 90, 180, vb. (Yaklaşım B: >= 30 gün filtresi için)
+    is_swap_only BOOLEAN DEFAULT false, -- 'Nur Tausch' / Takas ilanı filtresi
+    wbs_required BOOLEAN DEFAULT false, -- 'WBS erforderlich' sosyal konut filtresi
+    student_dorm_only BOOLEAN DEFAULT false, -- 'Studentenwohnheim' devlet yurdu filtresi
+    anmeldung_possible BOOLEAN DEFAULT true, -- 'Anmeldung möglich' filtresi
     is_furnished BOOLEAN DEFAULT false,
     size_sqm NUMERIC(5,2) NOT NULL,
     cold_rent_eur NUMERIC(8,2) NOT NULL,
@@ -106,3 +112,35 @@ FROM m2_summary r
 JOIN m2_summary a ON r.district_name = a.district_name AND a.property_type = 'Apartment'
 WHERE r.property_type = 'Room'
 ORDER BY room_premium_percentage DESC;
+
+-- ============================================================
+-- SORGULU ANALİZ 4: Yaklaşım B (Süre Eşiği >= 30 Gün) ile Medyan Kira & En Yakın 10'luğa Yuvarlama
+-- (Kısa süreli 1 haftalık / 10 günlük gürültüleri ayıklar, medyanı en yakın 10'a yuvarlar)
+-- ============================================================
+SELECT 
+    d.district_name,
+    d.borough,
+    f.property_type,
+    COUNT(f.listing_id) AS total_valid_samples,
+    -- 1. Ham medyan (Tam ortanca değer)
+    ROUND(PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY f.warm_rent_eur)::numeric, 2) AS exact_median_warm_rent,
+    -- 2. En yakın 10'luğa yuvarlanmış görselleştirme medyanı (Örn: 557 -> 560, 554 -> 550)
+    ROUND(PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY f.warm_rent_eur)::numeric / 10.0) * 10 AS rounded_median_display_eur,
+    -- 3. Pahallılık sıralaması (DENSE_RANK)
+    DENSE_RANK() OVER (
+        PARTITION BY f.property_type 
+        ORDER BY PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY f.warm_rent_eur) DESC
+    ) AS median_rank
+FROM fact_listings f
+JOIN dim_neighborhood d ON f.district_id = d.district_id
+WHERE 
+    -- 4 BÜYÜK TUZAK VE KATEGORİ A KELİMELERİNİN ELENMESİ (Newcomer/Expat Real Market):
+    f.is_swap_only = false           -- 'Nur Tausch' / Takas ilanları elendi
+    AND f.wbs_required = false       -- 'WBS erforderlich' sosyal konutları elendi
+    AND f.student_dorm_only = false  -- 'Studentenwohnheim' devlet yurtları elendi
+    AND f.anmeldung_possible = true  -- 'Keine Anmeldung' gayriresmi ilanlar elendi
+    AND (f.lease_type = 'unbefristet' OR f.rental_duration_days >= 30) -- 1 haftalık/10 günlük gürültüler elendi
+    AND f.warm_rent_eur BETWEEN 350 AND 3500
+GROUP BY d.district_name, d.borough, f.property_type
+ORDER BY f.property_type, median_rank;
+

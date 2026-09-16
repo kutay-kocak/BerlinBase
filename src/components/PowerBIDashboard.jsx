@@ -258,7 +258,7 @@ export default function PowerBIDashboard() {
                     />
                     <YAxis 
                       type="number" 
-                      domain={[0, 1850]} 
+                      domain={[0, 'auto']} 
                       stroke="#64748b" 
                       tickFormatter={(v) => `${v}€`}
                       tick={{ fill: '#94a3b8', fontSize: 11 }}
