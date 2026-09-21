@@ -9,7 +9,7 @@
     "ticketInfo": "€14 / Free under 18 (Museum Pass eligible)",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Hamburger+Bahnhof+Berlin",
     "address": "Invalidenstraße 50-51, 10557 Berlin",
-    "ticketUrl": "https://www.smb.museum/en/museums-institutions/hamburger-bahnhof/tickets/",
+    "ticketUrl": "https://www.smb.museum/en/museums-institutions/hamburger-bahnhof/home/",
     "isFree": false
   },
   {
@@ -35,7 +35,7 @@
     "ticketInfo": "€15 (Exhibition dependent)",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Gropius+Bau+Berlin",
     "address": "Niederkirchnerstraße 7, 10963 Berlin",
-    "ticketUrl": "https://www.berlinerfestspiele.de/en/gropius-bau/tickets",
+    "ticketUrl": "https://www.berlinerfestspiele.de/en/gropius-bau",
     "isFree": false
   },
   {
@@ -71,10 +71,10 @@
     "categoryLabel": "History & Cold War",
     "district": "Mitte",
     "highlight": "Highly interactive hands-on museum exploring everyday life, Stasi surveillance, and driving a simulated Trabant.",
-    "ticketInfo": "€13.50 (Online advance discount)",
+    "ticketInfo": "€13.90 (Online advance tickets available)",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=DDR+Museum+Berlin",
     "address": "Vera-Brittain-Ufer, 10178 Berlin",
-    "ticketUrl": "https://www.ddr-museum.de/en/tickets",
+    "ticketUrl": "https://www.ddr-museum.de/en",
     "isFree": false
   },
   {
@@ -87,7 +87,7 @@
     "ticketInfo": "Free General Admission (Permanent Exhibition)",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Jewish+Museum+Berlin",
     "address": "Lindenstraße 9-14, 10969 Berlin",
-    "ticketUrl": "https://www.jmberlin.de/en/tickets",
+    "ticketUrl": "https://www.jmberlin.de/en",
     "isFree": true
   },
   {
@@ -100,7 +100,7 @@
     "ticketInfo": "€10 / €8 concessions",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Stasi+Museum+Berlin",
     "address": "Ruschestraße 103, Haus 1, 10365 Berlin",
-    "ticketUrl": "https://www.stasimuseum.de/en/enbesucherinfos.htm",
+    "ticketUrl": "https://www.stasimuseum.de/en/enindex.htm",
     "isFree": false
   },
   {
@@ -126,7 +126,7 @@
     "ticketInfo": "€14 / Museum Pass eligible",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Pergamonmuseum+Das+Panorama+Berlin",
     "address": "Am Kupfergraben 2, 10117 Berlin",
-    "ticketUrl": "https://www.smb.museum/en/museums-institutions/pergamonmuseum-das-panorama/tickets/",
+    "ticketUrl": "https://www.smb.museum/en/museums-institutions/pergamonmuseum-das-panorama/home/",
     "isFree": false
   },
   {
@@ -139,7 +139,7 @@
     "ticketInfo": "€14 / Free under 18",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Neues+Museum+Berlin",
     "address": "Bodestraße 1-3, 10178 Berlin",
-    "ticketUrl": "https://www.smb.museum/en/museums-institutions/neues-museum/tickets/",
+    "ticketUrl": "https://www.smb.museum/en/museums-institutions/neues-museum/home/",
     "isFree": false
   },
   {
@@ -152,7 +152,7 @@
     "ticketInfo": "€12 / Museum Pass eligible",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Alte+Nationalgalerie+Berlin",
     "address": "Bodestraße 1-3, 10178 Berlin",
-    "ticketUrl": "https://www.smb.museum/en/museums-institutions/alte-nationalgalerie/tickets/",
+    "ticketUrl": "https://www.smb.museum/en/museums-institutions/alte-nationalgalerie/home/",
     "isFree": false
   },
   {
@@ -165,7 +165,7 @@
     "ticketInfo": "€12 / Museum Pass eligible",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Bode+Museum+Berlin",
     "address": "Am Kupfergraben, 10117 Berlin",
-    "ticketUrl": "https://www.smb.museum/en/museums-institutions/bode-museum/tickets/",
+    "ticketUrl": "https://www.smb.museum/en/museums-institutions/bode-museum/home/",
     "isFree": false
   },
   {
@@ -191,7 +191,7 @@
     "ticketInfo": "€11 / €5 concessions",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Museum+fur+Naturkunde+Berlin",
     "address": "Invalidenstraße 43, 10115 Berlin",
-    "ticketUrl": "https://www.museumfuernaturkunde.berlin/en/museum/tickets",
+    "ticketUrl": "https://www.museumfuernaturkunde.berlin/en",
     "isFree": false
   },
   {
@@ -202,7 +202,7 @@
     "district": "Mitte (Regierungsviertel)",
     "highlight": "Spectacular futuristic exhibition hub showcasing sustainable architecture, artificial intelligence, climate labs, and speculative future scenarios.",
     "ticketInfo": "Free Admission (Always free / Workshops may require booking)",
-    "ticketUrl": "https://futurium.de/en/tickets",
+    "ticketUrl": "https://futurium.de/en",
     "isFree": true,
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Futurium+Berlin",
     "address": "Alexanderufer 2, 10117 Berlin"

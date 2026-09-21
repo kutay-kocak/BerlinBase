@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "sync-rentals": "node scripts/update_housing_rentals.js",
     "sync-energy": "node scripts/update_energy_inflation.js",
-    "sync-lifestyle": "node scripts/update_lifestyle_venues.js"
+    "sync-lifestyle": "node scripts/update_lifestyle_venues.js",
+    "check:museums": "node scripts/check_museum_links.mjs"
   },
   "dependencies": {
     "canvas-confetti": "^1.9.4",

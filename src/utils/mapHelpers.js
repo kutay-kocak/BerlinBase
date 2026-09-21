@@ -80,7 +80,7 @@ export function enrichDistrictData({
 /**
  * Dynamic visual styling helper with distinct 4-tier relative scales (Green, Yellow, Orange, Red)
  */
-export function getMarkerStyle(item, selectedMetric, selectedRoomFilter) {
+export function getMarkerStyle(item, selectedMetric, selectedRoomFilter, allDistricts = []) {
   let radius = 18;
   let fillColor = '#F0D722';
   let borderColor = '#ffffff';
@@ -98,26 +98,46 @@ export function getMarkerStyle(item, selectedMetric, selectedRoomFilter) {
       fillColor = '#dc2626'; // Red: Steglitz, Pankow, Reinickendorf, Lichtenrade, Marzahn
     }
   } else if (selectedMetric === 'rent') {
-    const r = selectedRoomFilter === 'WG Room' ? item.rent_wg : selectedRoomFilter === '1-Room Studio (1+0)' ? item.rent_studio : item.rent_flat;
-    const minR = selectedRoomFilter === 'WG Room' ? 460 : selectedRoomFilter === '1-Room Studio (1+0)' ? 710 : 1020;
-    const maxR = selectedRoomFilter === 'WG Room' ? 740 : selectedRoomFilter === '1-Room Studio (1+0)' ? 1120 : 1670;
-    radius = 14 + ((r - minR) / (maxR - minR || 1)) * 16;
-    
-    if (selectedRoomFilter === 'WG Room') {
-      if (r >= 680) fillColor = '#dc2626';
-      else if (r >= 600) fillColor = '#ea580c';
-      else if (r >= 520) fillColor = '#eab308';
-      else fillColor = '#10b981';
-    } else if (selectedRoomFilter === '1-Room Studio (1+0)') {
-      if (r >= 1000) fillColor = '#dc2626';
-      else if (r >= 900) fillColor = '#ea580c';
-      else if (r >= 800) fillColor = '#eab308';
-      else fillColor = '#10b981';
+    const getRentVal = (d) => {
+      if (!d) return 0;
+      if (selectedRoomFilter === 'WG Room') return d.rent_wg;
+      if (selectedRoomFilter === '1-Room Studio (1+0)') return d.rent_studio;
+      return d.rent_flat;
+    };
+
+    const r = getRentVal(item);
+
+    if (allDistricts && allDistricts.length > 0) {
+      // Dynamic Quartile & Percentile Ranking:
+      // Extracts active rents for all 22 districts and sorts ascending
+      const allRents = allDistricts.map(d => getRentVal(d)).filter(Boolean).sort((a, b) => a - b);
+      const minR = allRents[0] || 450;
+      const maxR = allRents[allRents.length - 1] || 2500;
+      
+      // Proportional balanced radius (14px to 24px) avoiding oversized visual bloat
+      radius = 14 + ((r - minR) / (maxR - minR || 1)) * 10;
+
+      // Equal 25% quartile distribution:
+      // rank / (n - 1) partitions districts into 4 equal tiers (~5-6 districts each)
+      // Using indexOf ensures identical rent values share the exact same quartile tier
+      const rank = allRents.indexOf(r);
+      const percentile = rank / Math.max(1, allRents.length - 1);
+
+      if (percentile < 0.25) {
+        fillColor = '#10b981'; // Green: Lowest 25% (Affordable)
+      } else if (percentile < 0.50) {
+        fillColor = '#eab308'; // Yellow: 25% - 50% (Moderate)
+      } else if (percentile < 0.75) {
+        fillColor = '#ea580c'; // Orange: 50% - 75% (High)
+      } else {
+        fillColor = '#dc2626'; // Red: Top 25% (High / Premium)
+      }
     } else {
-      if (r >= 1500) fillColor = '#dc2626';
-      else if (r >= 1350) fillColor = '#ea580c';
-      else if (r >= 1200) fillColor = '#eab308';
-      else fillColor = '#10b981';
+      // Fallback
+      if (r <= 600) fillColor = '#10b981';
+      else if (r <= 1000) fillColor = '#eab308';
+      else if (r <= 1500) fillColor = '#ea580c';
+      else fillColor = '#dc2626';
     }
   } else if (selectedMetric === 'cuisine') {
     const ratio = item.foreign_cuisine_pct;

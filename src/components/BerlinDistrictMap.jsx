@@ -68,7 +68,7 @@ export default function BerlinDistrictMap() {
   });
 
   // Dynamic visual styling helper with distinct 4-tier relative scales (Green, Yellow, Orange, Red)
-  const getDistrictMarkerStyle = (item) => getMarkerStyle(item, selectedMetric, selectedRoomFilter);
+  const getDistrictMarkerStyle = (item) => getMarkerStyle(item, selectedMetric, selectedRoomFilter, allDistrictData);
 
   return (
     <div className="bg-[#15151D] border border-white/10 rounded-2xl p-6 shadow-2xl space-y-6">
@@ -374,7 +374,7 @@ export default function BerlinDistrictMap() {
           {/* Map Overlay Quick Legend */}
           <div className="absolute bottom-3 left-3 bg-bvg-dark/95 backdrop-blur-md border border-white/10 p-2.5 rounded-lg text-xs z-[1000] text-gray-200 shadow-xl">
             <div className="text-[10px] font-bold uppercase text-gray-400 mb-1 flex items-center justify-between">
-              <span>{selectedMetric === 'transit' ? 'Transit Speed to Hubs' : '4-Tier Relative Scale'}</span>
+              <span>{selectedMetric === 'transit' ? 'Transit Speed to Hubs' : selectedMetric === 'rent' ? '4-Tier Relative Scale (25% Quartiles)' : '4-Tier Relative Scale'}</span>
               <span className="text-[9px] text-amber-400 font-bold ml-2">
                 🚉 6 Main Hubs Pinned
               </span>
@@ -383,25 +383,25 @@ export default function BerlinDistrictMap() {
               <div className="flex items-center space-x-1">
                 <span className="w-2.5 h-2.5 rounded-full bg-[#10b981]"></span>
                 <span className="text-emerald-400 font-medium">
-                  {selectedMetric === 'transit' ? '< 12 mins (Ultra Fast)' : selectedMetric === 'fiber' ? 'Top Speed' : selectedMetric === 'rent' ? 'Affordable' : 'Low/Value'}
+                  {selectedMetric === 'transit' ? '< 12 mins (Ultra Fast)' : selectedMetric === 'fiber' ? 'Top Speed' : selectedMetric === 'rent' ? 'Affordable (Lowest 25%)' : 'Low/Value'}
                 </span>
               </div>
               <div className="flex items-center space-x-1">
                 <span className="w-2.5 h-2.5 rounded-full bg-[#eab308]"></span>
                 <span className="text-yellow-400 font-medium">
-                  {selectedMetric === 'transit' ? '14-18 mins' : 'Moderate'}
+                  {selectedMetric === 'transit' ? '14-18 mins' : selectedMetric === 'rent' ? 'Moderate (25-50%)' : 'Moderate'}
                 </span>
               </div>
               <div className="flex items-center space-x-1">
                 <span className="w-2.5 h-2.5 rounded-full bg-[#ea580c]"></span>
                 <span className="text-orange-400 font-medium">
-                  {selectedMetric === 'transit' ? '20-24 mins' : 'High'}
+                  {selectedMetric === 'transit' ? '20-24 mins' : selectedMetric === 'rent' ? 'High (50-75%)' : 'High'}
                 </span>
               </div>
               <div className="flex items-center space-x-1">
                 <span className="w-2.5 h-2.5 rounded-full bg-[#dc2626]"></span>
                 <span className="text-red-400 font-medium">
-                  {selectedMetric === 'transit' ? '25+ mins' : 'High / Premium'}
+                  {selectedMetric === 'transit' ? '25+ mins' : selectedMetric === 'rent' ? 'Premium (Top 25%)' : 'High / Premium'}
                 </span>
               </div>
             </div>
