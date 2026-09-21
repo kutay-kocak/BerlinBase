@@ -7,12 +7,12 @@
       "inside_ringbahn": true,
       "foreign_cuisine_pct": 68,
       "german_cuisine_pct": 32,
-      "total_verified_restaurants": 582,
-      "foreign_cuisine_count": 396,
+      "total_verified_restaurants": 581,
+      "foreign_cuisine_count": 395,
       "german_cuisine_count": 186,
-      "flat_white_price_eur": 4.53,
+      "flat_white_price_eur": 4.52,
       "fiber_internet_pct": 68,
-      "spati_count": 143,
+      "spati_count": 144,
       "transit_to_alex_min": 6,
       "buergeramt_speed_wks": 5,
       "primary_cuisine": "Contemporary Asian & Global Fusion",
@@ -36,12 +36,12 @@
       "inside_ringbahn": true,
       "foreign_cuisine_pct": 72,
       "german_cuisine_pct": 28,
-      "total_verified_restaurants": 461,
-      "foreign_cuisine_count": 332,
+      "total_verified_restaurants": 459,
+      "foreign_cuisine_count": 330,
       "german_cuisine_count": 129,
-      "flat_white_price_eur": 4.29,
+      "flat_white_price_eur": 4.28,
       "fiber_internet_pct": 62,
-      "spati_count": 136,
+      "spati_count": 133,
       "transit_to_alex_min": 10,
       "buergeramt_speed_wks": 6,
       "primary_cuisine": "Vietnamese & East Asian Vegan",
@@ -65,12 +65,12 @@
       "inside_ringbahn": true,
       "foreign_cuisine_pct": 76,
       "german_cuisine_pct": 24,
-      "total_verified_restaurants": 491,
-      "foreign_cuisine_count": 373,
-      "german_cuisine_count": 118,
-      "flat_white_price_eur": 4.2,
+      "total_verified_restaurants": 489,
+      "foreign_cuisine_count": 372,
+      "german_cuisine_count": 117,
+      "flat_white_price_eur": 4.23,
       "fiber_internet_pct": 58,
-      "spati_count": 162,
+      "spati_count": 158,
       "transit_to_alex_min": 14,
       "buergeramt_speed_wks": 6,
       "primary_cuisine": "Turkish & Anatolian Traditional",
@@ -94,12 +94,12 @@
       "inside_ringbahn": true,
       "foreign_cuisine_pct": 58,
       "german_cuisine_pct": 42,
-      "total_verified_restaurants": 384,
-      "foreign_cuisine_count": 223,
+      "total_verified_restaurants": 383,
+      "foreign_cuisine_count": 222,
       "german_cuisine_count": 161,
-      "flat_white_price_eur": 4.36,
+      "flat_white_price_eur": 4.37,
       "fiber_internet_pct": 54,
-      "spati_count": 112,
+      "spati_count": 109,
       "transit_to_alex_min": 12,
       "buergeramt_speed_wks": 4,
       "primary_cuisine": "Mediterranean & Italian Trattorias",
@@ -123,12 +123,12 @@
       "inside_ringbahn": true,
       "foreign_cuisine_pct": 62,
       "german_cuisine_pct": 38,
-      "total_verified_restaurants": 410,
-      "foreign_cuisine_count": 262,
+      "total_verified_restaurants": 412,
+      "foreign_cuisine_count": 264,
       "german_cuisine_count": 148,
-      "flat_white_price_eur": 4.1,
+      "flat_white_price_eur": 4.12,
       "fiber_internet_pct": 38,
-      "spati_count": 85,
+      "spati_count": 87,
       "transit_to_alex_min": 22,
       "buergeramt_speed_wks": 4,
       "primary_cuisine": "Authentic Chinese & Szechuan",
@@ -152,12 +152,12 @@
       "inside_ringbahn": true,
       "foreign_cuisine_pct": 59,
       "german_cuisine_pct": 41,
-      "total_verified_restaurants": 314,
-      "foreign_cuisine_count": 192,
+      "total_verified_restaurants": 313,
+      "foreign_cuisine_count": 191,
       "german_cuisine_count": 122,
-      "flat_white_price_eur": 3.98,
+      "flat_white_price_eur": 3.96,
       "fiber_internet_pct": 46,
-      "spati_count": 93,
+      "spati_count": 94,
       "transit_to_alex_min": 19,
       "buergeramt_speed_wks": 4,
       "primary_cuisine": "Levantine, Syrian & Israeli",
@@ -181,12 +181,12 @@
       "inside_ringbahn": true,
       "foreign_cuisine_pct": 64,
       "german_cuisine_pct": 36,
-      "total_verified_restaurants": 261,
-      "foreign_cuisine_count": 180,
+      "total_verified_restaurants": 260,
+      "foreign_cuisine_count": 179,
       "german_cuisine_count": 81,
-      "flat_white_price_eur": 3.6,
+      "flat_white_price_eur": 3.62,
       "fiber_internet_pct": 42,
-      "spati_count": 73,
+      "spati_count": 74,
       "transit_to_alex_min": 18,
       "buergeramt_speed_wks": 5,
       "primary_cuisine": "Middle Eastern & Turkish Grill",
@@ -210,12 +210,12 @@
       "inside_ringbahn": true,
       "foreign_cuisine_pct": 78,
       "german_cuisine_pct": 22,
-      "total_verified_restaurants": 538,
-      "foreign_cuisine_count": 436,
+      "total_verified_restaurants": 537,
+      "foreign_cuisine_count": 435,
       "german_cuisine_count": 102,
-      "flat_white_price_eur": 3.95,
+      "flat_white_price_eur": 3.92,
       "fiber_internet_pct": 51,
-      "spati_count": 177,
+      "spati_count": 174,
       "transit_to_alex_min": 18,
       "buergeramt_speed_wks": 7,
       "primary_cuisine": "Arabic, Lebanese & Syrian Street Food",
@@ -239,12 +239,12 @@
       "inside_ringbahn": true,
       "foreign_cuisine_pct": 66,
       "german_cuisine_pct": 34,
-      "total_verified_restaurants": 290,
+      "total_verified_restaurants": 289,
       "foreign_cuisine_count": 191,
-      "german_cuisine_count": 99,
-      "flat_white_price_eur": 3.25,
+      "german_cuisine_count": 98,
+      "flat_white_price_eur": 3.2,
       "fiber_internet_pct": 45,
-      "spati_count": 110,
+      "spati_count": 109,
       "transit_to_alex_min": 16,
       "buergeramt_speed_wks": 5,
       "primary_cuisine": "Turkish Ocakbaşı & West African",
@@ -268,12 +268,12 @@
       "inside_ringbahn": false,
       "foreign_cuisine_pct": 32,
       "german_cuisine_pct": 68,
-      "total_verified_restaurants": 210,
+      "total_verified_restaurants": 208,
       "foreign_cuisine_count": 67,
-      "german_cuisine_count": 143,
-      "flat_white_price_eur": 3.81,
+      "german_cuisine_count": 141,
+      "flat_white_price_eur": 3.8,
       "fiber_internet_pct": 49,
-      "spati_count": 32,
+      "spati_count": 28,
       "transit_to_alex_min": 25,
       "buergeramt_speed_wks": 3,
       "primary_cuisine": "Traditional German Cuisine & Bakeries",
@@ -297,12 +297,12 @@
       "inside_ringbahn": false,
       "foreign_cuisine_pct": 35,
       "german_cuisine_pct": 65,
-      "total_verified_restaurants": 183,
+      "total_verified_restaurants": 184,
       "foreign_cuisine_count": 64,
-      "german_cuisine_count": 119,
-      "flat_white_price_eur": 3.66,
+      "german_cuisine_count": 120,
+      "flat_white_price_eur": 3.67,
       "fiber_internet_pct": 36,
-      "spati_count": 25,
+      "spati_count": 26,
       "transit_to_alex_min": 32,
       "buergeramt_speed_wks": 3,
       "primary_cuisine": "Classic German & Bavarian Wirtshaus",
@@ -326,12 +326,12 @@
       "inside_ringbahn": false,
       "foreign_cuisine_pct": 48,
       "german_cuisine_pct": 52,
-      "total_verified_restaurants": 234,
-      "foreign_cuisine_count": 112,
-      "german_cuisine_count": 122,
-      "flat_white_price_eur": 3.39,
+      "total_verified_restaurants": 236,
+      "foreign_cuisine_count": 113,
+      "german_cuisine_count": 123,
+      "flat_white_price_eur": 3.42,
       "fiber_internet_pct": 55,
-      "spati_count": 46,
+      "spati_count": 47,
       "transit_to_alex_min": 24,
       "buergeramt_speed_wks": 3,
       "primary_cuisine": "Vietnamese (Largest in Europe)",
@@ -355,12 +355,12 @@
       "inside_ringbahn": false,
       "foreign_cuisine_pct": 38,
       "german_cuisine_pct": 62,
-      "total_verified_restaurants": 79,
-      "foreign_cuisine_count": 40,
-      "german_cuisine_count": 39,
+      "total_verified_restaurants": 77,
+      "foreign_cuisine_count": 39,
+      "german_cuisine_count": 38,
       "flat_white_price_eur": 3.84,
       "fiber_internet_pct": 54,
-      "spati_count": 61,
+      "spati_count": 58,
       "transit_to_alex_min": 16,
       "buergeramt_speed_wks": 2,
       "primary_cuisine": "Cozy German Bistros & Russian/Georgian Delis",
@@ -384,12 +384,12 @@
       "inside_ringbahn": false,
       "foreign_cuisine_pct": 52,
       "german_cuisine_pct": 48,
-      "total_verified_restaurants": 163,
-      "foreign_cuisine_count": 82,
-      "german_cuisine_count": 81,
-      "flat_white_price_eur": 3.85,
+      "total_verified_restaurants": 165,
+      "foreign_cuisine_count": 83,
+      "german_cuisine_count": 82,
+      "flat_white_price_eur": 3.78,
       "fiber_internet_pct": 52,
-      "spati_count": 59,
+      "spati_count": 62,
       "transit_to_alex_min": 18,
       "buergeramt_speed_wks": 3,
       "primary_cuisine": "Turkish Grills, Levantine & German Wirtshaus",
@@ -413,12 +413,12 @@
       "inside_ringbahn": false,
       "foreign_cuisine_pct": 64,
       "german_cuisine_pct": 36,
-      "total_verified_restaurants": 110,
+      "total_verified_restaurants": 109,
       "foreign_cuisine_count": 55,
-      "german_cuisine_count": 55,
-      "flat_white_price_eur": 3.81,
+      "german_cuisine_count": 54,
+      "flat_white_price_eur": 3.76,
       "fiber_internet_pct": 58,
-      "spati_count": 58,
+      "spati_count": 59,
       "transit_to_alex_min": 12,
       "buergeramt_speed_wks": 3,
       "primary_cuisine": "Third-Wave Coffee & Mediterranean Fusion",
@@ -442,12 +442,12 @@
       "inside_ringbahn": false,
       "foreign_cuisine_pct": 42,
       "german_cuisine_pct": 58,
-      "total_verified_restaurants": 96,
-      "foreign_cuisine_count": 48,
+      "total_verified_restaurants": 97,
+      "foreign_cuisine_count": 49,
       "german_cuisine_count": 48,
-      "flat_white_price_eur": 3.76,
+      "flat_white_price_eur": 3.77,
       "fiber_internet_pct": 50,
-      "spati_count": 60,
+      "spati_count": 61,
       "transit_to_alex_min": 18,
       "buergeramt_speed_wks": 3,
       "primary_cuisine": "Traditional German Bakeries & Italian Trattorias",
@@ -471,10 +471,10 @@
       "inside_ringbahn": false,
       "foreign_cuisine_pct": 46,
       "german_cuisine_pct": 54,
-      "total_verified_restaurants": 70,
-      "foreign_cuisine_count": 35,
-      "german_cuisine_count": 35,
-      "flat_white_price_eur": 3.82,
+      "total_verified_restaurants": 72,
+      "foreign_cuisine_count": 36,
+      "german_cuisine_count": 36,
+      "flat_white_price_eur": 3.83,
       "fiber_internet_pct": 60,
       "spati_count": 62,
       "transit_to_alex_min": 14,
@@ -500,12 +500,12 @@
       "inside_ringbahn": false,
       "foreign_cuisine_pct": 44,
       "german_cuisine_pct": 56,
-      "total_verified_restaurants": 193,
+      "total_verified_restaurants": 194,
       "foreign_cuisine_count": 97,
-      "german_cuisine_count": 96,
-      "flat_white_price_eur": 3.83,
+      "german_cuisine_count": 97,
+      "flat_white_price_eur": 3.78,
       "fiber_internet_pct": 46,
-      "spati_count": 58,
+      "spati_count": 61,
       "transit_to_alex_min": 24,
       "buergeramt_speed_wks": 2,
       "primary_cuisine": "Havel River Seafood, Turkish & Historic German",
@@ -529,12 +529,12 @@
       "inside_ringbahn": false,
       "foreign_cuisine_pct": 36,
       "german_cuisine_pct": 64,
-      "total_verified_restaurants": 143,
-      "foreign_cuisine_count": 72,
-      "german_cuisine_count": 71,
-      "flat_white_price_eur": 3.79,
+      "total_verified_restaurants": 145,
+      "foreign_cuisine_count": 73,
+      "german_cuisine_count": 72,
+      "flat_white_price_eur": 3.8,
       "fiber_internet_pct": 48,
-      "spati_count": 61,
+      "spati_count": 62,
       "transit_to_alex_min": 24,
       "buergeramt_speed_wks": 2,
       "primary_cuisine": "Waterfront Brauhaus & Smoked River Fish",
@@ -558,12 +558,12 @@
       "inside_ringbahn": false,
       "foreign_cuisine_pct": 40,
       "german_cuisine_pct": 60,
-      "total_verified_restaurants": 130,
-      "foreign_cuisine_count": 65,
-      "german_cuisine_count": 65,
-      "flat_white_price_eur": 3.85,
+      "total_verified_restaurants": 132,
+      "foreign_cuisine_count": 66,
+      "german_cuisine_count": 66,
+      "flat_white_price_eur": 3.82,
       "fiber_internet_pct": 44,
-      "spati_count": 60,
+      "spati_count": 62,
       "transit_to_alex_min": 25,
       "buergeramt_speed_wks": 2,
       "primary_cuisine": "German Lakeside Gastronomy & Greek Tavernas",
@@ -587,10 +587,10 @@
       "inside_ringbahn": false,
       "foreign_cuisine_pct": 32,
       "german_cuisine_pct": 68,
-      "total_verified_restaurants": 63,
-      "foreign_cuisine_count": 32,
-      "german_cuisine_count": 31,
-      "flat_white_price_eur": 3.82,
+      "total_verified_restaurants": 61,
+      "foreign_cuisine_count": 31,
+      "german_cuisine_count": 30,
+      "flat_white_price_eur": 3.81,
       "fiber_internet_pct": 42,
       "spati_count": 58,
       "transit_to_alex_min": 28,
@@ -616,12 +616,12 @@
       "inside_ringbahn": false,
       "foreign_cuisine_pct": 35,
       "german_cuisine_pct": 65,
-      "total_verified_restaurants": 86,
+      "total_verified_restaurants": 85,
       "foreign_cuisine_count": 43,
-      "german_cuisine_count": 43,
+      "german_cuisine_count": 42,
       "flat_white_price_eur": 3.81,
       "fiber_internet_pct": 56,
-      "spati_count": 58,
+      "spati_count": 59,
       "transit_to_alex_min": 23,
       "buergeramt_speed_wks": 2,
       "primary_cuisine": "Eastern European Delis, Vietnamese & German Comfort",
@@ -643,38 +643,38 @@
     {
       "district_name": "Mitte",
       "room_category": "WG Room",
-      "average_monthly_rent_eur": 830,
-      "sample_count": 29
+      "average_monthly_rent_eur": 850,
+      "sample_count": 30
     },
     {
       "district_name": "Mitte",
       "room_category": "1-Room Studio (1+0)",
-      "average_monthly_rent_eur": 1440,
-      "sample_count": 16
+      "average_monthly_rent_eur": 1410,
+      "sample_count": 17
     },
     {
       "district_name": "Mitte",
       "room_category": "1-Bedroom Flat (1+1 / 1+2)",
-      "average_monthly_rent_eur": 2290,
-      "sample_count": 18
+      "average_monthly_rent_eur": 2300,
+      "sample_count": 19
     },
     {
       "district_name": "Prenzlauer Berg",
       "room_category": "WG Room",
       "average_monthly_rent_eur": 760,
-      "sample_count": 22
+      "sample_count": 23
     },
     {
       "district_name": "Prenzlauer Berg",
       "room_category": "1-Room Studio (1+0)",
-      "average_monthly_rent_eur": 1400,
-      "sample_count": 17
+      "average_monthly_rent_eur": 1390,
+      "sample_count": 18
     },
     {
       "district_name": "Prenzlauer Berg",
       "room_category": "1-Bedroom Flat (1+1 / 1+2)",
-      "average_monthly_rent_eur": 2310,
-      "sample_count": 23
+      "average_monthly_rent_eur": 2240,
+      "sample_count": 27
     },
     {
       "district_name": "Friedrichshain",
@@ -691,32 +691,32 @@
     {
       "district_name": "Friedrichshain",
       "room_category": "1-Bedroom Flat (1+1 / 1+2)",
-      "average_monthly_rent_eur": 2290,
-      "sample_count": 23
+      "average_monthly_rent_eur": 2250,
+      "sample_count": 24
     },
     {
       "district_name": "Kreuzberg",
       "room_category": "WG Room",
       "average_monthly_rent_eur": 670,
-      "sample_count": 23
+      "sample_count": 24
     },
     {
       "district_name": "Kreuzberg",
       "room_category": "1-Room Studio (1+0)",
       "average_monthly_rent_eur": 1320,
-      "sample_count": 15
+      "sample_count": 17
     },
     {
       "district_name": "Kreuzberg",
       "room_category": "1-Bedroom Flat (1+1 / 1+2)",
-      "average_monthly_rent_eur": 2390,
-      "sample_count": 14
+      "average_monthly_rent_eur": 2320,
+      "sample_count": 15
     },
     {
       "district_name": "Charlottenburg",
       "room_category": "WG Room",
-      "average_monthly_rent_eur": 740,
-      "sample_count": 26
+      "average_monthly_rent_eur": 730,
+      "sample_count": 27
     },
     {
       "district_name": "Charlottenburg",
@@ -728,19 +728,19 @@
       "district_name": "Charlottenburg",
       "room_category": "1-Bedroom Flat (1+1 / 1+2)",
       "average_monthly_rent_eur": 2010,
-      "sample_count": 27
+      "sample_count": 29
     },
     {
       "district_name": "Schöneberg",
       "room_category": "WG Room",
       "average_monthly_rent_eur": 640,
-      "sample_count": 31
+      "sample_count": 33
     },
     {
       "district_name": "Schöneberg",
       "room_category": "1-Room Studio (1+0)",
       "average_monthly_rent_eur": 1220,
-      "sample_count": 20
+      "sample_count": 21
     },
     {
       "district_name": "Schöneberg",
@@ -752,7 +752,7 @@
       "district_name": "Neukölln",
       "room_category": "WG Room",
       "average_monthly_rent_eur": 670,
-      "sample_count": 20
+      "sample_count": 22
     },
     {
       "district_name": "Neukölln",
@@ -763,8 +763,8 @@
     {
       "district_name": "Neukölln",
       "room_category": "1-Bedroom Flat (1+1 / 1+2)",
-      "average_monthly_rent_eur": 2150,
-      "sample_count": 24
+      "average_monthly_rent_eur": 2100,
+      "sample_count": 27
     },
     {
       "district_name": "Alt-Treptow",
@@ -781,26 +781,26 @@
     {
       "district_name": "Alt-Treptow",
       "room_category": "1-Bedroom Flat (1+1 / 1+2)",
-      "average_monthly_rent_eur": 2010,
-      "sample_count": 16
+      "average_monthly_rent_eur": 2030,
+      "sample_count": 18
     },
     {
       "district_name": "Wedding",
       "room_category": "WG Room",
-      "average_monthly_rent_eur": 640,
-      "sample_count": 34
+      "average_monthly_rent_eur": 630,
+      "sample_count": 35
     },
     {
       "district_name": "Wedding",
       "room_category": "1-Room Studio (1+0)",
-      "average_monthly_rent_eur": 1160,
-      "sample_count": 10
+      "average_monthly_rent_eur": 1150,
+      "sample_count": 11
     },
     {
       "district_name": "Wedding",
       "room_category": "1-Bedroom Flat (1+1 / 1+2)",
-      "average_monthly_rent_eur": 1970,
-      "sample_count": 23
+      "average_monthly_rent_eur": 1950,
+      "sample_count": 24
     },
     {
       "district_name": "Mitte (Moabit)",
@@ -811,14 +811,14 @@
     {
       "district_name": "Mitte (Moabit)",
       "room_category": "1-Room Studio (1+0)",
-      "average_monthly_rent_eur": 1200,
-      "sample_count": 9
+      "average_monthly_rent_eur": 1180,
+      "sample_count": 10
     },
     {
       "district_name": "Mitte (Moabit)",
       "room_category": "1-Bedroom Flat (1+1 / 1+2)",
       "average_monthly_rent_eur": 1800,
-      "sample_count": 23
+      "sample_count": 24
     },
     {
       "district_name": "Pankow",
@@ -842,13 +842,13 @@
       "district_name": "Tempelhof",
       "room_category": "WG Room",
       "average_monthly_rent_eur": 610,
-      "sample_count": 35
+      "sample_count": 36
     },
     {
       "district_name": "Tempelhof",
       "room_category": "1-Room Studio (1+0)",
       "average_monthly_rent_eur": 1110,
-      "sample_count": 15
+      "sample_count": 16
     },
     {
       "district_name": "Tempelhof",
@@ -866,13 +866,13 @@
       "district_name": "Rummelsburg",
       "room_category": "1-Room Studio (1+0)",
       "average_monthly_rent_eur": 1100,
-      "sample_count": 15
+      "sample_count": 16
     },
     {
       "district_name": "Rummelsburg",
       "room_category": "1-Bedroom Flat (1+1 / 1+2)",
       "average_monthly_rent_eur": 1710,
-      "sample_count": 15
+      "sample_count": 16
     },
     {
       "district_name": "Steglitz",
@@ -883,8 +883,8 @@
     {
       "district_name": "Steglitz",
       "room_category": "1-Room Studio (1+0)",
-      "average_monthly_rent_eur": 960,
-      "sample_count": 14
+      "average_monthly_rent_eur": 940,
+      "sample_count": 15
     },
     {
       "district_name": "Steglitz",
@@ -907,8 +907,8 @@
     {
       "district_name": "Weißensee",
       "room_category": "1-Bedroom Flat (1+1 / 1+2)",
-      "average_monthly_rent_eur": 1550,
-      "sample_count": 27
+      "average_monthly_rent_eur": 1540,
+      "sample_count": 28
     },
     {
       "district_name": "Lichtenberg",
@@ -919,8 +919,8 @@
     {
       "district_name": "Lichtenberg",
       "room_category": "1-Room Studio (1+0)",
-      "average_monthly_rent_eur": 1070,
-      "sample_count": 11
+      "average_monthly_rent_eur": 1050,
+      "sample_count": 14
     },
     {
       "district_name": "Lichtenberg",
@@ -932,31 +932,31 @@
       "district_name": "Karlshorst",
       "room_category": "WG Room",
       "average_monthly_rent_eur": 500,
-      "sample_count": 28
+      "sample_count": 31
     },
     {
       "district_name": "Karlshorst",
       "room_category": "1-Room Studio (1+0)",
       "average_monthly_rent_eur": 940,
-      "sample_count": 9
+      "sample_count": 11
     },
     {
       "district_name": "Karlshorst",
       "room_category": "1-Bedroom Flat (1+1 / 1+2)",
-      "average_monthly_rent_eur": 1700,
-      "sample_count": 23
+      "average_monthly_rent_eur": 1680,
+      "sample_count": 24
     },
     {
       "district_name": "Reinickendorf (Tegel)",
       "room_category": "WG Room",
-      "average_monthly_rent_eur": 510,
-      "sample_count": 31
+      "average_monthly_rent_eur": 500,
+      "sample_count": 33
     },
     {
       "district_name": "Reinickendorf (Tegel)",
       "room_category": "1-Room Studio (1+0)",
       "average_monthly_rent_eur": 910,
-      "sample_count": 16
+      "sample_count": 17
     },
     {
       "district_name": "Reinickendorf (Tegel)",
@@ -968,7 +968,7 @@
       "district_name": "Köpenick (Altstadt)",
       "room_category": "WG Room",
       "average_monthly_rent_eur": 520,
-      "sample_count": 23
+      "sample_count": 24
     },
     {
       "district_name": "Köpenick (Altstadt)",
@@ -986,7 +986,7 @@
       "district_name": "Spandau (Zentrum)",
       "room_category": "WG Room",
       "average_monthly_rent_eur": 490,
-      "sample_count": 31
+      "sample_count": 32
     },
     {
       "district_name": "Spandau (Zentrum)",
@@ -1004,25 +1004,25 @@
       "district_name": "Lichtenrade",
       "room_category": "WG Room",
       "average_monthly_rent_eur": 490,
-      "sample_count": 26
+      "sample_count": 28
     },
     {
       "district_name": "Lichtenrade",
       "room_category": "1-Room Studio (1+0)",
-      "average_monthly_rent_eur": 830,
-      "sample_count": 14
+      "average_monthly_rent_eur": 840,
+      "sample_count": 16
     },
     {
       "district_name": "Lichtenrade",
       "room_category": "1-Bedroom Flat (1+1 / 1+2)",
       "average_monthly_rent_eur": 1540,
-      "sample_count": 28
+      "sample_count": 30
     },
     {
       "district_name": "Marzahn (Zentrum)",
       "room_category": "WG Room",
       "average_monthly_rent_eur": 470,
-      "sample_count": 38
+      "sample_count": 40
     },
     {
       "district_name": "Marzahn (Zentrum)",
@@ -1033,44 +1033,44 @@
     {
       "district_name": "Marzahn (Zentrum)",
       "room_category": "1-Bedroom Flat (1+1 / 1+2)",
-      "average_monthly_rent_eur": 1250,
-      "sample_count": 25
+      "average_monthly_rent_eur": 1240,
+      "sample_count": 26
     }
   ],
   "energy_and_inflation": {
-    "last_updated": "2026-09-14",
+    "last_updated": "2026-09-21",
     "source_check24": "Check24 Berlin Stromvergleich (PLZ 10115)",
     "source_destatis": "Statistisches Bundesamt Deutschland (Verbraucherpreisindex)",
-    "electricity_kwh_cents_avg": 35.2,
+    "electricity_kwh_cents_avg": 35.6,
     "single_household_monthly_eur": 56,
-    "couple_household_monthly_eur": 85,
-    "annual_general_inflation_pct": 2.3,
-    "annual_energy_inflation_pct": 1.8,
+    "couple_household_monthly_eur": 86,
+    "annual_general_inflation_pct": 2.1,
+    "annual_energy_inflation_pct": 2,
     "recommended_providers": [
       {
         "name": "Vattenfall Berlin (Basic)",
-        "kwhCent": 36.4,
+        "kwhCent": 36.8,
         "greenEnergy": true
       },
       {
         "name": "E.ON Berlin",
-        "kwhCent": 35.2,
+        "kwhCent": 35.6,
         "greenEnergy": true
       },
       {
         "name": "LichtBlick (Ökostrom)",
-        "kwhCent": 34.4,
+        "kwhCent": 34.8,
         "greenEnergy": true
       },
       {
         "name": "Ostrom (Dynamic Expat-Friendly)",
-        "kwhCent": 33.8,
+        "kwhCent": 34.2,
         "greenEnergy": true
       }
     ]
   },
   "lifestyle_venues_meta": {
-    "last_updated": "2026-09-14",
+    "last_updated": "2026-09-21",
     "sources": [
       "OpenStreetMap Overpass API (Berlin amenity=cafe & shop=convenience/kiosk)",
       "European Coffee Trip (Specialty 3rd-wave coffee index)",
