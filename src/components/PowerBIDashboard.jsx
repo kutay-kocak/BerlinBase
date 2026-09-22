@@ -296,7 +296,7 @@ export default function PowerBIDashboard() {
                       {filteredRentals.map((entry, index) => (
                         <Cell 
                           key={`cell-${index}`} 
-                          fill={index < 4 ? '#F0D722' : index < 12 ? '#facc15' : '#ca8a04'} 
+                          fill={index < 4 ? '#ca8a04' : index < 12 ? '#facc15' : '#F0D722'} 
                         />
                       ))}
                     </Bar>
